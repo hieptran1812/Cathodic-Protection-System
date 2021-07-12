@@ -1,51 +1,51 @@
 export const userData = [
     {
       name: "Jan",
-      "Thiết bị": 4000,
+      "Thiết bị": 10,
     },
     {
       name: "Feb",
-      "Thiết bị": 3000,
+      "Thiết bị": 15,
     },
     {
       name: "Mar",
-      "Thiết bị": 5000,
+      "Thiết bị": 2,
     },
     {
       name: "Apr",
-      "Thiết bị": 4000,
+      "Thiết bị": 4,
     },
     {
       name: "May",
-      "Thiết bị": 3000,
+      "Thiết bị": 5,
     },
     {
       name: "Jun",
-      "Thiết bị": 2000,
+      "Thiết bị": 4,
     },
     {
       name: "Jul",
-      "Thiết bị": 4000,
+      "Thiết bị": 3,
     },
     {
       name: "Agu",
-      "Thiết bị": 3000,
+      "Thiết bị": 3,
     },
     {
       name: "Sep",
-      "Thiết bị": 4000,
+      "Thiết bị": 4,
     },
     {
       name: "Oct",
-      "Thiết bị": 1000,
+      "Thiết bị": 1,
     },
     {
       name: "Nov",
-      "Thiết bị": 4000,
+      "Thiết bị": 4,
     },
     {
       name: "Dec",
-      "Thiết bị": 3000,
+      "Thiết bị": 3,
     },
   ];
 
