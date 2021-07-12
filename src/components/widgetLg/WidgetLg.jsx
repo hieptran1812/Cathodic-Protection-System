@@ -18,7 +18,7 @@ export default function WidgetLg() {
           <td className="widgetLgUser">
             <span className="widgetLgName">Hà Đông</span>
           </td>
-          <td className="widgetLgDate">2 Jun 2021</td>
+          <td className="widgetLgDate">5</td>
           <td className="widgetLgAmount">5</td>
           <td className="widgetLgStatus">
             <Button type="Approved" />
@@ -28,7 +28,7 @@ export default function WidgetLg() {
           <td className="widgetLgUser">
             <span className="widgetLgName">Cầu Giấy</span>
           </td>
-          <td className="widgetLgDate">2 Jun 2021</td>
+          <td className="widgetLgDate">6</td>
           <td className="widgetLgAmount">6</td>
           <td className="widgetLgStatus">
             <Button type="Declined" />
