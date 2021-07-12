@@ -10,7 +10,7 @@ export default function Product() {
       <div className="productTitleContainer">
         <h1 className="productTitle">Thông tin thiết bị</h1>
         <Link to="/newproduct">
-          <button className="productAddButton">Create</button>
+          <button className="productAddButton">Tạo mới</button>
         </Link>
       </div>
       <div className="productTop">
