@@ -3,7 +3,7 @@ import {
   LineStyle,
   Timeline,
   PermIdentity,
-  Storefront,
+  SettingsCell,
   MailOutline,
   DynamicFeed,
 } from "@material-ui/icons";
@@ -39,7 +39,7 @@ export default function Sidebar() {
             </Link>
             <Link to="/products" className="link">
               <li className="sidebarListItem">
-                <Storefront className="sidebarIcon" />
+                <SettingsCell className="sidebarIcon" />
                 Thiết bị
               </li>
             </Link>
