@@ -8,7 +8,7 @@ export default function MapDeviceDashboard() {
     return(
         <div className="general">
             <div className="title">
-                <h1 className="productTitle">Thông tin thiết bị</h1>
+                <h1 className="productTitle">Bản đồ thiết bị</h1>
             </div>
             <Autocomplete
                 className="search"
