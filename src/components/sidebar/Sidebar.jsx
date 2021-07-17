@@ -22,10 +22,12 @@ export default function Sidebar() {
               Tổng quan
             </li>
             </Link>
+            <Link to="/mapDevice" className="link">
             <li className="sidebarListItem">
               <Room className="sidebarIcon" />
               Bản đồ thiết bị
             </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -37,13 +39,13 @@ export default function Sidebar() {
                 Người dùng
               </li>
             </Link>
-            <Link to="/rectifierTransformer" className="link">
+            <Link to="/rectifierTransformerList" className="link">
               <li className="sidebarListItem">
                 <SettingsCell className="sidebarIcon" />
                 Biến áp chỉnh lưu
               </li>
             </Link>
-            <Link to="/testPost" className="link">
+            <Link to="/testPostList" className="link">
               <li className="sidebarListItem">
                 <NetworkCheck className="sidebarIcon" />
                 Trụ kiểm tra

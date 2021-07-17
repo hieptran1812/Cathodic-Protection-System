@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Map = () => {
+const MapDevice = () => {
   return (
     <div className="map">
       <iframe
@@ -15,4 +15,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default MapDevice;

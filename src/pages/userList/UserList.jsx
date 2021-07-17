@@ -27,16 +27,16 @@ export default function UserList() {
         );
       },
     },
-    { field: "email", headerName: "Email", width: 200 },
-    {
-      field: "status",
-      headerName: "Trạng thái",
-      width: 150,
-    },
     {
       field: "transaction",
       headerName: "Vai trò",
       width: 160,
+    },
+    { field: "email", headerName: "Email", width: 200 },
+    {
+      field: "status",
+      headerName: "Số điện thoại",
+      width: 180,
     },
     {
       field: "action",
@@ -60,6 +60,9 @@ export default function UserList() {
 
   return (
     <div className="userList">
+      <Link to="/newuser">
+        <button className="productAddButton">Thêm người dùng</button>
+      </Link>
       <DataGrid
         rows={data}
         disableSelectionOnClick

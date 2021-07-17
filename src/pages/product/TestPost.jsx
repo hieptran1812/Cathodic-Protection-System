@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import "./product.css";
 import {productData} from "../../dummyData"
-import { Publish } from "@material-ui/icons";
-import Map from "../../components/googleMap/map";
+import MapDevice from "../../components/googleMap/mapDevice";
 
 const key = 'AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY'
-export default function Product() {
+export default function TestPost() {
   return (
     <div className="product">
       <div className="productTitleContainer">
@@ -19,11 +18,15 @@ export default function Product() {
                       <span className="productInfoValue">123</span>
                   </div>
                   <div className="productInfoItem">
-                      <span className="productInfoKey">Hệ thống cục bộ</span>
+                      <span className="productInfoKey">Hệ thống vị trí</span>
                       <span className="productInfoValue">test2</span>
                   </div>
                   <div className="productInfoItem">
-                      <span className="productInfoKey">Địa chỉ cục bộ</span>
+                      <span className="productInfoKey">Địa chỉ trung tâm</span>
+                      <span className="productInfoValue">test3</span>
+                  </div>
+                  <div className="productInfoItem">
+                      <span className="productInfoKey">Địa chỉ nút mạng</span>
                       <span className="productInfoValue">test3</span>
                   </div>
                   <div className="productInfoItem">
@@ -48,23 +51,12 @@ export default function Product() {
             </form> */}
           </div>
       </div>
-      {/* <iframe
-        width="600"
-            height="450"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY
-    &q=Space+Needle,Seattle+WA">
-    </iframe> */}
-      <div className="productBottom">
-        <Map 
+        <MapDevice 
             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `90vh`, margin: `auto`, border: '2px solid black' }} />}
             mapElement={<div style={{ height: `100%` }} />}
-          />
-      </div>  
+        />
     </div>
   );
 }

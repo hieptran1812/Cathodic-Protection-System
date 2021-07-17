@@ -48,7 +48,7 @@ export default function TestPostList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row.id}>
+            <Link to={"/testPost/" + params.row.id}>
               <button className="productListEdit">Thông tin chi tiết</button>
             </Link>
             <DeleteOutline

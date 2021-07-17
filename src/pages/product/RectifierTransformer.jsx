@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import "./product.css";
 import {productData} from "../../dummyData"
-import { Publish } from "@material-ui/icons";
+import MapDevice from "../../components/googleMap/mapDevice";
 
-export default function Product() {
+const key = 'AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY'
+export default function RectifierTransformer() {
   return (
     <div className="product">
       <div className="productTitleContainer">
@@ -11,38 +12,43 @@ export default function Product() {
       </div>
       <div className="productTop">
           <div className="productTopRight">
-              <div className="productInfoTop">
-                  <span className="productName">Thiết bị 1</span>
-              </div>
               <div className="productInfoBottom">
                   <div className="productInfoItem">
-                      <span className="productInfoKey">id:</span>
+                      <span className="productInfoKey">Hệ thống cục bộ</span>
                       <span className="productInfoValue">123</span>
                   </div>
                   <div className="productInfoItem">
-                      <span className="productInfoKey">sales:</span>
-                      <span className="productInfoValue">5123</span>
+                      <span className="productInfoKey">Địa chỉ cục bộ</span>
+                      <span className="productInfoValue">test2</span>
                   </div>
                   <div className="productInfoItem">
-                      <span className="productInfoKey">Trạng thái</span>
-                      <span className="productInfoValue">Hoạt động</span>
+                      <span className="productInfoKey">Chất lượng tín hiệu</span>
+                      <span className="productInfoValue">tốt</span>
+                  </div>
+                  <div className="productInfoItem">
+                      <span className="productInfoKey">Số điện thoại</span>
+                      <span className="productInfoValue">0987938321</span>
                   </div>
               </div>
+              {/* <form className="productForm">
+                <div className="productFormLeft">
+                    <label>Đầu vào AC</label>
+                    <input type="text" placeholder="Thiết bị 1" />
+                    <label>In Stock</label>
+                    <select name="Hoạt động" id="idStock">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </form> */}
           </div>
       </div>
-      <div className="productBottom">
-          <form className="productForm">
-              <div className="productFormLeft">
-                  <label>Tên thiết bị</label>
-                  <input type="text" placeholder="Thiết bị 1" />
-                  <label>In Stock</label>
-                  <select name="Hoạt động" id="idStock">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                  </select>
-              </div>
-          </form>
-      </div>
+        <MapDevice 
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `90vh`, margin: `auto`, border: '2px solid black' }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+        />
     </div>
   );
 }

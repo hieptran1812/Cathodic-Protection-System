@@ -48,7 +48,7 @@ export default function RectifierTransformerList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row.id}>
+            <Link to={"/rectifierTransformer/" + params.row.id}>
               <button className="productListEdit">Thông tin chi tiết</button>
             </Link>
             <DeleteOutline

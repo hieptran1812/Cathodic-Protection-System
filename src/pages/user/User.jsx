@@ -14,10 +14,8 @@ export default function User() {
     <div className="user">
       <div className="userTitleContainer">
         <h1 className="userTitle">Thông tin chi tiết</h1>
-        <Link to="/newUser">
-          <button className="userAddButton">Tạo mới</button>
-        </Link>
       </div>
+      
       <div className="userContainer">
         <div className="userShow">
           <div className="userShowTop">
