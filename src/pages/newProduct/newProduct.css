@@ -2,8 +2,13 @@
   flex: 4;
 }
 
+.addProductTitle {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
 .addProductForm {
-  margin-top: 10px;
+  margin-left: 50px;
 }
 
 .addProductItem {

@@ -5,7 +5,7 @@ const MapDevice = () => {
     <div className="map">
       <iframe
         width="100%"
-        height="450"
+        height="600"
         title="map"
         loading="lazy"
         allowFullScreen
