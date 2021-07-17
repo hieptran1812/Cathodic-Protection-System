@@ -1,24 +1,18 @@
-import { withGoogleMap, withScriptjs, GoogleMap, Marker, InfoBox } from "react-google-maps"
+import React from 'react';
 
 const Map = () => {
   return (
     <div className="map">
-      <GoogleMap
-          defaultZoom={15}
-          defaultCenter={{ lat: 21.027763, lng: 105.834160 }}
-        >
-         <Marker
-              icon={{
-                url: 'https://insulationpads.co.uk/wp-content/uploads/2017/10/Home.png',
-                scaledSize: new window.google.maps.Size(40, 40),
-              }}
-              position={{ lat: 21.027763, lng: 105.834160 }}
-          >      
-                    
-          </Marker>
-      </GoogleMap>
+      <iframe
+        width="100%"
+        height="450"
+        title="map"
+        loading="lazy"
+        allowFullScreen
+        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJca2h2M2sNTERh4FkNmCx-aI&key=AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY"
+      />
     </div>
   );
-}
+};
 
-export default withScriptjs(withGoogleMap(Map));
+export default Map;
