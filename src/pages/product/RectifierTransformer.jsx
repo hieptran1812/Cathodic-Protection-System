@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./product.css";
-import Chart from "../../components/chart/Chart"
 import {productData} from "../../dummyData"
 import { Publish } from "@material-ui/icons";
 
@@ -9,17 +8,10 @@ export default function Product() {
     <div className="product">
       <div className="productTitleContainer">
         <h1 className="productTitle">Thông tin thiết bị</h1>
-        <Link to="/newproduct">
-          <button className="productAddButton">Tạo mới</button>
-        </Link>
       </div>
       <div className="productTop">
-          <div className="productTopLeft">
-              <Chart data={productData} dataKey="Sales" title="Thống kê hiệu suất"/>
-          </div>
           <div className="productTopRight">
               <div className="productInfoTop">
-                  <img src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="productInfoImg" />
                   <span className="productName">Thiết bị 1</span>
               </div>
               <div className="productInfoBottom">

@@ -49,21 +49,6 @@ export const userData = [
     },
   ];
 
-  export const productData = [
-    {
-      name: "Jan",
-      "Sales": 4000,
-    },
-    {
-      name: "Feb",
-      "Sales": 3000,
-    },
-    {
-      name: "Mar",
-      "Sales": 5000,
-    },
-  ];
-
   export const userRows = [
     {
       id: 1,
@@ -72,27 +57,47 @@ export const userData = [
         "https://i.imgur.com/cdw8m5u.jpg",
       email: "hieptran.jobs@gmail.com",
       status: "Hoạt động",
-      transaction: "Admin",
+      role: "Admin",
     },
   ];
 
-  export const productRows = [
+  export const productRectifiersRow = [
     {
-      id: 1,
+      id: '1',
       name: "Thiết bị 1",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      type: "Bộ đo",
-    },
-    {
-      id: 2,
-      name: "Thiết bị 2",
-      img:
-        "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      stock: 123,
-      status: "active",
-      type: "Bộ trung tâm",
+      localSystem: 123,
+      localAddress: "active",
+      phone: "0987938321",
+      signalQuality: "tốt"
     },
   ];
+
+  export const productTestRow = [
+    {
+      id: '1',
+      name: "Thiết bị 1",
+      locationSystem: 123,
+      centralAddress: "active",
+      nodeAddress: "active",
+      phone: "0987938321",
+      signalQuality: "tốt"
+    },
+  ];
+
+  export const pieChartData = [
+    {
+      id:1,
+      name: "Lỗi kết nối mạng",
+      value: 10,
+    },
+    {
+      id:2,
+      name: "Thiết bị hỏng",
+      value: 12,
+    },
+    {
+      id:3,
+      name: "Lỗi khác",
+      value: 10,
+    },
+  ]

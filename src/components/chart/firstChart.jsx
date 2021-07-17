@@ -8,11 +8,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export default function Chart({ title, data, dataKey, grid }) {
+export default function FirstChart({ title, data, dataKey, grid }) {
 
   return (
-    <div className="chart">
-      <h3 className="chartTitle">{title}</h3>
+    <div className="firstChart">
+      <h3 className="firstChartTitle">{title}</h3>
       <ResponsiveContainer width="100%" aspect={4 / 1}>
         <LineChart data={data}>
           <XAxis dataKey="name" stroke="#5550bd" />
@@ -24,3 +24,4 @@ export default function Chart({ title, data, dataKey, grid }) {
     </div>
   );
 }
+

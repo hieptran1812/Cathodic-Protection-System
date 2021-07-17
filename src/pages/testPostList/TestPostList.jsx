@@ -1,41 +1,44 @@
 import "./productList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
-import { productRows } from "../../dummyData";
+import { productTestRow } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function ProductList() {
-  const [data, setData] = useState(productRows);
+export default function TestPostList() {
+  const [data, setData] = useState(productTestRow);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
     {
       field: "product",
-      headerName: "Tên thiết bị",
-      width: 200,
+      headerName: "Mã thiết bị",
+      width: 160,
       renderCell: (params) => {
         return (
           <div className="productListItem">
-            <img className="productListImg" src={params.row.img} alt="" />
             {params.row.name}
           </div>
         );
       },
     },
-    { field: "stock", headerName: "Địa chỉ", width: 200 },
+    { field: "locationSystem", headerName: "Vị trí hệ thống", width: 180 },
     {
-      field: "status",
-      headerName: "Trạng thái",
-      width: 150,
+      field: "centralAddress",
+      headerName: "Địa chỉ trung tâm",
+      width: 180,
     },
     {
-      field: "type",
-      headerName: "Loại",
+      field: "signalQuality",
+      headerName: "Chất lượng tín hiệu",
+      width: 200,
+    },
+    {
+      field: "phone",
+      headerName: "Số điện thoại",
       width: 160,
     },
     {
@@ -60,6 +63,9 @@ export default function ProductList() {
 
   return (
     <div className="productList">
+      <Link to="/newproduct">
+        <button className="productAddButton">Thêm mới thiết bị</button>
+      </Link>
       <DataGrid
         rows={data}
         disableSelectionOnClick

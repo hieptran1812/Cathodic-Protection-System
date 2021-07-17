@@ -1,17 +1,17 @@
-import Chart from "../../components/chart/Chart";
+import FirstChart from "../../components/chart/firstChart";
+import SecondChart from "../../components/chart/secondChart";
 import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
 import "./home.css";
-import { userData } from "../../dummyData";
-import WidgetSm from "../../components/widgetSm/WidgetSm";
+import { userData, pieChartData } from "../../dummyData";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 
 export default function Home() {
   return (
     <div className="home">
       <FeaturedInfo />
-      <Chart data={userData} title="Số thiết bị lỗi theo thời gian" grid dataKey="Thiết bị"/>
+      <FirstChart data={userData} title="Số thiết bị lỗi theo thời gian" grid dataKey="Thiết bị"/>
       <div className="homeWidgets">
-        <WidgetSm/>
+        <SecondChart data = {pieChartData} title="Các loại lỗi thiết bị" dataKey="value"/>
         <WidgetLg/>
       </div>
     </div>

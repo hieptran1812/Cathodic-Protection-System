@@ -3,51 +3,53 @@ import "./newUser.css";
 export default function NewUser() {
   return (
     <div className="newUser">
-      <h1 className="newUserTitle">New User</h1>
+      <h1 className="newUserTitle">Tạo người dùng mới</h1>
       <form className="newUserForm">
         <div className="newUserItem">
-          <label>Username</label>
-          <input type="text" placeholder="john" />
+          <label>Tên tài khoản</label>
+          <input type="text" />
         </div>
         <div className="newUserItem">
-          <label>Full Name</label>
-          <input type="text" placeholder="John Smith" />
+          <label>Họ và tên</label>
+          <input type="text"/>
         </div>
         <div className="newUserItem">
           <label>Email</label>
-          <input type="email" placeholder="john@gmail.com" />
+          <input type="email" placeholder="abc@gmail.com" />
         </div>
         <div className="newUserItem">
-          <label>Password</label>
-          <input type="password" placeholder="password" />
+          <label>Mật khẩu</label>
+          <input type="password" />
         </div>
         <div className="newUserItem">
-          <label>Phone</label>
-          <input type="text" placeholder="+1 123 456 78" />
+          <label>Số điện thoại</label>
+          <input type="text"/>
         </div>
         <div className="newUserItem">
-          <label>Address</label>
-          <input type="text" placeholder="New York | USA" />
+          <label>Địa chỉ</label>
+          <input type="text" />
         </div>
         <div className="newUserItem">
-          <label>Gender</label>
+          <label>Giới tính</label>
           <div className="newUserGender">
-            <input type="radio" name="gender" id="male" value="male" />
-            <label for="male">Male</label>
-            <input type="radio" name="gender" id="female" value="female" />
-            <label for="female">Female</label>
-            <input type="radio" name="gender" id="other" value="other" />
-            <label for="other">Other</label>
+            <input type="radio" name="gender" id="nam" value="nam" />
+            <label for="nam">Nam</label>
+            <input type="radio" name="gender" id="nữ" value="nữ" />
+            <label for="nữ">Nữ</label>
+            <input type="radio" name="gender" id="khác" value="khác" />
+            <label for="khác">Khác</label>
           </div>
         </div>
         <div className="newUserItem">
-          <label>Active</label>
-          <select className="newUserSelect" name="active" id="active">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+          <label>Vai trò</label>
+          <select className="newUserSelect" name="role" id="role">
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
           </select>
         </div>
-        <button className="newUserButton">Create</button>
+        <div className="newUserItem">
+          <button className="newUserButton">Thêm người dùng</button>
+        </div>
       </form>
     </div>
   );
