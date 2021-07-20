@@ -12,43 +12,85 @@ export default function TestPost() {
       </div>
       <div className="productTop">
           <div className="productTopRight">
-              <div className="productInfoBottom">
-                  <div className="productInfoItem">
+            <div className="productInfoBottom">
+              <div className="productInfoItemTest">
                       <span className="productInfoKey">Mã thiết bị</span>
                       <span className="productInfoValue">123</span>
                   </div>
-                  <div className="productInfoItem">
-                      <span className="productInfoKey">Hệ thống vị trí</span>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Location System</span>
+                      <span className="productInfoValue">123</span>
+                    
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Điện áp pin</span>
+                      <span className="productInfoValue">test2</span>
+                     
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Nhiệt độ thiết bị</span>
+                      <span className="productInfoValue">tốt</span>
+                      
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Nhiệt độ thiết bị</span>
+                      <span className="productInfoValue">0987938321</span>
+                      
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Phone number</span>
+                      <span className="productInfoValue">0987938321</span>
+                   
+                  </div>
+              </div>
+          </div>
+          <div className="productTopRight">
+            <div className="productInfoBottom">
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Central Address</span>
+                      <span className="productInfoValue">test central</span>
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Node Address</span>
                       <span className="productInfoValue">test2</span>
                   </div>
-                  <div className="productInfoItem">
-                      <span className="productInfoKey">Địa chỉ trung tâm</span>
-                      <span className="productInfoValue">test3</span>
-                  </div>
-                  <div className="productInfoItem">
-                      <span className="productInfoKey">Địa chỉ nút mạng</span>
-                      <span className="productInfoValue">test3</span>
-                  </div>
-                  <div className="productInfoItem">
-                      <span className="productInfoKey">Chất lượng tín hiệu</span>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Điện AC 3 pha</span>
                       <span className="productInfoValue">tốt</span>
                   </div>
-                  <div className="productInfoItem">
-                      <span className="productInfoKey">Số điện thoại</span>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Điện áp nguồn</span>
+                      <span className="productInfoValue">0987938321</span>
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Signal quality</span>
                       <span className="productInfoValue">0987938321</span>
                   </div>
               </div>
-              {/* <form className="productForm">
-                <div className="productFormLeft">
-                    <label>Đầu vào AC</label>
-                    <input type="text" placeholder="Thiết bị 1" />
-                    <label>In Stock</label>
-                    <select name="Hoạt động" id="idStock">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
-            </form> */}
+          </div>
+          <div className="productTopRight">
+            <div className="productInfoBottom">
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Điện áp âm 1</span>
+                      <span className="productInfoValueElec">1</span>
+                      <span className="productInfoValueElec">1</span>
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Điện áp âm 2</span>
+                      <span className="productInfoValueElec">2</span>
+                      <span className="productInfoValueElec">1</span>
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Điện áp âm 3</span>
+                      <span className="productInfoValueElec">3</span>
+                      <span className="productInfoValueElec">1</span>
+                  </div>
+                  <div className="productInfoItemTest">
+                      <span className="productInfoKey">Điện áp âm 4</span>
+                      <span className="productInfoValueElec">4</span>
+                      <span className="productInfoValueElec">115</span>
+                  </div>
+              </div>
           </div>
       </div>
         <MapDevice 

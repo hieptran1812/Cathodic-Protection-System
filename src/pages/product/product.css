@@ -21,6 +21,8 @@
 .productTopRight {
   padding: 20px;
   margin: 20px;
+  margin-bottom: 5px;
+  margin-right: 20px;
   -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
@@ -38,11 +40,20 @@
   margin-top: 10px;
 }
 
-.productInfoItem {
-  margin-bottom: 10px;
+.productInfoItem{
+  margin-bottom: 15px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+}
+
+.productInfoItemTest {
+  margin-bottom: 15px;
   width: 250px;
   display: flex;
   justify-content: space-between;
+  padding-left: 20px;
 }
 
 .productInfoKey{
@@ -52,7 +63,13 @@
 
 .productInfoValue {
   font-weight: 300;
-  margin-left: 50px;
+}
+
+.productInfoValueElec {
+  font-weight: 300;
+  border: 1px solid red;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .productBottom {

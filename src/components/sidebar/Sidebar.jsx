@@ -42,13 +42,13 @@ export default function Sidebar() {
             <Link to="/rectifierTransformerList" className="link">
               <li className="sidebarListItem">
                 <SettingsCell className="sidebarIcon" />
-                Biến áp chỉnh lưu
+                Bộ trung tâm
               </li>
             </Link>
             <Link to="/testPostList" className="link">
               <li className="sidebarListItem">
                 <NetworkCheck className="sidebarIcon" />
-                Trụ kiểm tra
+                Bộ đo
               </li>
             </Link>
             <Link to="/alarm" className="link">
