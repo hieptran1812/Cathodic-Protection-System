@@ -51,12 +51,6 @@ export default function Sidebar() {
                 Bộ đo
               </li>
             </Link>
-            <Link to="/alarm" className="link">
-              <li className="sidebarListItem">
-                <Notifications className="sidebarIcon" />
-                Thông báo
-              </li>
-            </Link>
           </ul>
         </div>
       </div>

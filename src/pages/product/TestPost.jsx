@@ -70,6 +70,10 @@ export default function TestPost() {
           </div>
           <div className="productTopRight">
             <div className="productInfoBottom">
+                  <div className="productInfoItemColumn">
+                      <span className="columnTestPostLeft">Mở</span>
+                      <span className="columnTestPostRight">Đóng</span>
+                  </div>
                   <div className="productInfoItemTest">
                       <span className="productInfoKey">Điện áp âm 1</span>
                       <span className="productInfoValueElec">1</span>

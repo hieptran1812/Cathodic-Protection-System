@@ -56,6 +56,26 @@
   padding-left: 20px;
 }
 
+.productInfoItemColumn {
+  margin-bottom: 15px;
+  display: flex;
+  padding-left: 20px;
+  align-content: right;
+  width: 50px;
+}
+
+.columnTestPostLeft {
+  text-align: right;
+  font-weight: bold;
+  margin-left: 143px;
+}
+
+.columnTestPostRight {
+  text-align: right;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
 .productInfoKey{
   font-size: 16px;
   font-weight: bold;

@@ -47,7 +47,7 @@ export default function RectifierTransformer() {
                   </div>
                   <div className="productInfoItem">
                       <span className="productInfoKey">Điện áp nguồn</span>
-                      <span className="productInfoValue">test2</span>
+                      <span className="productInfoValue">{ 2+2 }</span>
                   </div>
                   <div className="productInfoItem">
                       <span className="productInfoKey">Điện AC 3 pha</span>
