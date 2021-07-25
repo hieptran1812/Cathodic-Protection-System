@@ -6,7 +6,7 @@ from base64 import b64decode, b64encode, decodebytes, encodebytes
 import struct
 import json
 
-sv_address = '127.0.0.1'
+sv_address = '103.82.21.195'
 
 #### Lấy dữ liệu từ bộ trung tâm ####
 def getDataFromRectifier():
@@ -172,134 +172,134 @@ def getDataFromTestPost():
 
             # Receive the data in small chunks and retransmit it
             data = connection.recv(2) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) # 
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) # 
             print("=============================================")
 
             data = connection.recv(2) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) # 
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) # 
             result['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
             print("=============================================")
 
             data = connection.recv(2) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) # 
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) # 
             result['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
             print("=============================================")
 
             data = connection.recv(2) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Node Address "%s"' % struct.unpack('<H', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Node Address "%s"' % struct.unpack('<H', data)) #
             result['nodeAddress'] = str(struct.unpack('<H', data))[1:-2]
             print("=============================================")
 
             data = connection.recv(8) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Not use "%s"' % struct.unpack('d', data)) # 
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Not use "%s"' % struct.unpack('d', data)) # 
             print("=============================================")
             data = connection.recv(2) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Not use "%s"' % struct.unpack('<H', data)) # 
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Not use "%s"' % struct.unpack('<H', data)) # 
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Điện áp pin "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Điện áp pin "%s"' % struct.unpack('f', data)) #
             result['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Điện áp nguồn "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Điện áp nguồn "%s"' % struct.unpack('f', data)) #
             result['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Nhiệt độ thiết bị "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Nhiệt độ thiết bị "%s"' % struct.unpack('f', data)) #
             result['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Open Point 1 "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Open Point 1 "%s"' % struct.unpack('f', data)) #
             result['openPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Open Point 2 "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Open Point 2 "%s"' % struct.unpack('f', data)) #
             result['openPoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Open Point 3 "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Open Point 3 "%s"' % struct.unpack('f', data)) #
             result['openPoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Open Point 4 "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Open Point 4 "%s"' % struct.unpack('f', data)) #
             result['openPoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Close Point 1 "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Close Point 1 "%s"' % struct.unpack('f', data)) #
             result['closePoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Close Point 2 "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Close Point 2 "%s"' % struct.unpack('f', data)) #
             result['closePoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 1) 
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Close Point 3 "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Close Point 3 "%s"' % struct.unpack('f', data)) #
             result['closePoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
             data = connection.recv(4) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Close Point 4 "%s"' % struct.unpack('f', data)) #
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Close Point 4 "%s"' % struct.unpack('f', data)) #
             result['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
             print("=============================================")
 
@@ -312,18 +312,18 @@ def getDataFromTestPost():
                 print("=============================================")
 
             data = connection.recv(16) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Số điện thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Số điện thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
             result['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
             print("=============================================")
 
             data = connection.recv(1) # number of bytes
-            print(sys.stderr, 'received "%s"' % data)
-            print(sys.stderr, 'received "%s"' % b64encode(data))
-            print(len(data))
-            print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
+            # print(sys.stderr, 'received "%s"' % data)
+            # print(sys.stderr, 'received "%s"' % b64encode(data))
+            # print(len(data))
+            # print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
             result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 1) 
             print("=============================================")
 
