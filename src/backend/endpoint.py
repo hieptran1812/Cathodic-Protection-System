@@ -66,7 +66,7 @@ def getUsers():
 #   return jsonify({'message': 'User Updated'})
 
 
-# ################ Bộ trung tâm ##################
+# ################ trung tam ##################
 # @app.route('/newRectifier', methods=['POST'])
 # def createRectifier():
 #   print(request.json)
@@ -110,7 +110,7 @@ def getRectifierTransformerDetail():
 #   return jsonify({'message': 'User Updated'})
 
 
-# ################ Bộ đo ##################
+# ################ Bo do ##################
 # @app.route('/newTestPost', methods=['POST'])
 # def createTestPost():
 #   print(request.json)

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import socket
 import sys
 from base64 import b64decode, b64encode, decodebytes, encodebytes
