@@ -1,7 +1,9 @@
-username = "customer_db"
-password = "hiep1812"
-database_name = "ptit-wav2vec"
+from flask_pymongo import pymongo
+import urllib 
 
-CONNECTION_STRING = "mongodb+srv://" + username + ":" + password + "@cluster0.dv4jr.mongodb.net/" + database_name + "?retryWrites=true&w=majority"
-client = pymongo.MongoClient(CONNECTION_STRING)
+database_name = "CathodicDatabase"
+
+client = pymongo.MongoClient("mongodb+srv://custom_db:hieptran1812@cluster0.eriug.mongodb.net/CathodicDatabase?retryWrites=true&w=majority")
 db = client.get_database(database_name)
+
+

@@ -13,7 +13,6 @@ export default function UserList() {
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
     {
       field: "user",
       headerName: "Người dùng",
@@ -21,22 +20,27 @@ export default function UserList() {
       renderCell: (params) => {
         return (
           <div className="userListUser">
-            <img className="userListImg" src={params.row.avatar} alt="" />
+            <img className="userListImg" src={params.row.avatar} alt="avatar" />
             {params.row.username}
           </div>
         );
       },
     },
     {
-      field: "transaction",
+      field: "role",
       headerName: "Vai trò",
-      width: 160,
+      width: 120,
     },
     { field: "email", headerName: "Email", width: 200 },
     {
-      field: "status",
+      field: "phone",
       headerName: "Số điện thoại",
       width: 180,
+    },
+    {
+      field: "address",
+      headerName: "Địa chỉ",
+      width: 220,
     },
     {
       field: "action",

@@ -10,13 +10,13 @@ export default function MapDeviceDashboard() {
             <div className="title">
                 <h1 className="productTitle">Bản đồ thiết bị</h1>
             </div>
-            <Autocomplete
+            {/* <Autocomplete
                 className="search"
                 id="search-combo-box"
                 getOptionLabel={(option) => option.title}
                 style={{ width: 300 }}
                 renderInput={(params) => <TextField {...params} label="Tìm kiếm" variant="outlined" />}
-            />
+            /> */}
             <MapDevice 
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
                 loadingElement={<div style={{ height: `100%` }} />}
