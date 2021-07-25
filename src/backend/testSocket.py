@@ -2,7 +2,7 @@
 
 import socket
 import sys
-from base64 import b64decode, b64encode, decodebytes, encodebytes
+from base64 import b64decode, b64encode
 import struct
 import json
 
