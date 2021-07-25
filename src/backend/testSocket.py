@@ -6,6 +6,7 @@ from base64 import b64decode, b64encode
 import struct
 import json
 
+sv_address = '127.0.0.1'
 
 #### Lấy dữ liệu từ bộ trung tâm ####
 def getDataFromRectifier():
@@ -13,7 +14,7 @@ def getDataFromRectifier():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Bind the socket to the port
-    server_address = ('127.0.0.1', 30001)
+    server_address = (sv_address, 30001)
     print(sys.stderr, 'starting up on %s port %s' % server_address)
     sock.bind(server_address)
 
@@ -152,7 +153,7 @@ def getDataFromTestPost():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Bind the socket to the port
-    server_address = ('127.0.0.1', 30001)
+    server_address = (sv_address, 30001)
     print(sys.stderr, 'starting up on %s port %s' % server_address)
     sock.bind(server_address)
 
