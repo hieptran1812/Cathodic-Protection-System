@@ -1,8 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_pymongo import pymongo
 from flask_cors import CORS
+print("start")
 from testSocket import getDataFromTestPost, getDataFromRectifier
 from configDB import db
+import socket
+import sys
 import json
 
 from bson import ObjectId
@@ -11,9 +14,24 @@ app = Flask(__name__)
 CORS(app)
 app.config['JSON_AS_ASCII'] = False
 
+# sv_address = '127.0.0.1'
+# sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# # Bind the socket to the port
+# server_address = (sv_address, 30001)
+# print(sys.stderr, 'starting up on %s port %s' % server_address)
+# sock.bind(server_address)
+# sock.listen(1)
+# print(sys.stderr, 'waiting for a connection')
+# connection, client_address = sock.accept()
+
+# print(connection)
+# print(client_address)
+# initSocket()
+
 @app.route('/')
 def t():
-  return "ok"
+  return "API running..."
 
 ################ User ##################
 @app.route('/users', methods=['POST'])
@@ -33,9 +51,12 @@ def getUsers():
     users = []
     for doc in db.User.find({}):
       users.append({
-        '_id': str(ObjectId(doc['_id'])),
+        'id': str(ObjectId(doc['_id'])),
         'name': doc['name'],
         'email': doc['email'],
+        'phone': doc['phone'],
+        'address': doc['address'],
+        'role':doc['role'],
       })
     return jsonify(users)
 
@@ -154,4 +175,4 @@ def getTestPostDetail():
 #   return jsonify({'message': 'User Updated'})
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
