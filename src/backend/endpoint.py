@@ -87,7 +87,7 @@ def getUsers():
 #   return jsonify({'message': 'User Updated'})
 
 
-# ################ trung tam ##################
+# ################ bo trung tam ##################
 # @app.route('/newRectifier', methods=['POST'])
 # def createRectifier():
 #   print(request.json)
@@ -104,16 +104,19 @@ def getRectifierTransformerDetail():
   if request.method == 'GET':
     return jsonify(getDataFromRectifier())
 
-# @app.route('/rectifierTransformer/<id>', methods=['GET'])
-# def getRectifierDetail(id):
-#   user = db.find_one({'_id': ObjectId(id)})
-#   print(user)
-#   return jsonify({
-#       '_id': str(ObjectId(user['_id'])),
-#       'name': user['name'],
-#       'email': user['email'],
-#       'password': user['password']
-#   })
+@app.route('/api/rectifierTransformerList/', methods=['GET'])
+def getRectifier():
+  devices = []
+  for doc in db.RectifierTransformers.find({}):
+      devices.append({
+        'id': str(ObjectId(doc['_id'])),
+        'devSerial': doc['devSerial'],
+        'locationSystem': doc['locationSystem'],
+        'centralAddress': doc['centralAddress'],
+        'phone': doc['phone'],
+        'signalQuality': doc['signalQuality'],
+      })
+  return jsonify(devices)
 
 # @app.route('/rectifierTransformerList/<id>', methods=['DELETE'])
 # def deleteRectifier(id):

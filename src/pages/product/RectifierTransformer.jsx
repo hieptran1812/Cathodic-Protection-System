@@ -26,12 +26,16 @@ export default class RectifierTransformer extends React.Component {
               <div className="productTitleContainer">
                 <h1 className="productTitle">Thông tin thiết bị</h1>
               </div>
+              <div className="time">
+                <span className="productInfoKey">Dữ liệu được cập nhật vào: </span>
+                <span className="productInfoValue">{this.state.info.time}</span>
+              </div>
               <div className="productTop">
                   <div className="productTopRight">
                       <div className="productInfoBottom">
                           <div className="productInfoItem">
                               <span className="productInfoKey">Mã thiết bị</span>
-                              <span className="productInfoValue">123</span>
+                              <span className="productInfoValue">{this.state.info.devSerial}</span>
                           </div>
                           <div className="productInfoItem">
                               <span className="productInfoKey">Location System</span>

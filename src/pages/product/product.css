@@ -56,6 +56,14 @@
   padding-left: 20px;
 }
 
+.time {
+  margin-bottom: 15px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
 .productInfoItemColumn {
   margin-bottom: 15px;
   display: flex;
