@@ -12,7 +12,7 @@ export default class RectifierTransformer extends React.Component {
     }
     
     componentDidMount() {
-        axios.get(`${API}/api/rectifierTransformer/12345`)
+        axios.get(`${API}/api/rectifierTransformer/123456`)
           .then(res => {
             console.log(res)
             const info = res.data;
