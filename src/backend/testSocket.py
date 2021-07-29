@@ -231,7 +231,7 @@ def getDataFromTestPost():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
+                # print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
                 result['devType'] = str(struct.unpack('b', data))[1:-2]
                 # print("=============================================")
 
@@ -239,7 +239,7 @@ def getDataFromTestPost():
                 print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 print(len(data))
-                print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
+                # print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
                 result['devSerial'] = str(struct.unpack("2H", data)[0:-1])
                 # print("=============================================")
 
@@ -355,15 +355,15 @@ def getDataFromTestPost():
                 # print("=============================================")
 
                 data = connection.recv(1) # number of bytes
-                print(sys.stderr, 'received "%s"' % data)
+                # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 print(len(data))
-                print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
+                # print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
                 result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 1) 
                 # print("=============================================")
 
                 data = connection.recv(1) # number of bytes
-                print(sys.stderr, 'received "%s"' % data)
+                # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 print(len(data))
                 print(sys.stderr, 'test1 "%s"' % struct.unpack('b', data))
