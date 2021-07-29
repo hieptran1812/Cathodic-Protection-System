@@ -390,7 +390,7 @@ def getDataFromTestPost():
 
 
 # getDataFromRectifier()
-getDataFromTestPost()
+# getDataFromTestPost()
 
 
 
