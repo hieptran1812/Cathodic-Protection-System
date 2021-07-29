@@ -166,7 +166,6 @@ def getDataFromRectifier():
                 break
     except Exception as e:
         print(e)
-        break
 
 #### Lấy dữ liệu từ bộ đo ####
 
