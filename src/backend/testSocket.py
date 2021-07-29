@@ -7,8 +7,8 @@ import struct
 import json
 import datetime
 
-print('testSocket')
-sv_address = '103.82.21.195'
+print('Connect to Socket')
+sv_address = '127.0.0.1'
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the port
@@ -153,16 +153,17 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
                 result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 1) 
                 # print("=============================================")
-                if data:
-                    print(sys.stderr, 'receive last data')
-                    connection.recv(len(data))
-                else:
-                    print(sys.stderr, 'no more data from', client_address)
+                
+                data = connection.recv(1) # number of bytes
+                print(sys.stderr, 'received "%s"' % data)
+                # print(sys.stderr, 'received "%s"' % b64encode(data))
+                print(len(data))
+                print(sys.stderr, 'test "%s"' % struct.unpack('b', data))
 
                 return result
                 
             except Exception as e:
-                print(e)
+                print("x" + str(e))
                 break
     except Exception as e:
         print(e)
@@ -354,33 +355,35 @@ def getDataFromTestPost():
                 # print("=============================================")
 
                 data = connection.recv(1) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
+                print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
+                print(len(data))
                 # print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
                 result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 1) 
                 # print("=============================================")
 
+                data = connection.recv(1) # number of bytes
+                print(sys.stderr, 'received "%s"' % data)
+                # print(sys.stderr, 'received "%s"' % b64encode(data))
+                print(len(data))
+                print(sys.stderr, 'test "%s"' % struct.unpack('b', data))
+
                 # result = json.dumps(result)
                 print(type(result))
 
-                if data:
-                    print(sys.stderr, 'receive last data')
-                    connection.recv(len(data))
-                else:
-                    print(sys.stderr, 'no more data from', client_address)
+                
 
                 return result
 
             except Exception as e:
-                print(e)
+                print("x" + str(e))
                 break
     
     except Exception as e:
         print(e)
 
 
-# getDataFromRectifier()
+getDataFromRectifier()
 # print(getDataFromTestPost())
 
 
