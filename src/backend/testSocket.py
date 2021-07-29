@@ -47,7 +47,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) #
+                # print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) #
                 result['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
                 # print("=============================================")
 
@@ -55,7 +55,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) #
+                # print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) #
                 result['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
                 # print("=============================================")
 
@@ -63,15 +63,15 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
+                # print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
                 result['devType'] = str(struct.unpack('b', data))[1:-2]
                 # print("=============================================")
 
                 data = connection.recv(4) # number of bytes
-                print(sys.stderr, 'received "%s"' % data)
+                # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
-                print(len(data))
-                print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
+                # print(len(data))
+                # print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
                 result['devSerial'] = str(struct.unpack("2H", data)[0:-1])
                 # print("=============================================")
 
@@ -79,14 +79,14 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Not use "%s"' % struct.unpack("b4s", data)[1]) #
+                # print(sys.stderr, 'Not use "%s"' % struct.unpack("b4s", data)[1]) #
                 # print("=============================================")
 
                 data = connection.recv(4) # number of bytes
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Dien ap pin "%s"' % struct.unpack('f', data)) #
+                # print(sys.stderr, 'Dien ap pin "%s"' % struct.unpack('f', data)) #
                 result['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
                 # print("=============================================")
 
@@ -94,7 +94,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Dien ap nguon "%s"' % struct.unpack('f', data)) #
+                # print(sys.stderr, 'Dien ap nguon "%s"' % struct.unpack('f', data)) #
                 result['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 1) 
                 # print("=============================================")
 
@@ -102,7 +102,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Nhiet do thiet bi "%s"' % struct.unpack('f', data)) #
+                # print(sys.stderr, 'Nhiet do thiet bi "%s"' % struct.unpack('f', data)) #
                 result['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
                 # print("=============================================")
 
@@ -110,7 +110,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Dien AC 3 pha "%s"' % struct.unpack('f', data)) #
+                # print(sys.stderr, 'Dien AC 3 pha "%s"' % struct.unpack('f', data)) #
                 result['dienAC3Pha'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
                 # print("=============================================")
 
@@ -118,7 +118,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Dien DC Point 1 "%s"' % struct.unpack('f', data)) #
+                # print(sys.stderr, 'Dien DC Point 1 "%s"' % struct.unpack('f', data)) #
                 result['dienDCPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
                 # print("=============================================")
 
@@ -126,7 +126,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Dong Dien DC "%s"' % struct.unpack('f', data)) #
+                # print(sys.stderr, 'Dong Dien DC "%s"' % struct.unpack('f', data)) #
                 result['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
                 # print("=============================================")
 
@@ -142,7 +142,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'So Dien thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
+                # print(sys.stderr, 'So Dien thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
                 result['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
                 # print("=============================================")
 
@@ -150,7 +150,7 @@ def getDataFromRectifier():
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
-                print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
+                # print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
                 result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 1) 
                 # print("=============================================")
                 if data:
