@@ -8,7 +8,7 @@ print('SettingSocket')
 
 def initSocket():
     print('initSocket')
-    sv_address = '127.0.0.1'
+    sv_address = '103.82.21.195'
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
     # Bind the socket to the port

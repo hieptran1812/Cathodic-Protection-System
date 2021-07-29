@@ -99,9 +99,12 @@ def getUsers():
 #   return jsonify(str(ObjectId(id)))
 
 
-@app.route('/api/rectifierTransformer/1', methods=['GET'])
-def getRectifierTransformerDetail():
+@app.route('/api/rectifierTransformer/<devSerial>', methods=['GET'])
+def getRectifierTransformerDetail(devSerial):
   if request.method == 'GET':
+    name = db.RectifierTransformers.find_one({
+      'devSerial': devSerial,
+    })
     return jsonify(getDataFromRectifier())
 
 @app.route('/api/rectifierTransformerList/', methods=['GET'])

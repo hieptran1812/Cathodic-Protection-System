@@ -163,6 +163,7 @@ def getDataFromRectifier():
                 
         except Exception as e:
             print(e)
+            connection.close()
 
 #### Lấy dữ liệu từ bộ đo ####
 
@@ -371,6 +372,7 @@ def getDataFromTestPost():
                 
         except Exception as e:
             print(e)
+            connection.close()
             
 
 # getDataFromRectifier()
