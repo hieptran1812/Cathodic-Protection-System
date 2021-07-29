@@ -377,7 +377,7 @@ def getDataFromTestPost():
                 # result = json.dumps(result)
                 print(type(result))
 
-                print(result)
+                # print(result)
 
                 return result
 
