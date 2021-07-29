@@ -8,7 +8,7 @@ import json
 import datetime
 
 print('Connect to Socket')
-sv_address = '127.0.0.1'
+sv_address = '103.82.21.195'
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the port
@@ -371,7 +371,11 @@ def getDataFromTestPost():
                 # result = json.dumps(result)
                 print(type(result))
 
-                
+                data = connection.recv(1) # number of bytes
+                print(sys.stderr, 'received "%s"' % data)
+                # print(sys.stderr, 'received "%s"' % b64encode(data))
+                print(len(data))
+                print(sys.stderr, 'test "%s"' % struct.unpack('b', data))
 
                 return result
 
@@ -383,8 +387,8 @@ def getDataFromTestPost():
         print(e)
 
 
-getDataFromRectifier()
-# print(getDataFromTestPost())
+# getDataFromRectifier()
+# getDataFromTestPost()
 
 
 
