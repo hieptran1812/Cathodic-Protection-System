@@ -338,7 +338,7 @@ def getDataFromTestPost():
                 result['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
                 # print("=============================================")
 
-                for i in range(19):
+                for i in range(20):
                     data = connection.recv(1) # number of bytes
                     # print(sys.stderr, 'received "%s"' % data)
                     # print(sys.stderr, 'received "%s"' % b64encode(data))
@@ -346,12 +346,12 @@ def getDataFromTestPost():
                     # print(sys.stderr, 'Not use "%s"' % struct.unpack('s', data)) # 
                     # print("=============================================")
 
-                data = connection.recv(16) # number of bytes
+                data = connection.recv(15) # number of bytes
                 # print(sys.stderr, 'received "%s"' % data)
                 # print(sys.stderr, 'received "%s"' % b64encode(data))
                 # print(len(data))
                 # print(sys.stderr, 'So Dien thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
-                result['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
+                result['phone'] = str(struct.unpack("b14s", data)[1].decode('cp1252'))[0:-5]
                 # print("=============================================")
 
                 data = connection.recv(1) # number of bytes
@@ -377,6 +377,8 @@ def getDataFromTestPost():
                 # result = json.dumps(result)
                 print(type(result))
 
+                print(result)
+
                 return result
 
             except Exception as e:
@@ -388,7 +390,7 @@ def getDataFromTestPost():
 
 
 # getDataFromRectifier()
-# getDataFromTestPost()
+getDataFromTestPost()
 
 
 
