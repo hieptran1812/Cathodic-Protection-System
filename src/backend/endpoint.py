@@ -1,18 +1,30 @@
+import logging
+logging.basicConfig(filename='log_endpoint.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 from flask import Flask, jsonify, request
 from flask_pymongo import pymongo
 from flask_cors import CORS
-print("start")
-from testSocket import getDataFromTestPost, getDataFromRectifier
 from configDB import db
+from testSocket import getDataFromTestPost, getDataFromRectifier
+# import threading
 import socket
 import sys
 import json
 
 from bson import ObjectId
+logging.info("Start API")
+# logging.debug('This is a debug log message.')
+# logging.info('This is a info log message.')
+# logging.warning('This is a warning log message.')
+# logging.error('This is a error log message.')
+# logging.critical('This is a critical log message.')
 
 app = Flask(__name__)
 CORS(app)
 app.config['JSON_AS_ASCII'] = False
+
+logging.info('Flask started')
+
+# threading._start_new_thread(getDataFromRectifier, ()) 
 
 # sv_address = '127.0.0.1'
 # sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -48,6 +60,7 @@ def createUser():
 
 @app.route('/api/users', methods=['GET'])
 def getUsers():
+    logging.info("start API get users list")
     users = []
     for doc in db.User.find({}):
       users.append({
@@ -99,16 +112,46 @@ def getUsers():
 #   return jsonify(str(ObjectId(id)))
 
 
-@app.route('/api/rectifierTransformer/<devSerial>', methods=['GET'])
-def getRectifierTransformerDetail(devSerial):
+@app.route('/api/rectifierTransformer/<id>', methods=['GET'])
+def getRectifierTransformerDetail(id):
   if request.method == 'GET':
-    name = db.RectifierTransformers.find_one({
-      'devSerial': devSerial,
+    getDataFromRectifier()
+    deviceInfo = db.RectifierTransformersDetails.find_one({
+      'devSerial': id,
     })
-    return jsonify(getDataFromRectifier())
+    if deviceInfo: 
+      result = {}
+      result['devSerial'] = deviceInfo['devSerial']
+      result['time'] = deviceInfo['otherInfo'][0]['time']
+      result['locationSystem'] = deviceInfo['otherInfo'][0]['locationSystem']
+      result['centralAddress'] = deviceInfo['otherInfo'][0]['centralAddress']
+      result['dienApPin'] = deviceInfo['otherInfo'][0]['dienApPin']
+      result['dienApNguon'] = deviceInfo['otherInfo'][0]['dienApNguon']
+      result['temperature'] = deviceInfo['otherInfo'][0]['temperature']
+      result['dienAC3Pha'] = deviceInfo['otherInfo'][0]['dienAC3Pha']
+      result['dienDCPoint1'] = deviceInfo['otherInfo'][0]['dienDCPoint1']
+      result['dongDienDC'] = deviceInfo['otherInfo'][0]['dongDienDC']
+      result['phone'] = deviceInfo['otherInfo'][0]['phone']
+      result['signalQuality'] = deviceInfo['otherInfo'][0]['signalQuality']
+    else: 
+      result = {}
+      result['devSerial'] = 'Khong co du lieu cho thiet bi nay'
+      result['time'] = 'Khong co du lieu cho thiet bi nay'
+      result['locationSystem'] = 'Khong co du lieu cho thiet bi nay'
+      result['centralAddress'] = 'Khong co du lieu cho thiet bi nay'
+      result['dienApPin'] = 'Khong co du lieu cho thiet bi nay'
+      result['dienApNguon'] = 'Khong co du lieu cho thiet bi nay'
+      result['temperature'] = 'Khong co du lieu cho thiet bi nay'
+      result['dienAC3Pha'] = 'Khong co du lieu cho thiet bi nay'
+      result['dienDCPoint1'] = 'Khong co du lieu cho thiet bi nay'
+      result['dongDienDC'] = 'Khong co du lieu cho thiet bi nay'
+      result['phone'] = 'Khong co du lieu cho thiet bi nay'
+      result['signalQuality'] = 'Khong co du lieu cho thiet bi nay'
+    return result
 
 @app.route('/api/rectifierTransformerList/', methods=['GET'])
 def getRectifier():
+  logging.info("start API get Rectifier Transformers list")
   devices = []
   for doc in db.RectifierTransformers.find({}):
       devices.append({
@@ -148,17 +191,20 @@ def getRectifier():
 #   })
 #   return jsonify(str(ObjectId(id)))
 
-# @app.route('/testPostList', methods=['GET'])
-# def getTestPost():
-#     users = []
-#     for doc in db.find():
-#         users.append({
-#             '_id': str(ObjectId(doc['_id'])),
-#             'name': doc['name'],
-#             'email': doc['email'],
-#             'password': doc['password']
-#         })
-#     return jsonify(users)
+@app.route('/api/testPostList', methods=['GET'])
+def getTestPost():
+    logging.info("start API get Test Posts list")
+    devices = []
+    for doc in db.TestPosts.find({}):
+        devices.append({
+          'id': str(ObjectId(doc['_id'])),
+          'devSerial': doc['devSerial'],
+          'locationSystem': doc['locationSystem'],
+          'centralAddress': doc['centralAddress'],
+          'phone': doc['phone'],
+          'signalQuality': doc['signalQuality'],
+        })
+    return jsonify(devices)
 
 @app.route('/api/testPost/1', methods=['GET'])
 def getTestPostDetail():
@@ -180,5 +226,7 @@ def getTestPostDetail():
 #   }})
 #   return jsonify({'message': 'User Updated'})
 
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
+    

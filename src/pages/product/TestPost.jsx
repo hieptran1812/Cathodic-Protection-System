@@ -1,27 +1,29 @@
 import "./product.css";
 import MapDevice from "../../components/googleMap/mapDevice";
+import { useParams } from "react-router-dom";
 import axios from 'axios';
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 
 const API = process.env.REACT_APP_API;
 const key = 'AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY';
 
-export default class TestPost extends React.Component {
+export default function TestPost() {
 
-  state = {
-      info: [],
-  }
-  
-  componentDidMount() {
-    axios.get(`${API}/api/testPost/1`)
-      .then(res => {
-        console.log(res)
-        const info = res.data;
-        this.setState({ info });
-      })
-      .catch(error => console.log(error));
-  }
-  render(){
+    const [info, setInfo] = useState('');
+    const {productId} = useParams()
+    useEffect(() => {
+        async function fetchAPI() {
+            await axios.get(`${API}/api/testPost/${productId}`)
+            .then(res => {
+              const data = res.data;
+              setInfo(data);
+              console.log(data)
+            })
+            .catch(error => console.log(error));
+        }
+        setInterval(fetchAPI, 1500)
+    }, [productId]) 
+
     return (
         <div className="product">
           <div className="productTitleContainer">
@@ -29,32 +31,32 @@ export default class TestPost extends React.Component {
           </div>
           <div className="time">
             <span className="productInfoKey">Dữ liệu được cập nhật vào: </span>
-            <span className="productInfoValue">{this.state.info.time}</span>
+            <span className="productInfoValue">{info.time}</span>
           </div>
           <div className="productTop">
               <div className="productTopRight">
                 <div className="productInfoBottom">
                   <div className="productInfoItemTest">
                           <span className="productInfoKey">Mã thiết bị</span>
-                          <span className="productInfoValue">{this.state.info.devSerial}</span>
+                          <span className="productInfoValue">{info.devSerial}</span>
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Location System</span>
-                          <span className="productInfoValue">{this.state.info.locationSystem}</span>
+                          <span className="productInfoValue">{info.locationSystem}</span>
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Điện áp pin</span>
-                          <span className="productInfoValue">{this.state.info.dienApPin}</span>
+                          <span className="productInfoValue">{info.dienApPin}</span>
                          
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Nhiệt độ thiết bị</span>
-                          <span className="productInfoValue">{this.state.info.temperature}</span>
+                          <span className="productInfoValue">{info.temperature}</span>
                           
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Phone number</span>
-                          <span className="productInfoValue">{this.state.info.phone}</span>
+                          <span className="productInfoValue">{info.phone}</span>
                        
                       </div>
                   </div>
@@ -63,19 +65,19 @@ export default class TestPost extends React.Component {
                 <div className="productInfoBottom">
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Central Address</span>
-                          <span className="productInfoValue">{this.state.info.centralAddress}</span>
+                          <span className="productInfoValue">{info.centralAddress}</span>
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Node Address</span>
-                          <span className="productInfoValue">{this.state.info.nodeAddress}</span>
+                          <span className="productInfoValue">{info.nodeAddress}</span>
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Điện áp nguồn</span>
-                          <span className="productInfoValue">{this.state.info.dienApNguon}</span>
+                          <span className="productInfoValue">{info.dienApNguon}</span>
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Signal quality</span>
-                          <span className="productInfoValue">{this.state.info.signalQuality}</span>
+                          <span className="productInfoValue">{info.signalQuality}</span>
                       </div>
                   </div>
               </div>
@@ -87,23 +89,23 @@ export default class TestPost extends React.Component {
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Điện áp âm 1</span>
-                          <span className="productInfoValueElec">{this.state.info.openPoint1}</span>
-                          <span className="productInfoValueElec">{this.state.info.closePoint1}</span>
+                          <span className="productInfoValueElec">{info.openPoint1}</span>
+                          <span className="productInfoValueElec">{info.closePoint1}</span>
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Điện áp âm 2</span>
-                          <span className="productInfoValueElec">{this.state.info.openPoint2}</span>
-                          <span className="productInfoValueElec">{this.state.info.closePoint2}</span>
+                          <span className="productInfoValueElec">{info.openPoint2}</span>
+                          <span className="productInfoValueElec">{info.closePoint2}</span>
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Điện áp âm 3</span>
-                          <span className="productInfoValueElec">{this.state.info.openPoint3}</span>
-                          <span className="productInfoValueElec">{this.state.info.closePoint3}</span>
+                          <span className="productInfoValueElec">{info.openPoint3}</span>
+                          <span className="productInfoValueElec">{info.closePoint3}</span>
                       </div>
                       <div className="productInfoItemTest">
                           <span className="productInfoKey">Điện áp âm 4</span>
-                          <span className="productInfoValueElec">{this.state.info.openPoint4}</span>
-                          <span className="productInfoValueElec">{this.state.info.closePoint4}</span>
+                          <span className="productInfoValueElec">{info.openPoint4}</span>
+                          <span className="productInfoValueElec">{info.closePoint4}</span>
                       </div>
                   </div>
               </div>
@@ -115,7 +117,5 @@ export default class TestPost extends React.Component {
                 mapElement={<div style={{ height: `100%` }} />}
             />
         </div>
-      );
-  }
-  
+    );  
 }

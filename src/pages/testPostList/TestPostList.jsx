@@ -1,78 +1,92 @@
 import "./productList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
-import { productTestRow } from "../../dummyData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import axios from 'axios';
+import React from 'react';
 
-export default function TestPostList() {
-  const [data, setData] = useState(productTestRow);
+const API = process.env.REACT_APP_API;
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
-
-  const columns = [
-    {
-      field: "product",
-      headerName: "Mã thiết bị",
-      width: 160,
-      renderCell: (params) => {
-        return (
-          <div className="productListItem">
-            {params.row.name}
-          </div>
-        );
-      },
+const columns = [
+  {
+    field: "devSerial",
+    headerName: "Mã thiết bị",
+    width: 150,
+    renderCell: (params) => {
+      return (
+        <div className="productListItem">
+          {params.row.devSerial}
+        </div>
+      );
     },
-    { field: "locationSystem", headerName: "Vị trí hệ thống", width: 180 },
-    {
-      field: "centralAddress",
-      headerName: "Địa chỉ trung tâm",
-      width: 180,
-    },
-    {
+  },
+  { field: "locationSystem", headerName: "Location System", width: 200 },
+  {
+    field: "centralAddress",
+    headerName: "Central Address",
+    width: 200,
+  },
+  {
       field: "signalQuality",
       headerName: "Chất lượng tín hiệu",
       width: 200,
     },
-    {
-      field: "phone",
-      headerName: "Số điện thoại",
-      width: 160,
+  {
+    field: "phone",
+    headerName: "Số điện thoại",
+    width: 160,
+  },
+  {
+    field: "action",
+    headerName: "Hành động",
+    width: 200,
+    renderCell: (params) => {
+      return (
+        <>
+          <Link to={"/rectifierTransformer/" + params.row.devSerial}>
+            <button className="productListEdit">Thông tin chi tiết</button>
+          </Link>
+        </>
+      );
     },
-    {
-      field: "action",
-      headerName: "Hành động",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <>
-            <Link to={"/testPost/" + params.row.id}>
-              <button className="productListEdit">Thông tin chi tiết</button>
-            </Link>
-            <DeleteOutline
-              className="productListDelete"
-              onClick={() => handleDelete(params.row.id)}
-            />
-          </>
-        );
-      },
-    },
-  ];
+  },
+];
 
-  return (
-    <div className="productList">
-      <Link to="/newproduct">
-        <button className="productAddButton">Thêm mới thiết bị</button>
-      </Link>
-      <DataGrid
-        rows={data}
-        disableSelectionOnClick
-        columns={columns}
-        pageSize={8}
-        checkboxSelection
-      />
-    </div>
-  );
+export default class TestPostList extends React.Component {
+  // const [data, setData] = useState(productTestRow);
+
+  // const handleDelete = (id) => {
+  //   setData(data.filter((item) => item.id !== id));
+  // };
+
+  state = {
+    deviceInfo: [],
+  }
+  
+  componentDidMount() {
+    axios.get(`${API}/api/testPostList`)
+      .then(res => {
+        console.log(res)
+        const deviceInfo = res.data;
+        this.setState({ deviceInfo });
+      })
+      .catch(error => console.log(error));
+  }
+
+  render(){
+    return (
+      <div className="productList">
+        <Link to="/newproduct">
+          <button className="productAddButton">Thêm mới thiết bị</button>
+        </Link>
+        <DataGrid
+          rows={this.state.deviceInfo}
+          disableSelectionOnClick
+          columns={columns}
+          pageSize={8}
+          checkboxSelection
+        />
+      </div>
+    );
+  }
 }

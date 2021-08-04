@@ -6,169 +6,178 @@ from base64 import b64decode, b64encode
 import struct
 import json
 import datetime
+import logging
+import threading
+from flask_pymongo import pymongo
+from configDB import db
 
-print('Connect to Socket')
-sv_address = '103.82.21.195'
+logging.info('Connect to Socket')
+sv_address = '127.0.0.1'
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the port
 server_address = (sv_address, 30001)
-print(sys.stderr, 'starting up on %s port %s' % server_address)
+logging.info('starting up on %s port %s' % server_address)
 # sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.bind(server_address)
-sock.listen(1)
-print(sys.stderr, 'waiting for a connection')
+sock.listen(1024)
+logging.info('waiting for a connection')
 
 connection, client_address = sock.accept()
-print(client_address)
+logging.info('connect to %s port %s' % server_address)
+
+def pushDataRectifier(result):
+    deviceInDb = db.RectifierTransformersDetails.find_one({
+        'devSerial': result['devSerial'] 
+    })
+    # print(result['devSerial'])
+    if deviceInDb:
+        db.RectifierTransformersDetails.update(
+            {'devSerial': result['devSerial']},
+            {
+                "$push": {
+                    "otherInfo": {
+                        "$each": [result['otherInfo'][0]],
+                        "$position": 0
+                    }
+                }
+            }
+        )
+        # print('1') 
+    else:
+        db.RectifierTransformersDetails.insert_one(result)
+        # print('0')
+        
+    logging.info('Insert data to MongoDB')
 
 #### Lấy dữ liệu từ bộ trung tâm ####
 def getDataFromRectifier():
-    print('getDataFromRectifier')
+    logging.info('Retrieve data from central device')
     try:
         while True:
-
             result = {}
-
-            result['time'] = datetime.datetime.now()
-
+            result['otherInfo'] = []
+            subOtherInfo = {}
+            subOtherInfo['time'] = datetime.datetime.now()
             try:
+                print('1')
                 # print(sys.stderr, 'connection from', client_address)
-
-                # Receive the data in small chunks and retransmit it
                 data = connection.recv(2) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
                 print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) #
-                # print("=============================================")
 
                 data = connection.recv(2) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) #
-                result['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
-                # print("=============================================")
+                subOtherInfo['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
 
                 data = connection.recv(2) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) #
-                result['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
-                # print("=============================================")
+                subOtherInfo['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
 
                 data = connection.recv(1) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
                 result['devType'] = str(struct.unpack('b', data))[1:-2]
-                # print("=============================================")
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
-                result['devSerial'] = str(struct.unpack("2H", data)[0:-1])
-                # print("=============================================")
-
+                result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
+                # print(str(struct.unpack("2H", data)[0:-1])[1:-2])
                 data = connection.recv(5) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Not use "%s"' % struct.unpack("b4s", data)[1]) #
-                # print("=============================================")
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dien ap pin "%s"' % struct.unpack('f', data)) #
-                result['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dien ap nguon "%s"' % struct.unpack('f', data)) #
-                result['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 1) 
-                # print("=============================================")
+                subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Nhiet do thiet bi "%s"' % struct.unpack('f', data)) #
-                result['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                subOtherInfo['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dien AC 3 pha "%s"' % struct.unpack('f', data)) #
-                result['dienAC3Pha'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                subOtherInfo['dienAC3Pha'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dien DC Point 1 "%s"' % struct.unpack('f', data)) #
-                result['dienDCPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                subOtherInfo['dienDCPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dong Dien DC "%s"' % struct.unpack('f', data)) #
-                result['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 for i in range(11):
                     data = connection.recv(4) # number of bytes
-                    # print(sys.stderr, 'received "%s"' % data)
-                    # print(sys.stderr, 'received "%s"' % b64encode(data))
-                    # print(len(data))
-                    # print(sys.stderr, 'Not use "%s"' % struct.unpack('f', data)) # 
-                    # print("=============================================")
 
                 data = connection.recv(16) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'So Dien thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
-                result['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
-                # print("=============================================")
+                subOtherInfo['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
 
                 data = connection.recv(1) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
-                result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 1) 
-                # print("=============================================")
+                subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3)
                 
                 data = connection.recv(1) # number of bytes
-                print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                print(len(data))
-                print(sys.stderr, 'test "%s"' % struct.unpack('b', data))
+                print(sys.stderr, 'received last byte "%s"' % data)
+                
+                result['otherInfo'].append(subOtherInfo)
 
-                return result
+                logging.info('Retrieve data from tool completely')
+                print('complete')
+
+                pushDataRectifier(result)
+
+                return
                 
             except Exception as e:
-                print("x" + str(e))
-                break
+                logging.critical(e)
+                logging.info('======================')
+                # logging.info('Connect to Socket AGAIN')
+                # sv_address = '127.0.0.1'
+                # sock = socket.ssdocket(socket.AF_INET, socket.SOCK_STREAM)
+
+                # # Bind the socket to the port
+                # server_address = (sv_address, 30001)
+                # logging.info('starting up on %s port %s' % server_address)
+                # # sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                # sock.bind(server_address)
+                # sock.listen(1)
+                # logging.info('waiting for a connection')
+
+                # connection, client_address = sock.accept()
+                # logging.info('connect to %s port %s' % server_address)
+                # getDataFromRectifier()
     except Exception as e:
-        print(e)
+        logging.critical(e)
+        logging.info('======================')
+        # logging.info('Connect to Socket AGAIN')
+        # sv_address = '127.0.0.1'
+        # sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # # Bind the socket to the port
+        # server_address = (sv_address, 30001)
+        # logging.info('starting up on %s port %s' % server_address)
+        # # sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        # sock.bind(server_address)
+        # sock.listen(1)
+        # logging.info('waiting for a connection')
+        # connection, client_address = sock.accept()
+        # logging.info('connect to %s port %s' % server_address)
+        # getDataFromRectifier()
 
 #### Lấy dữ liệu từ bộ đo ####
+
+def pushDataTestPost(result):
+    deviceInDb = db.TestPostsDetails.find_one({
+        'devSerial': result['devSerial'] 
+    })
+    # print(result['devSerial'])
+    if deviceInDb:
+        db.TestPostsDetails.update(
+            {'devSerial': result['devSerial']},
+            {
+                "$push": {
+                    "otherInfo": {
+                        "$each": [result['otherInfo'][0]],
+                        "$position": 0
+                    }
+                }
+            }
+        )
+        # print('1') 
+    else:
+        db.RectifierTransformersDetails.insert_one(result)
+        # print('0')
+        
+    logging.info('Insert data to MongoDB')
 
 def getDataFromTestPost():
     # Create a TCP/IP socket
@@ -181,7 +190,7 @@ def getDataFromTestPost():
 
     # # Listen for incoming connections
     # sock.listen(1)
-    print('getDataFromTestPost')
+    logging.info('Retrieve data from test device')
     try:
         while True:
             # Wait for a connection
@@ -195,202 +204,115 @@ def getDataFromTestPost():
             try:
                 # print(sys.stderr, 'connection from', client_address)
 
-                # Receive the data in small chunks and retransmit it
                 data = connection.recv(2) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) # 
-                # print("=============================================")
+                print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) # 
 
                 data = connection.recv(2) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) # 
+                print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) # 
                 result['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
-                # print("=============================================")
 
                 data = connection.recv(2) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) # 
+                print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) # 
                 result['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
-                # print("=============================================")
 
                 data = connection.recv(2) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Node Address "%s"' % struct.unpack('<H', data)) #
+                print(sys.stderr, 'Node Address "%s"' % struct.unpack('<H', data)) #
                 result['nodeAddress'] = str(struct.unpack('<H', data))[1:-2]
-                # print("=============================================")
 
                 data = connection.recv(1) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
+                print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
                 result['devType'] = str(struct.unpack('b', data))[1:-2]
-                # print("=============================================")
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
+                print(sys.stderr, 'received "%s"' % b64encode(data))
                 print(len(data))
-                # print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
+                print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
+                print(result)
+                print(struct.unpack("2H", data)[0:-1])
                 result['devSerial'] = str(struct.unpack("2H", data)[0:-1])
-                # print("=============================================")
+                print(result)
 
                 data = connection.recv(5) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Not use "%s"' % struct.unpack('<H', data)) # 
-                # print("=============================================")
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dien ap pin "%s"' % struct.unpack('f', data)) #
-                result['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Dien ap pin "%s"' % struct.unpack('f', data)) #
+                result['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Dien ap nguồn "%s"' % struct.unpack('f', data)) #
-                result['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Dien ap nguồn "%s"' % struct.unpack('f', data)) #
+                result['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Nhiet do thiet bi "%s"' % struct.unpack('f', data)) #
-                result['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Nhiet do thiet bi "%s"' % struct.unpack('f', data)) #
+                result['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Open Point 1 "%s"' % struct.unpack('f', data)) #
-                result['openPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Open Point 1 "%s"' % struct.unpack('f', data)) #
+                result['openPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Open Point 2 "%s"' % struct.unpack('f', data)) #
-                result['openPoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Open Point 2 "%s"' % struct.unpack('f', data)) #
+                result['openPoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Open Point 3 "%s"' % struct.unpack('f', data)) #
-                result['openPoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Open Point 3 "%s"' % struct.unpack('f', data)) #
+                result['openPoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Open Point 4 "%s"' % struct.unpack('f', data)) #
-                result['openPoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Open Point 4 "%s"' % struct.unpack('f', data)) #
+                result['openPoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Close Point 1 "%s"' % struct.unpack('f', data)) #
-                result['closePoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Close Point 1 "%s"' % struct.unpack('f', data)) #
+                result['closePoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Close Point 2 "%s"' % struct.unpack('f', data)) #
-                result['closePoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 1) 
-                # print("=============================================")
+                print(sys.stderr, 'Close Point 2 "%s"' % struct.unpack('f', data)) #
+                result['closePoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3) 
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Close Point 3 "%s"' % struct.unpack('f', data)) #
-                result['closePoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Close Point 3 "%s"' % struct.unpack('f', data)) #
+                result['closePoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'Close Point 4 "%s"' % struct.unpack('f', data)) #
-                result['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 1)
-                # print("=============================================")
+                print(sys.stderr, 'Close Point 4 "%s"' % struct.unpack('f', data)) #
+                result['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
-                for i in range(20):
+                for i in range(19):
                     data = connection.recv(1) # number of bytes
-                    # print(sys.stderr, 'received "%s"' % data)
-                    # print(sys.stderr, 'received "%s"' % b64encode(data))
-                    # print(len(data))
-                    # print(sys.stderr, 'Not use "%s"' % struct.unpack('s', data)) # 
-                    # print("=============================================")
 
-                data = connection.recv(15) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'So Dien thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
-                result['phone'] = str(struct.unpack("b14s", data)[1].decode('cp1252'))[0:-5]
-                # print("=============================================")
+                data = connection.recv(16) # number of bytes
+                print(sys.stderr, 'So Dien thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
+                result['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
 
                 data = connection.recv(1) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
-                print(len(data))
-                # print(sys.stderr, 'Signal Quality "%s"' % struct.unpack('b', data))
-                result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 1) 
-                # print("=============================================")
+                result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3) 
 
                 data = connection.recv(1) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # print(sys.stderr, 'received "%s"' % b64encode(data))
                 print(len(data))
                 print(sys.stderr, 'test1 "%s"' % struct.unpack('b', data))
 
-                # data = connection.recv(1) # number of bytes
-                # print(sys.stderr, 'received "%s"' % data)
-                # # print(sys.stderr, 'received "%s"' % b64encode(data))
-                # print(len(data))
-                # print(sys.stderr, 'test2 "%s"' % struct.unpack('b', data))
+                logging.info('Retrieve data from tool completely')
 
-                # result = json.dumps(result)
-                print(type(result))
+                print(db)
 
-                # print(result)
+                pushDataRectifier()
 
-                return result
+                return
 
             except Exception as e:
-                print("x" + str(e))
+                print(str(e))
                 break
     
     except Exception as e:
         print(e)
 
+# try:
+#     threading._start_new_thread(getDataFromRectifier, ())
+#     # threading._start_new_thread(getDataFromTestPost, ())
+# except Exception as e:
+#     logging.critical(str(e))
+# while (connection):
 
-# getDataFromRectifier()
-# getDataFromTestPost()
-
-
-
+#     getDataFromRectifier()
