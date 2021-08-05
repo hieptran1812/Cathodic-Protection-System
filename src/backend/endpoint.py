@@ -113,7 +113,7 @@ def addNewProduct():
     'devSerial': res['id'],
     'devType': res['type'],
   }
-  deviceInDb = db.RectifierTransformers.find_one({ # Tìm user trong database
+  deviceInDb = db.RectifierTransformers.find_one({ 
       'devSerial': device['devSerial']
   })
   if deviceInDb:
