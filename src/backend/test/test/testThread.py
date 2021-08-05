@@ -1,14 +1,19 @@
-import _thread
-import time
+s = str(input())
+res = int(s.replace(s[0], ''))
+ans = s[0]
+for i in range(1, len(s)):
+   tmp = s[i]
+   s = int(s.replace(s[i], ''))
+   if s < res:
+      res = s
+      s = str(s)
+      s = s[:i] + tmp + s[i:]
+      ans = tmp
+   else:
+      s = str(s)
+      s = s[:i] + tmp + s[i:]
+   print(ans)
 
-# Define a function for the thread
-def print_time( threadName, delay):
-   count = 0
-   while count < 5:
-      time.sleep(delay)
-      count += 1
-      print(threadName)
-      print(time.ctime(time.time()))
 
 # Create two threads as follows
 # while 1:

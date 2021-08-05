@@ -7,6 +7,7 @@ import struct
 import json
 import datetime
 import logging
+logging.basicConfig(filename='log_testSocket.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 import threading
 from flask_pymongo import pymongo
 from configDB import db
@@ -63,9 +64,16 @@ def getDataFromRectifier():
                 print('1')
                 # print(sys.stderr, 'connection from', client_address)
                 data = connection.recv(2) # number of bytes
+                logging.info('Start packet %s' % data)   
+                logging.info('length data %s' % len(data))
+                logging.info('Start packet %s' % struct.unpack('<H', data))
+
                 print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) #
 
                 data = connection.recv(2) # number of bytes
+                logging.info('Start packet %s' % data)   
+                logging.info('length data %s' % len(data))
+                logging.info('location System %s' % struct.unpack('<H', data))
                 subOtherInfo['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
 
                 data = connection.recv(2) # number of bytes
@@ -121,37 +129,10 @@ def getDataFromRectifier():
             except Exception as e:
                 logging.critical(e)
                 logging.info('======================')
-                # logging.info('Connect to Socket AGAIN')
-                # sv_address = '127.0.0.1'
-                # sock = socket.ssdocket(socket.AF_INET, socket.SOCK_STREAM)
-
-                # # Bind the socket to the port
-                # server_address = (sv_address, 30001)
-                # logging.info('starting up on %s port %s' % server_address)
-                # # sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-                # sock.bind(server_address)
-                # sock.listen(1)
-                # logging.info('waiting for a connection')
-
-                # connection, client_address = sock.accept()
-                # logging.info('connect to %s port %s' % server_address)
-                # getDataFromRectifier()
+                
     except Exception as e:
         logging.critical(e)
         logging.info('======================')
-        # logging.info('Connect to Socket AGAIN')
-        # sv_address = '127.0.0.1'
-        # sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # # Bind the socket to the port
-        # server_address = (sv_address, 30001)
-        # logging.info('starting up on %s port %s' % server_address)
-        # # sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        # sock.bind(server_address)
-        # sock.listen(1)
-        # logging.info('waiting for a connection')
-        # connection, client_address = sock.accept()
-        # logging.info('connect to %s port %s' % server_address)
-        # getDataFromRectifier()
 
 #### Lấy dữ liệu từ bộ đo ####
 
@@ -174,130 +155,114 @@ def pushDataTestPost(result):
         )
         # print('1') 
     else:
-        db.RectifierTransformersDetails.insert_one(result)
+        db.TestPostsDetails.insert_one(result)
         # print('0')
         
     logging.info('Insert data to MongoDB')
 
 def getDataFromTestPost():
-    # Create a TCP/IP socket
-    # sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    # # Bind the socket to the port
-    # server_address = (sv_address, 30001)
-    # print(sys.stderr, 'starting up on %s port %s' % server_address)
-    # sock.bind(server_address)
-
-    # # Listen for incoming connections
-    # sock.listen(1)
     logging.info('Retrieve data from test device')
     try:
         while True:
-            # Wait for a connection
-            # print(sys.stderr, 'waiting for a connection')
-            # connection, client_address = sock.accept()
 
             result = {}
-
-            result['time'] = datetime.datetime.now()
+            result['otherInfo'] = []
+            subOtherInfo = {}
+            subOtherInfo['time'] = datetime.datetime.now()
 
             try:
                 # print(sys.stderr, 'connection from', client_address)
-
+                
                 data = connection.recv(2) # number of bytes
+                logging.debug('')
                 print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) # 
 
                 data = connection.recv(2) # number of bytes
                 print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) # 
-                result['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
+                subOtherInfo['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
 
                 data = connection.recv(2) # number of bytes
                 print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) # 
-                result['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
+                subOtherInfo['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
 
                 data = connection.recv(2) # number of bytes
                 print(sys.stderr, 'Node Address "%s"' % struct.unpack('<H', data)) #
-                result['nodeAddress'] = str(struct.unpack('<H', data))[1:-2]
+                subOtherInfo['nodeAddress'] = str(struct.unpack('<H', data))[1:-2]
 
                 data = connection.recv(1) # number of bytes
                 print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
                 result['devType'] = str(struct.unpack('b', data))[1:-2]
 
                 data = connection.recv(4) # number of bytes
-                print(sys.stderr, 'received "%s"' % data)
-                print(sys.stderr, 'received "%s"' % b64encode(data))
-                print(len(data))
                 print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
-                print(result)
-                print(struct.unpack("2H", data)[0:-1])
-                result['devSerial'] = str(struct.unpack("2H", data)[0:-1])
-                print(result)
+                result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
 
                 data = connection.recv(5) # number of bytes
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Dien ap pin "%s"' % struct.unpack('f', data)) #
-                result['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Dien ap nguồn "%s"' % struct.unpack('f', data)) #
-                result['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Nhiet do thiet bi "%s"' % struct.unpack('f', data)) #
-                result['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Open Point 1 "%s"' % struct.unpack('f', data)) #
-                result['openPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['openPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Open Point 2 "%s"' % struct.unpack('f', data)) #
-                result['openPoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['openPoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Open Point 3 "%s"' % struct.unpack('f', data)) #
-                result['openPoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['openPoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Open Point 4 "%s"' % struct.unpack('f', data)) #
-                result['openPoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['openPoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Close Point 1 "%s"' % struct.unpack('f', data)) #
-                result['closePoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['closePoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Close Point 2 "%s"' % struct.unpack('f', data)) #
-                result['closePoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3) 
+                subOtherInfo['closePoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3) 
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Close Point 3 "%s"' % struct.unpack('f', data)) #
-                result['closePoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['closePoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 data = connection.recv(4) # number of bytes
                 print(sys.stderr, 'Close Point 4 "%s"' % struct.unpack('f', data)) #
-                result['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+                subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
                 for i in range(19):
                     data = connection.recv(1) # number of bytes
 
                 data = connection.recv(16) # number of bytes
                 print(sys.stderr, 'So Dien thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
-                result['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
+                subOtherInfo['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
 
                 data = connection.recv(1) # number of bytes
-                result['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3) 
+                subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3) 
 
                 data = connection.recv(1) # number of bytes
                 print(len(data))
                 print(sys.stderr, 'test1 "%s"' % struct.unpack('b', data))
 
+                result['otherInfo'].append(subOtherInfo)
+
                 logging.info('Retrieve data from tool completely')
+                print('complete')
 
-                print(db)
-
-                pushDataRectifier()
+                pushDataTestPost(result)
 
                 return
 

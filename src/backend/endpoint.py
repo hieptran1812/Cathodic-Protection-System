@@ -2,9 +2,10 @@ import logging
 logging.basicConfig(filename='log_endpoint.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 from flask import Flask, jsonify, request
 from flask_pymongo import pymongo
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from configDB import db
 from testSocket import getDataFromTestPost, getDataFromRectifier
+import datetime
 # import threading
 import socket
 import sys
@@ -19,8 +20,9 @@ logging.info("Start API")
 # logging.critical('This is a critical log message.')
 
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app)
 app.config['JSON_AS_ASCII'] = False
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 logging.info('Flask started')
 
@@ -42,6 +44,7 @@ logging.info('Flask started')
 # initSocket()
 
 @app.route('/')
+@cross_origin()
 def t():
   return "API running..."
 
@@ -101,28 +104,35 @@ def getUsers():
 
 
 # ################ bo trung tam ##################
-# @app.route('/newRectifier', methods=['POST'])
-# def createRectifier():
-#   print(request.json)
-#   id = db.insert({
-#     'name': request.json['name'],
-#     'email': request.json['email'],
-#     'password': request.json['password']
-#   })
-#   return jsonify(str(ObjectId(id)))
 
+@app.route('/api/newProduct', methods=['POST'])
+def addNewProduct():
+  logging.info("start API add new product")
+  res = request.get_json()
+  device = {
+    'devSerial': res['id'],
+    'devType': res['type'],
+  }
+  deviceInDb = db.RectifierTransformers.find_one({ # Tìm user trong database
+      'devSerial': device['devSerial']
+  })
+  if deviceInDb:
+      return 'thiet bi da ton tai', 404
+  else:
+      insertDevice = db.RectifierTransformers.insert_one(device)
+      return 'hoan thanh', 200
 
 @app.route('/api/rectifierTransformer/<id>', methods=['GET'])
 def getRectifierTransformerDetail(id):
   if request.method == 'GET':
-    getDataFromRectifier()
+    # getDataFromRectifier()
     deviceInfo = db.RectifierTransformersDetails.find_one({
       'devSerial': id,
     })
     if deviceInfo: 
       result = {}
       result['devSerial'] = deviceInfo['devSerial']
-      result['time'] = deviceInfo['otherInfo'][0]['time']
+      result['time'] = datetime.datetime.now()
       result['locationSystem'] = deviceInfo['otherInfo'][0]['locationSystem']
       result['centralAddress'] = deviceInfo['otherInfo'][0]['centralAddress']
       result['dienApPin'] = deviceInfo['otherInfo'][0]['dienApPin']
@@ -181,15 +191,6 @@ def getRectifier():
 
 
 # ################ Bo do ##################
-# @app.route('/newTestPost', methods=['POST'])
-# def createTestPost():
-#   print(request.json)
-#   id = db.insert({
-#     'name': request.json['name'],
-#     'email': request.json['email'],
-#     'password': request.json['password']
-#   })
-#   return jsonify(str(ObjectId(id)))
 
 @app.route('/api/testPostList', methods=['GET'])
 def getTestPost():
@@ -206,10 +207,48 @@ def getTestPost():
         })
     return jsonify(devices)
 
-@app.route('/api/testPost/1', methods=['GET'])
-def getTestPostDetail():
+@app.route('/api/testPost/<id>', methods=['GET'])
+def getTestPostDetail(id):
   if request.method == 'GET':
-    return jsonify(getDataFromTestPost())
+    # getDataFromTestPost()
+    deviceInfo = db.TestPostsDetails.find_one({
+      'devSerial': id,
+    })
+    if deviceInfo: 
+      result = {}
+      result['devSerial'] = deviceInfo['devSerial']
+      result['time'] = datetime.datetime.now()
+      result['locationSystem'] = deviceInfo['otherInfo'][0]['locationSystem']
+      result['centralAddress'] = deviceInfo['otherInfo'][0]['centralAddress']
+      result['nodeAddress'] = deviceInfo['otherInfo'][0]['nodeAddress']
+      result['dienApPin'] = deviceInfo['otherInfo'][0]['dienApPin']
+      result['dienApNguon'] = deviceInfo['otherInfo'][0]['dienApNguon']
+      result['temperature'] = deviceInfo['otherInfo'][0]['temperature']
+      result['openPoint1'] = deviceInfo['otherInfo'][0]['openPoint1']
+      result['openPoint2'] = deviceInfo['otherInfo'][0]['openPoint2']
+      result['openPoint3'] = deviceInfo['otherInfo'][0]['openPoint3']
+      result['openPoint4'] = deviceInfo['otherInfo'][0]['openPoint4']
+      result['closePoint1'] = deviceInfo['otherInfo'][0]['closePoint1']
+      result['closePoint2'] = deviceInfo['otherInfo'][0]['closePoint2']
+      result['closePoint3'] = deviceInfo['otherInfo'][0]['closePoint3']
+      result['closePoint4'] = deviceInfo['otherInfo'][0]['closePoint4']
+      result['phone'] = deviceInfo['otherInfo'][0]['phone']
+      result['signalQuality'] = deviceInfo['otherInfo'][0]['signalQuality']
+    else: 
+      result = {}
+      result['devSerial'] = 'Khong co du lieu cho thiet bi nay'
+      result['time'] = 'Khong co du lieu cho thiet bi nay'
+      result['locationSystem'] = 'Khong co du lieu cho thiet bi nay'
+      result['centralAddress'] = 'Khong co du lieu cho thiet bi nay'
+      result['dienApPin'] = 'Khong co du lieu cho thiet bi nay'
+      result['dienApNguon'] = 'Khong co du lieu cho thiet bi nay'
+      result['temperature'] = 'Khong co du lieu cho thiet bi nay'
+      result['dienAC3Pha'] = 'Khong co du lieu cho thiet bi nay'
+      result['dienDCPoint1'] = 'Khong co du lieu cho thiet bi nay'
+      result['dongDienDC'] = 'Khong co du lieu cho thiet bi nay'
+      result['phone'] = 'Khong co du lieu cho thiet bi nay'
+      result['signalQuality'] = 'Khong co du lieu cho thiet bi nay'
+    return result
 
 # @app.route('/testPostList/<id>', methods=['DELETE'])
 # def deleteTestPost(id):

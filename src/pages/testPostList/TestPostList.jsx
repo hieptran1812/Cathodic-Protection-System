@@ -43,7 +43,7 @@ const columns = [
     renderCell: (params) => {
       return (
         <>
-          <Link to={"/rectifierTransformer/" + params.row.devSerial}>
+          <Link to={"/testPost/" + params.row.devSerial}>
             <button className="productListEdit">Thông tin chi tiết</button>
           </Link>
         </>

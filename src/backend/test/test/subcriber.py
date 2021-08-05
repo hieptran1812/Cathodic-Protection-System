@@ -7,6 +7,7 @@ client.connect('localhost', 5000)
 def on_connect(client, userdata, flags, rc):
     print("Connected to a broker!")
     client.subscribe("LINTANGtopic/test")
+    client.subscribe("hieptran/test2")
 
 def on_message(client, userdata, message):
     print(message.payload.decode())
