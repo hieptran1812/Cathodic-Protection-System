@@ -166,66 +166,46 @@ def getDataFromTestPost(rawData):
             print("testpost")
             # print(sys.stderr, 'connection from', client_address)
             data = rawData[0:2] # number of bytes
-            print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) # 
             data = rawData[2:4] # number of bytes
-            print(sys.stderr, 'location system "%s"' % struct.unpack('<H', data)) # 
             subOtherInfo['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
             data = rawData[4:6] # number of bytes
-            print(sys.stderr, 'Central Address "%s"' % struct.unpack('<H', data)) # 
             subOtherInfo['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
             data = rawData[6:8] # number of bytes
-            print(sys.stderr, 'Node Address "%s"' % struct.unpack('<H', data)) #
             subOtherInfo['nodeAddress'] = str(struct.unpack('<H', data))[1:-2]
             data = rawData[8:9] # number of bytes
-            print(sys.stderr, 'Dev type "%s"' % struct.unpack('b', data)) #
             result['devType'] = str(struct.unpack('b', data))[1:-2]
             data = rawData[9:13] # number of bytes
-            print(sys.stderr, 'Dev Serial "%s"' % struct.unpack("2H", data)[0:-1]) #
             result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
             data = rawData[13:18] # number of bytes
             data = rawData[18:22] # number of bytes
-            print(sys.stderr, 'Dien ap pin "%s"' % struct.unpack('f', data)) #
             subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[22:26] # number of bytes
-            print(sys.stderr, 'Dien ap nguồn "%s"' % struct.unpack('f', data)) #
             subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[26:30] # number of bytes
-            print(sys.stderr, 'Nhiet do thiet bi "%s"' % struct.unpack('f', data)) #
             subOtherInfo['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[30:34] # number of bytes
-            print(sys.stderr, 'Open Point 1 "%s"' % struct.unpack('f', data)) #
             subOtherInfo['openPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[34:38] # number of bytes
-            print(sys.stderr, 'Open Point 2 "%s"' % struct.unpack('f', data)) #
             subOtherInfo['openPoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[38:42] # number of bytes
-            print(sys.stderr, 'Open Point 3 "%s"' % struct.unpack('f', data)) #
             subOtherInfo['openPoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[42:46] # number of bytes
-            print(sys.stderr, 'Open Point 4 "%s"' % struct.unpack('f', data)) #
             subOtherInfo['openPoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[46:50] # number of bytes
-            print(sys.stderr, 'Close Point 1 "%s"' % struct.unpack('f', data)) #
             subOtherInfo['closePoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[50:54] # number of bytes
-            print(sys.stderr, 'Close Point 2 "%s"' % struct.unpack('f', data)) #
             subOtherInfo['closePoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3) 
             data = rawData[54:58] # number of bytes
-            print(sys.stderr, 'Close Point 3 "%s"' % struct.unpack('f', data)) #
             subOtherInfo['closePoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[58:62] # number of bytes
-            print(sys.stderr, 'Close Point 4 "%s"' % struct.unpack('f', data)) #
             subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             # for i in range(19):
             #     data = connection.recv(1) # number of bytes
             data = rawData[81:97] # number of bytes
-            print(sys.stderr, 'So Dien thoại "%s"' % struct.unpack("b15s", data)[1].decode('cp1252'))
             subOtherInfo['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
             data = rawData[97:98] # number of bytes
             subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3) 
             data = rawData[98:99] # number of bytes
-            print(len(data))
-            print(sys.stderr, 'test1 "%s"' % struct.unpack('b', data))
             result['otherInfo'].append(subOtherInfo)
             logging.info('Retrieve data from tool completely')
             print('complete')
