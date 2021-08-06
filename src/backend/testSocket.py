@@ -204,30 +204,6 @@ def detectDevice(connection):
     print(len(data))
     return len(data), data
 
-# def executeGetData():
-#     while True:
-#         connection = initSocket()
-#         while(connection):
-#             try:
-#                 print('exe')
-#                 lengthOfData, data = detectDevice(connection)
-#                 if lengthOfData == 102:
-#                     threadOne = threading.Thread(target=getDataFromRectifier, args=(data,))
-#                     threadOne.daemon = True
-#                     threadOne.start()
-#                 elif lengthOfData == 99:
-#                     threadTwo = threading.Thread(target=getDataFromTestPost, args=(data,))
-#                     threadTwo.daemon = True
-#                     threadTwo.start()
-#                 else:
-#                     print('du lieu khong phu hop hoac da ngat ket noi voi thiet bi')
-#                     break
-#                 # print(threading.activeCount())
-#                 # print(threading.currentThread())
-#             except Exception as e:
-#                 logging.critical(str(e))
-#                 break;
-
 def thread_client(connection):
     while True:
         try:

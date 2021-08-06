@@ -93,7 +93,7 @@ def getUsers():
 def addNewProduct():
   logging.info("start API add new product")
   res = request.get_json()
-  device = {
+  deviceRectifierTransformer = {
     'devSerial': res['id'],
     'devType': res['type'],
     'otherInfo': [{
@@ -101,21 +101,49 @@ def addNewProduct():
       'centralAddress': '0',
       'phone': '0',
       'signalQuality': '0',
+      'dienApPin': '0',
+      'dienApNguon': '0',
+      'temperature': '0',
+      'dienAC3Pha': '0',
+      'dienDCPoint1': '0',
+      'dongDienDC': '0',
+    }],
+  }
+  deviceTestPost = {
+    'devSerial': res['id'],
+    'devType': res['type'],
+    'otherInfo': [{
+      'locationSystem': '0',
+      'centralAddress': '0',
+      'phone': '0',
+      'signalQuality': '0',
+      'nodeAddress': '0',
+      'dienApPin' : '0',
+      'dienApNguon': '0',
+      'temperature': '0',
+      'openPoint1': '0',
+      'openPoint2': '0',
+      'openPoint3': '0',
+      'openPoint4': '0',
+      'closePoint1': '0',
+      'closePoint2': '0',
+      'closePoint3': '0',
+      'closePoint4': '0',
     }],
   }
   deviceInDb = db.RectifierTransformersDetails.find_one({ #tim thiet bi trong danh sach bo trung tam
-      'devSerial': device['devSerial']
+      'devSerial': res['id']
   })
   deviceInDb = db.TestPostsDetails.find_one({ #tim thiet bi trong danh sach bo do
-      'devSerial': device['devSerial']
+      'devSerial': res['id']
   })
   if deviceInDb:
       return 'thiet bi da ton tai', 404
   else:
       if(res['type'] == '0'):
-        insertDevice = db.RectifierTransformersDetails.insert_one(device)
+        insertDevice = db.RectifierTransformersDetails.insert_one(deviceRectifierTransformer)
       else:
-        insertDevice = db.TestPostsDetails.insert_one(device)
+        insertDevice = db.TestPostsDetails.insert_one(deviceTestPost)
       return 'hoan thanh', 200
 
 # @socketio.on('connect', namespace='/api/rectifierTransformer/<id>', method=['GET'])
@@ -261,7 +289,6 @@ def getTestPostDetail(id):
 #     'password': request.json['password']
 #   }})
 #   return jsonify({'message': 'User Updated'})
-
 
 if __name__ == "__main__":
     print('run App')
