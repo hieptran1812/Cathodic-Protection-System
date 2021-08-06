@@ -12,23 +12,6 @@ import threading
 from flask_pymongo import pymongo
 from configDB import db
 
-def initSocket():
-    print('initSocket')
-    sv_address = '103.82.21.195'
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    
-    # Bind the socket to the port
-    server_address = (sv_address, 30001)
-    print(sys.stderr, 'starting up on %s port %s' % server_address)
-    sock.bind(server_address)
-    sock.listen(1)
-    print(sys.stderr, 'waiting for a connection')
-    
-    connection, client_address = sock.accept()
-    logging.info('connect to %s port %s' % server_address)
-    print(connection, client_address)
-    return connection
-
 def pushDataRectifier(result):
     deviceInDb = db.RectifierTransformersDetails.find_one({
         'devSerial': result['devSerial'] 
@@ -221,29 +204,62 @@ def detectDevice(connection):
     print(len(data))
     return len(data), data
 
-def executeGetData():
+# def executeGetData():
+#     while True:
+#         connection = initSocket()
+#         while(connection):
+#             try:
+#                 print('exe')
+#                 lengthOfData, data = detectDevice(connection)
+#                 if lengthOfData == 102:
+#                     threadOne = threading.Thread(target=getDataFromRectifier, args=(data,))
+#                     threadOne.daemon = True
+#                     threadOne.start()
+#                 elif lengthOfData == 99:
+#                     threadTwo = threading.Thread(target=getDataFromTestPost, args=(data,))
+#                     threadTwo.daemon = True
+#                     threadTwo.start()
+#                 else:
+#                     print('du lieu khong phu hop hoac da ngat ket noi voi thiet bi')
+#                     break
+#                 # print(threading.activeCount())
+#                 # print(threading.currentThread())
+#             except Exception as e:
+#                 logging.critical(str(e))
+#                 break;
+
+def thread_client(connection):
     while True:
-        connection = initSocket()
-        while(connection):
-            try:
-                print('exe')
-                lengthOfData, data = detectDevice(connection)
-                if lengthOfData == 102:
-                    threadOne = threading.Thread(target=getDataFromRectifier, args=(data,))
-                    threadOne.daemon = True
-                    threadOne.start()
-                elif lengthOfData == 99:
-                    threadTwo = threading.Thread(target=getDataFromTestPost, args=(data,))
-                    threadTwo.daemon = True
-                    threadTwo.start()
-                else:
-                    print('du lieu khong phu hop hoac da ngat ket noi voi thiet bi')
-                    break
-                # print(threading.activeCount())
-                # print(threading.currentThread())
-            except Exception as e:
-                logging.critical(str(e))
-                break;
+        try:
+            print('exe')
+            lengthOfData, data = detectDevice(connection)
+            if lengthOfData == 102:
+                getDataFromRectifier(data)
+            elif lengthOfData == 99:
+                getDataFromTestPost(data)
+            elif lengthOfData == 0:
+                print('ngat ket noi tu device')
+                break
+        except Exception as e:
+            logging.critical(str(e))
+            break;
+
+def executeGetData():
+    print('initSocket')
+    sv_address = '103.82.21.195'
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    # Bind the socket to the port
+    server_address = (sv_address, 30001)
+    print(sys.stderr, 'starting up on %s port %s' % server_address)
+    sock.bind(server_address)
+    sock.listen(1)
+    print(sys.stderr, 'waiting for a connection')
+    while True:
+        connection, client_address = sock.accept()
+        print(connection, client_address)
+        clientThread = threading.Thread(target=thread_client, args=(connection,))
+        clientThread.daemon = True
+        clientThread.start()
 
 threadExecutor = threading.Thread(target=executeGetData, args=())
 threadExecutor.daemon = True
