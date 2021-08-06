@@ -248,10 +248,13 @@ def executeGetData(connection):
                 threadOne = threading.Thread(target=getDataFromRectifier, args=(data,))
                 threadOne.daemon = True
                 threadOne.start()
-            else:
+            elif lengthOfData == 99:
                 threadTwo = threading.Thread(target=getDataFromTestPost, args=(data,))
                 threadTwo.daemon = True
                 threadTwo.start()
+            else:
+                print('du lieu khong phu hop')
+                break
             # print(threading.activeCount())
             # print(threading.currentThread())
         except Exception as e:
