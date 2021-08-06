@@ -21,7 +21,6 @@ logging.info("Start API")
 # logging.critical('This is a critical log message.')
 
 app = Flask(__name__)
-socketio = SocketIO(app)
 cors = CORS(app)
 app.config['JSON_AS_ASCII'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
