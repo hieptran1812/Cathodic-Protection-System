@@ -23,3 +23,5 @@ def initSocket():
     connection, client_address = sock.accept()
     print(connection, client_address)
     return connection, client_address
+
+

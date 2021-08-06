@@ -12,20 +12,22 @@ import threading
 from flask_pymongo import pymongo
 from configDB import db
 
-logging.info('Connect to Socket')
-sv_address = '103.82.21.195'
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# Bind the socket to the port
-server_address = (sv_address, 30001)
-logging.info('starting up on %s port %s' % server_address)
-# sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-sock.bind(server_address)
-sock.listen(1024)
-logging.info('waiting for a connection')
-
-connection, client_address = sock.accept()
-logging.info('connect to %s port %s' % server_address)
+def initSocket():
+    print('initSocket')
+    sv_address = '103.82.21.195'
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    
+    # Bind the socket to the port
+    server_address = (sv_address, 30001)
+    print(sys.stderr, 'starting up on %s port %s' % server_address)
+    sock.bind(server_address)
+    sock.listen(1)
+    print(sys.stderr, 'waiting for a connection')
+    
+    connection, client_address = sock.accept()
+    logging.info('connect to %s port %s' % server_address)
+    print(connection, client_address)
+    return connection
 
 def pushDataRectifier(result):
     deviceInDb = db.RectifierTransformersDetails.find_one({
@@ -239,31 +241,30 @@ def detectDevice(connection):
     print(len(data))
     return len(data), data
 
-def executeGetData(connection):
-    while(connection):
-        try:
-            print('exe')
-            lengthOfData, data = detectDevice(connection)
-            if lengthOfData == 102:
-                threadOne = threading.Thread(target=getDataFromRectifier, args=(data,))
-                threadOne.daemon = True
-                threadOne.start()
-            elif lengthOfData == 99:
-                threadTwo = threading.Thread(target=getDataFromTestPost, args=(data,))
-                threadTwo.daemon = True
-                threadTwo.start()
-            else:
-                print('du lieu khong phu hop')
-                break
-            # print(threading.activeCount())
-            # print(threading.currentThread())
-        except Exception as e:
-            logging.critical(str(e))
-            break;
+def executeGetData():
+    while True:
+        connection = initSocket()
+        while(connection):
+            try:
+                print('exe')
+                lengthOfData, data = detectDevice(connection)
+                if lengthOfData == 102:
+                    threadOne = threading.Thread(target=getDataFromRectifier, args=(data,))
+                    threadOne.daemon = True
+                    threadOne.start()
+                elif lengthOfData == 99:
+                    threadTwo = threading.Thread(target=getDataFromTestPost, args=(data,))
+                    threadTwo.daemon = True
+                    threadTwo.start()
+                else:
+                    print('du lieu khong phu hop hoac da ngat ket noi voi thiet bi')
+                    break
+                # print(threading.activeCount())
+                # print(threading.currentThread())
+            except Exception as e:
+                logging.critical(str(e))
+                break;
 
-threadExecutor = threading.Thread(target=executeGetData, args=(connection,))
+threadExecutor = threading.Thread(target=executeGetData, args=())
 threadExecutor.daemon = True
 threadExecutor.start()
-# while (connection):
-
-#     getDataFromRectifier()
