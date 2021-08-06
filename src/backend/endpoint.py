@@ -3,12 +3,10 @@ logging.basicConfig(filename='log_endpoint.log', format='%(asctime)s - %(levelna
 from flask import Flask, jsonify, request
 from flask_pymongo import pymongo
 from flask_cors import CORS, cross_origin
-from flask_socketio import SocketIO
 
 from configDB import db
 from testSocket import getDataFromTestPost, getDataFromRectifier
 import datetime
-import asyncio
 # import threading
 import socket
 import sys
