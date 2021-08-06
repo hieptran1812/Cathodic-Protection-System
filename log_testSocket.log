@@ -1,0 +1,28 @@
+2021-08-05 20:50:01,152 - INFO - Connect to Socket
+2021-08-05 20:50:01,153 - INFO - starting up on 127.0.0.1 port 30001
+2021-08-05 20:50:01,153 - INFO - waiting for a connection
+2021-08-05 20:50:05,212 - INFO - connect to 127.0.0.1 port 30001
+2021-08-05 20:50:05,212 - INFO - Retrieve data from central device
+2021-08-05 20:50:11,892 - INFO - Connect to Socket
+2021-08-05 20:50:11,893 - INFO - starting up on 127.0.0.1 port 30001
+2021-08-05 20:50:11,893 - INFO - waiting for a connection
+2021-08-05 20:50:13,582 - INFO - connect to 127.0.0.1 port 30001
+2021-08-05 20:50:13,583 - INFO - Retrieve data from central device
+2021-08-05 20:50:27,414 - INFO - Connect to Socket
+2021-08-05 20:50:27,414 - INFO - starting up on 127.0.0.1 port 30001
+2021-08-05 20:50:27,508 - INFO - waiting for a connection
+2021-08-05 20:50:30,322 - INFO - connect to 127.0.0.1 port 30001
+2021-08-05 20:50:30,323 - INFO - Retrieve data from central device
+2021-08-05 20:50:41,777 - INFO - Connect to Socket
+2021-08-05 20:50:41,778 - INFO - starting up on 127.0.0.1 port 30001
+2021-08-05 20:50:41,778 - INFO - waiting for a connection
+2021-08-05 20:50:42,723 - INFO - connect to 127.0.0.1 port 30001
+2021-08-05 20:50:42,723 - INFO - Retrieve data from central device
+2021-08-05 23:52:25,223 - INFO - Connect to Socket
+2021-08-05 23:52:25,243 - INFO - starting up on 127.0.0.1 port 30001
+2021-08-05 23:52:25,244 - INFO - waiting for a connection
+2021-08-05 23:52:25,830 - INFO - connect to 127.0.0.1 port 30001
+2021-08-06 11:48:43,791 - INFO - Connect to Socket
+2021-08-06 11:48:43,792 - INFO - starting up on 127.0.0.1 port 30001
+2021-08-06 11:48:43,792 - INFO - waiting for a connection
+2021-08-06 11:48:49,055 - INFO - connect to 127.0.0.1 port 30001

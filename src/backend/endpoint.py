@@ -3,9 +3,12 @@ logging.basicConfig(filename='log_endpoint.log', format='%(asctime)s - %(levelna
 from flask import Flask, jsonify, request
 from flask_pymongo import pymongo
 from flask_cors import CORS, cross_origin
+from flask_socketio import SocketIO
+
 from configDB import db
 from testSocket import getDataFromTestPost, getDataFromRectifier
 import datetime
+import asyncio
 # import threading
 import socket
 import sys
@@ -20,6 +23,7 @@ logging.info("Start API")
 # logging.critical('This is a critical log message.')
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 cors = CORS(app)
 app.config['JSON_AS_ASCII'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -45,7 +49,7 @@ logging.info('Flask started')
 
 @app.route('/')
 @cross_origin()
-def t():
+def running():
   return "API running..."
 
 ################ User ##################
@@ -122,6 +126,7 @@ def addNewProduct():
       insertDevice = db.RectifierTransformers.insert_one(device)
       return 'hoan thanh', 200
 
+# @socketio.on('connect', namespace='/api/rectifierTransformer/<id>', method=['GET'])
 @app.route('/api/rectifierTransformer/<id>', methods=['GET'])
 def getRectifierTransformerDetail(id):
   if request.method == 'GET':
@@ -267,5 +272,5 @@ def getTestPostDetail(id):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(port=5000,host='0.0.0.0')
     
