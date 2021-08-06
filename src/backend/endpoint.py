@@ -27,23 +27,6 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 logging.info('Flask started')
 
-# threading._start_new_thread(getDataFromRectifier, ()) 
-
-# sv_address = '127.0.0.1'
-# sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# # Bind the socket to the port
-# server_address = (sv_address, 30001)
-# print(sys.stderr, 'starting up on %s port %s' % server_address)
-# sock.bind(server_address)
-# sock.listen(1)
-# print(sys.stderr, 'waiting for a connection')
-# connection, client_address = sock.accept()
-
-# print(connection)
-# print(client_address)
-# initSocket()
-
 @app.route('/')
 @cross_origin()
 def running():
@@ -113,14 +96,26 @@ def addNewProduct():
   device = {
     'devSerial': res['id'],
     'devType': res['type'],
+    'otherInfo': [{
+      'locationSystem': '0',
+      'centralAddress': '0',
+      'phone': '0',
+      'signalQuality': '0',
+    }],
   }
-  deviceInDb = db.RectifierTransformers.find_one({ 
+  deviceInDb = db.RectifierTransformersDetails.find_one({ #tim thiet bi trong danh sach bo trung tam
+      'devSerial': device['devSerial']
+  })
+  deviceInDb = db.TestPostsDetails.find_one({ #tim thiet bi trong danh sach bo do
       'devSerial': device['devSerial']
   })
   if deviceInDb:
       return 'thiet bi da ton tai', 404
   else:
-      insertDevice = db.RectifierTransformers.insert_one(device)
+      if(res['type'] == '0'):
+        insertDevice = db.RectifierTransformersDetails.insert_one(device)
+      else:
+        insertDevice = db.TestPostsDetails.insert_one(device)
       return 'hoan thanh', 200
 
 # @socketio.on('connect', namespace='/api/rectifierTransformer/<id>', method=['GET'])
@@ -165,14 +160,14 @@ def getRectifierTransformerDetail(id):
 def getRectifier():
   logging.info("start API get Rectifier Transformers list")
   devices = []
-  for doc in db.RectifierTransformers.find({}):
+  for doc in db.RectifierTransformersDetails.find({}):
       devices.append({
         'id': str(ObjectId(doc['_id'])),
         'devSerial': doc['devSerial'],
-        'locationSystem': doc['locationSystem'],
-        'centralAddress': doc['centralAddress'],
-        'phone': doc['phone'],
-        'signalQuality': doc['signalQuality'],
+        'locationSystem': doc['otherInfo'][0]['locationSystem'],
+        'centralAddress': doc['otherInfo'][0]['centralAddress'],
+        'phone': doc['otherInfo'][0]['phone'],
+        'signalQuality': doc['otherInfo'][0]['signalQuality'],
       })
   return jsonify(devices)
 
@@ -198,14 +193,14 @@ def getRectifier():
 def getTestPost():
     logging.info("start API get Test Posts list")
     devices = []
-    for doc in db.TestPosts.find({}):
+    for doc in db.TestPostsDetails.find({}):
         devices.append({
           'id': str(ObjectId(doc['_id'])),
           'devSerial': doc['devSerial'],
-          'locationSystem': doc['locationSystem'],
-          'centralAddress': doc['centralAddress'],
-          'phone': doc['phone'],
-          'signalQuality': doc['signalQuality'],
+          'locationSystem': doc['otherInfo'][0]['locationSystem'],
+          'centralAddress': doc['otherInfo'][0]['centralAddress'],
+          'phone': doc['otherInfo'][0]['phone'],
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
         })
     return jsonify(devices)
 
