@@ -1,5 +1,3 @@
-import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/topbar/Topbar";
 import "./App.css";
 import Home from "./pages/home/Home";
 import MapDeviceDashboard from "./pages/mapDevice/mapDeviceDashboard";
@@ -13,21 +11,15 @@ import TestPostList from "./pages/testPostList/TestPostList";
 import TestPost from "./pages/product/TestPost";
 import NewProduct from "./pages/newProduct/NewProduct";
 import SignInSide from "./pages/signInUp/signIn";
-import SignUp from "./pages/signInUp/signUp";
 
 function App() {
   return (
     <Router>
-      {/* <Route path="/signin">
-        <SignInSide />
-      </Route>
-      <Route path="/signup">
-        <SignUp />
-      </Route>  */}
-      <Topbar />
       <div className="container">
-        <Sidebar />
         <Switch>
+          <Route path="/signIn">
+            <SignInSide />
+          </Route>
           <Route exact path="/">
             <Home />
           </Route>

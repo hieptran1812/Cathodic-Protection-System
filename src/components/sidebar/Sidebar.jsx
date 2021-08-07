@@ -4,10 +4,9 @@ import {
   Room,
   PermIdentity,
   SettingsCell,
-  Notifications,
   NetworkCheck,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   return (
@@ -16,41 +15,53 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <Link to="/" className="link">
-            <li className="sidebarListItem active">
-              <Dashboard className="sidebarIcon" />
-              Tổng quan
-            </li>
-            </Link>
-            <Link to="/mapDevice" className="link">
             <li className="sidebarListItem">
-              <Room className="sidebarIcon" />
-              Bản đồ thiết bị
+              <NavLink exact to="/" className="link" activeClassName="active">
+                <Dashboard className="sidebarIcon" />
+                Tổng quan
+              </NavLink>
             </li>
-            </Link>
+            <li className="sidebarListItem">
+              <NavLink
+                to="/mapDevice"
+                className="link"
+                activeClassName="active"
+              >
+                <Room className="sidebarIcon" />
+                Bản đồ thiết bị
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quản lý</h3>
           <ul className="sidebarList">
-            <Link to="/users" className="link">
-              <li className="sidebarListItem">
+            <li className="sidebarListItem">
+              <NavLink to="/users" className="link" activeClassName="active">
                 <PermIdentity className="sidebarIcon" />
                 Người dùng
-              </li>
-            </Link>
-            <Link to="/rectifierTransformerList" className="link">
-              <li className="sidebarListItem">
+              </NavLink>
+            </li>
+            <li className="sidebarListItem">
+              <NavLink
+                to="/rectifierTransformerList"
+                className="link"
+                activeClassName="active"
+              >
                 <SettingsCell className="sidebarIcon" />
                 Bộ trung tâm
-              </li>
-            </Link>
-            <Link to="/testPostList" className="link">
-              <li className="sidebarListItem">
+              </NavLink>
+            </li>
+            <li className="sidebarListItem">
+              <NavLink
+                to="/testPostList"
+                className="link"
+                activeClassName="active"
+              >
                 <NetworkCheck className="sidebarIcon" />
                 Bộ đo
-              </li>
-            </Link>
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

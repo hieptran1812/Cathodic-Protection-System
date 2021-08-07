@@ -3,6 +3,8 @@ import { DataGrid } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import React from 'react';
+import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 const API = process.env.REACT_APP_API;
 
@@ -69,16 +71,23 @@ export default class UserList extends React.Component {
   render() {
     return (
       <div className="userList">
-        <Link to="/newuser">
-          <button className="productAddButton">Thêm người dùng</button>
-        </Link>
-        <DataGrid
-          rows={this.state.userInfo}
-          disableSelectionOnClick
-          columns={columns}
-          pageSize={8}
-          checkboxSelection
-        />
+        <Topbar />
+        <div style={{ display: "flex" }}>
+          <Sidebar />
+          <div style={{ width: "100%" }}>
+            <Link to="/newuser">
+              <button className="productAddButton">Thêm người dùng</button>
+            </Link>
+            <DataGrid
+              rows={this.state.userInfo}
+              disableSelectionOnClick
+              autoHeight
+              columns={columns}
+              pageSize={8}
+              checkboxSelection
+            />
+          </div>
+        </div>
       </div>
     );
   }

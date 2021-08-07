@@ -3,6 +3,8 @@ import { DataGrid } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import React from 'react';
+import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 const API = process.env.REACT_APP_API;
 
@@ -37,7 +39,7 @@ const columns = [
   },
   {
     field: "action",
-    headerName: "Hành động",
+    headerName: "Mô tả",
     width: 200,
     renderCell: (params) => {
       return (
@@ -68,16 +70,23 @@ export default class RectifierTransformerList extends React.Component {
   render(){
     return (
       <div className="productList">
-        <Link to="/newproduct">
-          <button className="productAddButton">Thêm mới thiết bị</button>
-        </Link>
-        <DataGrid
-          rows={this.state.deviceInfo}
-          disableSelectionOnClick
-          columns={columns}
-          pageSize={8}
-          checkboxSelection
-        />
+        <Topbar />
+        <div style={{ display: "flex" }}>
+          <Sidebar />
+          <div style={{ width: "100%" }}>
+            <Link to="/newproduct">
+              <button className="productAddButton">Thêm mới thiết bị</button>
+            </Link>
+            <DataGrid
+              rows={this.state.deviceInfo}
+              autoHeight
+              disableSelectionOnClick
+              columns={columns}
+              pageSize={8}
+              checkboxSelection
+            />
+          </div>
+        </div>
       </div>
     );
   }

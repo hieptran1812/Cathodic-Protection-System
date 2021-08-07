@@ -5,8 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
 import IconButton from '@material-ui/core/IconButton';
 import Collapse from '@material-ui/core/Collapse';
-import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
+import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,43 +47,57 @@ export default function NewProduct() {
   }
 
   return (
-    
     <div className="newProduct">
-      <div className={classes.root}>
-      <Collapse in={open}>
-        <Alert
-          action={
-            <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
-          }
-        >
-          Thêm thiết bị thành công!
-        </Alert>
-      </Collapse>
-    </div>
-      <h1 className="addProductTitle">Thêm thiết bị mới</h1>
-      <form className="addProductForm" onSubmit={handleSubmit}>
-        <div className="addProductItem">
-          <label>Mã thiết bị</label>
-          <input type="text" required="required" onChange={e => setId(e.target.value)} autoFocus/>
+      <Topbar />
+      <div style={{ display: "flex" }}>
+        <Sidebar />
+        <div style={{ width: "100%" }}>
+          <div className={classes.root}>
+            <Collapse in={open}>
+              <Alert
+                action={
+                  <IconButton
+                    aria-label="close"
+                    color="inherit"
+                    size="small"
+                    onClick={() => {
+                      setOpen(false);
+                    }}
+                  >
+                    <CloseIcon fontSize="inherit" />
+                  </IconButton>
+                }
+              >
+                Thêm thiết bị thành công!
+              </Alert>
+            </Collapse>
+          </div>
+          <h1 className="addProductTitle">Thêm thiết bị mới</h1>
+          <form className="addProductForm" onSubmit={handleSubmit}>
+            <div className="addProductItem">
+              <label>Mã thiết bị</label>
+              <input
+                type="text"
+                required="required"
+                onChange={(e) => setId(e.target.value)}
+                autoFocus
+              />
+            </div>
+            <div className="addProductItem">
+              <label>Loại thiết bị</label>
+              <select
+                className="addProductItem"
+                id="type"
+                onChange={(e) => setType(e.target.value)}
+              >
+                <option value="0">Bộ trung tâm</option>
+                <option value="1">Bộ đo</option>
+              </select>
+            </div>
+            <button className="addProductButton">Thêm mới</button>
+          </form>
         </div>
-        <div className="addProductItem">
-          <label>Loại thiết bị</label>
-          <select className="addProductItem" id="type" onChange={e => setType(e.target.value)}>
-            <option value="0">Bộ trung tâm</option>
-            <option value="1">Bộ đo</option>
-          </select>
-        </div>
-        <button className="addProductButton">Thêm mới</button>
-      </form>
+      </div>
     </div>
   );
 }
