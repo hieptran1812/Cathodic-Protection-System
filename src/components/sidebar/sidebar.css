@@ -3,10 +3,10 @@
   background-color: rgb(251, 251, 255);
   position: sticky;
   top: 50px;
-  width: 20%;
+  width: 15%;
 }
 
-.active{
+.active {
   background-color: rgb(240, 240, 255);
 }
 
@@ -29,11 +29,10 @@
   padding: 5px;
 }
 
-.sidebarListItem {
-  
-}
+/* .sidebarListItem {
+} */
 
-a{
+a {
   /* width: 100%; */
   padding: 5px;
   cursor: pointer;
@@ -42,11 +41,11 @@ a{
   border-radius: 10px;
 }
 
-.sidebarListItem a:hover{
+.sidebarListItem a:hover {
   background-color: rgb(240, 240, 255);
 }
 
-.sidebarIcon{
-    margin-right: 5px;
-    font-size: 20px !important;
+.sidebarIcon {
+  margin-right: 5px;
+  font-size: 20px !important;
 }

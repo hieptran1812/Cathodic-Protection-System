@@ -1,5 +1,5 @@
 .product {
-  flex: 4;
+  width: 100%;
 }
 
 .productTitleContainer {
@@ -39,7 +39,7 @@
   margin-top: 10px;
 }
 
-.productInfoItem{
+.productInfoItem {
   margin-bottom: 15px;
   width: 350px;
   display: flex;
@@ -83,7 +83,7 @@
   margin-left: 50px;
 }
 
-.productInfoKey{
+.productInfoKey {
   font-size: 16px;
   font-weight: bold;
 }
@@ -129,27 +129,27 @@
   border-bottom: 1px solid gray;
 }
 
-.productFormLeft >select{
+.productFormLeft > select {
   margin-bottom: 10px;
 }
 
-.productFormRight{
+.productFormRight {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.productUpload{
+.productUpload {
   display: flex;
   align-items: center;
 }
 
-.productButton{
+.productButton {
   border: none;
   padding: 5px;
   border-radius: 5px;
   background-color: darkblue;
-  color:white;
+  color: white;
   font-weight: 600;
   cursor: pointer;
 }

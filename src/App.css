@@ -1,10 +1,8 @@
-.container{
-    display: flex;
-    margin-top: 0px;
+.container {
+  display: flex;
 }
 
-
-.link{
-    text-decoration: none;
-    color: inherit;
+.link {
+  text-decoration: none;
+  color: inherit;
 }

@@ -1,4 +1,4 @@
-import "./chart.css";
+import './chart.css';
 import {
   LineChart,
   Line,
@@ -6,10 +6,9 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "recharts";
+} from 'recharts';
 
 export default function FirstChart({ title, data, dataKey, grid }) {
-
   return (
     <div className="firstChart">
       <h3 className="firstChartTitle">{title}</h3>
@@ -24,4 +23,3 @@ export default function FirstChart({ title, data, dataKey, grid }) {
     </div>
   );
 }
-
