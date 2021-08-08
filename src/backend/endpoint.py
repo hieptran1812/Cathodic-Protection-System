@@ -1,24 +1,18 @@
 import logging
 logging.basicConfig(filename='log_endpoint.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, session, redirect
 from flask_pymongo import pymongo
 from flask_cors import CORS, cross_origin
 
 from configDB import db
 from testSocket import getDataFromTestPost, getDataFromRectifier
+from controller import login, signout
 import datetime
-# import threading
-import socket
 import sys
 import json
 
 from bson import ObjectId
 logging.info("Start API")
-# logging.debug('This is a debug log message.')
-# logging.info('This is a info log message.')
-# logging.warning('This is a warning log message.')
-# logging.error('This is a error log message.')
-# logging.critical('This is a critical log message.')
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -32,17 +26,50 @@ logging.info('Flask started')
 def running():
   return "API running..."
 
+################ Sign in, sign out ##################
+
+# @app.before_request
+# def before_request():
+#   session.permanent = True
+# # app.permanent_session_lifetime = timedelta(minutes=10)
+#   print(request.endpoint)
+#   if 'logged_in' not in session:
+#     print('not log')
+#     return redirect("/")
+
+@app.route("/api/signout")
+def signout():
+    return signout()
+
+@app.route('/api/login', methods=['POST'])
+def index():
+  if request.method == 'POST':
+    print('api login')
+    return login()
+
 ################ User ##################
-@app.route('/users', methods=['POST'])
+@app.route('/api/addUser', methods=['POST'])
 def createUser():
-  print(request.json)
-  # id = db.insert({
-  #   'name': request.json['name'],
-  #   'email': request.json['email'],
-  #   'password': request.json['password']
-  # })
-  # return jsonify(str(ObjectId(id)))
-  return "oke"
+  logging.info("start API add new user")
+  res = request.get_json()
+  userData = {
+    'name': res['name'],
+    'username': res['username'],
+    'password': res['password'],
+    'organization': res['organization'],
+    'email': res['email'],
+    'phone': res['phone'],
+    'address': res['address'],
+    'role': res['role'],
+  }
+  user = db.User.find_one({ 
+      'username': res['username']
+  })
+  if user:
+      return 'nguoi dung da ton tai', 404
+  else:
+      insertUser = db.User.insert_one(userData)
+      return 'hoan thanh', 200
 
 
 @app.route('/api/users', methods=['GET'])
@@ -60,20 +87,23 @@ def getUsers():
       })
     return jsonify(users)
 
-# @app.route('/users/<id>', methods=['GET'])
-# def getUser(id):
-#   user = db.find_one({'_id': ObjectId(id)})
-#   print(user)
-#   return jsonify({
-#       '_id': str(ObjectId(user['_id'])),
-#       'name': user['name'],
-#       'email': user['email'],
-#       'password': user['password']
-#   })
+@app.route('/api/users/<id>', methods=['GET', 'POST'])
+def getUserDetail(id):
+  if request.method == 'GET':
+    user = db.User.find_one({'_id': ObjectId(id)})
+    res = {}
+    res['name'] = user['name']
+    res['username'] = user['username'],
+    res['role'] = user['role'],
+    res['email'] = user['email'],
+    res['phone'] = user['phone'],
+    res['organization'] = user['organization'],
+    res['address'] = user['address']
+    return jsonify(res), 200
 
-# @app.route('/users/<id>', methods=['DELETE'])
+# @app.route('/api/users/delete/<id>', methods=['DELETE'])
 # def deleteUser(id):
-#   db.delete_one({'_id': ObjectId(id)})
+#   db.User.delete_one({'_id': ObjectId(id)})
 #   return jsonify({'message': 'User Deleted'})
 
 # @app.route('/users/<id>', methods=['PUT'])
@@ -146,7 +176,6 @@ def addNewProduct():
         insertDevice = db.TestPostsDetails.insert_one(deviceTestPost)
       return 'hoan thanh', 200
 
-# @socketio.on('connect', namespace='/api/rectifierTransformer/<id>', method=['GET'])
 @app.route('/api/rectifierTransformer/<id>', methods=['GET'])
 def getRectifierTransformerDetail(id):
   if request.method == 'GET':
