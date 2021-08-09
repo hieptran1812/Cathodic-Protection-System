@@ -191,42 +191,6 @@ def getRectifier():
       })
   return jsonify(devices)
 
-@app.route('/api/rectifierTransformer/<id>', methods=['GET'])
-def getRectifierTransformerDetail(id):
-  if request.method == 'GET':
-    deviceInfo = db.RectifierTransformersDetails.find_one({
-      'devSerial': id,
-    })
-    if deviceInfo: 
-      result = {}
-      result['devSerial'] = deviceInfo['devSerial']
-      result['time'] = datetime.datetime.now()
-      result['locationSystem'] = deviceInfo['otherInfo'][0]['locationSystem']
-      result['centralAddress'] = deviceInfo['otherInfo'][0]['centralAddress']
-      result['dienApPin'] = deviceInfo['otherInfo'][0]['dienApPin']
-      result['dienApNguon'] = deviceInfo['otherInfo'][0]['dienApNguon']
-      result['temperature'] = deviceInfo['otherInfo'][0]['temperature']
-      result['dienAC3Pha'] = deviceInfo['otherInfo'][0]['dienAC3Pha']
-      result['dienDCPoint1'] = deviceInfo['otherInfo'][0]['dienDCPoint1']
-      result['dongDienDC'] = deviceInfo['otherInfo'][0]['dongDienDC']
-      result['phone'] = deviceInfo['otherInfo'][0]['phone']
-      result['signalQuality'] = deviceInfo['otherInfo'][0]['signalQuality']
-    else: 
-      result = {}
-      result['devSerial'] = 'Khong co du lieu cho thiet bi nay'
-      result['time'] = 'Khong co du lieu cho thiet bi nay'
-      result['locationSystem'] = 'Khong co du lieu cho thiet bi nay'
-      result['centralAddress'] = 'Khong co du lieu cho thiet bi nay'
-      result['dienApPin'] = 'Khong co du lieu cho thiet bi nay'
-      result['dienApNguon'] = 'Khong co du lieu cho thiet bi nay'
-      result['temperature'] = 'Khong co du lieu cho thiet bi nay'
-      result['dienAC3Pha'] = 'Khong co du lieu cho thiet bi nay'
-      result['dienDCPoint1'] = 'Khong co du lieu cho thiet bi nay'
-      result['dongDienDC'] = 'Khong co du lieu cho thiet bi nay'
-      result['phone'] = 'Khong co du lieu cho thiet bi nay'
-      result['signalQuality'] = 'Khong co du lieu cho thiet bi nay'
-    return result
-
 @app.route('/api/rectifierTransformer/table/<id>', methods=['GET'])
 def getRectifierTransformerDetailTable(id):
   if request.method == 'GET':

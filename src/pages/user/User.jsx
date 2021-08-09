@@ -1,17 +1,36 @@
 import {
-  CalendarToday,
   LocationSearching,
   MailOutline,
   PermIdentity,
   PhoneAndroid,
-  Publish,
+  Business,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { React, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./user.css";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 
+const API = process.env.REACT_APP_API;
+
 export default function User() {
+  const [info, setInfo] = useState("");
+  const { userId } = useParams();
+  useEffect(() => {
+    async function fetchAPI() {
+      axios
+        .get(`${API}/api/users/${userId}`)
+        .then((res) => {
+          const data = res.data;
+          setInfo(data);
+          console.log(data);
+        })
+        .catch((error) => console.log(error));
+    }
+    fetchAPI()
+  }, [userId]);
+
   return (
     <div className="user">
       <Topbar />
@@ -25,60 +44,45 @@ export default function User() {
           <div className="userContainer">
             <div className="userShow">
               <div className="userShowTop">
-                <img
-                  src="https://i.imgur.com/cdw8m5u.jpg"
-                  alt=""
-                  className="userShowImg"
-                />
                 <div className="userShowTopTitle">
-                  <span className="userShowUsername">Trân Quang Hiệp</span>
-                  <span className="userShowUserTitle">Admin</span>
+                  <span className="userShowUsername">{info.name}</span>
+                  <span className="userShowUserTitle">{info.role}</span>
                 </div>
               </div>
               <div className="userShowBottom">
                 <span className="userShowTitle">Thông tin chi tiết</span>
                 <div className="userShowInfo">
                   <PermIdentity className="userShowIcon" />
-                  <span className="userShowInfoTitle">hieptran1812</span>
+                  <span className="userShowInfoTitle">{info.username}</span>
                 </div>
                 <div className="userShowInfo">
-                  <CalendarToday className="userShowIcon" />
-                  <span className="userShowInfoTitle">18.12.2000</span>
+                  <Business className="userShowIcon" />
+                  <span className="userShowInfoTitle">{info.organization}</span>
                 </div>
                 <span className="userShowTitle">Liên hệ</span>
                 <div className="userShowInfo">
                   <PhoneAndroid className="userShowIcon" />
-                  <span className="userShowInfoTitle">0987938320</span>
+                  <span className="userShowInfoTitle">{info.phone}</span>
                 </div>
                 <div className="userShowInfo">
                   <MailOutline className="userShowIcon" />
-                  <span className="userShowInfoTitle">
-                    hieptran.jobs@gmail.com
-                  </span>
+                  <span className="userShowInfoTitle">{info.email}</span>
                 </div>
                 <div className="userShowInfo">
                   <LocationSearching className="userShowIcon" />
-                  <span className="userShowInfoTitle">Hà Đông | Hà Nội</span>
+                  <span className="userShowInfoTitle">{info.address}</span>
                 </div>
               </div>
             </div>
             <div className="userUpdate">
-              <span className="userUpdateTitle">Sửa</span>
+              <span className="userUpdateTitle">Sửa thông tin</span>
               <form className="userUpdateForm">
                 <div className="userUpdateLeft">
-                  <div className="userUpdateItem">
-                    <label>Tên tài khoản</label>
-                    <input
-                      type="text"
-                      placeholder="hieptran1812"
-                      className="userUpdateInput"
-                    />
-                  </div>
                   <div className="userUpdateItem">
                     <label>Họ và tên</label>
                     <input
                       type="text"
-                      placeholder="Trần Quang Hiệp"
+                      placeholder={info.name}
                       className="userUpdateInput"
                     />
                   </div>
@@ -86,7 +90,7 @@ export default function User() {
                     <label>Email</label>
                     <input
                       type="text"
-                      placeholder="hieptran.jobs@gmail.com"
+                      placeholder={info.email}
                       className="userUpdateInput"
                     />
                   </div>
@@ -94,7 +98,7 @@ export default function User() {
                     <label>Số điện thoại</label>
                     <input
                       type="text"
-                      placeholder="0987938320"
+                      placeholder={info.phone}
                       className="userUpdateInput"
                     />
                   </div>
@@ -102,23 +106,12 @@ export default function User() {
                     <label>Địa chỉ</label>
                     <input
                       type="text"
-                      placeholder="Hà Đông | Hà Nội"
+                      placeholder={info.address}
                       className="userUpdateInput"
                     />
                   </div>
                 </div>
                 <div className="userUpdateRight">
-                  <div className="userUpdateUpload">
-                    <img
-                      className="userUpdateImg"
-                      src="https://i.imgur.com/cdw8m5u.jpg"
-                      alt=""
-                    />
-                    <label htmlFor="file">
-                      <Publish className="userUpdateIcon" />
-                    </label>
-                    <input type="file" id="file" style={{ display: "none" }} />
-                  </div>
                   <button className="userUpdateButton">Cập nhật</button>
                 </div>
               </form>

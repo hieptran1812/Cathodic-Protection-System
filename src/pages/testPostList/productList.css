@@ -39,5 +39,6 @@
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
   margin: 20px;
 }

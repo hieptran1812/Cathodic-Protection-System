@@ -1,7 +1,12 @@
 import "./App.css";
 import Home from "./pages/home/Home";
 import MapDeviceDashboard from "./pages/mapDevice/mapDeviceDashboard";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
@@ -17,12 +22,19 @@ function App() {
     <Router>
       <div className="container">
         <Switch>
-          <Route path="/signIn">
+          <Route exact path="/">
             <SignInSide />
           </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Route
+            path="/home"
+            render={() => {
+              return localStorage.getItem("accessToken") ? (
+                <Home />
+              ) : (
+                <Redirect to="/" />
+              );
+            }}
+          ></Route>
           <Route path="/mapDevice">
             <MapDeviceDashboard />
           </Route>

@@ -8,7 +8,6 @@ def signout():
 def login():
     loginData = request.get_json()
     user = db.User.find_one({'username': loginData['username']})
-    # print(user)
     # print(loginData['password'])
     if user and user['password'] == loginData['password']:
         print('ok')

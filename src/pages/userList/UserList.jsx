@@ -1,8 +1,8 @@
 import "./userList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
-import axios from 'axios';
-import React from 'react';
+import axios from "axios";
+import { React, useState, useEffect } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 
@@ -11,14 +11,10 @@ const API = process.env.REACT_APP_API;
 const columns = [
   {
     field: "name",
-    headerName: "Người dùng",
+    headerName: "Tên người dùng",
     width: 200,
     renderCell: (params) => {
-      return (
-        <div className="userListUser">
-          {params.row.name}
-        </div>
-      );
+      return <div className="userListUser">{params.row.name}</div>;
     },
   },
   {
@@ -53,42 +49,40 @@ const columns = [
   },
 ];
 
-export default class UserList extends React.Component {
-  state = {
-    userInfo: [],
-  }
+export default function UserList() {
+  const [userInfo, setUserInfo] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  componentDidMount() {
-    axios.get(`${API}/api/users`)
-      .then(res => {
-        console.log(res)
-        const userInfo = res.data;
-        this.setState({ userInfo });
-      })
-      .catch(error => console.log(error));
-  }
+  axios
+    .get(`${API}/api/users`)
+    .then((res) => {
+      setLoading(false);
+      console.log(res);
+      const info = res.data;
+      setUserInfo(info);
+    })
+    .catch((error) => console.log(error));
 
-  render() {
-    return (
-      <div className="userList">
-        <Topbar />
-        <div style={{ display: "flex" }}>
-          <Sidebar />
-          <div style={{ width: "100%" }}>
-            <Link to="/newuser">
-              <button className="productAddButton">Thêm người dùng</button>
-            </Link>
-            <DataGrid
-              rows={this.state.userInfo}
-              disableSelectionOnClick
-              autoHeight
-              columns={columns}
-              pageSize={8}
-              checkboxSelection
-            />
-          </div>
+  return (
+    <div className="userList">
+      <Topbar />
+      <div style={{ display: "flex" }}>
+        <Sidebar />
+        <div style={{ width: "100%" }}>
+          <Link to="/newuser">
+            <button className="productAddButton">Thêm người dùng</button>
+          </Link>
+          <DataGrid
+            rows={userInfo}
+            disableSelectionOnClick
+            autoHeight
+            columns={columns}
+            pageSize={8}
+            checkboxSelection
+            loading={loading}
+          />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

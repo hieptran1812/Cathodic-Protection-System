@@ -1,8 +1,17 @@
 import React from "react";
 import "./topbar.css";
-import { NotificationsNone } from "@material-ui/icons";
+import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
 
 export default function Topbar() {
+
+  let history = useHistory();
+
+  function logOut() {
+    localStorage.removeItem("accessToken");
+    history.replace("/");
+  }
+
   return (
     <div className="topbar">
       <div className="topbarWrapper">
@@ -10,11 +19,12 @@ export default function Topbar() {
           <span className="logo">Cathodic Protection</span>
         </div>
         <div className="topRight">
-          <div className="topbarIconContainer">
-            <NotificationsNone />
-            <span className="topIconBadge">2</span>
-          </div>
-          <img src="https://i.imgur.com/cdw8m5u.jpg" alt="" className="topAvatar" />
+          <Button variant="contained" color="primary">
+            <b>Thông tin cá nhân</b>
+          </Button>
+          <Button variant="contained" onClick={logOut}>
+            <b>Đăng xuất</b>
+          </Button>
         </div>
       </div>
     </div>

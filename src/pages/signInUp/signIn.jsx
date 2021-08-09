@@ -1,42 +1,45 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { React, useState } from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
+const API = process.env.REACT_APP_API;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '100vh',
+    height: "100vh",
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
-    backgroundRepeat: 'no-repeat',
+    backgroundImage:
+      "url(https://petrovietnam.petrotimes.vn/stores/news_dataimages/thanhngoc/092019/25/17/3946_Gian_CNTT_sY_2_mY_BYch_HY_2.jpg)",
+    backgroundRepeat: "no-repeat",
     backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+      theme.palette.type === "light"
+        ? theme.palette.grey[50]
+        : theme.palette.grey[900],
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   },
   paper: {
     margin: theme.spacing(8, 4),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -46,6 +49,32 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
+
+  let history = useHistory();
+  let [username, setUsername] = useState("");
+  let [password, setPassword] = useState("");
+  // let [isLogin, setLogin] = useState(localStorage.getItem("accessToken") != null);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // alert('An essay was submitted: ' + this.state.value);
+    const data = {
+      username,
+      password,
+    };
+    console.log(data);
+
+    axios.post(`${API}/api/login`, data)
+      .then((res) => {
+        console.log(res.data);
+        if (res.status == 200) {
+          console.log("200 r nha");
+          localStorage.setItem("accessToken", true)
+          // window.location.replace("/home");
+          history.replace("/home")
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -59,7 +88,7 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Cathodic Protection System
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} onSubmit={handleSubmit} noValidate>
             <TextField
               variant="outlined"
               margin="normal"
@@ -67,6 +96,7 @@ export default function SignInSide() {
               fullWidth
               id="username"
               label="Tên đăng nhập"
+              onChange={(e) => setUsername(e.target.value)}
               name="username"
               autoFocus
             />
@@ -78,12 +108,9 @@ export default function SignInSide() {
               name="password"
               label="Mật khẩu"
               type="password"
+              onChange={(e) => setPassword(e.target.value)}
               id="password"
               autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Ghi nhớ tài khoản"
             />
             <Button
               type="submit"

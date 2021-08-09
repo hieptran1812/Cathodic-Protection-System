@@ -16,7 +16,7 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
-              <NavLink exact to="/" className="link" activeClassName="active">
+              <NavLink to="/home" className="link" activeClassName="active">
                 <Dashboard className="sidebarIcon" />
                 Tổng quan
               </NavLink>
