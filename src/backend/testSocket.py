@@ -106,6 +106,7 @@ def getDataFromRectifier(rawData):
             logging.info('Retrieve data from tool completely')
             print('complete')
             pushDataRectifier(result)
+            print('push data to db complete')
             
         except Exception as e:
             logging.critical(e)
