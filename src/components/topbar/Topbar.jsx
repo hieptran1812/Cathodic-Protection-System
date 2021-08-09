@@ -6,9 +6,9 @@ import { useHistory } from "react-router-dom";
 export default function Topbar() {
 
   let history = useHistory();
-
   function logOut() {
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("role");
     history.replace("/");
   }
 

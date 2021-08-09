@@ -53,10 +53,8 @@ export default function SignInSide() {
   let history = useHistory();
   let [username, setUsername] = useState("");
   let [password, setPassword] = useState("");
-  // let [isLogin, setLogin] = useState(localStorage.getItem("accessToken") != null);
   const handleSubmit = (e) => {
     e.preventDefault();
-    // alert('An essay was submitted: ' + this.state.value);
     const data = {
       username,
       password,
@@ -65,11 +63,12 @@ export default function SignInSide() {
 
     axios.post(`${API}/api/login`, data)
       .then((res) => {
-        console.log(res.data);
+        const info = res.data;
+        console.log(info);
         if (res.status == 200) {
           console.log("200 r nha");
-          localStorage.setItem("accessToken", true)
-          // window.location.replace("/home");
+          localStorage.setItem("accessToken", true);
+          localStorage.setItem("role", info);
           history.replace("/home")
         }
       })

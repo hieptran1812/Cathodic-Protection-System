@@ -29,7 +29,6 @@ export default function NewProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // alert('An essay was submitted: ' + this.state.value);
     const data = {
       id,
       type,

@@ -28,40 +28,106 @@ function App() {
           <Route
             path="/home"
             render={() => {
-              return localStorage.getItem("accessToken") ? (
-                <Home />
-              ) : (
-                <Redirect to="/" />
-              );
+              if (localStorage.getItem("accessToken")) {
+                return <Home />;
+              } else {
+                return <Redirect to="/" />;
+              }
             }}
           ></Route>
-          <Route path="/mapDevice">
-            <MapDeviceDashboard />
-          </Route>
-          <Route path="/users">
-            <UserList />
-          </Route>
-          <Route path="/user/:userId">
-            <User />
-          </Route>
-          <Route path="/newUser">
-            <NewUser />
-          </Route>
-          <Route path="/rectifierTransformerList">
-            <RectifierTransformerList />
-          </Route>
-          <Route path="/rectifierTransformer/:productId">
-            <RectifierTransformer />
-          </Route>
-          <Route path="/testPostList">
-            <TestPostList />
-          </Route>
-          <Route path="/testPost/:productId">
-            <TestPost />
-          </Route>
-          <Route path="/newproduct">
-            <NewProduct />
-          </Route>
+          <Route
+            path="/mapDevice"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <MapDeviceDashboard />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/users"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                if (localStorage.getItem("role") !== "viewer")
+                  return <UserList />;
+                else return <Home />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/user/:userId"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                if (localStorage.getItem("role") !== "viewer") return <User />;
+                else return <Home />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/newUser"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <NewUser />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/rectifierTransformerList"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <RectifierTransformerList />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/rectifierTransformer/:productId"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <RectifierTransformer />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/testPostList"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <TestPostList />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/testPost/:productId"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <TestPost />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/newproduct"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <NewProduct />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
         </Switch>
       </div>
     </Router>

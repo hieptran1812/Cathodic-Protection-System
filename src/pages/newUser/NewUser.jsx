@@ -40,7 +40,7 @@ export default function NewUser() {
       .post(`${API}/api/addUser`, data)
       .then((res) => {
         console.log(res.data);
-        if (res.status == 200) {
+        if (res.status === 200) {
           setOpen(true);
         }
       })
