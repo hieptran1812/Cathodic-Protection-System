@@ -68,7 +68,7 @@ export default function SignInSide() {
         if (res.status == 200) {
           console.log("200 r nha");
           localStorage.setItem("accessToken", true);
-          localStorage.setItem("role", info);
+          localStorage.setItem("role", JSON.stringify(info));
           history.replace("/home")
         }
       })

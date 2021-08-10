@@ -6,7 +6,7 @@ from flask_cors import CORS, cross_origin
 
 from configDB import db
 from testSocket import getDataFromTestPost, getDataFromRectifier
-from controller import login
+from controller import login, res
 import datetime
 import sys
 import json
@@ -27,19 +27,6 @@ def running():
   return "API running..."
 
 ################ Sign in, sign out ##################
-
-# @app.before_request
-# def before_request():
-#   session.permanent = True
-# # app.permanent_session_lifetime = timedelta(minutes=10)
-#   print(request.endpoint)
-#   if 'logged_in' not in session:
-#     print('not log')
-#     return redirect("/")
-
-# @app.route("/api/signout")
-# def signout():
-#     return signout()
 
 @app.route('/api/login', methods=['POST'])
 def index():
@@ -76,15 +63,31 @@ def createUser():
 def getUsers():
     logging.info("start API get users list")
     users = []
-    for doc in db.User.find({}):
-      users.append({
-        'id': str(ObjectId(doc['_id'])),
-        'name': doc['name'],
-        'email': doc['email'],
-        'phone': doc['phone'],
-        'address': doc['address'],
-        'role':doc['role'],
-      })
+    if(res['role'] == 'superadmin'):
+      for doc in db.User.find({}):
+        users.append({
+          'id': str(ObjectId(doc['_id'])),
+          'name': doc['name'],
+          'email': doc['email'],
+          'phone': doc['phone'],
+          'address': doc['address'],
+          'role':doc['role'],
+          'organization':doc['organization'],
+        })
+    elif(res['role'] == 'admin'):
+      for doc in db.User.find({
+        'organization': res['organization'],
+        'role': 'viewer'
+      }):
+        users.append({
+          'id': str(ObjectId(doc['_id'])),
+          'name': doc['name'],
+          'email': doc['email'],
+          'phone': doc['phone'],
+          'address': doc['address'],
+          'role':doc['role'],
+          'organization':doc['organization'],
+        })
     return jsonify(users)
 
 @app.route('/api/users/<id>', methods=['GET', 'POST'])

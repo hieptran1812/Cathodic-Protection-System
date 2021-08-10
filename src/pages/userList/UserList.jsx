@@ -34,6 +34,11 @@ const columns = [
     width: 220,
   },
   {
+    field: "organization",
+    headerName: "Tổ chức",
+    width: 220,
+  },
+  {
     field: "action",
     headerName: "Hành động",
     width: 200,
