@@ -37,8 +37,18 @@ const columns = [
     width: 220,
   },
   {
-    field: "dienAC3Pha",
-    headerName: "Điện AC 3 pha (V)",
+    field: "dienAC3PhaA",
+    headerName: "Điện AC pha A (V)",
+    width: 200,
+  },
+  {
+    field: "dienAC3PhaB",
+    headerName: "Điện AC pha B (V)",
+    width: 200,
+  },
+  {
+    field: "dienAC3PhaC",
+    headerName: "Điện AC pha C (V)",
     width: 200,
   },
   {
@@ -82,21 +92,21 @@ export default function RectifierTransformer() {
     return (
       <GridToolbarContainer>
         <GridToolbarExport
-          csvOptions={
-            {
-              fields: [
-                "Thoi gian",
-                "Dien ap pin",
-                "Dien ap nguon",
-                "Nhiet do thiet bi",
-                "Dien AC 3 pha",
-                "Dien DC Point 1",
-                "Dong dien DC",
-                "Chat luong tin hieu",
-              ],
-              'utf8WithBom': true,
-            }
-          }
+          csvOptions={{
+            fields: [
+              "Thoi gian",
+              "Dien ap pin",
+              "Dien ap nguon",
+              "Nhiet do thiet bi",
+              "Dien AC pha A",
+              "Dien AC pha B",
+              "Dien AC pha C",
+              "Dien DC Point 1",
+              "Dong dien DC",
+              "Chat luong tin hieu",
+            ],
+            utf8WithBom: true,
+          }}
         />
       </GridToolbarContainer>
     );
@@ -109,7 +119,7 @@ export default function RectifierTransformer() {
         <Sidebar />
         <div style={{ width: "100%", margin: "20px 40px 20px" }}>
           <div className="productTitleContainer">
-            <h1 className="productTitle">Thông tin thiết bị</h1>
+            <h1 className="productTitle">Thông tin Bộ trung tâm</h1>
           </div>
           <div className="time">
             <span className="productInfoKey">Dữ liệu được cập nhật vào: </span>
@@ -149,9 +159,21 @@ export default function RectifierTransformer() {
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Điện AC 3 pha</span>
+                  <span className="productInfoKey">Điện AC pha A</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienAC3Pha} (V)
+                    {infoTop[0].dienAC3PhaA} (V)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Điện AC pha B</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].dienAC3PhaB} (V)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Điện AC pha C</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].dienAC3PhaC} (V)
                   </span>
                 </div>
                 <div className="productInfoItem">

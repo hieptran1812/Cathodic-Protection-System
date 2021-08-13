@@ -24,6 +24,7 @@ export default function NewProduct() {
 
   const [id, setId] = useState('');
   const [type, setType] = useState('0');
+  const [organization, setOrganization] = useState("");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -32,7 +33,8 @@ export default function NewProduct() {
     const data = {
       id,
       type,
-    }
+      organization,
+    };
     console.log(data);
     
     axios.post(`${API}/api/newProduct`, data)
@@ -92,6 +94,24 @@ export default function NewProduct() {
                 <option value="0">Bộ trung tâm</option>
                 <option value="1">Bộ đo</option>
               </select>
+            </div>
+            <div className="addProductItem">
+              <label>Tên tổ chức</label>
+              <input
+                type="text"
+                required="required"
+                onChange={(e) => setOrganization(e.target.value)}
+                autoFocus
+              />
+            </div>
+            <div className="addProductItem">
+              <label>Vị trí thiết bị</label>
+              <input
+                type="text"
+                required="required"
+                // onChange={(e) => setId(e.target.value)}
+                autoFocus
+              />
             </div>
             <button className="addProductButton">Thêm mới</button>
           </form>

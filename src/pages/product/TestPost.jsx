@@ -132,7 +132,7 @@ export default function TestPost() {
         <Sidebar />
         <div style={{ width: "100%", margin: "20px 40px 20px" }}>
           <div className="productTitleContainer">
-            <h1 className="productTitle">Thông tin thiết bị</h1>
+            <h1 className="productTitle">Thông tin Bộ đo</h1>
           </div>
           <div className="time">
             <span className="productInfoKey">Dữ liệu được cập nhật vào: </span>

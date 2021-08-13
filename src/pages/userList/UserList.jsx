@@ -2,7 +2,7 @@ import "./userList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 

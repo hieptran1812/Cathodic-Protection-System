@@ -5,31 +5,31 @@ export default function FeaturedInfo() {
   return (
     <div className="featured">
       <div className="featuredItem">
-        <span className="featuredTitle">Số thiết bị lỗi</span>
+        <span className="featuredTitle">Tổng thiết bị</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">10</span>
           <span className="featuredMoneyRate">
-            -11.4 <ArrowDownward  className="featuredIcon negative"/>
+            -11.4 <ArrowDownward className="featuredIcon negative" />
           </span>
         </div>
         <span className="featuredSub">So với tháng trước</span>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">Đã sửa chữa</span>
+        <span className="featuredTitle">Trung bình điện áp DC</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">10</span>
           <span className="featuredMoneyRate">
-            -1.4 <ArrowDownward className="featuredIcon negative"/>
+            -1.4 <ArrowDownward className="featuredIcon negative" />
           </span>
         </div>
         <span className="featuredSub">So với tháng trước</span>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">Số địa điểm sửa chữa</span>
+        <span className="featuredTitle">Trung bình điện áp AC</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">9</span>
           <span className="featuredMoneyRate">
-            +2.4 <ArrowUpward className="featuredIcon"/>
+            +2.4 <ArrowUpward className="featuredIcon" />
           </span>
         </div>
         <span className="featuredSub">So với tháng trước</span>

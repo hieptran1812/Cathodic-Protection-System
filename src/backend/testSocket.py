@@ -79,25 +79,28 @@ def getDataFromRectifier(rawData):
             subOtherInfo['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             # data = connection.recv(4) # number of bytes
             data = rawData[28:32]
-            subOtherInfo['dienAC3Pha'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            print(subOtherInfo['dienAC3Pha'])
-            # data = connection.recv(4) # number of bytes
+            subOtherInfo['dienAC3PhaA'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+            print(subOtherInfo['dienAC3PhaA'])
             data = rawData[32:36]
+            subOtherInfo['dienAC3PhaB'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+            print(subOtherInfo['dienAC3PhaB'])
+            data = rawData[36:40]
+            subOtherInfo['dienAC3PhaC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+            print(subOtherInfo['dienAC3PhaC'])
+            # data = connection.recv(4) # number of bytes
+            data = rawData[44:48]
             subOtherInfo['dienDCPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+            print(subOtherInfo['dienDCPoint1'])
             # data = connection.recv(4) # number of bytes
             data = rawData[36:40]
             subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            for i in range(11):
-                # data = connection.recv(4) # number of bytes
-                data = rawData[40:84]
-            # data = connection.recv(16) # number of bytes
+            print(subOtherInfo['dongDienDC'])
             data = rawData[84:100]
             subOtherInfo['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
             print(subOtherInfo['phone'])
             # data = connection.recv(1) # number of bytes
             data = rawData[100:101]
             subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3)
-            
             # data = connection.recv(1) # number of bytes
             data = rawData[101]
             print(sys.stderr, 'received last byte "%s"' % data)
