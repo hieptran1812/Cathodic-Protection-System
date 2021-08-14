@@ -1,4 +1,4 @@
-import MapDevice from "../../components/googleMap/mapDevice";
+import Map from "../../components/googleMap/mapDevice";
 import "./mapDevice.css";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -36,7 +36,21 @@ export default function MapDeviceDashboard() {
             )}
           />
 
-          <MapDevice
+          {/* <MapDevice
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={
+              <div
+                style={{
+                  height: `90vh`,
+                  margin: `auto`,
+                  border: "2px solid black",
+                }}
+              />
+            }
+            mapElement={<div style={{ height: `100%` }} />}
+          /> */}
+          <Map
             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={

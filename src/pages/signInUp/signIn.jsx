@@ -65,10 +65,10 @@ export default function SignInSide() {
       .then((res) => {
         const info = res.data;
         console.log(info);
-        if (res.status == 200) {
+        if (res.status === 200) {
           console.log("200 r nha");
           localStorage.setItem("accessToken", true);
-          localStorage.setItem("role", JSON.stringify(info));
+          localStorage.setItem("idCurrentUser", info['id']);
           history.replace("/home")
         }
       })

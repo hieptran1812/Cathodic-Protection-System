@@ -2,14 +2,20 @@ import React from "react";
 import "./topbar.css";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Topbar() {
-
   let history = useHistory();
   function logOut() {
     localStorage.removeItem("accessToken");
-    localStorage.removeItem("role");
+    localStorage.removeItem("idCurrentUser");
     history.replace("/");
+  }
+
+  function profileUser() {
+    const currentUser = localStorage.getItem("idCurrentUser");
+    console.log(currentUser);
+    history.replace("/user/" + currentUser);
   }
 
   return (
@@ -19,7 +25,7 @@ export default function Topbar() {
           <span className="logo">Cathodic Protection</span>
         </div>
         <div className="topRight">
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={profileUser}>
             <b>Thông tin cá nhân</b>
           </Button>
           <Button variant="contained" onClick={logOut}>
