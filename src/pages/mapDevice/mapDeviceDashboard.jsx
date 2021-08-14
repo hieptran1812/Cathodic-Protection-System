@@ -9,26 +9,25 @@ import { React, useEffect, useState } from "react";
 const key = "AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY";
 
 export default function MapDeviceDashboard() {
+  // const { productId } = useParams();
+  // const [loading, setLoading] = useState(true);
+  // const [infoTop, setInfoTop] = useState([{}]);
+  // const [infoBottom, setInfoBottom] = useState([]);
 
-  const { productId } = useParams();
-  const [loading, setLoading] = useState(true);
-  const [infoTop, setInfoTop] = useState([{}]);
-  const [infoBottom, setInfoBottom] = useState([]);
-
-  useEffect(() => {
-    async function fetchAPI() {
-      await axios
-        .get(`${API}/api/rectifierTransformer/table/${productId}`)
-        .then((res) => {
-          setLoading(false);
-          const data = res.data;
-          setInfoTop(data);
-          setInfoBottom(data);
-        })
-        .catch((error) => console.log(error));
-    }
-    fetchAPI();
-  }, [productId]);
+  // useEffect(() => {
+  //   async function fetchAPI() {
+  //     await axios
+  //       .get(`${API}/api/rectifierTransformer/table/${productId}`)
+  //       .then((res) => {
+  //         setLoading(false);
+  //         const data = res.data;
+  //         setInfoTop(data);
+  //         setInfoBottom(data);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   }
+  //   fetchAPI();
+  // }, [productId]);
 
   return (
     <div className="general">
