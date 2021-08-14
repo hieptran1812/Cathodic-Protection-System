@@ -1,19 +1,20 @@
 from flask import Flask, render_template, request, session, jsonify
 from configDB import db
 
-res = {}
+currentUser = {}
 
 def login():
     loginData = request.get_json()
     user = db.User.find_one({'username': loginData['username']})
     if user and user['password'] == loginData['password']:
-        res['username'] = user['username']
-        res['role'] = user['role']
-        res['organization'] = user['organization']
-        res['address'] = user['address']
-        res['phone'] = user['phone']
-        res['email'] = user['email']
-        res['name'] = user['name']
-        return jsonify(res), 200
+        currentUser['id'] = str(user['_id'])
+        currentUser['username'] = user['username']
+        currentUser['role'] = user['role']
+        currentUser['organization'] = user['organization']
+        currentUser['address'] = user['address']
+        currentUser['phone'] = user['phone']
+        currentUser['email'] = user['email']
+        currentUser['name'] = user['name']
+        return jsonify(currentUser), 200
     else:
         return 'ten dang nhap va mat khau sai', 404

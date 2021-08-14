@@ -6,7 +6,7 @@ from flask_cors import CORS, cross_origin
 
 from configDB import db
 from testSocket import getDataFromTestPost, getDataFromRectifier
-from controller import login, res
+from controller import login, currentUser
 import datetime
 import sys
 import json
@@ -63,7 +63,7 @@ def createUser():
 def getUsers():
     logging.info("start API get users list")
     users = []
-    if(res['role'] == 'superadmin'):
+    if(currentUser['role'] == 'superadmin'):
       for doc in db.User.find({}):
         users.append({
           'id': str(ObjectId(doc['_id'])),
@@ -74,9 +74,9 @@ def getUsers():
           'role':doc['role'],
           'organization':doc['organization'],
         })
-    elif(res['role'] == 'admin'):
+    elif(currentUser['role'] == 'admin'):
       for doc in db.User.find({
-        'organization': res['organization'],
+        'organization': currentUser['organization'],
         'role': 'viewer'
       }):
         users.append({
