@@ -23,7 +23,7 @@ const Map = () => {
   return (
     <div>
       <GoogleMap
-        defaultZoom={8}
+        defaultZoom={15}
         defaultCenter={{ lat: 20.980592, lng: 105.786841 }}
       ></GoogleMap>
     </div>

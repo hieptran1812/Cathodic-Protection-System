@@ -4,10 +4,32 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import { React, useEffect, useState } from "react";
 
 const key = "AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY";
 
 export default function MapDeviceDashboard() {
+
+  const { productId } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [infoTop, setInfoTop] = useState([{}]);
+  const [infoBottom, setInfoBottom] = useState([]);
+
+  useEffect(() => {
+    async function fetchAPI() {
+      await axios
+        .get(`${API}/api/rectifierTransformer/table/${productId}`)
+        .then((res) => {
+          setLoading(false);
+          const data = res.data;
+          setInfoTop(data);
+          setInfoBottom(data);
+        })
+        .catch((error) => console.log(error));
+    }
+    fetchAPI();
+  }, [productId]);
+
   return (
     <div className="general">
       <Topbar />
@@ -57,7 +79,7 @@ export default function MapDeviceDashboard() {
               <div
                 style={{
                   height: `90vh`,
-                  margin: `auto`,
+                  margin: `40px`,
                   border: "2px solid black",
                 }}
               />
