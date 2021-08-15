@@ -88,11 +88,11 @@ def getDataFromRectifier(rawData):
             subOtherInfo['dienAC3PhaC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             print(subOtherInfo['dienAC3PhaC'])
             # data = connection.recv(4) # number of bytes
-            data = rawData[44:48]
+            data = rawData[40:44]
             subOtherInfo['dienDCPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             print(subOtherInfo['dienDCPoint1'])
             # data = connection.recv(4) # number of bytes
-            data = rawData[36:40]
+            data = rawData[44:48]
             subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             print(subOtherInfo['dongDienDC'])
             data = rawData[84:100]
