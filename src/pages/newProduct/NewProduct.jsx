@@ -104,7 +104,7 @@ export default function NewProduct() {
                 autoFocus
               />
             </div>
-            <div className="addProductItem">
+            {/* <div className="addProductItem">
               <label>Vị trí thiết bị</label>
               <input
                 type="text"
@@ -112,7 +112,7 @@ export default function NewProduct() {
                 // onChange={(e) => setId(e.target.value)}
                 autoFocus
               />
-            </div>
+            </div> */}
             <button className="addProductButton">Thêm mới</button>
           </form>
         </div>
