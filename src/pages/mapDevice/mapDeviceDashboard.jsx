@@ -11,15 +11,7 @@ const key = "AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY";
 export default function MapDeviceDashboard() {
 
 
-  // displayMarkers = () => {
-  //   return this.state.stores.map((store, index) => {
-  //     return <Marker key={index} id={index} position={{
-  //      lat: store.latitude,
-  //      lng: store.longitude
-  //    }}
-  //    onClick={() => console.log("You clicked me!")} />
-  //   })
-  // }
+ 
 
   return (
     <div className="general">

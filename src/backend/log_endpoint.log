@@ -1161,3 +1161,150 @@ KeyError: 'latitude'
 2021-08-17 01:51:31,875 - INFO - 127.0.0.1 - - [17/Aug/2021 01:51:31] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
 2021-08-17 01:51:35,487 - INFO - start API get location all devices
 2021-08-17 01:51:35,925 - INFO - 127.0.0.1 - - [17/Aug/2021 01:51:35] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:21:54,703 - INFO - Start API
+2021-08-17 08:21:54,816 - INFO - Flask started
+2021-08-17 08:21:55,723 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-08-17 08:21:57,103 - INFO - 127.0.0.1 - - [17/Aug/2021 08:21:57] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-08-17 08:21:57,521 - INFO - 127.0.0.1 - - [17/Aug/2021 08:21:57] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-08-17 08:21:59,837 - INFO - start API get Rectifier Transformers list
+2021-08-17 08:21:59,911 - INFO - 127.0.0.1 - - [17/Aug/2021 08:21:59] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-08-17 08:22:02,488 - INFO - start API get Rectifier Transformers list
+2021-08-17 08:22:02,561 - INFO - 127.0.0.1 - - [17/Aug/2021 08:22:02] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-08-17 08:22:33,300 - INFO - start API get location all devices
+2021-08-17 08:22:33,752 - ERROR - Exception on /api/locationAllDevices [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 312, in getLocation
+    'lat': doc['lat'],
+KeyError: 'lat'
+2021-08-17 08:22:33,785 - INFO - 127.0.0.1 - - [17/Aug/2021 08:22:33] "[35m[1mGET /api/locationAllDevices HTTP/1.1[0m" 500 -
+2021-08-17 08:22:49,463 - INFO - start API get location all devices
+2021-08-17 08:22:49,910 - ERROR - Exception on /api/locationAllDevices [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 312, in getLocation
+    'lat': doc['lat'],
+KeyError: 'lat'
+2021-08-17 08:22:49,911 - INFO - 127.0.0.1 - - [17/Aug/2021 08:22:49] "[35m[1mGET /api/locationAllDevices HTTP/1.1[0m" 500 -
+2021-08-17 08:22:50,960 - INFO - start API get location all devices
+2021-08-17 08:22:51,421 - ERROR - Exception on /api/locationAllDevices [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 312, in getLocation
+    'lat': doc['lat'],
+KeyError: 'lat'
+2021-08-17 08:22:51,422 - INFO - 127.0.0.1 - - [17/Aug/2021 08:22:51] "[35m[1mGET /api/locationAllDevices HTTP/1.1[0m" 500 -
+2021-08-17 08:23:17,485 - INFO - start API get location all devices
+2021-08-17 08:23:17,920 - ERROR - Exception on /api/locationAllDevices [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 312, in getLocation
+    'lat': doc['lat'],
+KeyError: 'lat'
+2021-08-17 08:23:17,921 - INFO - 127.0.0.1 - - [17/Aug/2021 08:23:17] "[35m[1mGET /api/locationAllDevices HTTP/1.1[0m" 500 -
+2021-08-17 08:24:30,799 - INFO - start API get location all devices
+2021-08-17 08:24:31,234 - ERROR - Exception on /api/locationAllDevices [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 312, in getLocation
+    'lat': doc['lat'],
+KeyError: 'lat'
+2021-08-17 08:24:31,235 - INFO - 127.0.0.1 - - [17/Aug/2021 08:24:31] "[35m[1mGET /api/locationAllDevices HTTP/1.1[0m" 500 -
+2021-08-17 08:25:05,454 - INFO - Start API
+2021-08-17 08:25:05,456 - INFO - Flask started
+2021-08-17 08:25:06,411 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-08-17 08:27:00,023 - INFO - start API get location all devices
+2021-08-17 08:27:00,866 - INFO - 127.0.0.1 - - [17/Aug/2021 08:27:00] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:27:39,610 - INFO - start API get location all devices
+2021-08-17 08:27:39,987 - INFO - 127.0.0.1 - - [17/Aug/2021 08:27:39] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:27:44,063 - INFO - start API get location all devices
+2021-08-17 08:27:44,449 - INFO - 127.0.0.1 - - [17/Aug/2021 08:27:44] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:31:00,867 - INFO - start API get location all devices
+2021-08-17 08:31:01,266 - INFO - 127.0.0.1 - - [17/Aug/2021 08:31:01] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:33:47,770 - INFO - start API get location all devices
+2021-08-17 08:33:48,523 - INFO - 127.0.0.1 - - [17/Aug/2021 08:33:48] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:34:13,327 - INFO - start API get location all devices
+2021-08-17 08:34:13,741 - INFO - 127.0.0.1 - - [17/Aug/2021 08:34:13] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:34:46,002 - INFO - start API get location all devices
+2021-08-17 08:34:46,448 - INFO - 127.0.0.1 - - [17/Aug/2021 08:34:46] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:38:06,620 - INFO - start API get location all devices
+2021-08-17 08:38:07,112 - INFO - 127.0.0.1 - - [17/Aug/2021 08:38:07] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:38:12,033 - INFO - start API get location all devices
+2021-08-17 08:38:12,510 - INFO - 127.0.0.1 - - [17/Aug/2021 08:38:12] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:38:17,526 - INFO - start API get location all devices
+2021-08-17 08:38:18,042 - INFO - 127.0.0.1 - - [17/Aug/2021 08:38:18] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:38:27,338 - INFO - start API get location all devices
+2021-08-17 08:38:27,821 - INFO - 127.0.0.1 - - [17/Aug/2021 08:38:27] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:39:08,748 - INFO - start API get location all devices
+2021-08-17 08:39:09,184 - INFO - 127.0.0.1 - - [17/Aug/2021 08:39:09] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:39:39,411 - INFO - start API get location all devices
+2021-08-17 08:39:39,841 - INFO - 127.0.0.1 - - [17/Aug/2021 08:39:39] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:39:52,328 - INFO - start API get location all devices
+2021-08-17 08:39:52,793 - INFO - 127.0.0.1 - - [17/Aug/2021 08:39:52] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-08-17 08:42:43,948 - INFO - start API get location all devices
+2021-08-17 08:42:44,359 - INFO - 127.0.0.1 - - [17/Aug/2021 08:42:44] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -

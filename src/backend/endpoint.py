@@ -148,6 +148,7 @@ def addNewProduct():
   deviceTestPost = {
     'devSerial': res['id'],
     'devType': res['type'],
+    'organization': res['organization'],
     'otherInfo': [{
       'locationSystem': '0',
       'centralAddress': '0',

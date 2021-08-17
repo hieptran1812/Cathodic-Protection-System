@@ -4,15 +4,15 @@ import {
   withScriptjs,
   GoogleMap,
   Marker,
+  InfoWindow,
 } from "react-google-maps";
 import axios from "axios";
 // import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 
-// const options = { closeBoxURL: "", enableEventPropagation: true };
 const API = process.env.REACT_APP_API;
 const Map = () => {
   // const [loading, setLoading] = useState(true);
-  // const [infoTop, setInfoTop] = useState([{}]);
+  const [openInfoWindow, setOpenInfoWindow] = useState(false);
   const [location, setLocation] = useState([{}]);
   useEffect(() => {
     axios
@@ -24,6 +24,39 @@ const Map = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
+  // displayMarkers = () => {
+  //   return this.state.stores.map((store, index) => {
+  //     return <Marker key={index} id={index} position={{
+  //      lat: store.latitude,
+  //      lng: store.longitude
+  //    }}
+  //    onClick={() => console.log("You clicked me!")} />
+  //   })
+  // }
+  const onMarkerClick = (evt) => {
+    console.log("clicked marker");
+    // return (
+    //   <InfoWindow>
+    //     <div>
+    //       <div>nhà trọ cho thuê</div>
+    //       <div>1.500.000đ</div>
+    //     </div>
+    //   </InfoWindow>
+    // );
+  };
+
+  // const onToggleOpen = (evt) => {
+  //   console.log("clicked marker");
+  //   // return (
+  //   //   <InfoWindow>
+  //   //     <div>
+  //   //       <div>nhà trọ cho thuê</div>
+  //   //       <div>1.500.000đ</div>
+  //   //     </div>
+  //   //   </InfoWindow>
+  //   // );
+  // };
 
   return (
     <div>
@@ -42,7 +75,15 @@ const Map = () => {
               lat: value["lat"],
               lng: value["lng"],
             }}
+            onClick={onMarkerClick}
           />
+            /* <InfoWindow onCloseClick={onToggleOpen}>
+              <div>
+                <div>nhà trọ cho thuê</div>
+                <div>1.500.000đ</div>
+              </div>
+            </InfoWindow> */
+          // </Marker>
         );
       })}
       {/* <InfoBox options={options}>
