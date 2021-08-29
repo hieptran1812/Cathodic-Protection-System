@@ -11,12 +11,28 @@ import { useParams } from "react-router-dom";
 import "./user.css";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+// import SearchBar from "material-ui-search-bar";
 
 const API = process.env.REACT_APP_API;
 
 export default function User() {
   const [info, setInfo] = useState("");
   const { userId } = useParams();
+
+  // const [searched, setSearched] = useState<string>("");
+
+  // const requestSearch = (searchedVal: string) => {
+  //   const filteredRows = originalRows.filter((row) => {
+  //     return row.name.toLowerCase().includes(searchedVal.toLowerCase());
+  //   });
+  //   setRows(filteredRows);
+  // };
+
+  // const cancelSearch = () => {
+  //   setSearched("");
+  //   requestSearch(searched);
+  // };
+
   useEffect(() => {
     async function fetchAPI() {
       axios
@@ -28,7 +44,7 @@ export default function User() {
         })
         .catch((error) => console.log(error));
     }
-    fetchAPI()
+    fetchAPI();
   }, [userId]);
 
   return (

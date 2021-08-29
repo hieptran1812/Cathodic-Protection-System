@@ -94,16 +94,16 @@ export default function RectifierTransformer() {
         <GridToolbarExport
           csvOptions={{
             fields: [
-              "Thoi gian",
-              "Dien ap pin",
-              "Dien ap nguon",
-              "Nhiet do thiet bi",
-              "Dien AC pha A",
-              "Dien AC pha B",
-              "Dien AC pha C",
-              "Dien DC Point 1",
-              "Dong dien DC",
-              "Chat luong tin hieu",
+              "time",
+              "dienApPin",
+              "dienApNguon",
+              "temperature",
+              "dienAC3PhaA",
+              "dienAC3PhaB",
+              "dienAC3PhaC",
+              "dienDCPoint1",
+              "dongDienDC",
+              "signalQuality",
             ],
             utf8WithBom: true,
           }}

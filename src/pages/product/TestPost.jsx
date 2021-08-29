@@ -3,7 +3,7 @@ import MapDevice from "../../components/googleMap/mapDevice";
 import {
   DataGrid,
   GridToolbarContainer,
-  GridToolbarExport
+  GridToolbarExport,
 } from "@material-ui/data-grid";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -109,14 +109,19 @@ export default function TestPost() {
         <GridToolbarExport
           csvOptions={{
             fields: [
-              "Thoi gian",
-              "Dien ap pin",
-              "Dien ap nguon",
-              "Nhiet do thiet bi",
-              "Dien AC 3 pha",
-              "Dien DC Point 1",
-              "Dong dien DC",
-              "Chat luong tin hieu",
+              "time",
+              "dienApPin",
+              "dienApNguon",
+              "temperature",
+              "openPoint1",
+              "closePoint1",
+              "openPoint2",
+              "closePoint2",
+              "openPoint3",
+              "closePoint3",
+              "openPoint4",
+              "closePoint4",
+              "signalQuality",
             ],
             utf8WithBom: true,
           }}

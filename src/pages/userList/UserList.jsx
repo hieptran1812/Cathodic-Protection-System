@@ -2,7 +2,7 @@ import "./userList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 
@@ -58,15 +58,21 @@ export default function UserList() {
   const [userInfo, setUserInfo] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  axios
-    .get(`${API}/api/users`)
-    .then((res) => {
-      setLoading(false);
-      console.log(res);
-      const info = res.data;
-      setUserInfo(info);
-    })
-    .catch((error) => console.log(error));
+  useEffect(() => {
+    async function fetchAPI() {
+      axios
+        .get(`${API}/api/users`)
+        .then((res) => {
+          setLoading(false);
+          console.log(res);
+          const info = res.data;
+          setUserInfo(info);
+        })
+        .catch((error) => console.log(error));
+    }
+    fetchAPI();
+  }, []);
+  
 
   return (
     <div className="userList">

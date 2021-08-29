@@ -25,6 +25,9 @@ export default function NewProduct() {
   const [id, setId] = useState('');
   const [type, setType] = useState('0');
   const [organization, setOrganization] = useState("");
+  const [date, setDate] = useState("");
+  const [dateUpdate, setDateUpdate] = useState("");
+  const [area, setArea] = useState("");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -34,6 +37,9 @@ export default function NewProduct() {
       id,
       type,
       organization,
+      date,
+      area,
+      dateUpdate,
     };
     console.log(data);
     
@@ -76,16 +82,25 @@ export default function NewProduct() {
           <h1 className="addProductTitle">Thêm thiết bị mới</h1>
           <form className="addProductForm" onSubmit={handleSubmit}>
             <div className="addProductItem">
-              <label>Mã thiết bị</label>
+              <label>Tên tổ chức *</label>
               <input
                 type="text"
                 required="required"
-                onChange={(e) => setId(e.target.value)}
+                onChange={(e) => setOrganization(e.target.value)}
                 autoFocus
               />
             </div>
             <div className="addProductItem">
-              <label>Loại thiết bị</label>
+              <label>Tên khu vực/phân xưởng *</label>
+              <input
+                type="text"
+                required="required"
+                onChange={(e) => setArea(e.target.value)}
+                autoFocus
+              />
+            </div>
+            <div className="addProductItem">
+              <label>Loại thiết bị *</label>
               <select
                 className="addProductItem"
                 id="type"
@@ -96,14 +111,33 @@ export default function NewProduct() {
               </select>
             </div>
             <div className="addProductItem">
-              <label>Tên tổ chức</label>
+              <label>Mã thiết bị *</label>
               <input
                 type="text"
                 required="required"
-                onChange={(e) => setOrganization(e.target.value)}
+                onChange={(e) => setId(e.target.value)}
                 autoFocus
               />
             </div>
+            <div className="addProductItem">
+              <label>Ngày cập nhật *</label>
+              <input
+                type="date"
+                required="required"
+                onChange={(e) => setDateUpdate(e.target.value)}
+                autoFocus
+              />
+            </div>
+            <div className="addProductItem">
+              <label>Ngày bảo trì, bảo dưỡng *</label>
+              <input
+                type="date"
+                required="required"
+                onChange={(e) => setDate(e.target.value)}
+                autoFocus
+              />
+            </div>
+
             {/* <div className="addProductItem">
               <label>Vị trí thiết bị</label>
               <input

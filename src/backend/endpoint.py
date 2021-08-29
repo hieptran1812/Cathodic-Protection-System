@@ -34,6 +34,90 @@ def index():
     print('api login')
     return login()
 
+
+################ Dashboard ###############
+@app.route('/api/featureInfo/', methods=['GET'])
+def getFeatureInfo():
+  logging.info("start API get info Dashboard")
+  countBTT = db.RectifierTransformersDetails.count_documents({})
+  countBD = db.TestPostsDetails.count_documents({})
+  countDevices = countBTT + countBD
+  averageDC = 0
+  averageAC = 0
+  for doc in db.RectifierTransformersDetails.find({}):
+    if(currentUser['role'] == 'superadmin'):
+      averageDC += int(doc['otherInfo'][0]['dienDCPoint1'])
+      averageAC += int(doc['otherInfo'][0]['dienAC3PhaA'])
+    else:
+      if(doc['organization'] == currentUser['organization']):
+        averageDC += int(doc['otherInfo'][0]['dienDCPoint1'])
+        averageAC += int(doc['otherInfo'][0]['dienAC3PhaA'])
+  averageAC /= countBTT
+  info = {
+    'countDevices': countDevices,
+    'averageDC': averageDC,
+    'averageAC': averageAC,
+  }
+  return jsonify(info)
+
+
+@app.route('/api/dashboardList/', methods=['GET'])
+def getDashboard():
+  logging.info("start API get dashboard list")
+  devices = []
+  print(currentUser['role'])
+  for doc in db.RectifierTransformersDetails.find({}):
+    type = ""
+    if(doc['devType'] == '0'):
+      type = "Bo trung tam"
+    else:
+      type = "Bo do" 
+    if(currentUser['role'] == 'superadmin'):
+      devices.append({
+      'id': str(ObjectId(doc['_id'])),
+      'devSerial': doc['devSerial'],
+      'devType': type,
+      'dateUpdate': doc['dateUpdate'],
+      'organization': doc['organization'],
+      'signalQuality': doc['otherInfo'][0]['signalQuality'],
+    })
+    else:
+      if(doc['organization'] == currentUser['organization']):
+        devices.append({
+          'id': str(ObjectId(doc['_id'])),
+          'devSerial': doc['devSerial'],
+          'devType': type,
+          'dateUpdate': doc['dateUpdate'],
+          'organization': doc['organization'],
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+        })
+  for doc in db.TestPostsDetails.find({}):
+    type = ""
+    if(doc['devType'] == '0'):
+      type = "Bo trung tam"
+    else:
+      type = "Bo do" 
+    if(currentUser['role'] == 'superadmin'):
+      devices.append({
+        'id': str(ObjectId(doc['_id'])),
+        'devSerial': doc['devSerial'],
+        'devType': type,
+        'dateUpdate': doc['dateUpdate'],
+        'organization': doc['organization'],
+        'signalQuality': doc['otherInfo'][0]['signalQuality'],
+      })
+    else:
+      if(doc['organization'] == currentUser['organization']):
+        devices.append({
+          'id': str(ObjectId(doc['_id'])),
+          'devSerial': doc['devSerial'],
+          'devType': type,
+          'dateUpdate': doc['dateUpdate'],
+          'organization': doc['organization'],
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+        })
+  return jsonify(devices)
+
 ################ User ##################
 @app.route('/api/addUser', methods=['POST'])
 def createUser():
@@ -126,10 +210,21 @@ def getUserDetail(id):
 def addNewProduct():
   logging.info("start API add new product")
   res = request.get_json()
+  deviceRectifierTransformersList = {
+    'devSerial': res['id'],
+    'devType': res['type'],
+    'organization': res['organization'],
+    'area': res['area'],
+    'dateUpdate': res['dateUpdate'],
+    'date': res['date']
+  }
   deviceRectifierTransformer = {
     'devSerial': res['id'],
     'devType': res['type'],
     'organization': res['organization'],
+    'area': res['area'],
+    'dateUpdate': res['dateUpdate'],
+    'date': res['date'],
     'otherInfo': [{
       'locationSystem': '0',
       'centralAddress': '0',
@@ -149,6 +244,9 @@ def addNewProduct():
     'devSerial': res['id'],
     'devType': res['type'],
     'organization': res['organization'],
+    'area': res['area'],
+    'dateUpdate': res['dateUpdate'],
+    'date': res['date'],
     'otherInfo': [{
       'locationSystem': '0',
       'centralAddress': '0',
@@ -168,9 +266,19 @@ def addNewProduct():
       'closePoint4': '0',
     }],
   }
+  deviceTestPostsList = {
+    'devSerial': res['id'],
+    'devType': res['type'],
+    'organization': res['organization'],
+    'area': res['area'],
+    'dateUpdate': res['dateUpdate'],
+    'date': res['date']
+  }
   deviceInDb = db.RectifierTransformersDetails.find_one({ #tim thiet bi trong danh sach bo trung tam
       'devSerial': res['id']
   })
+  if deviceInDb:
+      return 'thiet bi da ton tai', 404
   deviceInDb = db.TestPostsDetails.find_one({ #tim thiet bi trong danh sach bo do
       'devSerial': res['id']
   })
@@ -178,9 +286,11 @@ def addNewProduct():
       return 'thiet bi da ton tai', 404
   else:
       if(res['type'] == '0'):
-        insertDevice = db.RectifierTransformersDetails.insert_one(deviceRectifierTransformer)
+        # insertDeviceList = db.RectifierTransformersList.insert_one(deviceRectifierTransformersList)
+        insertDeviceDetails = db.RectifierTransformersDetails.insert_one(deviceRectifierTransformer)
       else:
-        insertDevice = db.TestPostsDetails.insert_one(deviceTestPost)
+        # insertDeviceList = db.TestPostsList.insert_one(deviceTestPostsList)
+        insertDeviceDetails = db.TestPostsDetails.insert_one(deviceTestPost)
       return 'hoan thanh', 200
 
 @app.route('/api/rectifierTransformerList/', methods=['GET'])
@@ -208,6 +318,7 @@ def getRectifier():
           'phone': doc['otherInfo'][0]['phone'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
         })
+  
   return jsonify(devices)
 
 @app.route('/api/rectifierTransformer/table/<id>', methods=['GET'])

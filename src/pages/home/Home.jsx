@@ -1,34 +1,72 @@
-import FirstChart from '../../components/chart/firstChart';
-import SecondChart from '../../components/chart/secondChart';
 import FeaturedInfo from '../../components/featuredInfo/FeaturedInfo';
 import './home.css';
-import { userData, pieChartData } from '../../dummyData';
-import WidgetLg from '../../components/widgetLg/WidgetLg';
 import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
+import { DataGrid } from "@material-ui/data-grid";
+import axios from "axios";
+import { React, useEffect, useState } from "react";
+
+const API = process.env.REACT_APP_API;
+
+const columns = [
+  {
+    field: "devSerial",
+    headerName: "Mã thiết bị",
+    width: 250,
+    renderCell: (params) => {
+      return <div className="productListItem">{params.row.devSerial}</div>;
+    },
+  },
+  { field: "devType", headerName: "Loại thiết bị", width: 220 },
+  {
+    field: "organization",
+    headerName: "Tổ chức",
+    width: 250,
+  },
+  {
+    field: "dateUpdate",
+    headerName: "Ngày thêm",
+    width: 200,
+  },
+  {
+    field: "signalQuality",
+    headerName: "Chất lượng tín hiệu",
+    width: 250,
+  },
+];
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+  const [deviceInfo, setDeviceInfo] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${API}/api/dashboardList`)
+      .then((res) => {
+        setLoading(false);
+        console.log(res);
+        const data = res.data;
+        setDeviceInfo(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className="home">
       <Topbar />
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: "flex" }}>
         <Sidebar />
-        <div style={{ width: '100%' }}>
+        <div style={{ width: "100%" }}>
           <FeaturedInfo />
-          <FirstChart
-            data={userData}
-            title="Số thiết bị lỗi theo thời gian"
-            grid
-            dataKey="Thiết bị"
+          <DataGrid
+            rows={deviceInfo}
+            autoHeight
+            disableSelectionOnClick
+            columns={columns}
+            pageSize={10}
+            loading={loading}
+            checkboxSelection
           />
-          <div className="homeWidgets">
-            <SecondChart
-              data={pieChartData}
-              title="Các loại lỗi thiết bị"
-              dataKey="value"
-            />
-            <WidgetLg />
-          </div>
         </div>
       </div>
     </div>
