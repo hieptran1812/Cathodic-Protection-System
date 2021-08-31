@@ -180,10 +180,10 @@ def getUserDetail(id):
     res['address'] = user['address']
     return jsonify(res), 200
 
-# @app.route('/api/users/delete/<id>', methods=['DELETE'])
-# def deleteUser(id):
-#   db.User.delete_one({'_id': ObjectId(id)})
-#   return jsonify({'message': 'User Deleted'})
+@app.route('/api/user/delete/<id>', methods=['GET'])
+def deleteUser(id):
+  db.User.delete_one({'_id': ObjectId(id)})
+  return 'hoan thanh', 200
 
 @app.route('/api/editUser/<id>', methods=['POST'])
 def updateUser(id):
@@ -336,10 +336,10 @@ def getRectifierTransformerDetailTable(id):
     return jsonify(result)
 
 
-# @app.route('/rectifierTransformerList/<id>', methods=['DELETE'])
-# def deleteRectifier(id):
-#   db.delete_one({'_id': ObjectId(id)})
-#   return jsonify({'message': 'User Deleted'})
+@app.route('/api/rectifierTransformer/delete/<id>', methods=['GET'])
+def deleteRectifier(id):
+  db.RectifierTransformersDetails.delete_one({'devSerial': id})
+  return 'hoan thanh', 200
 
 # @app.route('/rectifierTransformer/<id>', methods=['PUT'])
 # def updateRectifier(id):
@@ -394,10 +394,10 @@ def getTestPostDetailTable(id):
       i += 1
     return jsonify(result)
 
-# @app.route('/testPostList/<id>', methods=['DELETE'])
-# def deleteTestPost(id):
-#   db.delete_one({'_id': ObjectId(id)})
-#   return jsonify({'message': 'User Deleted'})
+@app.route('/api/testPost/delete/<id>', methods=['GET'])
+def deleteTestpost(id):
+  db.TestPostsDetails.delete_one({'devSerial': id})
+  return 'hoan thanh', 200
 
 # @app.route('/testPost/<id>', methods=['PUT'])
 # def updateTestPost(id):

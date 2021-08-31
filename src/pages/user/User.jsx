@@ -15,10 +15,25 @@ import Alert from "@material-ui/lab/Alert";
 import IconButton from "@material-ui/core/IconButton";
 import Collapse from "@material-ui/core/Collapse";
 import CloseIcon from "@material-ui/icons/Close";
+import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DeleteIcon from "@material-ui/icons/Delete";
+import Button from "@material-ui/core/Button";
 
 const API = process.env.REACT_APP_API;
 
+const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
 export default function User() {
+  const classes = useStyles();
   const [info, setInfo] = useState("");
   const { userId } = useParams();
   const [name, setName] = useState("");
@@ -26,7 +41,27 @@ export default function User() {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [open, setOpen] = useState(false);
+  const [openClick, setOpenClick] = useState(false);
+  let history = useHistory();
 
+  const handleClickOpen = () => {
+    setOpenClick(true);
+  };
+
+  const handleClose = () => {
+    setOpenClick(false);
+  };
+  function deleteUser() {
+    axios
+      .get(`${API}/api/user/delete/${userId}`)
+      .then((res) => {
+        console.log(res.data);
+        history.replace("/users");
+        return 0;
+      })
+      .catch((error) => console.log(error));
+    return 0;
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     // alert('An essay was submitted: ' + this.state.value);
@@ -89,6 +124,38 @@ export default function User() {
           </Collapse>
           <div className="userTitleContainer">
             <h1 className="userTitle">Thông tin chi tiết</h1>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+              startIcon={<DeleteIcon />}
+              onClick={handleClickOpen}
+            >
+              Xóa người dùng
+            </Button>
+            <Dialog
+              open={openClick}
+              onClose={handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {"Bạn chắc chắn muốn xóa?"}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  Xóa người dùng sẽ xóa tất cả dữ liệu của người dùng đó.
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                  Không đồng ý
+                </Button>
+                <Button onClick={() => deleteUser()} color="primary" autoFocus>
+                  Đồng ý
+                </Button>
+              </DialogActions>
+            </Dialog>
           </div>
 
           <div className="userContainer">

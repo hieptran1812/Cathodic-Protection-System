@@ -9,6 +9,15 @@ import axios from "axios";
 import { React, useEffect, useState } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DeleteIcon from "@material-ui/icons/Delete";
+import Button from "@material-ui/core/Button";
 
 const API = process.env.REACT_APP_API;
 
@@ -65,12 +74,41 @@ const columns = [
     width: 200,
   },
 ];
+
+const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
+
 export default function RectifierTransformer() {
+  const classes = useStyles();
   const { productId } = useParams();
   const [loading, setLoading] = useState(true);
   const [infoTop, setInfoTop] = useState([{}]);
   const [infoBottom, setInfoBottom] = useState([]);
+  const [open, setOpen] = useState(false);
 
+  let history = useHistory();
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  function deleteDevice() {
+    axios
+      .get(`${API}/api/rectifierTransformer/delete/${productId}`)
+      .then((res) => {
+        console.log(res.data);
+        history.replace("/rectifierTransformerList");
+        return 0;
+      })
+      .catch((error) => console.log(error));
+    return 0;
+  }
   useEffect(() => {
     async function fetchAPI() {
       await axios
@@ -118,6 +156,38 @@ export default function RectifierTransformer() {
         <div style={{ width: "100%", margin: "20px 40px 20px" }}>
           <div className="productTitleContainer">
             <h1 className="productTitle">Thông tin Bộ trung tâm</h1>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+              startIcon={<DeleteIcon />}
+              onClick={handleClickOpen}
+            >
+              Xóa thiết bị
+            </Button>
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {"Bạn chắc chắn muốn xóa?"}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  Xóa thiết bị sẽ xóa tất cả dữ liệu của thiết bị đó.
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose} color="primary">
+                  Không đồng ý
+                </Button>
+                <Button onClick={() => deleteDevice()} color="primary" autoFocus>
+                  Đồng ý
+                </Button>
+              </DialogActions>
+            </Dialog>
           </div>
           <div className="time">
             <span className="productInfoKey">Dữ liệu được cập nhật vào: </span>

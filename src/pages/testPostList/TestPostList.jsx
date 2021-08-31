@@ -1,6 +1,5 @@
 import "./productList.css";
 import { DataGrid } from "@material-ui/data-grid";
-import { DeleteOutline } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import {React, useState, useEffect} from "react";
