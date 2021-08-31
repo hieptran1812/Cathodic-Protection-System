@@ -64,10 +64,10 @@ export default function Map() {
               }}
             >
               <img
-                width="20"
-                height="20"
-                src="https://cdn-icons-png.flaticon.com/512/2922/2922456.png"
-                alt="Bo trung tam icon"
+                width="30"
+                height="30"
+                src="https://cdn-icons-png.flaticon.com/512/2475/2475301.png"
+                alt="icon"
               />
             </button>
           </Marker>

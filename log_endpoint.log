@@ -10281,3 +10281,18 @@ KeyError: 'role'
 2021-08-31 16:21:46,790 - INFO - start API get dashboard list
 2021-08-31 16:21:46,832 - INFO - 127.0.0.1 - - [31/Aug/2021 16:21:46] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
 2021-08-31 16:21:47,246 - INFO - 127.0.0.1 - - [31/Aug/2021 16:21:47] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-08-31 16:24:21,333 - INFO - Start API
+2021-08-31 16:24:21,335 - INFO - Flask started
+2021-08-31 16:24:22,305 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-08-31 16:24:27,052 - INFO - 127.0.0.1 - - [31/Aug/2021 16:24:27] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-08-31 16:24:27,347 - INFO - 127.0.0.1 - - [31/Aug/2021 16:24:27] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-08-31 16:24:27,615 - INFO - start API get info Dashboard
+2021-08-31 16:24:27,702 - INFO - start API get dashboard list
+2021-08-31 16:24:27,743 - INFO - 127.0.0.1 - - [31/Aug/2021 16:24:27] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-08-31 16:24:28,076 - INFO - 127.0.0.1 - - [31/Aug/2021 16:24:28] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-08-31 16:26:17,862 - INFO - start API get users list
+2021-08-31 16:26:17,901 - INFO - 127.0.0.1 - - [31/Aug/2021 16:26:17] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-08-31 16:26:18,733 - INFO - start API get Rectifier Transformers list
+2021-08-31 16:26:18,851 - INFO - 127.0.0.1 - - [31/Aug/2021 16:26:18] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-08-31 16:26:19,148 - INFO - start API get Test Posts list
+2021-08-31 16:26:19,189 - INFO - 127.0.0.1 - - [31/Aug/2021 16:26:19] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -

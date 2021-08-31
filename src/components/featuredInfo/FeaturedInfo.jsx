@@ -29,7 +29,6 @@ export default function FeaturedInfo() {
             -11.4 <ArrowDownward className="featuredIcon negative" />
           </span>
         </div>
-        <span className="featuredSub">So với tháng trước</span>
       </div>
       <div className="featuredItem">
         <span className="featuredTitle">Trung bình điện áp DC</span>
@@ -39,7 +38,6 @@ export default function FeaturedInfo() {
             -1.4 <ArrowDownward className="featuredIcon negative" />
           </span>
         </div>
-        <span className="featuredSub">So với tháng trước</span>
       </div>
       <div className="featuredItem">
         <span className="featuredTitle">Trung bình điện áp AC</span>
@@ -49,7 +47,6 @@ export default function FeaturedInfo() {
             +2.4 <ArrowUpward className="featuredIcon" />
           </span>
         </div>
-        <span className="featuredSub">So với tháng trước</span>
       </div>
     </div>
   );

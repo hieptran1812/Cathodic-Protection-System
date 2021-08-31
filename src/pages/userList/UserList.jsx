@@ -36,7 +36,7 @@ const columns = [
   {
     field: "organization",
     headerName: "Tổ chức",
-    width: 220,
+    width: 200,
   },
   {
     field: "action",
