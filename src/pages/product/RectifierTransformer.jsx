@@ -1,5 +1,4 @@
 import "./product.css";
-import MapDevice from "../../components/googleMap/mapDevice";
 import {
   DataGrid,
   GridToolbarContainer,
@@ -12,7 +11,6 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 
 const API = process.env.REACT_APP_API;
-const key = "AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY";
 
 const columns = [
   { field: "id", hide: true },
@@ -220,20 +218,6 @@ export default function RectifierTransformer() {
             pageSize={8}
             loading={loading}
             checkboxSelection
-          />
-          <MapDevice
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`}
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={
-              <div
-                style={{
-                  height: `90vh`,
-                  margin: `auto`,
-                  border: "2px solid black",
-                }}
-              />
-            }
-            mapElement={<div style={{ height: `100%` }} />}
           />
         </div>
       </div>

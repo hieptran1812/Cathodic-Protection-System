@@ -69,6 +69,7 @@ export default function SignInSide() {
           console.log("200 r nha");
           localStorage.setItem("accessToken", true);
           localStorage.setItem("idCurrentUser", info['id']);
+          localStorage.setItem("role", info["role"]);
           history.replace("/home")
         }
       })

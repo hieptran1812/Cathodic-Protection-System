@@ -1,6 +1,6 @@
 import "./featuredInfo.css";
 import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
-import axios from "axios";
+import axios from 'axios';
 import { React, useEffect, useState } from "react";
 
 const API = process.env.REACT_APP_API;
@@ -22,7 +22,7 @@ export default function FeaturedInfo() {
   return (
     <div className="featured">
       <div className="featuredItem">
-        <span className="featuredTitle">Tổng thiết bị</span>
+        <span className="featuredTitle">Tổng thiết bị bộ trung tâm</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">{info.countDevices}</span>
           <span className="featuredMoneyRate">

@@ -1,108 +1,94 @@
-import { React, useState, useEffect } from "react";
-import {
-  withGoogleMap,
-  withScriptjs,
-  GoogleMap,
-  Marker,
-  InfoWindow,
-} from "react-google-maps";
+import React, { useState, useEffect } from "react";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import axios from "axios";
-// import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 
 const API = process.env.REACT_APP_API;
-const Map = () => {
-  // const [loading, setLoading] = useState(true);
-  const [openInfoWindow, setOpenInfoWindow] = useState(false);
-  const [location, setLocation] = useState([{}]);
+
+export default function Map() {
+  const [viewport, setViewport] = useState({
+    latitude: 20.98041582814874,
+    longitude: 105.78735636908121,
+    width: "80vw",
+    height: "80vh",
+    zoom: 15,
+  });
+  const [selectedDevice, setSelectedDevice] = useState(null);
+  const [locate, setLocate] = useState([]);
   useEffect(() => {
-    axios
-      .get(`${API}/api/locationAllDevices`)
-      .then((res) => {
-        const infoLocation = res.data;
-        console.log(infoLocation);
-        setLocation(infoLocation);
-      })
-      .catch((error) => console.log(error));
+    async function fetchAPI() {
+      await axios
+        .get(`${API}/api/locationAllDevices`)
+        .then((res) => {
+          const data = res.data;
+          console.log(data);
+          setLocate(data);
+        })
+        .catch((error) => console.log(error));
+    }
+    fetchAPI();
   }, []);
 
-  // displayMarkers = () => {
-  //   return this.state.stores.map((store, index) => {
-  //     return <Marker key={index} id={index} position={{
-  //      lat: store.latitude,
-  //      lng: store.longitude
-  //    }}
-  //    onClick={() => console.log("You clicked me!")} />
-  //   })
-  // }
-  const onMarkerClick = (evt) => {
-    console.log("clicked marker");
-    // return (
-    //   <InfoWindow>
-    //     <div>
-    //       <div>nhà trọ cho thuê</div>
-    //       <div>1.500.000đ</div>
-    //     </div>
-    //   </InfoWindow>
-    // );
-  };
+  useEffect(() => {
+    const listener = (e) => {
+      if (e.key === "Escape") {
+        setSelectedDevice(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
 
-  // const onToggleOpen = (evt) => {
-  //   console.log("clicked marker");
-  //   // return (
-  //   //   <InfoWindow>
-  //   //     <div>
-  //   //       <div>nhà trọ cho thuê</div>
-  //   //       <div>1.500.000đ</div>
-  //   //     </div>
-  //   //   </InfoWindow>
-  //   // );
-  // };
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
-    <div>
-      <GoogleMap
-        defaultZoom={15}
-        defaultCenter={{ lat: 20.980592, lng: 105.786841 }}
-      ></GoogleMap>
-      {location.map((value, index) => {
-        return (
+    <div className="map">
+      <ReactMapGL
+        {...viewport}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        mapStyle="mapbox://styles/halley1812/ckszt26zdaaqb18ljqjyi166h"
+        onViewportChange={(viewport) => {
+          setViewport(viewport);
+        }}
+      >
+        {locate.map((device) => (
           <Marker
-            icon={{
-              url: "https://image.flaticon.com/icons/png/512/2794/2794289.png",
-              scaledSize: new window.google.maps.Size(20, 20),
-            }}
-            position={{
-              lat: value["lat"],
-              lng: value["lng"],
-            }}
-            onClick={onMarkerClick}
-          />
-            /* <InfoWindow onCloseClick={onToggleOpen}>
-              <div>
-                <div>nhà trọ cho thuê</div>
-                <div>1.500.000đ</div>
-              </div>
-            </InfoWindow> */
-          // </Marker>
-        );
-      })}
-      {/* <InfoBox options={options}>
-          <>
-            <div
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                borderRadius: "1em",
-                padding: "0.2em",
+            latitude={device.lat}
+            longitude={device.lng}
+          >
+            <button
+              className="marker-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedDevice(device);
               }}
             >
-              someone's house
+              <img
+                width="20"
+                height="20"
+                src="https://cdn-icons-png.flaticon.com/512/2922/2922456.png"
+                alt="Bo trung tam icon"
+              />
+            </button>
+          </Marker>
+        ))}
+
+        {selectedDevice ? (
+          <Popup
+            latitude={selectedDevice.lat}
+            longitude={selectedDevice.lng}
+            onClose={() => {
+              setSelectedDevice(null);
+            }}
+          >
+            <div>
+              <h4>{selectedDevice.devType}</h4>
+              <p>Mã thiết bị: {selectedDevice.devSerial}</p>
+              <p>Tổ chức: {selectedDevice.organization}</p>
             </div>
-          </>
-        </InfoBox> */}
-      {/* </Marker> */}
+          </Popup>
+        ) : null}
+      </ReactMapGL>
     </div>
   );
-};
-
-export default withScriptjs(withGoogleMap(Map));
+}

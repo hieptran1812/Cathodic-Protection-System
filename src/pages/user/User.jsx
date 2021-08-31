@@ -11,27 +11,43 @@ import { useParams } from "react-router-dom";
 import "./user.css";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
-// import SearchBar from "material-ui-search-bar";
+import Alert from "@material-ui/lab/Alert";
+import IconButton from "@material-ui/core/IconButton";
+import Collapse from "@material-ui/core/Collapse";
+import CloseIcon from "@material-ui/icons/Close";
 
 const API = process.env.REACT_APP_API;
 
 export default function User() {
   const [info, setInfo] = useState("");
   const { userId } = useParams();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [open, setOpen] = useState(false);
 
-  // const [searched, setSearched] = useState<string>("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // alert('An essay was submitted: ' + this.state.value);
+    const data = {
+      name,
+      email,
+      phone,
+      address,
+    };
+    console.log(data);
 
-  // const requestSearch = (searchedVal: string) => {
-  //   const filteredRows = originalRows.filter((row) => {
-  //     return row.name.toLowerCase().includes(searchedVal.toLowerCase());
-  //   });
-  //   setRows(filteredRows);
-  // };
-
-  // const cancelSearch = () => {
-  //   setSearched("");
-  //   requestSearch(searched);
-  // };
+    axios
+      .post(`${API}/api/editUser/${userId}`, data)
+      .then((res) => {
+        console.log(res.data);
+        if (res.status === 200) {
+          setOpen(true);
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
     async function fetchAPI() {
@@ -53,6 +69,24 @@ export default function User() {
       <div style={{ display: "flex" }}>
         <Sidebar />
         <div style={{ width: "100%", margin: "20px 40px 20px" }}>
+          <Collapse in={open}>
+            <Alert
+              action={
+                <IconButton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                  onClick={() => {
+                    setOpen(false);
+                  }}
+                >
+                  <CloseIcon fontSize="inherit" />
+                </IconButton>
+              }
+            >
+              Thêm người dùng thành công!
+            </Alert>
+          </Collapse>
           <div className="userTitleContainer">
             <h1 className="userTitle">Thông tin chi tiết</h1>
           </div>
@@ -92,7 +126,7 @@ export default function User() {
             </div>
             <div className="userUpdate">
               <span className="userUpdateTitle">Sửa thông tin</span>
-              <form className="userUpdateForm">
+              <form className="userUpdateForm" onSubmit={handleSubmit}>
                 <div className="userUpdateLeft">
                   <div className="userUpdateItem">
                     <label>Họ và tên</label>
@@ -100,6 +134,7 @@ export default function User() {
                       type="text"
                       placeholder={info.name}
                       className="userUpdateInput"
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div className="userUpdateItem">
@@ -108,6 +143,7 @@ export default function User() {
                       type="text"
                       placeholder={info.email}
                       className="userUpdateInput"
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="userUpdateItem">
@@ -116,6 +152,7 @@ export default function User() {
                       type="text"
                       placeholder={info.phone}
                       className="userUpdateInput"
+                      onChange={(e) => setPhone(e.target.value)}
                     />
                   </div>
                   <div className="userUpdateItem">
@@ -124,6 +161,7 @@ export default function User() {
                       type="text"
                       placeholder={info.address}
                       className="userUpdateInput"
+                      onChange={(e) => setAddress(e.target.value)}
                     />
                   </div>
                 </div>

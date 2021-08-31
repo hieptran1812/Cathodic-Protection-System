@@ -9,6 +9,7 @@ export default function Topbar() {
   function logOut() {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("idCurrentUser");
+    localStorage.removeItem("role");
     history.replace("/");
   }
 

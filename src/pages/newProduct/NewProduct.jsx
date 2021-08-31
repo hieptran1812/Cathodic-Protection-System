@@ -28,6 +28,8 @@ export default function NewProduct() {
   const [date, setDate] = useState("");
   const [dateUpdate, setDateUpdate] = useState("");
   const [area, setArea] = useState("");
+  const [lat, setLat] = useState();
+  const [lng, setLng] = useState("");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
@@ -40,6 +42,8 @@ export default function NewProduct() {
       date,
       area,
       dateUpdate,
+      lat,
+      lng
     };
     console.log(data);
     
@@ -137,16 +141,26 @@ export default function NewProduct() {
                 autoFocus
               />
             </div>
-
-            {/* <div className="addProductItem">
-              <label>Vị trí thiết bị</label>
+            <div className="addProductItem">
+              <label>Vĩ độ *</label>
               <input
-                type="text"
+                type="number"
                 required="required"
-                // onChange={(e) => setId(e.target.value)}
+                onChange={(e) => setLat(e.target.value)}
                 autoFocus
+                step="any"
               />
-            </div> */}
+            </div>
+            <div className="addProductItem">
+              <label>Kinh độ *</label>
+              <input
+                type="number"
+                required="required"
+                onChange={(e) => setLng(e.target.value)}
+                autoFocus
+                step="any"
+              />
+            </div>
             <button className="addProductButton">Thêm mới</button>
           </form>
         </div>
