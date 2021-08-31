@@ -2,7 +2,6 @@ import React from "react";
 import "./topbar.css";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 export default function Topbar() {
   let history = useHistory();

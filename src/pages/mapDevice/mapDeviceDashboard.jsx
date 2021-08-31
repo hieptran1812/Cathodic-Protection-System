@@ -5,11 +5,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
-
-const key = "AIzaSyB_-Yji-hFBCnR4YC964AwLLWjnDcUSVdY";
-
 export default function MapDeviceDashboard() {
- 
 
   return (
     <div className="general">
