@@ -17190,3 +17190,48 @@ KeyError: 'role'
 2021-09-01 00:31:58,578 - INFO - 127.0.0.1 - - [01/Sep/2021 00:31:58] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
 2021-09-01 00:32:10,397 - INFO - 127.0.0.1 - - [01/Sep/2021 00:32:10] "[37mGET /api/users/610fb83d5a596414da3d993e HTTP/1.1[0m" 200 -
 2021-09-01 00:32:18,230 - INFO - 127.0.0.1 - - [01/Sep/2021 00:32:18] "[37mGET /api/users/610fb83d5a596414da3d993e HTTP/1.1[0m" 200 -
+2021-09-01 00:32:22,010 - INFO - 127.0.0.1 - - [01/Sep/2021 00:32:22] "[37mGET /api/users/610fb83d5a596414da3d993e HTTP/1.1[0m" 200 -
+2021-09-01 00:32:29,362 - INFO - 127.0.0.1 - - [01/Sep/2021 00:32:29] "[37mGET /api/user/delete/610fb83d5a596414da3d993e HTTP/1.1[0m" 200 -
+2021-09-01 00:32:29,761 - INFO - start API get users list
+2021-09-01 00:32:29,805 - INFO - 127.0.0.1 - - [01/Sep/2021 00:32:29] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-01 00:32:41,290 - ERROR - Exception on /api/users/610fb83d5a596414da3d993e [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 174, in getUserDetail
+    res['name'] = user['name']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-01 00:32:41,292 - INFO - 127.0.0.1 - - [01/Sep/2021 00:32:41] "[35m[1mGET /api/users/610fb83d5a596414da3d993e HTTP/1.1[0m" 500 -
+2021-09-01 00:32:47,814 - INFO - 127.0.0.1 - - [01/Sep/2021 00:32:47] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-09-01 00:32:47,858 - INFO - 127.0.0.1 - - [01/Sep/2021 00:32:47] "[33mPOST /api/login HTTP/1.1[0m" 404 -
+2021-09-01 00:34:03,753 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:03] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-09-01 00:34:03,797 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:03] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-09-01 00:34:04,188 - INFO - start API get info Dashboard
+2021-09-01 00:34:04,262 - INFO - start API get dashboard list
+2021-09-01 00:34:04,310 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:04] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-09-01 00:34:04,666 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:04] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-09-01 00:34:07,574 - INFO - start API get users list
+2021-09-01 00:34:07,612 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:07] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-01 00:34:11,349 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:11] "[37mGET /api/users/61120177cd36e80d5b625ece HTTP/1.1[0m" 200 -
+2021-09-01 00:34:13,625 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:13] "[37mGET /api/user/delete/61120177cd36e80d5b625ece HTTP/1.1[0m" 200 -
+2021-09-01 00:34:14,033 - INFO - start API get users list
+2021-09-01 00:34:14,078 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:14] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-01 00:34:19,643 - INFO - start API get users list
+2021-09-01 00:34:19,681 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:19] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-01 00:34:22,147 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:22] "[37mGET /api/users/611b26d08244768da480ead2 HTTP/1.1[0m" 200 -
+2021-09-01 00:34:24,020 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:24] "[37mGET /api/user/delete/611b26d08244768da480ead2 HTTP/1.1[0m" 200 -
+2021-09-01 00:34:24,384 - INFO - start API get users list
+2021-09-01 00:34:24,423 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:24] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-01 00:34:31,970 - INFO - 127.0.0.1 - - [01/Sep/2021 00:34:31] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
