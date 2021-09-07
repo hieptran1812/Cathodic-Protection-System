@@ -16,6 +16,7 @@ import TestPostList from "./pages/testPostList/TestPostList";
 import TestPost from "./pages/product/TestPost";
 import NewProduct from "./pages/newProduct/NewProduct";
 import SignInSide from "./pages/signInUp/signIn";
+import LandingPage from "./pages/SaaSProductLandingPage";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
       <div className="container">
         <Switch>
           <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route path="/login">
             <SignInSide />
           </Route>
           <Route
