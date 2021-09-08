@@ -59,8 +59,6 @@ export default function SignInSide() {
       username,
       password,
     };
-    console.log(data);
-
     axios.post(`${API}/api/login`, data)
       .then((res) => {
         const info = res.data;

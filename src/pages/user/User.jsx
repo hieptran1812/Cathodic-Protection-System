@@ -55,7 +55,6 @@ export default function User() {
     axios
       .get(`${API}/api/user/delete/${userId}`)
       .then((res) => {
-        console.log(res.data);
         history.replace("/users");
         return 0;
       })

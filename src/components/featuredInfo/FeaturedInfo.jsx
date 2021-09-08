@@ -12,7 +12,6 @@ export default function FeaturedInfo() {
     axios
       .get(`${API}/api/featureInfo/`)
       .then((res) => {
-        console.log(res);
         const data = res.data;
         setInfo(data);
       })

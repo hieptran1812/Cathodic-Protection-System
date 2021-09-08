@@ -23,7 +23,6 @@ export default function NewUser() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // alert('An essay was submitted: ' + this.state.value);
     const data = {
       name,
       username,
@@ -34,12 +33,9 @@ export default function NewUser() {
       organization,
       role,
     };
-    console.log(data);
-
     axios
       .post(`${API}/api/addUser`, data)
       .then((res) => {
-        console.log(res.data);
         if (res.status === 200) {
           setOpen(true);
         }

@@ -14,7 +14,6 @@ export default function Topbar() {
 
   function profileUser() {
     const currentUser = localStorage.getItem("idCurrentUser");
-    console.log(currentUser);
     history.replace("/user/" + currentUser);
   }
 

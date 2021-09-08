@@ -45,11 +45,8 @@ export default function NewProduct() {
       lat,
       lng
     };
-    console.log(data);
-    
     axios.post(`${API}/api/newProduct`, data)
       .then(res => {
-        console.log(res.data)
         if(res.status === 200){
           setOpen(true)
         }
