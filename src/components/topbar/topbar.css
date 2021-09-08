@@ -47,7 +47,7 @@
   position: absolute;
   top: -5px;
   right: 0px;
-  background-color: red;
+  background-color: rgb(86, 75, 245);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -61,4 +61,8 @@
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.logo{
+  color: rgb(114, 105, 231);
 }

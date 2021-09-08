@@ -12,3 +12,6 @@
 2021-09-07 23:52:13,073 - INFO - start API get dashboard list
 2021-09-07 23:52:13,135 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:13] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
 2021-09-07 23:52:13,443 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:13] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-09-08 20:20:05,158 - INFO - Start API
+2021-09-08 20:20:05,211 - INFO - Flask started
+2021-09-08 20:20:06,241 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)

@@ -20,7 +20,7 @@
 }
 
 .sidebarTitle {
-  font-size: 15px;
+  font-size: 22px;
   color: rgb(187, 186, 186);
 }
 
@@ -45,4 +45,8 @@ a {
 .sidebarIcon {
   margin-right: 5px;
   font-size: 20px !important;
+}
+
+.link{
+  font-size: 18px;
 }

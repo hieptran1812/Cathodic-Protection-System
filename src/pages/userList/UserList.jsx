@@ -5,6 +5,7 @@ import axios from "axios";
 import { React, useState, useEffect } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+import Button from "@material-ui/core/Button";
 
 const API = process.env.REACT_APP_API;
 
@@ -72,7 +73,6 @@ export default function UserList() {
     }
     fetchAPI();
   }, []);
-  
 
   return (
     <div className="userList">
@@ -80,9 +80,9 @@ export default function UserList() {
       <div style={{ display: "flex" }}>
         <Sidebar />
         <div style={{ width: "100%" }}>
-          <Link to="/newuser">
-            <button className="productAddButton">Thêm người dùng</button>
-          </Link>
+          <Button variant="contained" href="/newuser" style={{ margin: "40px" }}>
+            <b>Thêm người dùng</b>
+          </Button>
           <DataGrid
             rows={userInfo}
             disableSelectionOnClick
