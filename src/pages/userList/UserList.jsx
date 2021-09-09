@@ -13,7 +13,7 @@ const columns = [
   {
     field: "name",
     headerName: "Tên người dùng",
-    width: 200,
+    width: 230,
     renderCell: (params) => {
       return <div className="userListUser">{params.row.name}</div>;
     },
@@ -21,23 +21,17 @@ const columns = [
   {
     field: "role",
     headerName: "Vai trò",
-    width: 120,
+    width: 200,
   },
-  { field: "email", headerName: "Email", width: 200 },
   {
     field: "phone",
     headerName: "Số điện thoại",
     width: 180,
   },
   {
-    field: "address",
-    headerName: "Địa chỉ",
-    width: 220,
-  },
-  {
     field: "organization",
     headerName: "Tổ chức",
-    width: 200,
+    width: 220,
   },
   {
     field: "action",
@@ -80,7 +74,11 @@ export default function UserList() {
       <div style={{ display: "flex" }}>
         <Sidebar />
         <div style={{ width: "100%" }}>
-          <Button variant="contained" href="/newuser" style={{ margin: "40px" }}>
+          <Button
+            variant="contained"
+            href="/newuser"
+            style={{ margin: "40px" }}
+          >
             <b>Thêm người dùng</b>
           </Button>
           <DataGrid

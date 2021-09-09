@@ -16,6 +16,9 @@ export default function MapDeviceDashboard() {
           <div className="title">
             <h1 className="productTitle">Bản đồ thiết bị</h1>
           </div>
+          <div className="note">
+            <p>Bản đồ hiển thị vị trí các thiết bị. Click vào một biểu tượng để xem thông tin chi tiết.</p>
+          </div>
           {/* <Autocomplete
             className="search"
             id="search-combo-box"
@@ -34,7 +37,7 @@ export default function MapDeviceDashboard() {
               <TextField {...params} label="Mã thiết bị" variant="outlined" />
             )}
           /> */}
-          <Map/>
+          <Map />
         </div>
       </div>
     </div>

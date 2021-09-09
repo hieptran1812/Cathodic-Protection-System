@@ -201,6 +201,7 @@ export default function User() {
                       placeholder={info.name}
                       className="userUpdateInput"
                       onChange={(e) => setName(e.target.value)}
+                      value={info.name}
                     />
                   </div>
                   <div className="userUpdateItem">

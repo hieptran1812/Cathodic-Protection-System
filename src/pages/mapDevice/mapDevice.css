@@ -16,9 +16,14 @@
 
 .title {
     padding: 20px;
+    padding-bottom: 10px;
     margin-left: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.note {
+    margin-left: 40px;
 }
 
