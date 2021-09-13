@@ -213,10 +213,10 @@ export default function User() {
                     <label>Email</label>
                     <input
                       type="text"
-                      placeholder={info.email}
+                      placeholder={email}
                       className="userUpdateInput"
                       onChange={(e) => setEmail(e.target.value)}
-                      value={info.email}
+                      value={email}
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                       title="Nhập địa chỉ email hợp lệ"
                     />
@@ -225,7 +225,7 @@ export default function User() {
                     <label>Số điện thoại</label>
                     <input
                       type="text"
-                      placeholder={info.phone}
+                      placeholder={phone}
                       className="userUpdateInput"
                       onChange={(e) => setPhone(e.target.value)}
                       value={phone}
@@ -237,7 +237,7 @@ export default function User() {
                     <label>Địa chỉ</label>
                     <input
                       type="text"
-                      placeholder={info.address}
+                      placeholder={address}
                       className="userUpdateInput"
                       onChange={(e) => setAddress(e.target.value)}
                       value={address}
