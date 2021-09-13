@@ -67,7 +67,9 @@ export default function NewUser() {
               Thêm người dùng thành công!
             </Alert>
           </Collapse>
-          <h1 className="newUserTitle" style= {{margin: "20px 0px 0px 0px"}}>Tạo người dùng mới</h1>
+          <h1 className="newUserTitle" style={{ margin: "20px 0px 0px 0px" }}>
+            Tạo người dùng mới
+          </h1>
           <form className="newUserForm" onSubmit={handleSubmit}>
             <div className="newUserItem">
               <label>Tên tài khoản</label>
@@ -105,6 +107,7 @@ export default function NewUser() {
                 placeholder="abc@gmail.com"
                 onChange={(e) => setEmail(e.target.value)}
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Nhập địa chỉ email hợp lệ"
               />
             </div>
             <div className="newUserItem">
@@ -121,6 +124,7 @@ export default function NewUser() {
                 name="phone"
                 type="text"
                 onChange={(e) => setPhone(e.target.value)}
+                pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"
               />
             </div>
             <div className="newUserItem">

@@ -2,8 +2,8 @@ import Map from "../../components/googleMap/mapDevice";
 import "./mapDevice.css";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
-import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+// import TextField from "@material-ui/core/TextField";
+// import Autocomplete from "@material-ui/lab/Autocomplete";
 
 export default function MapDeviceDashboard() {
 

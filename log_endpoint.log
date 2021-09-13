@@ -1,61 +1,579 @@
-2021-09-07 23:52:03,486 - INFO - Start API
-2021-09-07 23:52:03,493 - INFO - Flask started
-2021-09-07 23:52:04,486 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-2021-09-07 23:52:07,474 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:07] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
-2021-09-07 23:52:07,735 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:07] "[37mPOST /api/login HTTP/1.1[0m" 200 -
-2021-09-07 23:52:07,857 - INFO - start API get info Dashboard
-2021-09-07 23:52:07,876 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:07] "[32mGET /api/dashboardList HTTP/1.1[0m" 308 -
-2021-09-07 23:52:07,975 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:07] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
-2021-09-07 23:52:08,384 - INFO - start API get dashboard list
-2021-09-07 23:52:08,508 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:08] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
-2021-09-07 23:52:13,013 - INFO - start API get info Dashboard
-2021-09-07 23:52:13,073 - INFO - start API get dashboard list
-2021-09-07 23:52:13,135 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:13] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
-2021-09-07 23:52:13,443 - INFO - 127.0.0.1 - - [07/Sep/2021 23:52:13] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
-2021-09-08 20:20:05,158 - INFO - Start API
-2021-09-08 20:20:05,211 - INFO - Flask started
-2021-09-08 20:20:06,241 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-2021-09-09 16:41:08,831 - INFO - Start API
-2021-09-09 16:41:08,865 - INFO - Flask started
-2021-09-09 16:41:09,812 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-2021-09-09 16:43:40,069 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:40] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
-2021-09-09 16:43:40,386 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:40] "[37mPOST /api/login HTTP/1.1[0m" 200 -
-2021-09-09 16:43:40,463 - INFO - start API get info Dashboard
-2021-09-09 16:43:40,472 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:40] "[32mGET /api/dashboardList HTTP/1.1[0m" 308 -
-2021-09-09 16:43:40,577 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:40] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
-2021-09-09 16:43:40,754 - INFO - start API get dashboard list
-2021-09-09 16:43:40,873 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:40] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
-2021-09-09 16:43:42,271 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:42] "[32mGET /api/rectifierTransformerList HTTP/1.1[0m" 308 -
-2021-09-09 16:43:42,403 - INFO - start API get Rectifier Transformers list
-2021-09-09 16:43:42,521 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:42] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
-2021-09-09 16:43:43,291 - INFO - start API get users list
-2021-09-09 16:43:43,331 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:43] "[37mGET /api/users HTTP/1.1[0m" 200 -
-2021-09-09 16:43:48,249 - INFO - start API get users list
-2021-09-09 16:43:48,288 - INFO - 127.0.0.1 - - [09/Sep/2021 16:43:48] "[37mGET /api/users HTTP/1.1[0m" 200 -
-2021-09-09 17:43:02,327 - INFO - start API get users list
-2021-09-09 17:43:02,623 - INFO - 127.0.0.1 - - [09/Sep/2021 17:43:02] "[37mGET /api/users HTTP/1.1[0m" 200 -
-2021-09-09 17:43:14,420 - INFO - start API get users list
-2021-09-09 17:43:14,460 - INFO - 127.0.0.1 - - [09/Sep/2021 17:43:14] "[37mGET /api/users HTTP/1.1[0m" 200 -
-2021-09-09 17:43:33,657 - INFO - start API get users list
-2021-09-09 17:43:33,697 - INFO - 127.0.0.1 - - [09/Sep/2021 17:43:33] "[37mGET /api/users HTTP/1.1[0m" 200 -
-2021-09-09 17:48:05,532 - INFO - start API get Rectifier Transformers list
-2021-09-09 17:48:05,652 - INFO - 127.0.0.1 - - [09/Sep/2021 17:48:05] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
-2021-09-09 17:48:06,202 - INFO - start API get Test Posts list
-2021-09-09 17:48:06,243 - INFO - 127.0.0.1 - - [09/Sep/2021 17:48:06] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
-2021-09-09 17:48:10,255 - INFO - start API get Test Posts list
-2021-09-09 17:48:10,296 - INFO - 127.0.0.1 - - [09/Sep/2021 17:48:10] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
-2021-09-09 17:48:15,034 - INFO - start API get info Dashboard
-2021-09-09 17:48:15,151 - INFO - 127.0.0.1 - - [09/Sep/2021 17:48:15] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
-2021-09-09 17:48:15,230 - INFO - start API get dashboard list
-2021-09-09 17:48:15,348 - INFO - 127.0.0.1 - - [09/Sep/2021 17:48:15] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
-2021-09-09 17:49:26,802 - INFO - start API get location all devices
-2021-09-09 17:49:26,958 - INFO - 127.0.0.1 - - [09/Sep/2021 17:49:26] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
-2021-09-09 17:49:30,462 - INFO - start API get info Dashboard
-2021-09-09 17:49:30,582 - INFO - 127.0.0.1 - - [09/Sep/2021 17:49:30] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
-2021-09-09 17:49:30,657 - INFO - start API get dashboard list
-2021-09-09 17:49:30,778 - INFO - 127.0.0.1 - - [09/Sep/2021 17:49:30] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
-2021-09-09 17:49:36,575 - INFO - start API get Test Posts list
-2021-09-09 17:49:36,615 - INFO - 127.0.0.1 - - [09/Sep/2021 17:49:36] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
-2021-09-09 17:49:40,844 - INFO - start API get Test Posts list
-2021-09-09 17:49:40,885 - INFO - 127.0.0.1 - - [09/Sep/2021 17:49:40] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
-2021-09-09 17:49:41,298 - INFO - 127.0.0.1 - - [09/Sep/2021 17:49:41] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 15:43:34,152 - INFO - 127.0.0.1 - - [13/Sep/2021 15:43:34] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:43:36,806 - INFO - 127.0.0.1 - - [13/Sep/2021 15:43:36] "[37mOPTIONS /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:43:36,858 - INFO - 127.0.0.1 - - [13/Sep/2021 15:43:36] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:43:40,771 - INFO - 127.0.0.1 - - [13/Sep/2021 15:43:40] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:45:31,362 - INFO - 127.0.0.1 - - [13/Sep/2021 15:45:31] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:45:41,172 - INFO - 127.0.0.1 - - [13/Sep/2021 15:45:41] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:45:45,005 - INFO - 127.0.0.1 - - [13/Sep/2021 15:45:45] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:45:48,999 - INFO - 127.0.0.1 - - [13/Sep/2021 15:45:48] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:45:52,919 - INFO - 127.0.0.1 - - [13/Sep/2021 15:45:52] "[37mOPTIONS /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:45:52,991 - INFO - 127.0.0.1 - - [13/Sep/2021 15:45:52] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:45:58,496 - INFO - 127.0.0.1 - - [13/Sep/2021 15:45:58] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:46:39,721 - INFO - 127.0.0.1 - - [13/Sep/2021 15:46:39] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:46:41,355 - INFO - 127.0.0.1 - - [13/Sep/2021 15:46:41] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:46:52,755 - INFO - 127.0.0.1 - - [13/Sep/2021 15:46:52] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:47:04,343 - INFO - 127.0.0.1 - - [13/Sep/2021 15:47:04] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:33,376 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:33] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:35,349 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:35] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:39,726 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:39] "[37mOPTIONS /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:39,772 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:39] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:45,730 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:45] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:50,400 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:50] "[37mOPTIONS /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:50,446 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:50] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:55,322 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:55] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:52:59,615 - INFO - 127.0.0.1 - - [13/Sep/2021 15:52:59] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:56:49,353 - INFO - 127.0.0.1 - - [13/Sep/2021 15:56:49] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:57:08,336 - INFO - 127.0.0.1 - - [13/Sep/2021 15:57:08] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:57:38,209 - INFO - 127.0.0.1 - - [13/Sep/2021 15:57:38] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:57:39,107 - INFO - 127.0.0.1 - - [13/Sep/2021 15:57:39] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:57:46,542 - INFO - 127.0.0.1 - - [13/Sep/2021 15:57:46] "[37mOPTIONS /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:57:46,594 - INFO - 127.0.0.1 - - [13/Sep/2021 15:57:46] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:57:51,333 - INFO - 127.0.0.1 - - [13/Sep/2021 15:57:51] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:57:58,869 - INFO - 127.0.0.1 - - [13/Sep/2021 15:57:58] "[37mOPTIONS /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:57:58,915 - INFO - 127.0.0.1 - - [13/Sep/2021 15:57:58] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:58:03,473 - INFO - 127.0.0.1 - - [13/Sep/2021 15:58:03] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:58:59,370 - INFO - 127.0.0.1 - - [13/Sep/2021 15:58:59] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:59:30,115 - INFO - 127.0.0.1 - - [13/Sep/2021 15:59:30] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 15:59:54,064 - INFO - 127.0.0.1 - - [13/Sep/2021 15:59:54] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 16:00:01,895 - INFO - 127.0.0.1 - - [13/Sep/2021 16:00:01] "[37mOPTIONS /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 16:00:01,944 - INFO - 127.0.0.1 - - [13/Sep/2021 16:00:01] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 16:00:09,944 - INFO - 127.0.0.1 - - [13/Sep/2021 16:00:09] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 16:01:25,372 - INFO - 127.0.0.1 - - [13/Sep/2021 16:01:25] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 16:01:29,297 - INFO - 127.0.0.1 - - [13/Sep/2021 16:01:29] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 16:01:33,108 - INFO - 127.0.0.1 - - [13/Sep/2021 16:01:33] "[37mOPTIONS /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 16:01:33,162 - INFO - 127.0.0.1 - - [13/Sep/2021 16:01:33] "[37mPOST /api/editUser/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 16:01:47,266 - INFO - 127.0.0.1 - - [13/Sep/2021 16:01:47] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 17:00:45,936 - INFO - 127.0.0.1 - - [13/Sep/2021 17:00:45] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 17:00:48,434 - INFO - 127.0.0.1 - - [13/Sep/2021 17:00:48] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 17:01:13,364 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:13] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 17:01:14,331 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:14] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 17:01:19,157 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:19] "[37mGET /api/users/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 17:01:25,102 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:25] "[37mGET /api/user/delete/613f0b270541801343927e57 HTTP/1.1[0m" 200 -
+2021-09-13 17:01:25,187 - INFO - start API get users list
+2021-09-13 17:01:25,249 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:25] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 17:01:32,399 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:32] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 17:01:51,974 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:51] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 17:01:52,033 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:52] "[37mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 17:01:54,448 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:54] "[32mGET /api/rectifierTransformerList HTTP/1.1[0m" 308 -
+2021-09-13 17:01:54,594 - INFO - start API get Rectifier Transformers list
+2021-09-13 17:01:55,201 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:55] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-13 17:01:56,552 - INFO - start API get users list
+2021-09-13 17:01:56,595 - INFO - 127.0.0.1 - - [13/Sep/2021 17:01:56] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 17:02:00,243 - INFO - start API get users list
+2021-09-13 17:02:00,284 - INFO - 127.0.0.1 - - [13/Sep/2021 17:02:00] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 17:02:02,571 - INFO - 127.0.0.1 - - [13/Sep/2021 17:02:02] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 17:02:37,054 - INFO - 127.0.0.1 - - [13/Sep/2021 17:02:37] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 17:02:37,104 - INFO - 127.0.0.1 - - [13/Sep/2021 17:02:37] "[37mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 17:02:39,782 - INFO - 127.0.0.1 - - [13/Sep/2021 17:02:39] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:16:18,855 - INFO - 127.0.0.1 - - [13/Sep/2021 18:16:18] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:16:21,364 - INFO - 127.0.0.1 - - [13/Sep/2021 18:16:21] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:16:26,332 - INFO - 127.0.0.1 - - [13/Sep/2021 18:16:26] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:16:45,646 - INFO - 127.0.0.1 - - [13/Sep/2021 18:16:45] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:16:45,691 - INFO - 127.0.0.1 - - [13/Sep/2021 18:16:45] "[37mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:16:48,653 - INFO - 127.0.0.1 - - [13/Sep/2021 18:16:48] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:17:34,959 - INFO - 127.0.0.1 - - [13/Sep/2021 18:17:34] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:17:35,004 - INFO - 127.0.0.1 - - [13/Sep/2021 18:17:35] "[37mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:17:37,439 - INFO - 127.0.0.1 - - [13/Sep/2021 18:17:37] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:17:43,413 - INFO - 127.0.0.1 - - [13/Sep/2021 18:17:43] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:17:43,461 - INFO - 127.0.0.1 - - [13/Sep/2021 18:17:43] "[37mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:17:45,672 - INFO - 127.0.0.1 - - [13/Sep/2021 18:17:45] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:17:57,382 - INFO - 127.0.0.1 - - [13/Sep/2021 18:17:57] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:18:02,511 - INFO - 127.0.0.1 - - [13/Sep/2021 18:18:02] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:18:02,558 - INFO - 127.0.0.1 - - [13/Sep/2021 18:18:02] "[37mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 18:18:05,661 - INFO - 127.0.0.1 - - [13/Sep/2021 18:18:05] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-09-13 19:40:13,208 - INFO - start API get info Dashboard
+2021-09-13 19:40:13,213 - INFO - 127.0.0.1 - - [13/Sep/2021 19:40:13] "[32mGET /api/dashboardList HTTP/1.1[0m" 308 -
+2021-09-13 19:40:13,513 - INFO - start API get dashboard list
+2021-09-13 19:40:13,838 - INFO - 127.0.0.1 - - [13/Sep/2021 19:40:13] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-09-13 19:40:14,140 - INFO - 127.0.0.1 - - [13/Sep/2021 19:40:14] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-09-13 19:49:47,492 - INFO - start API get location all devices
+2021-09-13 19:49:47,679 - INFO - 127.0.0.1 - - [13/Sep/2021 19:49:47] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-09-13 19:50:15,250 - INFO - start API get users list
+2021-09-13 19:50:15,318 - INFO - 127.0.0.1 - - [13/Sep/2021 19:50:15] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 19:51:20,204 - INFO - start API get users list
+2021-09-13 19:51:20,272 - INFO - 127.0.0.1 - - [13/Sep/2021 19:51:20] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 19:51:34,392 - INFO - start API get info Dashboard
+2021-09-13 19:51:34,557 - INFO - 127.0.0.1 - - [13/Sep/2021 19:51:34] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-09-13 19:51:34,735 - INFO - start API get dashboard list
+2021-09-13 19:51:34,887 - INFO - 127.0.0.1 - - [13/Sep/2021 19:51:34] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-09-13 19:58:34,073 - INFO - start API get location all devices
+2021-09-13 19:58:34,204 - INFO - 127.0.0.1 - - [13/Sep/2021 19:58:34] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-09-13 20:07:41,594 - INFO - start API get users list
+2021-09-13 20:07:41,680 - INFO - 127.0.0.1 - - [13/Sep/2021 20:07:41] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 23:14:49,740 - INFO - start API get users list
+2021-09-13 23:14:49,852 - INFO - 127.0.0.1 - - [13/Sep/2021 23:14:49] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 23:15:06,125 - INFO - 127.0.0.1 - - [13/Sep/2021 23:15:06] "[37mGET /api/users/610fb9b45a596414da3d993f HTTP/1.1[0m" 200 -
+2021-09-13 23:30:01,918 - INFO - start API get users list
+2021-09-13 23:30:01,985 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:01] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 23:30:03,854 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:03] "[37mGET /api/users/6111eeb2d64b6b02be983106 HTTP/1.1[0m" 200 -
+2021-09-13 23:30:06,066 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:06] "[32mGET /api/rectifierTransformerList HTTP/1.1[0m" 308 -
+2021-09-13 23:30:06,090 - INFO - start API get Rectifier Transformers list
+2021-09-13 23:30:06,632 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:06] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-13 23:30:07,620 - INFO - start API get users list
+2021-09-13 23:30:07,664 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:07] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 23:30:08,633 - INFO - start API get Rectifier Transformers list
+2021-09-13 23:30:08,780 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:08] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-13 23:30:11,879 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:11] "[37mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 200 -
+2021-09-13 23:30:12,953 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:12] "[37mGET /api/rectifierTransformer/delete/1 HTTP/1.1[0m" 200 -
+2021-09-13 23:30:13,146 - INFO - start API get Rectifier Transformers list
+2021-09-13 23:30:13,298 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:13] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-13 23:30:13,731 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:13,941 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:13] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:15,699 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:15,714 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:15] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:17,689 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:17,690 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:17] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:18,838 - INFO - start API get users list
+2021-09-13 23:30:18,883 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:18] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 23:30:19,688 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:19,689 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:19] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:21,702 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:21,723 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:21] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:23,701 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:23,702 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:23] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:25,695 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:25,696 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:25] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:27,692 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:27,693 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:27] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:29,695 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:29,696 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:29] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:31,693 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:31,694 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:31] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:33,689 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:33,690 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:33] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:35,698 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:35,698 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:35] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:37,689 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:37,689 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:37] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:39,690 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:39,691 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:39] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:41,694 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:41,695 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:41] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:43,697 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:43,697 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:43] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:45,705 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:45,707 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:45] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:47,688 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:47,689 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:47] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:49,696 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:49,697 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:49] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:51,689 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:51,690 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:51] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:53,697 - ERROR - Exception on /api/rectifierTransformer/table/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 331, in getRectifierTransformerDetailTable
+    result = deviceInfo['otherInfo']
+TypeError: 'NoneType' object is not subscriptable
+2021-09-13 23:30:53,698 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:53] "[35m[1mGET /api/rectifierTransformer/table/1 HTTP/1.1[0m" 500 -
+2021-09-13 23:30:58,111 - INFO - start API get users list
+2021-09-13 23:30:58,156 - INFO - 127.0.0.1 - - [13/Sep/2021 23:30:58] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 23:31:20,541 - INFO - 127.0.0.1 - - [13/Sep/2021 23:31:20] "[37mOPTIONS /api/addUser HTTP/1.1[0m" 200 -
+2021-09-13 23:31:20,582 - INFO - start API add new user
+2021-09-13 23:31:20,921 - INFO - 127.0.0.1 - - [13/Sep/2021 23:31:20] "[37mPOST /api/addUser HTTP/1.1[0m" 200 -
+2021-09-13 23:31:24,600 - INFO - start API get users list
+2021-09-13 23:31:24,676 - INFO - 127.0.0.1 - - [13/Sep/2021 23:31:24] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 23:31:28,169 - INFO - 127.0.0.1 - - [13/Sep/2021 23:31:28] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:31:29,714 - INFO - 127.0.0.1 - - [13/Sep/2021 23:31:29] "[37mOPTIONS /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:31:29,886 - INFO - 127.0.0.1 - - [13/Sep/2021 23:31:29] "[37mPOST /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:31:32,960 - INFO - 127.0.0.1 - - [13/Sep/2021 23:31:32] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:35:37,864 - INFO - start API get users list
+2021-09-13 23:35:37,943 - INFO - 127.0.0.1 - - [13/Sep/2021 23:35:37] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-13 23:35:39,848 - INFO - 127.0.0.1 - - [13/Sep/2021 23:35:39] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:36:43,622 - INFO - 127.0.0.1 - - [13/Sep/2021 23:36:43] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:36,546 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:36] "[37mOPTIONS /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:36,628 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:36] "[37mPOST /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:39,887 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:39] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:43,138 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:43] "[37mOPTIONS /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:43,187 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:43] "[37mPOST /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:45,108 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:45] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:52,394 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:52] "[37mOPTIONS /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:52,486 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:52] "[37mPOST /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:54,753 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:54] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:59,137 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:59] "[37mOPTIONS /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:39:59,185 - INFO - 127.0.0.1 - - [13/Sep/2021 23:39:59] "[37mPOST /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:41:48,334 - INFO - 127.0.0.1 - - [13/Sep/2021 23:41:48] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:42:33,782 - INFO - 127.0.0.1 - - [13/Sep/2021 23:42:33] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:44:14,707 - INFO - 127.0.0.1 - - [13/Sep/2021 23:44:14] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:44:27,526 - INFO - 127.0.0.1 - - [13/Sep/2021 23:44:27] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:44:30,082 - INFO - 127.0.0.1 - - [13/Sep/2021 23:44:30] "[37mOPTIONS /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:44:30,129 - INFO - 127.0.0.1 - - [13/Sep/2021 23:44:30] "[37mPOST /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:44:32,263 - INFO - 127.0.0.1 - - [13/Sep/2021 23:44:32] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:47:37,647 - INFO - 127.0.0.1 - - [13/Sep/2021 23:47:37] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:47:40,341 - INFO - 127.0.0.1 - - [13/Sep/2021 23:47:40] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:47:50,348 - INFO - 127.0.0.1 - - [13/Sep/2021 23:47:50] "[37mOPTIONS /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:47:50,396 - INFO - 127.0.0.1 - - [13/Sep/2021 23:47:50] "[37mPOST /api/editUser/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-13 23:47:53,747 - INFO - 127.0.0.1 - - [13/Sep/2021 23:47:53] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -

@@ -63,7 +63,6 @@ export default function User() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    // alert('An essay was submitted: ' + this.state.value);
     const data = {
       name,
       email,
@@ -90,7 +89,11 @@ export default function User() {
         .then((res) => {
           const data = res.data;
           setInfo(data);
-          console.log(data);
+          setName(data.name);
+          setEmail(data.email);
+          setAddress(data.address);
+          setPhone(data.phone);
+          // console.log(data);
         })
         .catch((error) => console.log(error));
     }
@@ -118,7 +121,7 @@ export default function User() {
                 </IconButton>
               }
             >
-              Thêm người dùng thành công!
+              Cập nhật thông tin người dùng thành công!
             </Alert>
           </Collapse>
           <div className="userTitleContainer">
@@ -198,10 +201,12 @@ export default function User() {
                     <label>Họ và tên</label>
                     <input
                       type="text"
-                      placeholder={info.name}
+                      // placeholder={info.name}
                       className="userUpdateInput"
+                      value={name}
                       onChange={(e) => setName(e.target.value)}
-                      value={info.name}
+                      required
+                      title="Nhập họ và tên"
                     />
                   </div>
                   <div className="userUpdateItem">
@@ -211,6 +216,9 @@ export default function User() {
                       placeholder={info.email}
                       className="userUpdateInput"
                       onChange={(e) => setEmail(e.target.value)}
+                      value={info.email}
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                      title="Nhập địa chỉ email hợp lệ"
                     />
                   </div>
                   <div className="userUpdateItem">
@@ -220,6 +228,9 @@ export default function User() {
                       placeholder={info.phone}
                       className="userUpdateInput"
                       onChange={(e) => setPhone(e.target.value)}
+                      value={phone}
+                      pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"
+                      title="Nhập số điện thoại hợp lệ"
                     />
                   </div>
                   <div className="userUpdateItem">
@@ -229,6 +240,7 @@ export default function User() {
                       placeholder={info.address}
                       className="userUpdateInput"
                       onChange={(e) => setAddress(e.target.value)}
+                      value={address}
                     />
                   </div>
                 </div>
