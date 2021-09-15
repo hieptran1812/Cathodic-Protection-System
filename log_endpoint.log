@@ -2028,3 +2028,225 @@ TypeError: 'NoneType' object is not subscriptable
 2021-09-14 00:00:24,328 - INFO - 127.0.0.1 - - [14/Sep/2021 00:00:24] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
 2021-09-14 00:00:27,555 - INFO - 127.0.0.1 - - [14/Sep/2021 00:00:27] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
 2021-09-14 00:05:26,423 - INFO - 127.0.0.1 - - [14/Sep/2021 00:05:26] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-14 00:05:45,566 - INFO - 127.0.0.1 - - [14/Sep/2021 00:05:45] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-14 00:05:47,343 - INFO - 127.0.0.1 - - [14/Sep/2021 00:05:47] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-14 00:05:53,338 - INFO - 127.0.0.1 - - [14/Sep/2021 00:05:53] "[37mGET /api/users/613f7cd80541801343927e58 HTTP/1.1[0m" 200 -
+2021-09-15 13:37:07,443 - INFO - Start API
+2021-09-15 13:37:07,530 - INFO - Flask started
+2021-09-15 13:37:08,429 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-15 13:40:08,891 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:08] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-09-15 13:40:09,225 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:09] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-09-15 13:40:09,316 - INFO - start API get info Dashboard
+2021-09-15 13:40:09,322 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:09] "[32mGET /api/dashboardList HTTP/1.1[0m" 308 -
+2021-09-15 13:40:09,444 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:09] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-09-15 13:40:09,602 - INFO - start API get dashboard list
+2021-09-15 13:40:09,696 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:09] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:40:15,442 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:15] "[32mGET /api/rectifierTransformerList HTTP/1.1[0m" 308 -
+2021-09-15 13:40:15,595 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:40:15,715 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:15] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:40:42,014 - INFO - start API get info Dashboard
+2021-09-15 13:40:42,061 - INFO - start API get dashboard list
+2021-09-15 13:40:42,137 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:42] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-09-15 13:40:42,454 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:42] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:40:43,749 - INFO - start API get users list
+2021-09-15 13:40:43,789 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:43] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-09-15 13:40:45,361 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:40:45,481 - INFO - 127.0.0.1 - - [15/Sep/2021 13:40:45] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:41:04,304 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:04] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:06,313 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:06] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:08,300 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:08] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:10,309 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:10] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:12,308 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:12] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:14,308 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:14] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:16,299 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:16] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:18,311 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:18] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:20,550 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:20] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:22,307 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:22] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:24,558 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:24] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:26,557 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:26] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:28,549 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:28] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:30,554 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:30] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:32,552 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:32] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:34,546 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:34] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,087 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,196 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,279 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,303 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,325 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,361 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,381 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,581 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:52,582 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:52] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:53,291 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:53] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:41:53,950 - INFO - 127.0.0.1 - - [15/Sep/2021 13:41:53] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:14,827 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:14] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:15,070 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:15,236 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:15,279 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:15,320 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:15,321 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:15,322 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:15,322 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:15,892 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:16,663 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:16] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:17,661 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:17] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:19,667 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:19] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:21,659 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:21] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:23,664 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:23] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:25,655 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:25] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:27,657 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:27] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:29,657 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:29] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:31,656 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:31] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:33,670 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:33] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:35,663 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:35] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:37,662 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:37] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:39,665 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:39] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:42:41,670 - INFO - 127.0.0.1 - - [15/Sep/2021 13:42:41] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,603 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,648 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,690 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,733 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,776 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,818 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,863 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,919 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:03,967 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:03] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:04,010 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:04] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:04,766 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:04] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:05,943 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:05] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:06,547 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:06] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:07,558 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:07] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:08,561 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:08] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:09,828 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:09] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:09,877 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:09] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:11,559 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:11] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:12,565 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:12] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:13,549 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:13] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:14,557 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:14] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:15,544 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:15] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:16,552 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:16] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:17,553 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:17] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:17,833 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:17] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:18,636 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:18] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:19,728 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:19] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:20,448 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:43:20,576 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:20] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:43:20,630 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:20] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:21,658 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:21] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:22,630 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:22] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:23,672 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:23] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:24,623 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:24] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:25,666 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:25] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:26,625 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:26] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:27,660 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:27] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:28,633 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:28] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:29,668 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:29] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:30,636 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:30] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:31,663 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:31] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:32,627 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:32] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:33,662 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:33] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:34,630 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:34] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:35,680 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:35] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:36,637 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:36] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:37,668 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:37] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:38,627 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:38] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:39,659 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:39] "[37mGET /api/rectifierTransformer/table/60821 HTTP/1.1[0m" 200 -
+2021-09-15 13:43:41,759 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:43:41,886 - INFO - 127.0.0.1 - - [15/Sep/2021 13:43:41] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:45:35,672 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:45:35,796 - INFO - 127.0.0.1 - - [15/Sep/2021 13:45:35] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:45:42,898 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:45:43,023 - INFO - 127.0.0.1 - - [15/Sep/2021 13:45:43] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:45:47,789 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:45:47,913 - INFO - 127.0.0.1 - - [15/Sep/2021 13:45:47] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:46:25,682 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:46:25,820 - INFO - 127.0.0.1 - - [15/Sep/2021 13:46:25] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:46:44,303 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:46:44,439 - INFO - 127.0.0.1 - - [15/Sep/2021 13:46:44] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:46:53,022 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:46:53,145 - INFO - 127.0.0.1 - - [15/Sep/2021 13:46:53] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:47:06,855 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:47:06,989 - INFO - 127.0.0.1 - - [15/Sep/2021 13:47:06] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:47:29,365 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:47:29,485 - INFO - 127.0.0.1 - - [15/Sep/2021 13:47:29] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:48:35,974 - INFO - Start API
+2021-09-15 13:48:35,977 - INFO - Flask started
+2021-09-15 13:48:36,983 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-15 13:48:45,459 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:48:45,459 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 301, in getRectifier
+    print(currentUser['role'])
+KeyError: 'role'
+2021-09-15 13:48:45,463 - INFO - 127.0.0.1 - - [15/Sep/2021 13:48:45] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-09-15 13:49:47,057 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:49:47,058 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 301, in getRectifier
+    print(currentUser['role'])
+KeyError: 'role'
+2021-09-15 13:49:47,058 - INFO - 127.0.0.1 - - [15/Sep/2021 13:49:47] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-09-15 13:51:44,875 - INFO - Start API
+2021-09-15 13:51:44,878 - INFO - Flask started
+2021-09-15 13:51:45,826 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-15 13:52:11,071 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:52:11,071 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 301, in getRectifier
+    print(currentUser['role'])
+KeyError: 'role'
+2021-09-15 13:52:11,091 - INFO - 127.0.0.1 - - [15/Sep/2021 13:52:11] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-09-15 13:52:20,634 - INFO - 127.0.0.1 - - [15/Sep/2021 13:52:20] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-09-15 13:52:20,912 - INFO - 127.0.0.1 - - [15/Sep/2021 13:52:20] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-09-15 13:52:21,107 - INFO - start API get info Dashboard
+2021-09-15 13:52:21,237 - INFO - 127.0.0.1 - - [15/Sep/2021 13:52:21] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-09-15 13:52:22,138 - INFO - start API get dashboard list
+2021-09-15 13:52:22,319 - INFO - 127.0.0.1 - - [15/Sep/2021 13:52:22] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:52:24,648 - INFO - start API get Rectifier Transformers list
+2021-09-15 13:52:24,774 - INFO - 127.0.0.1 - - [15/Sep/2021 13:52:24] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-09-15 13:52:30,047 - INFO - start API get Test Posts list
+2021-09-15 13:52:30,095 - INFO - 127.0.0.1 - - [15/Sep/2021 13:52:30] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-09-15 13:53:05,630 - INFO - start API get Test Posts list
+2021-09-15 13:53:05,675 - INFO - 127.0.0.1 - - [15/Sep/2021 13:53:05] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -

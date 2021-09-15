@@ -44,7 +44,7 @@ export default function Home() {
       .get(`${API}/api/dashboardList`)
       .then((res) => {
         setLoading(false);
-        console.log(res);
+        // console.log(res);
         const data = res.data;
         setDeviceInfo(data);
       })

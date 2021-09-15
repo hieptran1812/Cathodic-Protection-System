@@ -59,7 +59,7 @@ export default function UserList() {
         .get(`${API}/api/users`)
         .then((res) => {
           setLoading(false);
-          console.log(res);
+          // console.log(res);
           const info = res.data;
           setUserInfo(info);
         })

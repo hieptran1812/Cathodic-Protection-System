@@ -115,7 +115,7 @@ export default function TestPost() {
     axios
       .get(`${API}/api/testPost/delete/${productId}`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         history.replace("/testPostList");
         return 0;
       })

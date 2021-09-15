@@ -25,7 +25,7 @@ export default function Map() {
         .get(`${API}/api/locationAllDevices`)
         .then((res) => {
           const data = res.data;
-          console.log(data);
+          // console.log(data);
           setLocate(data);
         })
         .catch((error) => console.log(error));

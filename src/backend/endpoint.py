@@ -307,7 +307,7 @@ def getRectifier():
       'locationSystem': doc['otherInfo'][0]['locationSystem'],
       'centralAddress': doc['otherInfo'][0]['centralAddress'],
       'phone': doc['otherInfo'][0]['phone'],
-      'signalQuality': doc['otherInfo'][0]['signalQuality'],
+      'dateUpdate': doc['dateUpdate']
     })
     else:
       if(doc['organization'] == currentUser['organization']):
@@ -317,7 +317,7 @@ def getRectifier():
           'locationSystem': doc['otherInfo'][0]['locationSystem'],
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
           'phone': doc['otherInfo'][0]['phone'],
-          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'dateUpdate': doc['dateUpdate']
         })
   
   return jsonify(devices)
@@ -367,7 +367,7 @@ def getTestPost():
           'locationSystem': doc['otherInfo'][0]['locationSystem'],
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
           'phone': doc['otherInfo'][0]['phone'],
-          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'dateUpdate': doc['dateUpdate']
         })
       else:
         if(doc['organization'] == currentUser['organization']):
@@ -377,7 +377,7 @@ def getTestPost():
             'locationSystem': doc['otherInfo'][0]['locationSystem'],
             'centralAddress': doc['otherInfo'][0]['centralAddress'],
             'phone': doc['otherInfo'][0]['phone'],
-            'signalQuality': doc['otherInfo'][0]['signalQuality'],
+            'dateUpdate': doc['dateUpdate']
           })
     return jsonify(devices)
 

@@ -62,9 +62,9 @@ export default function SignInSide() {
     axios.post(`${API}/api/login`, data)
       .then((res) => {
         const info = res.data;
-        console.log(info);
+        // console.log(info);
         if (res.status === 200) {
-          console.log("200 r nha");
+          console.log("Dang nhap thanh cong");
           localStorage.setItem("accessToken", true);
           localStorage.setItem("idCurrentUser", info['id']);
           localStorage.setItem("role", info["role"]);

@@ -69,12 +69,12 @@ export default function User() {
       phone,
       address,
     };
-    console.log(data);
+    // console.log(data);
 
     axios
       .post(`${API}/api/editUser/${userId}`, data)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.status === 200) {
           setOpen(true);
         }

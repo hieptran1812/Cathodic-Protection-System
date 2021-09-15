@@ -102,7 +102,7 @@ export default function RectifierTransformer() {
     axios
       .get(`${API}/api/rectifierTransformer/delete/${productId}`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         history.replace("/rectifierTransformerList");
         return 0;
       })
@@ -116,6 +116,7 @@ export default function RectifierTransformer() {
         .then((res) => {
           setLoading(false);
           const data = res.data;
+          // console.log(data);
           setInfoTop(data);
           setInfoBottom(data);
         })

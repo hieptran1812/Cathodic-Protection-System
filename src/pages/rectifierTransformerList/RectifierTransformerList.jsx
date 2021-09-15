@@ -14,7 +14,7 @@ const columns = [
   {
     field: "devSerial",
     headerName: "Mã thiết bị",
-    width: 200,
+    width: 220,
     renderCell: (params) => {
       return <div className="productListItem">{params.row.devSerial}</div>;
     },
@@ -26,14 +26,14 @@ const columns = [
     width: 200,
   },
   {
-    field: "signalQuality",
-    headerName: "Chất lượng tín hiệu",
-    width: 200,
-  },
-  {
     field: "phone",
     headerName: "Số điện thoại",
     width: 160,
+  },
+  {
+    field: "dateUpdate",
+    headerName: "Ngày thêm thiết bị",
+    width: 200,
   },
   {
     field: "action",
@@ -59,7 +59,7 @@ export default function RectifierTransformerList() {
       .get(`${API}/api/rectifierTransformerList`)
       .then((res) => {
         setLoading(false);
-        console.log(res);
+        // console.log(res);
         const data = res.data;
         setDeviceInfo(data);
       })

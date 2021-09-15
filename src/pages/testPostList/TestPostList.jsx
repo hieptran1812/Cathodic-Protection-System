@@ -25,14 +25,14 @@ const columns = [
     width: 200,
   },
   {
-    field: "signalQuality",
-    headerName: "Chất lượng tín hiệu",
-    width: 200,
-  },
-  {
     field: "phone",
     headerName: "Số điện thoại",
     width: 160,
+  },
+  {
+    field: "dateUpdate",
+    headerName: "Ngày thêm thiết bị",
+    width: 200,
   },
   {
     field: "action",
@@ -51,11 +51,6 @@ const columns = [
 ];
 
 export default function TestPostList() {
-  // const [data, setData] = useState(productTestRow);
-
-  // const handleDelete = (id) => {
-  //   setData(data.filter((item) => item.id !== id));
-  // };
 
   const [loading, setLoading] = useState(true);
   const [deviceInfo, setDeviceInfo] = useState([]);
@@ -65,7 +60,7 @@ export default function TestPostList() {
       .get(`${API}/api/testPostList`)
       .then((res) => {
         setLoading(false);
-        console.log(res);
+        // console.log(res);
         const data = res.data;
         setDeviceInfo(data);
       })
