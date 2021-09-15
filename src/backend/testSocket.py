@@ -29,8 +29,9 @@ def pushDataRectifier(result):
             }
         )
     else:
-        db.RectifierTransformersDetails.insert_one(result)
-        
+        # db.RectifierTransformersDetails.insert_one(result)
+        logging.info(f"nhan du lieu tu thiet bi moi chua duoc them tren he thong")
+
     logging.info('Insert data to MongoDB')
 
 #### Lấy dữ liệu từ bộ trung tâm ####
@@ -139,7 +140,8 @@ def pushDataTestPost(result):
             }
         )
     else:
-        db.TestPostsDetails.insert_one(result)
+        # db.TestPostsDetails.insert_one(result)
+        logging.info(f"nhan du lieu tu thiet bi moi chua duoc them tren he thong")
     logging.info('Insert data to MongoDB')
 
 def getDataFromTestPost(rawData):
