@@ -98,9 +98,9 @@ def getDataFromRectifier(rawData):
             print(subOtherInfo['dongDienDC'])
 
             # Ma thiet bi dang chuoi
-            data = rawData[48:83]
-            print(str(struct.unpack("b34s", data)[1].decode('cp1252'))[0:-5])
-            testt2 = str(struct.unpack("b34s", data)[1].decode('cp1252'))[0:-5]
+            data = rawData[48:84]
+            print(str(struct.unpack("b35s", data)[1].decode('cp1252'))[0:-5])
+            testt2 = str(struct.unpack("b35s", data)[1].decode('cp1252'))[0:-5]
             logging.info('Ma thiet bi dang chuoi %s', testt2)
 
             data = rawData[84:100]
@@ -197,9 +197,9 @@ def getDataFromTestPost(rawData):
             subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
 
             # Ma thiet bi dang chuoi
-            data = rawData[62:81]
-            testt = str(struct.unpack("b18s", data)[1].decode('cp1252'))[0:-5]
-            print(str(struct.unpack("b18s", data)[1].decode('cp1252'))[0:-5])
+            data = rawData[62:82]
+            testt = str(struct.unpack("b19s", data)[1].decode('cp1252'))[0:-5]
+            print(str(struct.unpack("b19s", data)[1].decode('cp1252'))[0:-5])
             logging.info('Ma thiet bi dang chuoi %s', testt)
 
             data = rawData[81:97] # number of bytes
