@@ -23,6 +23,7 @@ const API = process.env.REACT_APP_API;
 export default function NewProduct() {
 
   const [id, setId] = useState('');
+  const [maChuoi, setMaChuoi] = useState("");
   const [type, setType] = useState('0');
   const [organization, setOrganization] = useState("");
   const [date, setDate] = useState("");
@@ -37,6 +38,7 @@ export default function NewProduct() {
     e.preventDefault();
     const data = {
       id,
+      maChuoi,
       type,
       organization,
       date,
@@ -117,6 +119,15 @@ export default function NewProduct() {
                 type="text"
                 required="required"
                 onChange={(e) => setId(e.target.value)}
+                autoFocus
+              />
+            </div>
+            <div className="addProductItem">
+              <label>Mã chuỗi của thiết bị *</label>
+              <input
+                type="text"
+                required="required"
+                onChange={(e) => setMaChuoi(e.target.value)}
                 autoFocus
               />
             </div>

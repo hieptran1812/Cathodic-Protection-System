@@ -10,6 +10,7 @@ import Button from "@material-ui/core/Button";
 const API = process.env.REACT_APP_API;
 
 const columns = [
+  { field: "maChuoi", headerName: "Mã dạng chuỗi", width: 200 },
   {
     field: "devSerial",
     headerName: "Mã thiết bị",
@@ -18,7 +19,6 @@ const columns = [
       return <div className="productListItem">{params.row.devSerial}</div>;
     },
   },
-  { field: "maChuoi", headerName: "Mã dạng chuỗi", width: 200 },
   {
     field: "centralAddress",
     headerName: "Central Address",

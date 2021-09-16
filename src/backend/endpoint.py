@@ -205,6 +205,7 @@ def addNewProduct():
   res = request.get_json()
   deviceRectifierTransformersList = {
     'devSerial': res['id'],
+    'maChuoi': res['maChuoi'],
     'devType': res['type'],
     'organization': res['organization'],
     'area': res['area'],
@@ -215,6 +216,7 @@ def addNewProduct():
   }
   deviceRectifierTransformer = {
     'devSerial': res['id'],
+    'maChuoi': res['maChuoi'],
     'devType': res['type'],
     'organization': res['organization'],
     'area': res['area'],
@@ -239,6 +241,7 @@ def addNewProduct():
   }
   deviceTestPost = {
     'devSerial': res['id'],
+    'maChuoi': res['maChuoi'],
     'devType': res['type'],
     'organization': res['organization'],
     'area': res['area'],
@@ -267,6 +270,7 @@ def addNewProduct():
   }
   deviceTestPostsList = {
     'devSerial': res['id'],
+    'maChuoi': res['maChuoi'],
     'devType': res['type'],
     'organization': res['organization'],
     'area': res['area'],
