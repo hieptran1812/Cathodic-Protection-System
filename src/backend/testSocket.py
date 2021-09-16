@@ -96,6 +96,11 @@ def getDataFromRectifier(rawData):
             data = rawData[44:48]
             subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             print(subOtherInfo['dongDienDC'])
+
+            # Ma thiet bi dang chuoi
+            data = rawData[48:83]
+            print(str(struct.unpack("b34s", data)[1].decode('cp1252'))[0:-5])
+
             data = rawData[84:100]
             subOtherInfo['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
             print(subOtherInfo['phone'])
@@ -188,8 +193,13 @@ def getDataFromTestPost(rawData):
             subOtherInfo['closePoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             data = rawData[58:62] # number of bytes
             subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+
             # for i in range(19):
             #     data = connection.recv(1) # number of bytes
+            # Ma thiet bi dang chuoi
+            data = rawData[62:81]
+            print(str(struct.unpack("b18s", data)[1].decode('cp1252'))[0:-5])
+
             data = rawData[81:97] # number of bytes
             subOtherInfo['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
             data = rawData[97:98] # number of bytes
