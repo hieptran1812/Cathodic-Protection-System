@@ -308,7 +308,7 @@ def getRectifier():
       devices.append({
       'id': str(ObjectId(doc['_id'])),
       'devSerial': doc['devSerial'],
-      'locationSystem': doc['otherInfo'][0]['locationSystem'],
+      'maChuoi': doc['maChuoi'],
       'centralAddress': doc['otherInfo'][0]['centralAddress'],
       'phone': doc['otherInfo'][0]['phone'],
       'dateUpdate': doc['dateUpdate']
@@ -318,7 +318,7 @@ def getRectifier():
         devices.append({
           'id': str(ObjectId(doc['_id'])),
           'devSerial': doc['devSerial'],
-          'locationSystem': doc['otherInfo'][0]['locationSystem'],
+          'maChuoi': doc['maChuoi'],
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
           'phone': doc['otherInfo'][0]['phone'],
           'dateUpdate': doc['dateUpdate']
@@ -368,7 +368,7 @@ def getTestPost():
         devices.append({
           'id': str(ObjectId(doc['_id'])),
           'devSerial': doc['devSerial'],
-          'locationSystem': doc['otherInfo'][0]['locationSystem'],
+          'maChuoi': doc['maChuoi'],
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
           'phone': doc['otherInfo'][0]['phone'],
           'dateUpdate': doc['dateUpdate']
@@ -378,7 +378,7 @@ def getTestPost():
           devices.append({
             'id': str(ObjectId(doc['_id'])),
             'devSerial': doc['devSerial'],
-            'locationSystem': doc['otherInfo'][0]['locationSystem'],
+            'maChuoi': doc['maChuoi'],
             'centralAddress': doc['otherInfo'][0]['centralAddress'],
             'phone': doc['otherInfo'][0]['phone'],
             'dateUpdate': doc['dateUpdate']

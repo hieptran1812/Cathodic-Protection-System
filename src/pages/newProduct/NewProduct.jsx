@@ -117,6 +117,7 @@ export default function NewProduct() {
               <label>Mã thiết bị *</label>
               <input
                 type="text"
+                placeholder="Mã chỉ gồm số"
                 required="required"
                 onChange={(e) => setId(e.target.value)}
                 autoFocus
@@ -126,6 +127,7 @@ export default function NewProduct() {
               <label>Mã chuỗi của thiết bị *</label>
               <input
                 type="text"
+                placeholder="Mã có dạng XXX-XXX-XXX-XXX bao gồm cả chữ và số"
                 required="required"
                 onChange={(e) => setMaChuoi(e.target.value)}
                 autoFocus
