@@ -97,9 +97,9 @@ def getDataFromRectifier(rawData):
             subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
             print(subOtherInfo['dongDienDC'])
 
-            # Ma thiet bi dang chuoi
-            data = rawData[48:84]
-            subOtherInfo['maChuoi'] = str(struct.unpack("b35s", data)[1].decode('cp1252'))[0:-5]
+            # Ma thiet bi dang chuoi tu bo trung tam
+            data = rawData[47:84]
+            subOtherInfo['maChuoi'] = str(struct.unpack("b36s", data)[1].decode('cp1252'))[0:-5]
             logging.info('Ma thiet bi dang chuoi %s', subOtherInfo['maChuoi'])
 
             data = rawData[84:100]
