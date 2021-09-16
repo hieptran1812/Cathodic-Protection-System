@@ -18,7 +18,7 @@ const columns = [
       return <div className="productListItem">{params.row.devSerial}</div>;
     },
   },
-  { field: "locationSystem", headerName: "Location System", width: 200 },
+  { field: "maChuoi", headerName: "Mã dạng chuỗi", width: 200 },
   {
     field: "centralAddress",
     headerName: "Central Address",
