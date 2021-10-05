@@ -333,6 +333,20 @@ def getRectifierTransformerDetailTable(id):
       'devSerial': id,
     })
     result = deviceInfo['otherInfo']
+    #Bo do lien ket voi Bo trung tam
+    testPostConnectionList = db.TestPostsDetails.find({
+      'otherInfo.centralAddress': deviceInfo['otherInfo'][0]['centralAddress']
+    })
+
+    if(testPostConnectionList):
+      testPostResultList = ""
+      for doc in testPostConnectionList:
+        if(doc['organization'] == deviceInfo['organization']):
+          testPostResultList += doc['maChuoi'] + "  ||  "  
+          # print(doc["maChuoi"])
+      result[0]["testPostResultList"] = testPostResultList
+    else:
+      result[0]["testPostResultList"] = "Chua ket noi Bo do nao!"
     i = 0
     for data in result:
       data['id'] = i
@@ -388,10 +402,22 @@ def getTestPost():
 @app.route('/api/testPost/table/<id>', methods=['GET'])
 def getTestPostDetailTable(id):
   if request.method == 'GET':
+    # Thong tin cua bo do    
     deviceInfo = db.TestPostsDetails.find_one({
       'devSerial': id,
     })
     result = deviceInfo['otherInfo']
+
+    #Bo trung tam lien ket voi bo do
+    centralDevice = db.RectifierTransformersDetails.find_one({
+      'otherInfo.centralAddress': deviceInfo['otherInfo'][0]['centralAddress']
+    })
+    if(centralDevice and centralDevice['organization'] == deviceInfo['organization']):
+      result[0]["idCentralDevice"] = centralDevice["devSerial"]
+      result[0]["idStringCentralDevice"] = centralDevice["maChuoi"]
+    else:
+      result[0]["idCentralDevice"] = "Chua ket noi Bo trung tam nao"
+      result[0]["idStringCentralDevice"] = "Chua ket noi Bo trung tam nao"
     i = 0
     for data in result:
       data['id'] = i

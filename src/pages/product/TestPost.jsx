@@ -129,6 +129,7 @@ export default function TestPost() {
         .then((res) => {
           setLoading(false);
           const data = res.data;
+          console.log(data);
           setInfoTop(data);
           setInfoBottom(data);
         })
@@ -212,6 +213,12 @@ export default function TestPost() {
           <div className="time">
             <span className="productInfoKey">Dữ liệu được cập nhật vào: </span>
             <span className="productInfoValue">{infoTop[0].time}</span>
+          </div>
+          <div className="time">
+            <span className="productInfoKey">Kết nối với bộ trung tâm: </span>
+            <span className="productInfoValue">
+              {infoTop[0].idStringCentralDevice}
+            </span>
           </div>
           <div className="productTop">
             <div className="productTopRight">

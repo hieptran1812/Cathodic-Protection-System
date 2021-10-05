@@ -2250,3 +2250,641 @@ KeyError: 'role'
 2021-09-15 13:52:30,095 - INFO - 127.0.0.1 - - [15/Sep/2021 13:52:30] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
 2021-09-15 13:53:05,630 - INFO - start API get Test Posts list
 2021-09-15 13:53:05,675 - INFO - 127.0.0.1 - - [15/Sep/2021 13:53:05] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-05 20:19:27,314 - INFO - Start API
+2021-10-05 20:19:27,346 - INFO - Flask started
+2021-10-05 20:19:28,293 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-05 20:19:42,939 - INFO - Retrieve data from test device
+2021-10-05 20:19:42,939 - INFO - Ma thiet bi dang chuoi dang chay               
+2021-10-05 20:19:42,940 - INFO - Retrieve data from tool completely
+2021-10-05 20:19:43,321 - INFO - Insert data to MongoDB
+2021-10-05 20:19:47,322 - ERROR - Exception on /api/testPost/table/101 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 407, in getTestPostDetailTable
+    result["idCentralDevice"] = "Chua co thong tin"
+TypeError: list indices must be integers or slices, not str
+2021-10-05 20:19:47,325 - INFO - 127.0.0.1 - - [05/Oct/2021 20:19:47] "[35m[1mGET /api/testPost/table/101 HTTP/1.1[0m" 500 -
+2021-10-06 00:31:16,725 - INFO - Start API
+2021-10-06 00:31:16,750 - INFO - Flask started
+2021-10-06 00:31:17,689 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-06 00:31:18,886 - INFO - 127.0.0.1 - - [06/Oct/2021 00:31:18] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:31:20,019 - INFO - 127.0.0.1 - - [06/Oct/2021 00:31:20] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:31:21,860 - INFO - 127.0.0.1 - - [06/Oct/2021 00:31:21] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:31:29,667 - INFO - 127.0.0.1 - - [06/Oct/2021 00:31:29] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-06 00:31:29,721 - INFO - 127.0.0.1 - - [06/Oct/2021 00:31:29] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-06 00:31:29,771 - INFO - start API get info Dashboard
+2021-10-06 00:31:29,820 - INFO - 127.0.0.1 - - [06/Oct/2021 00:31:29] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-06 00:31:30,038 - INFO - start API get dashboard list
+2021-10-06 00:31:30,233 - INFO - 127.0.0.1 - - [06/Oct/2021 00:31:30] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:35:13,558 - INFO - start API get Test Posts list
+2021-10-06 00:35:13,718 - INFO - 127.0.0.1 - - [06/Oct/2021 00:35:13] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:36:35,767 - INFO - start API get Rectifier Transformers list
+2021-10-06 00:36:35,817 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:35] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:36:39,383 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:39] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:41,380 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:41] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:43,618 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:43] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:45,623 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:45] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:47,408 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:47] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:49,393 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:49] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:51,624 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:51] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:53,622 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:53] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:55,629 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:55] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:57,401 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:57] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:36:59,628 - INFO - 127.0.0.1 - - [06/Oct/2021 00:36:59] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:01,626 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:01] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:03,390 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:03] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:05,403 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:05] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:07,381 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:07] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:09,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:09] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:14,389 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:14] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:16,400 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:16] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:18,627 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:18] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:20,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:20] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:22,618 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:22] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:24,632 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:24] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:26,620 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:26] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:28,385 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:28] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:30,401 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:30] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:32,390 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:32] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:34,406 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:34] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:36,395 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:36] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:38,382 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:38] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:40,396 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:40] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:42,397 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:42] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:44,394 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:44] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:46,391 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:46] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:48,400 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:48] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:50,393 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:50] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:52,382 - INFO - start API get Rectifier Transformers list
+2021-10-06 00:37:52,398 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:52] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:37:52,743 - INFO - 127.0.0.1 - - [06/Oct/2021 00:37:52] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:38:13,636 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:13] "[37mOPTIONS /api/newProduct HTTP/1.1[0m" 200 -
+2021-10-06 00:38:13,639 - INFO - start API add new product
+2021-10-06 00:38:13,799 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:13] "[37mPOST /api/newProduct HTTP/1.1[0m" 200 -
+2021-10-06 00:38:15,467 - INFO - start API get Test Posts list
+2021-10-06 00:38:15,628 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:15] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:38:16,855 - INFO - start API get Rectifier Transformers list
+2021-10-06 00:38:16,912 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:16] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:38:21,441 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:21] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:23,441 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:23] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:25,451 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:25] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:27,445 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:27] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:29,463 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:29] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:30,483 - INFO - Retrieve data from test device
+2021-10-06 00:38:30,484 - INFO - Ma thiet bi dang chuoi dang chay               
+2021-10-06 00:38:30,484 - INFO - Retrieve data from tool completely
+2021-10-06 00:38:30,590 - INFO - Insert data to MongoDB
+2021-10-06 00:38:31,449 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:31] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:33,454 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:33] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:35,438 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:35] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:37,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:37] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:39,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:39] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:41,457 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:41] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:43,630 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:43] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:45,457 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:45] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:47,638 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:47] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:49,627 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:49] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:51,640 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:51] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:53,635 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:53] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:55,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:55] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:57,643 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:57] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:38:59,646 - INFO - 127.0.0.1 - - [06/Oct/2021 00:38:59] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:01,630 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:01] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:03,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:03] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:05,641 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:05] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:07,632 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:07] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:09,626 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:09] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:11,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:11] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:13,643 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:13] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:15,626 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:15] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:17,634 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:17] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:19,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:19] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:21,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:21] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:23,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:23] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:25,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:25] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:27,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:27] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:29,629 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:29] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:31,635 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:31] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:33,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:33] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:35,705 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:35] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:37,640 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:37] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:39,652 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:39] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:41,630 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:41] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:43,689 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:43] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:48,127 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:48] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:52,508 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:52] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:54,627 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:54] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:56,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:56] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:39:58,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:39:58] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:00,641 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:00] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:02,646 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:02] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:04,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:04] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:06,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:06] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:07,976 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:07] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:10,638 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:10] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:12,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:12] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:14,647 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:14] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:16,626 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:16] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:18,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:18] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:20,649 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:20] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:22,638 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:22] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:24,636 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:24] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:26,643 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:26] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:28,640 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:28] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:30,649 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:30] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:32,648 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:32] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:34,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:34] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:36,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:36] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:38,634 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:38] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:40,649 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:40] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:42,629 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:42] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:43,947 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:43] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:48,786 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:48] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:50,785 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:50] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:53,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:53] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:55,641 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:55] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:57,648 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:57] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:40:59,629 - INFO - 127.0.0.1 - - [06/Oct/2021 00:40:59] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:01,718 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:01] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:02,840 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:02] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:05,650 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:05] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:07,648 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:07] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:09,636 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:09] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:11,636 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:11] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:13,647 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:13] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:15,635 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:15] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:17,644 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:17] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:19,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:19] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:21,729 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:21] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:22,799 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:22] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:25,614 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:25] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:26,835 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:26] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:29,644 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:29] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:30,794 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:30] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:33,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:33] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:34,793 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:34] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:36,796 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:36] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:39,626 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:39] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:41,651 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:41] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:43,648 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:43] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:44,999 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:44] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:46,804 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:46] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:51,843 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:51] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:53,834 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:53] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:56,635 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:56] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:41:58,696 - INFO - 127.0.0.1 - - [06/Oct/2021 00:41:58] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:00,665 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:00] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:02,641 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:02] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:03,649 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:03] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:04,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:04] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:04,792 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:04] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:05,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:05] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:06,643 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:06] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:06,812 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:06] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:07,654 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:07] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:08,650 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:08] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:08,821 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:08] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:09,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:09] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:10,626 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:10] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:10,788 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:10] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:11,636 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:11] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:12,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:12] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:12,808 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:12] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:13,629 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:13] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:14,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:14] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:14,805 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:14] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:15,375 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:15] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:15,679 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:15] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:15,847 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:15] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:16,791 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:16] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:20,027 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:20] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:22,013 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:22] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:24,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:24] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:26,690 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:26] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:28,633 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:28] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:30,643 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:30] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:32,646 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:32] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:34,664 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:34] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:36,658 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:36] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:38,640 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:38] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:40,656 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:40] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:42,776 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:42] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:44,253 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:44] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:46,004 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:46] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:48,007 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:48] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:50,005 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:50] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:52,007 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:52] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:54,006 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:54] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:56,635 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:56] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:58,000 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:58] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:42:58,112 - INFO - start API get Test Posts list
+2021-10-06 00:42:58,231 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:58] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:42:59,433 - INFO - start API get Rectifier Transformers list
+2021-10-06 00:42:59,486 - INFO - 127.0.0.1 - - [06/Oct/2021 00:42:59] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:43:00,009 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:00] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:02,019 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:02] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:02,910 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:02] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:04,001 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:04] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:04,326 - INFO - start API get Rectifier Transformers list
+2021-10-06 00:43:04,380 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:04] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:43:24,432 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:24] "[37mOPTIONS /api/newProduct HTTP/1.1[0m" 200 -
+2021-10-06 00:43:24,436 - INFO - start API add new product
+2021-10-06 00:43:24,597 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:24] "[37mPOST /api/newProduct HTTP/1.1[0m" 200 -
+2021-10-06 00:43:26,973 - INFO - start API get Rectifier Transformers list
+2021-10-06 00:43:27,029 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:27] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:43:31,132 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:31] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:33,130 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:33] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:35,121 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:35] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:37,152 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:37] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:39,635 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:39] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:41,650 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:41] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:43,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:43] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:45,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:45] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:47,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:47] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:49,137 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:49] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:51,140 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:51] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:53,123 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:53] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:55,121 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:55] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:57,126 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:57] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:43:59,139 - INFO - 127.0.0.1 - - [06/Oct/2021 00:43:59] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:01,134 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:01] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:01,162 - INFO - start API get Test Posts list
+2021-10-06 00:44:01,279 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:01] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:44:03,128 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:03] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:05,132 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:05] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:07,129 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:07] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:09,623 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:09] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:11,635 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:11] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:13,638 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:13] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:15,634 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:15] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:17,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:17] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:19,646 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:19] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:21,647 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:21] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:23,629 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:23] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:25,657 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:25] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:27,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:27] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:29,642 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:29] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:31,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:31] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:33,639 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:33] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:35,644 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:35] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:37,671 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:37] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:39,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:39] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:44:43,684 - INFO - Start API
+2021-10-06 00:44:43,687 - INFO - Flask started
+2021-10-06 00:44:44,658 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-06 00:44:45,416 - ERROR - Exception on /api/rectifierTransformer/table/100 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 344, in getRectifierTransformerDetailTable
+    if(doc['organization'] == currentUser['organization']):
+KeyError: 'organization'
+2021-10-06 00:44:45,419 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:45] "[35m[1mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 500 -
+2021-10-06 00:44:47,137 - ERROR - Exception on /api/rectifierTransformer/table/100 [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "d:\Project\IOT AMTM\cathodic\src\backend\endpoint.py", line 344, in getRectifierTransformerDetailTable
+    if(doc['organization'] == currentUser['organization']):
+KeyError: 'organization'
+2021-10-06 00:44:47,138 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:47] "[35m[1mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 500 -
+2021-10-06 00:44:55,252 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:55] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-06 00:44:55,307 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:55] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-06 00:44:55,358 - INFO - start API get info Dashboard
+2021-10-06 00:44:55,412 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:55] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-06 00:44:55,603 - INFO - start API get dashboard list
+2021-10-06 00:44:55,810 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:55] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:44:57,191 - INFO - start API get Test Posts list
+2021-10-06 00:44:57,359 - INFO - 127.0.0.1 - - [06/Oct/2021 00:44:57] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:45:02,488 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:02] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:04,503 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:04] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:06,504 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:06] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:08,509 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:08] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:12,669 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:12] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:14,666 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:14] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:17,527 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:17] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:19,524 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:19] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:21,522 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:21] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:23,529 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:23] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:24,906 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:24] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:26,666 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:26] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:29,522 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:29] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:31,531 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:31] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:33,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:33] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:34,670 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:34] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:36,400 - INFO - start API get Test Posts list
+2021-10-06 00:45:36,560 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:36] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:45:36,671 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:36] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:38,678 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:38] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:40,023 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:40] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:40,672 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:40] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:42,019 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:42] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:42,677 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:42] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:44,030 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:44] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:44,675 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:44] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:46,045 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:46] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:46,681 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:46] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:48,012 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:48] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:48,675 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:48] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:50,016 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:50] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:50,675 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:50] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:52,026 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:52] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:52,680 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:52] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:54,012 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:54] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:54,669 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:54] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:56,011 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:56] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:56,679 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:56] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:58,015 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:58] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:58,676 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:58] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:45:58,749 - INFO - start API get Test Posts list
+2021-10-06 00:45:58,913 - INFO - 127.0.0.1 - - [06/Oct/2021 00:45:58] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:46:00,013 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:00] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:00,677 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:00] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:02,026 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:02] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:02,470 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:02] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:02,671 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:02] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:04,031 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:04] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:04,470 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:04] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:04,671 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:04] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:06,025 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:06] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:06,461 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:06] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:06,669 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:06] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:08,027 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:08] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:08,474 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:08] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:08,524 - INFO - Retrieve data from test device
+2021-10-06 00:46:08,524 - INFO - Ma thiet bi dang chuoi dang chay               
+2021-10-06 00:46:08,525 - INFO - Retrieve data from tool completely
+2021-10-06 00:46:08,639 - INFO - Insert data to MongoDB
+2021-10-06 00:46:08,989 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:08] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:10,017 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:10] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:10,479 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:10] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:10,707 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:10] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:12,012 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:12] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:12,462 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:12] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:12,680 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:12] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:13,902 - INFO - start API get Rectifier Transformers list
+2021-10-06 00:46:13,957 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:13] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:46:14,047 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:14] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:14,469 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:14] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:14,665 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:14] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:16,013 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:16] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:16,463 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:16] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:16,678 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:16] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:17,281 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:17] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:18,016 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:18] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:18,475 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:18] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:18,679 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:18] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:19,275 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:19] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:20,017 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:20] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:20,471 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:20] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:20,681 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:20] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:21,271 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:21] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:22,012 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:22] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:22,473 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:22] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:22,677 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:22] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:25,978 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:25] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:27,960 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:27] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:29,977 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:29] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:30,516 - INFO - start API get Test Posts list
+2021-10-06 00:46:30,694 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:30] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:46:31,981 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:31] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:33,960 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:33] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:35,973 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:35] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:36,213 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:36] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:37,978 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:37] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:38,220 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:38] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:40,534 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:40] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:40,635 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:40] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:42,529 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:42] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:42,641 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:42] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:44,521 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:44] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:44,624 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:44] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:46,528 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:46] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:46,640 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:46] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:48,524 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:48] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:48,633 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:48] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:50,532 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:50] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:50,638 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:50] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:52,525 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:52] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:52,684 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:52] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:54,532 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:54] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:54,641 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:54] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:56,516 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:56] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:56,627 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:56] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:58,523 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:58] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:46:58,628 - INFO - 127.0.0.1 - - [06/Oct/2021 00:46:58] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:00,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:00] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:00,631 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:00] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:02,520 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:02] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:02,628 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:02] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:04,522 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:04] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:04,630 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:04] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:06,521 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:06] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:06,636 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:06] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:08,517 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:08] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:08,630 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:08] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:10,525 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:10] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:10,630 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:10] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:12,522 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:12] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:12,733 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:12] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:14,521 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:14] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:14,682 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:14] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:16,514 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:16] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:16,673 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:16] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:18,520 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:18] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:18,677 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:18] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:20,521 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:20] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:20,683 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:20] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:22,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:22] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:22,683 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:22] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:24,531 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:24] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:24,701 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:24] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:26,218 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:26] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:26,350 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:26] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:28,011 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:28] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:28,213 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:28] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:30,013 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:30] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:30,221 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:30] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:32,018 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:32] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:32,233 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:32] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:34,525 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:34] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:34,680 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:34] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:36,525 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:36] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:36,692 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:36] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:38,536 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:38] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:38,695 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:38] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:40,518 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:40] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:40,669 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:40] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:42,524 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:42] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:42,694 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:42] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:44,534 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:44] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:44,689 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:44] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:46,518 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:46] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:46,674 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:46] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:48,521 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:48] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:48,683 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:48] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:50,532 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:50] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:50,693 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:50] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:52,518 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:52] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:52,687 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:52] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:54,520 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:54] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:54,682 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:54] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:56,516 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:56] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:56,684 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:56] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:58,534 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:58] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:47:58,690 - INFO - 127.0.0.1 - - [06/Oct/2021 00:47:58] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:00,537 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:00] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:00,690 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:00] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:02,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:02] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:02,685 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:02] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:04,527 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:04] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:04,682 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:04] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:06,520 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:06] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:06,677 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:06] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:08,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:08] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:08,682 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:08] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:10,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:10] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:10,690 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:10] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:12,532 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:12] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:12,689 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:12] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:14,524 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:14] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:14,683 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:14] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:16,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:16] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:16,684 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:16] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:18,521 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:18] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:18,680 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:18] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:20,525 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:20] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:20,688 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:20] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:22,519 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:22] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:22,684 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:22] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:24,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:24] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:24,688 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:24] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:26,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:26] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:26,691 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:26] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:28,525 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:28] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:28,693 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:28] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:30,528 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:30] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:30,690 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:30] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:32,526 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:32] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:32,690 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:32] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:34,547 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:34] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:34,699 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:34] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:36,523 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:36] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:36,683 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:36] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:38,528 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:38] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:38,696 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:38] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:40,528 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:40] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:40,696 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:40] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:42,522 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:42] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:42,680 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:42] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:44,525 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:44] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:44,677 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:44] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:46,529 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:46] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:46,706 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:46] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:48,528 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:48] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:48,683 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:48] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:50,516 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:50] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:50,679 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:50] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:52,522 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:52] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:52,688 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:52] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:54,531 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:54] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:54,690 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:54] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:56,531 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:56] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:56,687 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:56] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:58,524 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:58] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:48:58,690 - INFO - 127.0.0.1 - - [06/Oct/2021 00:48:58] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:00,523 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:00] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:00,676 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:00] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:02,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:02] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:02,687 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:02] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:04,525 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:04] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:04,678 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:04] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:06,519 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:06] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:06,681 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:06] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:08,529 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:08] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:08,703 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:08] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:10,519 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:10] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:10,676 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:10] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:13,997 - INFO - Start API
+2021-10-06 00:49:13,999 - INFO - Flask started
+2021-10-06 00:49:14,945 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-06 00:49:15,351 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:15] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:16,648 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:16] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:16,799 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:16] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:18,528 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:18] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:18,621 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:18] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:19,963 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:19] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:20,214 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:20] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:27,586 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:27] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-06 00:49:27,637 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:27] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-06 00:49:27,686 - INFO - start API get info Dashboard
+2021-10-06 00:49:27,733 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:27] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-06 00:49:27,955 - INFO - start API get dashboard list
+2021-10-06 00:49:28,148 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:28] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:49:29,588 - INFO - start API get Test Posts list
+2021-10-06 00:49:29,729 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:29] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:49:33,047 - INFO - start API get Rectifier Transformers list
+2021-10-06 00:49:33,096 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:33] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-06 00:49:36,427 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:36] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:38,075 - INFO - start API get Test Posts list
+2021-10-06 00:49:38,219 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:38] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:49:38,380 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:38] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:40,436 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:40] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:41,785 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:41] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:42,433 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:42] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:43,786 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:43] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:44,250 - INFO - start API get Test Posts list
+2021-10-06 00:49:44,399 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:44] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-06 00:49:44,571 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:44] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:45,800 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:45] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:46,458 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:46] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:47,499 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:47] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:47,797 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:47] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:48,453 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:48] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:50,524 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:50] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:50,614 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:50] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:50,811 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:50] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:51,533 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:51] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:52,540 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:52] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:52,628 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:52] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:53,511 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:53] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:54,521 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:54] "[37mGET /api/testPost/table/104 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:54,648 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:54] "[37mGET /api/rectifierTransformer/table/100 HTTP/1.1[0m" 200 -
+2021-10-06 00:49:55,530 - INFO - 127.0.0.1 - - [06/Oct/2021 00:49:55] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -

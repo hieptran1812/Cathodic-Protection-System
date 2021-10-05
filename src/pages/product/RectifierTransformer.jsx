@@ -184,7 +184,11 @@ export default function RectifierTransformer() {
                 <Button onClick={handleClose} color="primary">
                   Không đồng ý
                 </Button>
-                <Button onClick={() => deleteDevice()} color="primary" autoFocus>
+                <Button
+                  onClick={() => deleteDevice()}
+                  color="primary"
+                  autoFocus
+                >
                   Đồng ý
                 </Button>
               </DialogActions>
@@ -193,6 +197,12 @@ export default function RectifierTransformer() {
           <div className="time">
             <span className="productInfoKey">Dữ liệu được cập nhật vào: </span>
             <span className="productInfoValue">{infoTop[0].time}</span>
+          </div>
+          <div className="connect">
+            <span className="productInfoKey">Kết nối với các bộ đo: </span>
+            <span className="productInfoValue">
+              {infoTop[0].testPostResultList}
+            </span>
           </div>
           <div className="productTop">
             <div className="productTopRight">
