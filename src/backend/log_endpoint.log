@@ -1222,3 +1222,13 @@ KeyError: 'notes'
 2021-10-25 20:39:49,848 - INFO - 127.0.0.1 - - [25/Oct/2021 20:39:49] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
 2021-10-25 20:39:50,201 - INFO - start API get dashboard list
 2021-10-25 20:39:50,484 - INFO - 127.0.0.1 - - [25/Oct/2021 20:39:50] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-25 22:03:48,849 - INFO - 127.0.0.1 - - [25/Oct/2021 22:03:48] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-25 22:03:49,149 - INFO - 127.0.0.1 - - [25/Oct/2021 22:03:49] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-25 22:03:49,227 - INFO - start API get info Dashboard
+2021-10-25 22:03:49,285 - INFO - 127.0.0.1 - - [25/Oct/2021 22:03:49] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-25 22:03:49,531 - INFO - start API get dashboard list
+2021-10-25 22:03:49,849 - INFO - 127.0.0.1 - - [25/Oct/2021 22:03:49] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-25 22:03:52,581 - INFO - start API get Rectifier Transformers list
+2021-10-25 22:03:52,636 - INFO - 127.0.0.1 - - [25/Oct/2021 22:03:52] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-25 22:04:18,450 - INFO - start API get Rectifier Transformers list
+2021-10-25 22:04:18,507 - INFO - 127.0.0.1 - - [25/Oct/2021 22:04:18] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
