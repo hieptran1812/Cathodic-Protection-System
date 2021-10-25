@@ -168,7 +168,7 @@ export default function User() {
             <div className="userShow">
               <div className="userShowTop">
                 <div className="userShowTopTitle">
-                  <span className="userShowUsername">Họ và tên: {info.name}</span>
+                  <span className="userUpdateTitle">Họ và tên: {info.name}</span>
                   <span className="userShowUserTitle">Vai trò: {info.role}</span>
                 </div>
               </div>

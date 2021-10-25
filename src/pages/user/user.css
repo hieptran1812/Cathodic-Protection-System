@@ -60,12 +60,13 @@
 
 .userShowUsername {
   font-weight: 600;
-  font-size: 200;
+  font-size: 500;
   margin-bottom: 20px;
 }
 
 .userShowUserTitle {
   font-weight: 300;
+  margin-top: 20px;
 }
 
 .userShowBottom {
