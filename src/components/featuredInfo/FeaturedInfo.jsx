@@ -21,30 +21,31 @@ export default function FeaturedInfo() {
   return (
     <div className="featured">
       <div className="featuredItem">
-        <span className="featuredTitle">Tổng thiết bị bộ trung tâm</span>
+        <span className="featuredTitle">Thống kê thiết bị bộ trung tâm</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.countDevices}</span>
-          <span className="featuredMoneyRate">
-            -11.4 <ArrowDownward className="featuredIcon negative" />
-          </span>
+          <span className="featuredMoney">{info.countDevicesBTT} thiết bị</span>
+        </div>
+        <span className="featuredTitle">Điện áp DC cao nhất</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">{info.maxDC} (V)</span>
+        </div>
+        <span className="featuredTitle">Điện áp AC cao nhất</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">{info.maxAC} (V)</span>
         </div>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">Trung bình điện áp DC</span>
+        <span className="featuredTitle">Thống kê thiết bị bộ đo</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxDC}</span>
-          <span className="featuredMoneyRate">
-            -1.4 <ArrowDownward className="featuredIcon negative" />
-          </span>
+          <span className="featuredMoney">{info.countDevicesBD} thiết bị</span>
         </div>
-      </div>
-      <div className="featuredItem">
-        <span className="featuredTitle">Trung bình điện áp AC</span>
+        <span className="featuredTitle">Điện áp nguồn cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxAC}</span>
-          <span className="featuredMoneyRate">
-            +2.4 <ArrowUpward className="featuredIcon" />
-          </span>
+          <span className="featuredMoney">{info.maxNguon} (V)</span>
+        </div>
+        <span className="featuredTitle">Điện áp pin cao nhất</span>
+        <div className="featuredMoneyContainer">
+          <span className="featuredMoney">{info.maxPin} (V)</span>
         </div>
       </div>
     </div>

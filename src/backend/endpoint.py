@@ -40,8 +40,11 @@ def index():
 def getFeatureInfo():
   logging.info("start API get info Dashboard")
   countBTT = 0
+  countBD = 0
   maxDC = 0
   maxAC = 0
+  maxNguon = 0
+  maxPin = 0
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       countBTT += 1
@@ -52,11 +55,27 @@ def getFeatureInfo():
         countBTT += 1
         maxDC = max(int(doc['otherInfo'][0]['dienDCPoint1']),maxDC)
         maxAC = max(int(doc['otherInfo'][0]['dienAC3PhaA']),maxAC)
-  countDevices = countBTT
+  
+  for doc in db.TestPostsDetails.find({}):
+    if(currentUser['role'] == 'superadmin'):
+      countBD += 1
+      maxNguon = max(int(doc['otherInfo'][0]['dienApPin']),maxNguon)
+      maxPin = max(int(doc['otherInfo'][0]['dienApNguon']),maxPin)
+    else:
+      if(doc['organization'] == currentUser['organization']):
+        countBD += 1
+        maxNguon = max(int(doc['otherInfo'][0]['dienApPin']),maxNguon)
+        maxPin = max(int(doc['otherInfo'][0]['dienApNguon']),maxPin)
+
+  countDevicesBTT = countBTT
+  countDevicesBD = countBD
   info = {
-    'countDevices': countDevices,
+    'countDevicesBTT': countDevicesBTT,
     'maxDC': round(maxDC, 3),
     'maxAC': round(maxAC, 3),
+    'countDevicesBD': countDevicesBD,
+    'maxNguon': round(maxNguon, 3),
+    'maxPin': round(maxPin, 3),
   }
   return jsonify(info)
 
