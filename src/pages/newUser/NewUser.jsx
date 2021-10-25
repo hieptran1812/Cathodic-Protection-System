@@ -17,6 +17,7 @@ export default function NewUser() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [notes, setNotes] = useState("");
   const [organization, setOrganization] = useState("")
   const [role, setRole] = useState("viewer");
   const [open, setOpen] = useState(false);
@@ -32,6 +33,7 @@ export default function NewUser() {
       address,
       organization,
       role,
+      notes,
     };
     axios
       .post(`${API}/api/addUser`, data)
@@ -136,6 +138,14 @@ export default function NewUser() {
               />
             </div>
             <div className="newUserItem">
+              <label>Ghi chú</label>
+              <input
+                name="notes"
+                type="text"
+                onChange={(e) => setNotes(e.target.value)}
+              />
+            </div>
+            <div className="newUserItem">
               <label>Vai trò</label>
               <select
                 className="newUserSelect"
@@ -150,7 +160,7 @@ export default function NewUser() {
                 </option>
               </select>
             </div>
-            <div className="newUserItem">
+            <div>
               <button className="newUserButton">Thêm người dùng</button>
             </div>
           </form>

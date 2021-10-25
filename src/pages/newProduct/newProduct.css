@@ -19,7 +19,7 @@
 }
 
 .addProductItem > label {
-  color: gray;
+  color: rgb(9, 4, 41);
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -34,6 +34,7 @@
 
 .addProductButton {
   margin-top: 30px;
+  margin-bottom: 50px;
   padding: 7px 10px;
   border: none;
   border-radius: 10px;

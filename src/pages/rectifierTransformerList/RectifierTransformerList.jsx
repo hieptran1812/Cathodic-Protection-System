@@ -11,7 +11,12 @@ import Button from "@material-ui/core/Button";
 const API = process.env.REACT_APP_API;
 
 const columns = [
-  { field: "maChuoi", headerName: "Mã dạng chuỗi", width: 200 },
+  { field: "maChuoi", headerName: "Tên thiết bị", width: 200 },
+  {
+    field: "centralAddress",
+    headerName: "Central Address",
+    width: 200,
+  },
   {
     field: "devSerial",
     headerName: "Mã thiết bị",
@@ -19,11 +24,6 @@ const columns = [
     renderCell: (params) => {
       return <div className="productListItem">{params.row.devSerial}</div>;
     },
-  },
-  {
-    field: "centralAddress",
-    headerName: "Central Address",
-    width: 200,
   },
   {
     field: "phone",
@@ -37,13 +37,16 @@ const columns = [
   },
   {
     field: "action",
-    headerName: "Mô tả",
+    headerName: "Thông tin",
     width: 200,
     renderCell: (params) => {
       return (
         <>
-          <Link to={"/rectifierTransformer/" + params.row.devSerial}>
-            <button className="productListEdit">Thông tin chi tiết</button>
+          <Link
+            to={"/rectifierTransformer/" + params.row.devSerial}
+            style={{ textDecoration: "none" }}
+          >
+            <button className="productListEdit">Chi tiết</button>
           </Link>
         </>
       );

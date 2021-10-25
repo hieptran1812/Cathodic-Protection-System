@@ -4,6 +4,7 @@ import {
   PermIdentity,
   PhoneAndroid,
   Business,
+  Notes
 } from "@material-ui/icons";
 import axios from "axios";
 import { React, useState, useEffect } from "react";
@@ -40,6 +41,7 @@ export default function User() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [notes, setNotes] = useState("");
   const [open, setOpen] = useState(false);
   const [openClick, setOpenClick] = useState(false);
   let history = useHistory();
@@ -68,6 +70,7 @@ export default function User() {
       email,
       phone,
       address,
+      notes,
     };
     // console.log(data);
 
@@ -93,6 +96,7 @@ export default function User() {
           setEmail(data.email);
           setAddress(data.address);
           setPhone(data.phone);
+          setNotes(data.notes);
           // console.log(data);
         })
         .catch((error) => console.log(error));
@@ -164,32 +168,49 @@ export default function User() {
             <div className="userShow">
               <div className="userShowTop">
                 <div className="userShowTopTitle">
-                  <span className="userShowUsername">{info.name}</span>
-                  <span className="userShowUserTitle">{info.role}</span>
+                  <span className="userShowUsername">Họ và tên: {info.name}</span>
+                  <span className="userShowUserTitle">Vai trò: {info.role}</span>
                 </div>
               </div>
               <div className="userShowBottom">
                 <span className="userShowTitle">Thông tin chi tiết</span>
                 <div className="userShowInfo">
                   <PermIdentity className="userShowIcon" />
-                  <span className="userShowInfoTitle">{info.username}</span>
+                  <span className="userShowInfoTitle">
+                    Tên tài khoản: {info.username}
+                  </span>
                 </div>
                 <div className="userShowInfo">
                   <Business className="userShowIcon" />
-                  <span className="userShowInfoTitle">{info.organization}</span>
+                  <span className="userShowInfoTitle">
+                    Tổ chức: {info.organization}
+                  </span>
                 </div>
-                <span className="userShowTitle">Liên hệ</span>
+                <span className="userShowTitle">Thông tin liên hệ</span>
                 <div className="userShowInfo">
                   <PhoneAndroid className="userShowIcon" />
-                  <span className="userShowInfoTitle">{info.phone}</span>
+                  <span className="userShowInfoTitle">
+                    Số điện thoại: {info.phone}
+                  </span>
                 </div>
                 <div className="userShowInfo">
                   <MailOutline className="userShowIcon" />
-                  <span className="userShowInfoTitle">{info.email}</span>
+                  <span className="userShowInfoTitle">
+                    Địa chỉ email: {info.email}
+                  </span>
                 </div>
                 <div className="userShowInfo">
                   <LocationSearching className="userShowIcon" />
-                  <span className="userShowInfoTitle">{info.address}</span>
+                  <span className="userShowInfoTitle">
+                    Địa chỉ: {info.address}
+                  </span>
+                </div>
+                <span className="userShowTitle">Ghi chú</span>
+                <div className="userShowInfo">
+                  <Notes className="userShowIcon" />
+                  <span className="userShowInfoTitle">
+                    Ghi chú: {info.notes}
+                  </span>
                 </div>
               </div>
             </div>
@@ -241,6 +262,16 @@ export default function User() {
                       className="userUpdateInput"
                       onChange={(e) => setAddress(e.target.value)}
                       value={address}
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>Ghi chú</label>
+                    <input
+                      type="text"
+                      placeholder={notes}
+                      className="userUpdateInput"
+                      onChange={(e) => setNotes(e.target.value)}
+                      value={notes}
                     />
                   </div>
                 </div>

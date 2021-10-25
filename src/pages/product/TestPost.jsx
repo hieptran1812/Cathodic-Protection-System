@@ -25,7 +25,7 @@ const columns = [
   { field: "id", hide: true },
   {
     field: "time",
-    headerName: "Thời gian",
+    headerName: "Date",
     width: 230,
   },
   {
@@ -40,7 +40,7 @@ const columns = [
   },
   {
     field: "temperature",
-    headerName: "Nhiệt độ thiết bị (độ C)",
+    headerName: "Temperature (°C)",
     width: 220,
   },
   {
@@ -260,9 +260,9 @@ export default function TestPost() {
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Nhiệt độ thiết bị</span>
+                  <span className="productInfoKey">Temperature</span>
                   <span className="productInfoValue">
-                    {infoTop[0].temperature} độ C
+                    {infoTop[0].temperature} °C
                   </span>
                 </div>
                 <div className="productInfoItemTest">

@@ -17,7 +17,7 @@ export default function LandingPage() {
   const HighlightedText = tw.span`text-gray-500`;
 
   return (
-    <AnimationRevealPage>
+    <AnimationRevealPage id = "feature">
       <Hero roundedHeaderButton={true} />
       <Features
         subheading={<Subheading>Tính năng</Subheading>}

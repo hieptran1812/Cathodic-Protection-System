@@ -40,25 +40,23 @@ def index():
 def getFeatureInfo():
   logging.info("start API get info Dashboard")
   countBTT = 0
-  averageDC = 0
-  averageAC = 0
+  maxDC = 0
+  maxAC = 0
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       countBTT += 1
-      averageDC += int(doc['otherInfo'][0]['dienDCPoint1'])
-      averageAC += int(doc['otherInfo'][0]['dienAC3PhaA'])
+      maxDC = max(int(doc['otherInfo'][0]['dienDCPoint1']),maxDC)
+      maxAC = max(int(doc['otherInfo'][0]['dienAC3PhaA']),maxAC)
     else:
       if(doc['organization'] == currentUser['organization']):
         countBTT += 1
-        averageDC += int(doc['otherInfo'][0]['dienDCPoint1'])
-        averageAC += int(doc['otherInfo'][0]['dienAC3PhaA'])
-  averageAC /= countBTT
-  averageDC /= countBTT
+        maxDC = max(int(doc['otherInfo'][0]['dienDCPoint1']),maxDC)
+        maxAC = max(int(doc['otherInfo'][0]['dienAC3PhaA']),maxAC)
   countDevices = countBTT
   info = {
     'countDevices': countDevices,
-    'averageDC': round(averageDC, 3),
-    'averageAC': round(averageAC, 3),
+    'maxDC': round(maxDC, 3),
+    'maxAC': round(maxAC, 3),
   }
   return jsonify(info)
 
@@ -124,6 +122,7 @@ def createUser():
     'phone': res['phone'],
     'address': res['address'],
     'role': res['role'],
+    'notes': res['notes'],
   }
   user = db.User.find_one({ 
       'username': res['username']
@@ -177,7 +176,8 @@ def getUserDetail(id):
     res['email'] = user['email'],
     res['phone'] = user['phone'],
     res['organization'] = user['organization'],
-    res['address'] = user['address']
+    res['address'] = user['address'],
+    res['notes'] = user['notes']
     return jsonify(res), 200
 
 @app.route('/api/user/delete/<id>', methods=['GET'])
@@ -193,6 +193,7 @@ def updateUser(id):
     'email': res['email'],
     'phone': res['phone'],
     'address': res['address'],
+    'notes': res['notes'],
   }})
   return 'hoan thanh', 200
 

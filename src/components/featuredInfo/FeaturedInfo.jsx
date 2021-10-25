@@ -32,7 +32,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Trung bình điện áp DC</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.averageDC}</span>
+          <span className="featuredMoney">{info.maxDC}</span>
           <span className="featuredMoneyRate">
             -1.4 <ArrowDownward className="featuredIcon negative" />
           </span>
@@ -41,7 +41,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Trung bình điện áp AC</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.averageAC}</span>
+          <span className="featuredMoney">{info.maxAC}</span>
           <span className="featuredMoneyRate">
             +2.4 <ArrowUpward className="featuredIcon" />
           </span>

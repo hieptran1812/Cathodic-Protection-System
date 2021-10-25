@@ -17,7 +17,8 @@ h1 {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 50px;
 }
 
 .newUserItem > label {
@@ -30,7 +31,7 @@ h1 {
 .newUserItem > input {
   height: 20px;
   padding: 10px;
-  border: 1px solid gray;
+  border: 1px solid rgb(179, 65, 65);
   border-radius: 5px;
 }
 
@@ -39,9 +40,9 @@ h1 {
 }
 
 .newUserGender > label {
-  margin: 10px;
+  margin: 15px;
   font-size: 18px;
-  color: #555;
+  color: rgb(61, 79, 233);
 }
 
 .newUserSelect {
@@ -52,12 +53,13 @@ h1 {
 .newUserButton {
   width: 200px;
   border: none;
-  background-color: darkblue;
+  background-color: rgb(66, 66, 231);
   color: white;
-  padding: 10px 10px;
+  padding: 10px 20px;
   font-weight: 800;
   border-radius: 10px;
-  margin-top: 60px;
+  margin-top: 70px;
   cursor: pointer;
   align-items: center;
+  margin-top: 100px;
 }

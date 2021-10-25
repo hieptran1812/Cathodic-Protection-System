@@ -24,24 +24,27 @@ const columns = [
     width: 200,
   },
   {
-    field: "phone",
-    headerName: "Số điện thoại",
-    width: 180,
-  },
-  {
     field: "organization",
     headerName: "Tổ chức",
     width: 220,
   },
   {
+    field: "phone",
+    headerName: "Số điện thoại",
+    width: 180,
+  },
+  {
     field: "action",
-    headerName: "Hành động",
-    width: 200,
+    headerName: "Thông tin người dùng",
+    width: 220,
     renderCell: (params) => {
       return (
         <>
-          <Link to={"/user/" + params.row.id}>
-            <button className="userListEdit">Thông tin chi tiết</button>
+          <Link
+            to={"/user/" + params.row.id}
+            style={{ textDecoration: "none" }}
+          >
+            <button className="userListEdit">Chi tiết</button>
           </Link>
         </>
       );
