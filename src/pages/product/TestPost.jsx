@@ -18,6 +18,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
+import Alert from "@material-ui/lab/Alert";
 
 const API = process.env.REACT_APP_API;
 
@@ -30,65 +31,87 @@ const columns = [
   },
   {
     field: "dienApPin",
-    headerName: "Điện áp pin (V)",
-    width: 180,
+    headerName: "Battery voltage (V)",
+    width: 200,
   },
   {
     field: "dienApNguon",
-    headerName: "Điện áp nguồn (V)",
-    width: 190,
+    headerName: "Power supply voltage (V)",
+    width: 230,
   },
   {
     field: "temperature",
     headerName: "Temperature (°C)",
-    width: 220,
+    width: 180,
   },
   {
     field: "openPoint1",
-    headerName: "Điện áp âm 1 mở (V)",
-    width: 200,
+    headerName: "Negative voltage 1 open (V)",
+    width: 250,
   },
   {
     field: "closePoint1",
-    headerName: "Điện áp âm 1 đóng (V)",
-    width: 220,
+    headerName: "Negative voltage 1 closed (V)",
+    width: 250,
   },
   {
     field: "openPoint2",
-    headerName: "Điện áp âm 2 mở (V)",
-    width: 200,
+    headerName: "Negative voltage 2 open (V)",
+    width: 250,
   },
   {
     field: "closePoint2",
-    headerName: "Điện áp âm 2 đóng (V)",
-    width: 220,
+    headerName: "Negative voltage 2 closed (V)",
+    width: 250,
   },
   {
     field: "openPoint3",
-    headerName: "Điện áp âm 3 mở (V)",
-    width: 200,
+    headerName: "Negative voltage 3 open (V)",
+    width: 250,
   },
   {
     field: "closePoint3",
-    headerName: "Điện áp âm 3 đóng (V)",
-    width: 220,
+    headerName: "Negative voltage 3 closed (V)",
+    width: 250,
   },
   {
     field: "openPoint4",
-    headerName: "Điện áp âm 4 mở (V)",
-    width: 200,
+    headerName: "Negative voltage 4 open (V)",
+    width: 250,
   },
   {
     field: "closePoint4",
-    headerName: "Điện áp âm 4 đóng (V)",
-    width: 220,
+    headerName: "Negative voltage 4 closed (V)",
+    width: 250,
   },
   {
     field: "signalQuality",
-    headerName: "Chất lượng tín hiệu",
-    width: 200,
+    headerName: "Signal quality",
+    width: 165,
   },
 ];
+
+function ConditionTemperature(props) {
+  if (props.value > 50) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} °C Nhiệt độ cao, hãy kiểm tra lại!
+      </Alert>
+    );
+  } else if (props.value === 0) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} °C, hãy kiểm tra lại!
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value} °C
+      </Alert>
+    );
+  }
+}
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -230,7 +253,7 @@ export default function TestPost() {
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Mã thiết bị</span>
+                  <span className="productInfoKey">Device code</span>
                   <span className="productInfoValue">{productId}</span>
                 </div>
                 <div className="productInfoItemTest">
@@ -254,7 +277,7 @@ export default function TestPost() {
             <div className="productTopRight">
               <div className="productInfoBottom">
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Điện áp pin</span>
+                  <span className="productInfoKey">Battery voltage</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienApPin} (V)
                   </span>
@@ -262,11 +285,11 @@ export default function TestPost() {
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Temperature</span>
                   <span className="productInfoValue">
-                    {infoTop[0].temperature} °C
+                    <ConditionTemperature value={infoTop[0].temperature} />
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Điện áp nguồn</span>
+                  <span className="productInfoKey">Power supply voltage</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienApNguon} (V)
                   </span>
@@ -282,11 +305,11 @@ export default function TestPost() {
             <div className="productTopRight">
               <div className="productInfoBottom">
                 <div className="productInfoItemColumn">
-                  <span className="columnTestPostLeft">Mở</span>
-                  <span className="columnTestPostRight">Đóng</span>
+                  <span className="columnTestPostLeft">Open</span>
+                  <span className="columnTestPostRight">Close</span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Điện áp âm 1</span>
+                  <span className="productInfoKey">Negative voltage 1</span>
                   <span className="productInfoValueElec">
                     {infoTop[0].openPoint1} (V)
                   </span>
@@ -295,7 +318,7 @@ export default function TestPost() {
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Điện áp âm 2</span>
+                  <span className="productInfoKey">Negative voltage 2</span>
                   <span className="productInfoValueElec">
                     {infoTop[0].openPoint2} (V)
                   </span>
@@ -304,7 +327,7 @@ export default function TestPost() {
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Điện áp âm 3</span>
+                  <span className="productInfoKey">Negative voltage 3</span>
                   <span className="productInfoValueElec">
                     {infoTop[0].openPoint3} (V)
                   </span>
@@ -313,7 +336,7 @@ export default function TestPost() {
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Điện áp âm 4</span>
+                  <span className="productInfoKey">Negative voltage 4</span>
                   <span className="productInfoValueElec">
                     {infoTop[0].openPoint4} (V)
                   </span>

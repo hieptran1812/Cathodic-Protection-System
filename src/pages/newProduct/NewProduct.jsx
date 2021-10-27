@@ -124,7 +124,7 @@ export default function NewProduct() {
               />
             </div>
             <div className="addProductItem">
-              <label>Mã chuỗi của thiết bị *</label>
+              <label>Tên thiết bị *</label>
               <input
                 type="text"
                 placeholder="Mã có dạng XXX-XXX-XXX-XXX bao gồm cả chữ và số"

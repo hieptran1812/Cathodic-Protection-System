@@ -18,6 +18,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
+import Alert from "@material-ui/lab/Alert";
 
 const API = process.env.REACT_APP_API;
 
@@ -25,53 +26,53 @@ const columns = [
   { field: "id", hide: true },
   {
     field: "time",
-    headerName: "Thời gian",
+    headerName: "Date",
     width: 230,
   },
   {
     field: "dienApPin",
-    headerName: "Điện áp pin (V)",
-    width: 180,
+    headerName: "Battery voltage (V)",
+    width: 200,
   },
   {
     field: "dienApNguon",
-    headerName: "Điện áp nguồn (V)",
-    width: 190,
+    headerName: "Power supply voltage (V)",
+    width: 240,
   },
   {
     field: "temperature",
     headerName: "Temperature (°C)",
-    width: 220,
+    width: 180,
   },
   {
     field: "dienAC3PhaA",
-    headerName: "Điện AC pha A (V)",
-    width: 200,
+    headerName: "AC power phase A (V)",
+    width: 210,
   },
   {
     field: "dienAC3PhaB",
-    headerName: "Điện AC pha B (V)",
-    width: 200,
+    headerName: "AC power phase B (V)",
+    width: 210,
   },
   {
     field: "dienAC3PhaC",
-    headerName: "Điện AC pha C (V)",
-    width: 200,
+    headerName: "AC power phase C (V)",
+    width: 210,
   },
   {
     field: "dienDCPoint1",
-    headerName: "Điện DC Point 1 (V)",
-    width: 200,
+    headerName: "Power DC Point 1 (V)",
+    width: 210,
   },
   {
     field: "dongDienDC",
-    headerName: "Dòng điện DC (A)",
-    width: 200,
+    headerName: "DC current (A)",
+    width: 180,
   },
   {
     field: "signalQuality",
-    headerName: "Chất lượng tín hiệu",
-    width: 200,
+    headerName: "Signal quality",
+    width: 170,
   },
 ];
 
@@ -80,6 +81,28 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
 }));
+
+function ConditionTemperature(props) {
+  if (props.value > 50) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} °C Nhiệt độ cao, hãy kiểm tra lại!
+      </Alert>
+    );
+  } else if (props.value === 0) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} °C, hãy kiểm tra lại!
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value} °C
+      </Alert>
+    );
+  }
+}
 
 export default function RectifierTransformer() {
   const classes = useStyles();
@@ -214,7 +237,7 @@ export default function RectifierTransformer() {
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Mã thiết bị</span>
+                  <span className="productInfoKey">Device code</span>
                   <span className="productInfoValue">{productId}</span>
                 </div>
                 <div className="productInfoItem">
@@ -232,31 +255,31 @@ export default function RectifierTransformer() {
             <div className="productTopRight">
               <div className="productInfoBottom">
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Điện áp nguồn</span>
+                  <span className="productInfoKey">Power supply voltage</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienApNguon} (V)
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Điện AC pha A</span>
+                  <span className="productInfoKey">AC power phase A</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienAC3PhaA} (V)
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Điện AC pha B</span>
+                  <span className="productInfoKey">AC power phase B</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienAC3PhaB} (V)
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Điện AC pha C</span>
+                  <span className="productInfoKey">AC power phase C</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienAC3PhaC} (V)
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Điện áp pin</span>
+                  <span className="productInfoKey">Battery voltage</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienApPin} (V)
                   </span>
@@ -264,17 +287,17 @@ export default function RectifierTransformer() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">Temperature</span>
                   <span className="productInfoValue">
-                    {infoTop[0].temperature} °C
+                    <ConditionTemperature value={infoTop[0].temperature} />
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Điện DC point 1</span>
+                  <span className="productInfoKey">Power DC point 1</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienDCPoint1} (V)
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Dòng điện DC</span>
+                  <span className="productInfoKey">DC current</span>
                   <span className="productInfoValue">
                     {infoTop[0].dongDienDC} (A)
                   </span>
