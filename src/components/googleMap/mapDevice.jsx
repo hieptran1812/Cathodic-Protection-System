@@ -57,10 +57,7 @@ export default function Map() {
         }}
       >
         {locate.map((device) => (
-          <Marker
-            latitude={device.lat}
-            longitude={device.lng}
-          >
+          <Marker latitude={device.lat} longitude={device.lng}>
             <button
               className="marker-btn"
               onClick={(e) => {
@@ -68,11 +65,13 @@ export default function Map() {
                 setSelectedDevice(device);
               }}
             >
+              <div>{device.devType}</div>
+              <div>{device.maChuoi}</div>
               <img
                 width="30"
                 height="30"
-                src="https://cdn-icons-png.flaticon.com/512/2475/2475301.png"
-                alt="icon"
+                src="https://cdn-icons-png.flaticon.com/512/900/900618.png"
+                alt={device.devType}
               />
             </button>
           </Marker>
@@ -89,6 +88,7 @@ export default function Map() {
             <div>
               <h4>{selectedDevice.devType}</h4>
               <p>Mã thiết bị: {selectedDevice.devSerial}</p>
+              <p>Tên thiết bị: {selectedDevice.maChuoi}</p>
               <p>Tổ chức: {selectedDevice.organization}</p>
             </div>
           </Popup>

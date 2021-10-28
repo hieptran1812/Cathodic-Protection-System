@@ -473,7 +473,8 @@ def getLocation():
           'lng': float(doc['lng']),
           'devSerial': doc['devSerial'],
           'organization': doc['organization'],
-          'devType': "Bo do",        
+          'devType': "Bo do",
+          'maChuoi':doc['maChuoi'],        
         })
       else:
         if(doc['organization'] == currentUser['organization']):
@@ -482,7 +483,8 @@ def getLocation():
             'lng': float(doc['lng']),
             'devSerial': doc['devSerial'],
             'organization': doc['organization'],
-            'devType': "Bo do",        
+            'devType': "Bo do",
+            'maChuoi':doc['maChuoi'],        
           })
     for doc in db.RectifierTransformersDetails.find({}):
       if(currentUser['role'] == 'superadmin'):
@@ -491,7 +493,8 @@ def getLocation():
           'lng': float(doc['lng']),
           'devSerial': doc['devSerial'],
           'organization': doc['organization'],
-          'devType': "Bo trung tam",           
+          'devType': "Bo trung tam",
+          'maChuoi':doc['maChuoi'],           
         })
       else:
         if(doc['organization'] == currentUser['organization']):
@@ -500,7 +503,8 @@ def getLocation():
             'lng': float(doc['lng']),
             'devSerial': doc['devSerial'],
             'organization': doc['organization'],
-            'devType': "Bo trung tam",           
+            'devType': "Bo trung tam",
+            'maChuoi':doc['maChuoi'],           
           })
     return jsonify(devices)
 
