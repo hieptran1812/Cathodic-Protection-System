@@ -42,6 +42,7 @@ export default function User() {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
+  const [password, setPassword] = useState("");
   const [open, setOpen] = useState(false);
   const [openClick, setOpenClick] = useState(false);
   let history = useHistory();
@@ -71,6 +72,7 @@ export default function User() {
       phone,
       address,
       notes,
+      password,
     };
     // console.log(data);
 
@@ -97,6 +99,7 @@ export default function User() {
           setAddress(data.address);
           setPhone(data.phone);
           setNotes(data.notes);
+          setPassword(data.password);
           // console.log(data);
         })
         .catch((error) => console.log(error));
@@ -271,7 +274,15 @@ export default function User() {
                       placeholder={notes}
                       className="userUpdateInput"
                       onChange={(e) => setNotes(e.target.value)}
-                      value={notes}
+                    />
+                  </div>
+                  <div className="userUpdateItem">
+                    <label>Sửa lại mật khẩu</label>
+                    <input
+                      type="password"
+                      placeholder={password}
+                      className="userUpdateInput"
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                 </div>

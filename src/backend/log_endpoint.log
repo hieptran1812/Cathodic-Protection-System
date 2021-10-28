@@ -1,0 +1,180 @@
+2021-10-28 08:34:58,743 - INFO - Start API
+2021-10-28 08:34:58,746 - INFO - Flask started
+2021-10-28 08:34:59,014 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-28 08:45:28,323 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:28] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-28 08:45:28,799 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:28] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-28 08:45:28,868 - INFO - start API get info Dashboard
+2021-10-28 08:45:29,106 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:29] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 08:45:29,132 - INFO - start API get dashboard list
+2021-10-28 08:45:29,259 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:29] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:45:30,689 - INFO - start API get users list
+2021-10-28 08:45:30,760 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:30] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-10-28 08:45:36,755 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:36] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 08:45:44,906 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:44] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 08:45:44,911 - ERROR - Exception on /api/editUser/6111eee7d64b6b02be983107 [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 215, in updateUser
+    'notes': res['notes'],
+KeyError: 'notes'
+2021-10-28 08:45:44,938 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:44] "[35m[1mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 500 -
+2021-10-28 08:45:46,134 - ERROR - Exception on /api/editUser/6111eee7d64b6b02be983107 [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 215, in updateUser
+    'notes': res['notes'],
+KeyError: 'notes'
+2021-10-28 08:45:46,134 - INFO - 127.0.0.1 - - [28/Oct/2021 08:45:46] "[35m[1mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 500 -
+2021-10-28 08:46:06,539 - INFO - Start API
+2021-10-28 08:46:06,540 - INFO - Flask started
+2021-10-28 08:46:06,982 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-28 08:46:54,144 - INFO - 127.0.0.1 - - [28/Oct/2021 08:46:54] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 08:47:07,970 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:07] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 08:47:08,038 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:08] "[37mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 08:47:19,889 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:19] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-28 08:47:19,948 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:19] "[33mPOST /api/login HTTP/1.1[0m" 404 -
+2021-10-28 08:47:24,086 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:24] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-28 08:47:24,179 - INFO - start API get info Dashboard
+2021-10-28 08:47:24,421 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:24] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 08:47:24,440 - INFO - start API get dashboard list
+2021-10-28 08:47:24,580 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:24] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:47:28,595 - INFO - start API get Rectifier Transformers list
+2021-10-28 08:47:28,653 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:28] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:47:31,066 - INFO - start API get users list
+2021-10-28 08:47:31,121 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:31] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-10-28 08:47:32,779 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:32] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 08:47:44,106 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:44] "[37mOPTIONS /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 08:47:44,168 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:44] "[37mPOST /api/editUser/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 08:47:45,537 - INFO - start API get users list
+2021-10-28 08:47:45,593 - INFO - 127.0.0.1 - - [28/Oct/2021 08:47:45] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-10-28 08:48:01,482 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:01] "[37mOPTIONS /api/addUser HTTP/1.1[0m" 200 -
+2021-10-28 08:48:01,485 - INFO - start API add new user
+2021-10-28 08:48:01,603 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:01] "[37mPOST /api/addUser HTTP/1.1[0m" 200 -
+2021-10-28 08:48:09,297 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:09] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-28 08:48:09,364 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:09] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-28 08:48:09,429 - INFO - start API get info Dashboard
+2021-10-28 08:48:09,640 - INFO - start API get dashboard list
+2021-10-28 08:48:09,659 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:09] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 08:48:10,208 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:10] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:48:16,430 - INFO - start API get location all devices
+2021-10-28 08:48:16,625 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:16] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 08:48:20,606 - INFO - start API get info Dashboard
+2021-10-28 08:48:20,766 - INFO - start API get dashboard list
+2021-10-28 08:48:20,805 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:20] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 08:48:21,005 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:21] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:48:33,646 - INFO - start API get location all devices
+2021-10-28 08:48:33,888 - INFO - 127.0.0.1 - - [28/Oct/2021 08:48:33] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 08:57:08,526 - INFO - start API get location all devices
+2021-10-28 08:57:08,766 - INFO - 127.0.0.1 - - [28/Oct/2021 08:57:08] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 08:59:20,223 - INFO - start API get info Dashboard
+2021-10-28 08:59:20,279 - INFO - start API get dashboard list
+2021-10-28 08:59:20,454 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:20] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 08:59:20,470 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:20] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:59:23,286 - INFO - start API get Rectifier Transformers list
+2021-10-28 08:59:23,333 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:23] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:59:23,777 - INFO - start API get info Dashboard
+2021-10-28 08:59:23,919 - INFO - start API get dashboard list
+2021-10-28 08:59:23,970 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:23] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 08:59:24,155 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:24] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:59:24,897 - INFO - start API get Rectifier Transformers list
+2021-10-28 08:59:24,955 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:24] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:59:25,548 - INFO - start API get info Dashboard
+2021-10-28 08:59:25,627 - INFO - start API get dashboard list
+2021-10-28 08:59:25,819 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:25] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 08:59:25,827 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:25] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 08:59:31,009 - INFO - start API get Test Posts list
+2021-10-28 08:59:31,164 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:31] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-28 08:59:32,046 - INFO - start API get Rectifier Transformers list
+2021-10-28 08:59:32,097 - INFO - 127.0.0.1 - - [28/Oct/2021 08:59:32] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:01:40,946 - INFO - start API get Test Posts list
+2021-10-28 09:01:41,096 - INFO - 127.0.0.1 - - [28/Oct/2021 09:01:41] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-28 09:01:49,249 - INFO - 127.0.0.1 - - [28/Oct/2021 09:01:49] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-28 09:01:49,301 - INFO - 127.0.0.1 - - [28/Oct/2021 09:01:49] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-28 09:01:49,365 - INFO - start API get info Dashboard
+2021-10-28 09:01:49,557 - INFO - 127.0.0.1 - - [28/Oct/2021 09:01:49] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:01:49,610 - INFO - start API get dashboard list
+2021-10-28 09:01:49,717 - INFO - 127.0.0.1 - - [28/Oct/2021 09:01:49] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:01:55,169 - INFO - 127.0.0.1 - - [28/Oct/2021 09:01:55] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 09:02:10,001 - INFO - 127.0.0.1 - - [28/Oct/2021 09:02:10] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-28 09:02:10,051 - INFO - 127.0.0.1 - - [28/Oct/2021 09:02:10] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-28 09:02:10,117 - INFO - start API get info Dashboard
+2021-10-28 09:02:10,336 - INFO - 127.0.0.1 - - [28/Oct/2021 09:02:10] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:02:10,371 - INFO - start API get dashboard list
+2021-10-28 09:02:10,508 - INFO - 127.0.0.1 - - [28/Oct/2021 09:02:10] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:02:14,384 - INFO - start API get Rectifier Transformers list
+2021-10-28 09:02:14,433 - INFO - 127.0.0.1 - - [28/Oct/2021 09:02:14] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:29:14,811 - INFO - start API get info Dashboard
+2021-10-28 09:29:15,089 - INFO - 127.0.0.1 - - [28/Oct/2021 09:29:15] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:29:15,174 - INFO - start API get dashboard list
+2021-10-28 09:29:15,326 - INFO - 127.0.0.1 - - [28/Oct/2021 09:29:15] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:30:50,916 - INFO - start API get info Dashboard
+2021-10-28 09:30:51,112 - INFO - 127.0.0.1 - - [28/Oct/2021 09:30:51] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:30:51,179 - INFO - start API get dashboard list
+2021-10-28 09:30:51,306 - INFO - 127.0.0.1 - - [28/Oct/2021 09:30:51] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:33:31,239 - INFO - 127.0.0.1 - - [28/Oct/2021 09:33:31] "[37mGET /api/users/617a01512fb2b2dfa27d8618 HTTP/1.1[0m" 200 -
+2021-10-28 09:33:36,297 - INFO - start API get info Dashboard
+2021-10-28 09:33:36,466 - INFO - start API get dashboard list
+2021-10-28 09:33:36,631 - INFO - 127.0.0.1 - - [28/Oct/2021 09:33:36] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:33:36,785 - INFO - 127.0.0.1 - - [28/Oct/2021 09:33:36] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:33:37,848 - INFO - 127.0.0.1 - - [28/Oct/2021 09:33:37] "[37mGET /api/users/617a01512fb2b2dfa27d8618 HTTP/1.1[0m" 200 -
+2021-10-28 09:33:39,130 - INFO - start API get info Dashboard
+2021-10-28 09:33:39,149 - INFO - start API get dashboard list
+2021-10-28 09:33:39,314 - INFO - 127.0.0.1 - - [28/Oct/2021 09:33:39] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:33:39,372 - INFO - 127.0.0.1 - - [28/Oct/2021 09:33:39] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:33:40,033 - INFO - start API get Rectifier Transformers list
+2021-10-28 09:33:40,089 - INFO - 127.0.0.1 - - [28/Oct/2021 09:33:40] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:33:40,637 - INFO - 127.0.0.1 - - [28/Oct/2021 09:33:40] "[37mGET /api/users/617a01512fb2b2dfa27d8618 HTTP/1.1[0m" 200 -
+2021-10-28 09:35:21,319 - INFO - start API get info Dashboard
+2021-10-28 09:35:21,411 - INFO - start API get dashboard list
+2021-10-28 09:35:21,548 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:21] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:35:21,601 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:21] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:35:22,130 - INFO - start API get Rectifier Transformers list
+2021-10-28 09:35:22,177 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:22] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:35:22,698 - INFO - start API get Test Posts list
+2021-10-28 09:35:22,847 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:22] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-28 09:35:23,473 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:23] "[37mGET /api/users/617a01512fb2b2dfa27d8618 HTTP/1.1[0m" 200 -
+2021-10-28 09:35:28,967 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:28] "[37mGET /api/user/delete/617a01512fb2b2dfa27d8618 HTTP/1.1[0m" 200 -
+2021-10-28 09:35:29,003 - INFO - start API get info Dashboard
+2021-10-28 09:35:29,126 - INFO - start API get dashboard list
+2021-10-28 09:35:29,187 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:29] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:35:29,350 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:29] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:35:41,058 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:41] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-28 09:35:41,117 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:41] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-28 09:35:41,181 - INFO - start API get info Dashboard
+2021-10-28 09:35:41,401 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:41] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 09:35:41,447 - INFO - start API get dashboard list
+2021-10-28 09:35:41,599 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:41] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:35:43,176 - INFO - start API get users list
+2021-10-28 09:35:43,231 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:43] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-10-28 09:35:45,515 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:45] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -
+2021-10-28 09:35:48,130 - INFO - start API get Test Posts list
+2021-10-28 09:35:48,305 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:48] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-10-28 09:35:48,968 - INFO - start API get Rectifier Transformers list
+2021-10-28 09:35:49,023 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:49] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-10-28 09:35:49,897 - INFO - 127.0.0.1 - - [28/Oct/2021 09:35:49] "[37mGET /api/users/6111eee7d64b6b02be983107 HTTP/1.1[0m" 200 -

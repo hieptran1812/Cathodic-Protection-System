@@ -63,9 +63,16 @@ function App() {
           ></Route>
           <Route
             path="/user/:userId"
-            render={() => {
+            render={(props) => {
+              
               if (localStorage.getItem("accessToken")) {
-                if (localStorage.getItem("role") !== "viewer") return <User />;
+                
+                if (
+                  localStorage.getItem("role") !== "viewer" ||
+                  localStorage.getItem("idCurrentUser") ==
+                    props.match.params.userId
+                )
+                  return <User />;
                 else return <Home />;
               } else {
                 return <Redirect to="/" />;

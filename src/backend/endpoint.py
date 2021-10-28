@@ -213,6 +213,7 @@ def updateUser(id):
     'phone': res['phone'],
     'address': res['address'],
     'notes': res['notes'],
+    'password': res['password'],
   }})
   return 'hoan thanh', 200
 
