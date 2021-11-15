@@ -374,3 +374,61 @@ Traceback (most recent call last):
     if(currentUser['role'] == 'superadmin'):
 KeyError: 'role'
 2021-10-28 10:50:30,964 - INFO - 127.0.0.1 - - [28/Oct/2021 10:50:30] "[35m[1mGET /api/locationAllDevices HTTP/1.1[0m" 500 -
+2021-10-28 10:52:03,769 - INFO - Start API
+2021-10-28 10:52:03,772 - INFO - Flask started
+2021-10-28 10:52:04,633 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-28 10:52:10,207 - INFO - start API get location all devices
+2021-10-28 10:52:10,809 - ERROR - Exception on /api/locationAllDevices [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 470, in getLocation
+    if(currentUser['role'] == 'superadmin'):
+KeyError: 'role'
+2021-10-28 10:52:10,814 - INFO - 127.0.0.1 - - [28/Oct/2021 10:52:10] "[35m[1mGET /api/locationAllDevices HTTP/1.1[0m" 500 -
+2021-10-28 10:59:22,462 - INFO - 127.0.0.1 - - [28/Oct/2021 10:59:22] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-10-28 10:59:22,525 - INFO - 127.0.0.1 - - [28/Oct/2021 10:59:22] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-10-28 10:59:22,609 - INFO - start API get info Dashboard
+2021-10-28 10:59:22,842 - INFO - 127.0.0.1 - - [28/Oct/2021 10:59:22] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-10-28 10:59:23,046 - INFO - start API get dashboard list
+2021-10-28 10:59:23,236 - INFO - 127.0.0.1 - - [28/Oct/2021 10:59:23] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-10-28 10:59:24,579 - INFO - start API get location all devices
+2021-10-28 10:59:24,826 - INFO - 127.0.0.1 - - [28/Oct/2021 10:59:24] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:00:16,567 - INFO - start API get location all devices
+2021-10-28 11:00:16,802 - INFO - 127.0.0.1 - - [28/Oct/2021 11:00:16] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:00:31,817 - INFO - start API get location all devices
+2021-10-28 11:00:32,060 - INFO - 127.0.0.1 - - [28/Oct/2021 11:00:32] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:01:04,475 - INFO - start API get location all devices
+2021-10-28 11:01:04,730 - INFO - 127.0.0.1 - - [28/Oct/2021 11:01:04] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:01:14,814 - INFO - start API get location all devices
+2021-10-28 11:01:15,058 - INFO - 127.0.0.1 - - [28/Oct/2021 11:01:15] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:01:20,181 - INFO - start API get location all devices
+2021-10-28 11:01:20,425 - INFO - 127.0.0.1 - - [28/Oct/2021 11:01:20] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:01:29,706 - INFO - start API get location all devices
+2021-10-28 11:01:29,946 - INFO - 127.0.0.1 - - [28/Oct/2021 11:01:29] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:01:32,464 - INFO - start API get location all devices
+2021-10-28 11:01:32,696 - INFO - 127.0.0.1 - - [28/Oct/2021 11:01:32] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:01:48,978 - INFO - start API get location all devices
+2021-10-28 11:01:49,245 - INFO - 127.0.0.1 - - [28/Oct/2021 11:01:49] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:02:01,215 - INFO - start API get location all devices
+2021-10-28 11:02:01,456 - INFO - 127.0.0.1 - - [28/Oct/2021 11:02:01] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:02:38,296 - INFO - start API get location all devices
+2021-10-28 11:02:38,469 - INFO - 127.0.0.1 - - [28/Oct/2021 11:02:38] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:02:59,051 - INFO - start API get location all devices
+2021-10-28 11:02:59,232 - INFO - 127.0.0.1 - - [28/Oct/2021 11:02:59] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:03:02,204 - INFO - start API get location all devices
+2021-10-28 11:03:02,393 - INFO - 127.0.0.1 - - [28/Oct/2021 11:03:02] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-10-28 11:03:02,397 - INFO - start API get location all devices
+2021-10-28 11:03:02,495 - INFO - 127.0.0.1 - - [28/Oct/2021 11:03:02] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -

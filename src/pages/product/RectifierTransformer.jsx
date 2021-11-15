@@ -30,21 +30,6 @@ const columns = [
     width: 230,
   },
   {
-    field: "dienApPin",
-    headerName: "Battery voltage (V)",
-    width: 200,
-  },
-  {
-    field: "dienApNguon",
-    headerName: "Power supply voltage (V)",
-    width: 240,
-  },
-  {
-    field: "temperature",
-    headerName: "Temperature (°C)",
-    width: 180,
-  },
-  {
     field: "dienAC3PhaA",
     headerName: "AC power phase A (V)",
     width: 210,
@@ -74,6 +59,21 @@ const columns = [
     headerName: "Signal quality",
     width: 170,
   },
+  {
+    field: "dienApPin",
+    headerName: "Battery voltage (V)",
+    width: 200,
+  },
+  {
+    field: "dienApNguon",
+    headerName: "Power supply voltage (V)",
+    width: 240,
+  },
+  {
+    field: "temperature",
+    headerName: "Temperature (°C)",
+    width: 180,
+  },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -99,6 +99,50 @@ function ConditionTemperature(props) {
     return (
       <Alert variant="filled" severity="info">
         {props.value} °C
+      </Alert>
+    );
+  }
+}
+
+function ConditionACInputPhaA(props) {
+  if (props.value > 380) {
+    return (
+      <Alert variant="filled" severity="warning">
+        {props.value} (V)
+      </Alert>
+    );
+  } else if (props.value < 220) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} (V)
+      </Alert>
+    );
+  } else{
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value} (V)
+      </Alert>
+    );
+  }
+}
+
+function ConditionDCOutput(props) {
+  if (props.value > 50) {
+    return (
+      <Alert variant="filled" severity="warning">
+        {props.value} (V)
+      </Alert>
+    );
+  } else if (props.value < 10) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} (V)
+      </Alert>
+    );
+  } else{
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value} (V)
       </Alert>
     );
   }
@@ -263,7 +307,7 @@ export default function RectifierTransformer() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">AC power phase A</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienAC3PhaA} (V)
+                    <ConditionACInputPhaA value={infoTop[0].dienAC3PhaA} />
                   </span>
                 </div>
                 <div className="productInfoItem">
@@ -293,7 +337,7 @@ export default function RectifierTransformer() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">Power DC point 1</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienDCPoint1} (V)
+                    <ConditionDCOutput value={infoTop[0].dienDCPoint1} />
                   </span>
                 </div>
                 <div className="productInfoItem">

@@ -30,21 +30,6 @@ const columns = [
     width: 230,
   },
   {
-    field: "dienApPin",
-    headerName: "Battery voltage (V)",
-    width: 200,
-  },
-  {
-    field: "dienApNguon",
-    headerName: "Power supply voltage (V)",
-    width: 230,
-  },
-  {
-    field: "temperature",
-    headerName: "Temperature (°C)",
-    width: 180,
-  },
-  {
     field: "openPoint1",
     headerName: "Negative voltage 1 open (V)",
     width: 250,
@@ -89,19 +74,34 @@ const columns = [
     headerName: "Signal quality",
     width: 165,
   },
+  {
+    field: "dienApPin",
+    headerName: "Battery voltage (V)",
+    width: 200,
+  },
+  {
+    field: "dienApNguon",
+    headerName: "Power supply voltage (V)",
+    width: 230,
+  },
+  {
+    field: "temperature",
+    headerName: "Temperature (°C)",
+    width: 180,
+  },
 ];
 
 function ConditionTemperature(props) {
   if (props.value > 50) {
     return (
       <Alert variant="filled" severity="error">
-        {props.value} °C Nhiệt độ cao, hãy kiểm tra lại!
+        {props.value} °C
       </Alert>
     );
   } else if (props.value === 0) {
     return (
       <Alert variant="filled" severity="error">
-        {props.value} °C, hãy kiểm tra lại!
+        {props.value} °C
       </Alert>
     );
   } else {
@@ -110,6 +110,28 @@ function ConditionTemperature(props) {
         {props.value} °C
       </Alert>
     );
+  }
+}
+
+function ConditionPort1(props) {
+  if (props.value <-1.2) {
+    return (
+      <Alert variant="filled" severity="warning">
+        {props.value} (V)
+      </Alert>
+    );
+  } else if (props.value > -0.85) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} (V)
+      </Alert>
+    );
+  } else{
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value} (V)
+      </Alert>
+    ); 
   }
 }
 
@@ -311,10 +333,10 @@ export default function TestPost() {
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Negative voltage 1</span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].openPoint1} (V)
+                    <ConditionPort1 value={infoTop[0].openPoint1} />
                   </span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].closePoint1} (V)
+                    <ConditionPort1 value={infoTop[0].closePoint1} />
                   </span>
                 </div>
                 <div className="productInfoItemTest">
