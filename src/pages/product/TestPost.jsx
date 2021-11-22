@@ -31,42 +31,42 @@ const columns = [
   },
   {
     field: "openPoint1",
-    headerName: "Negative voltage 1 open (V)",
+    headerName: "Potential Open Port 1 (mV)",
     width: 250,
   },
   {
     field: "closePoint1",
-    headerName: "Negative voltage 1 closed (V)",
+    headerName: "Potential Closed Port 1 (mV)",
     width: 250,
   },
   {
     field: "openPoint2",
-    headerName: "Negative voltage 2 open (V)",
+    headerName: "Potential Open Port 2 (mV)",
     width: 250,
   },
   {
     field: "closePoint2",
-    headerName: "Negative voltage 2 closed (V)",
+    headerName: "Potential Closed Port 2 (mV)",
     width: 250,
   },
   {
     field: "openPoint3",
-    headerName: "Negative voltage 3 open (V)",
+    headerName: "Potential Open Port 3 (mV)",
     width: 250,
   },
   {
     field: "closePoint3",
-    headerName: "Negative voltage 3 closed (V)",
+    headerName: "Potential Closed Port 3 (mV)",
     width: 250,
   },
   {
     field: "openPoint4",
-    headerName: "Negative voltage 4 open (V)",
+    headerName: "Potential Open Port 4 (mV)",
     width: 250,
   },
   {
     field: "closePoint4",
-    headerName: "Negative voltage 4 closed (V)",
+    headerName: "Potential Closed Port 4 (mV)",
     width: 250,
   },
   {
@@ -190,9 +190,6 @@ export default function TestPost() {
           csvOptions={{
             fields: [
               "time",
-              "dienApPin",
-              "dienApNguon",
-              "temperature",
               "openPoint1",
               "closePoint1",
               "openPoint2",
@@ -202,6 +199,9 @@ export default function TestPost() {
               "openPoint4",
               "closePoint4",
               "signalQuality",
+              "dienApPin",
+              "dienApNguon",
+              "temperature",
             ],
             utf8WithBom: true,
           }}
@@ -331,7 +331,7 @@ export default function TestPost() {
                   <span className="columnTestPostRight">Close</span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Negative voltage 1</span>
+                  <span className="productInfoKey">Potential 1</span>
                   <span className="productInfoValueElec">
                     <ConditionPort1 value={infoTop[0].openPoint1} />
                   </span>
@@ -340,7 +340,7 @@ export default function TestPost() {
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Negative voltage 2</span>
+                  <span className="productInfoKey">Potential 2</span>
                   <span className="productInfoValueElec">
                     {infoTop[0].openPoint2} (V)
                   </span>
@@ -349,7 +349,7 @@ export default function TestPost() {
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Negative voltage 3</span>
+                  <span className="productInfoKey">Potential 3</span>
                   <span className="productInfoValueElec">
                     {infoTop[0].openPoint3} (V)
                   </span>
@@ -358,7 +358,7 @@ export default function TestPost() {
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Negative voltage 4</span>
+                  <span className="productInfoKey">Potential 4</span>
                   <span className="productInfoValueElec">
                     {infoTop[0].openPoint4} (V)
                   </span>

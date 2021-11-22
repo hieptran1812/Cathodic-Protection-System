@@ -46,7 +46,7 @@ const columns = [
   },
   {
     field: "dienDCPoint1",
-    headerName: "Power DC Point 1 (V)",
+    headerName: "Power DC Point(V)",
     width: 210,
   },
   {
@@ -199,15 +199,15 @@ export default function RectifierTransformer() {
           csvOptions={{
             fields: [
               "time",
-              "dienApPin",
-              "dienApNguon",
-              "temperature",
               "dienAC3PhaA",
               "dienAC3PhaB",
               "dienAC3PhaC",
               "dienDCPoint1",
               "dongDienDC",
               "signalQuality",
+              "dienApPin",
+              "dienApNguon",
+              "temperature",
             ],
             utf8WithBom: true,
           }}
@@ -335,7 +335,7 @@ export default function RectifierTransformer() {
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Power DC point 1</span>
+                  <span className="productInfoKey">Power DC point</span>
                   <span className="productInfoValue">
                     <ConditionDCOutput value={infoTop[0].dienDCPoint1} />
                   </span>

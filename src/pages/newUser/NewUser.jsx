@@ -21,6 +21,8 @@ export default function NewUser() {
   const [organization, setOrganization] = useState("")
   const [role, setRole] = useState("viewer");
   const [open, setOpen] = useState(false);
+  const [dateRegistered, setDateRegistered] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,6 +36,8 @@ export default function NewUser() {
       organization,
       role,
       notes,
+      dateRegistered,
+      dueDate,
     };
     axios
       .post(`${API}/api/addUser`, data)
@@ -145,6 +149,25 @@ export default function NewUser() {
                 onChange={(e) => setNotes(e.target.value)}
               />
             </div>
+            <div className="newUserItem">
+              <label>Ngày đăng ký tài khoản *</label>
+              <input
+                type="date"
+                required="required"
+                onChange={(e) => setDateRegistered(e.target.value)}
+                autoFocus
+              />
+            </div>
+            <div className="newUserItem">
+              <label>Ngày hết hạn tài khoản *</label>
+              <input
+                type="date"
+                required="required"
+                onChange={(e) => setDueDate(e.target.value)}
+                autoFocus
+              />
+            </div>
+
             <div className="newUserItem">
               <label>Vai trò</label>
               <select

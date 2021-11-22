@@ -134,7 +134,7 @@ export default function NewProduct() {
               />
             </div>
             <div className="addProductItem">
-              <label>Ngày cập nhật *</label>
+              <label>Ngày thêm thiết bị *</label>
               <input
                 type="date"
                 required="required"
@@ -151,6 +151,14 @@ export default function NewProduct() {
                 autoFocus
               />
             </div>
+            <iframe
+              title = "map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29793.98839009497!2d105.81945408380663!3d21.02273870409065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2zSGFub2ksIEhvw6BuIEtp4bq_bSwgSGFub2ksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1637593863598!5m2!1sen!2s"
+              width="600"
+              height="450"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
             <div className="addProductItem">
               <label>Vĩ độ *</label>
               <input

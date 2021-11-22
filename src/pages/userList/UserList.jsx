@@ -1,5 +1,9 @@
 import "./userList.css";
-import { DataGrid } from "@material-ui/data-grid";
+import {
+  DataGrid,
+  GridToolbarContainer,
+  GridToolbarExport,
+} from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { React, useState, useEffect } from "react";
@@ -7,9 +11,15 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Button from "@material-ui/core/Button";
 
+
 const API = process.env.REACT_APP_API;
 
 const columns = [
+  {
+    field: "organization",
+    headerName: "Tổ chức",
+    width: 220,
+  },
   {
     field: "name",
     headerName: "Tên người dùng",
@@ -24,13 +34,18 @@ const columns = [
     width: 200,
   },
   {
-    field: "organization",
-    headerName: "Tổ chức",
-    width: 220,
-  },
-  {
     field: "phone",
     headerName: "Số điện thoại",
+    width: 180,
+  },
+  {
+    field: "dateRegistered",
+    headerName: "Ngày đăng ký",
+    width: 180,
+  },
+  {
+    field: "dueDate",
+    headerName: "Ngày hết hạn",
     width: 180,
   },
   {
@@ -71,6 +86,26 @@ export default function UserList() {
     fetchAPI();
   }, []);
 
+  function CustomToolbar() {
+    return (
+      <GridToolbarContainer>
+        <GridToolbarExport
+          csvOptions={{
+            fields: [
+              "organization",
+              "name",
+              "role",
+              "phone",
+              "dateRegistered",
+              "dueDate",
+            ],
+            utf8WithBom: true,
+          }}
+        />
+      </GridToolbarContainer>
+    );
+  }
+
   return (
     <div className="userList">
       <Topbar />
@@ -86,6 +121,9 @@ export default function UserList() {
           </Button>
           <DataGrid
             rows={userInfo}
+            components={{
+              Toolbar: CustomToolbar,
+            }}
             disableSelectionOnClick
             autoHeight
             columns={columns}

@@ -142,6 +142,8 @@ def createUser():
     'address': res['address'],
     'role': res['role'],
     'notes': res['notes'],
+    'dateRegistered': res['dateRegistered'],
+    'dueDate': res['dueDate'],
   }
   user = db.User.find_one({ 
       'username': res['username']
@@ -167,6 +169,8 @@ def getUsers():
           'address': doc['address'],
           'role':doc['role'],
           'organization':doc['organization'],
+          'dateRegistered': doc['dateRegistered'],
+          'dueDate': doc['dueDate'],
         })
     elif(currentUser['role'] == 'admin'):
       for doc in db.User.find({
@@ -181,6 +185,8 @@ def getUsers():
           'address': doc['address'],
           'role':doc['role'],
           'organization':doc['organization'],
+          'dateRegistered': doc['dateRegistered'],
+          'dueDate': doc['dueDate'],
         })
     return jsonify(users)
 
@@ -197,6 +203,8 @@ def getUserDetail(id):
     res['organization'] = user['organization'],
     res['address'] = user['address'],
     res['notes'] = user['notes']
+    res['dateRegistered'] = user['dateRegistered'],
+    res['dueDate'] = user['dueDate'],
     return jsonify(res), 200
 
 @app.route('/api/user/delete/<id>', methods=['GET'])
@@ -332,7 +340,10 @@ def getRectifier():
       'maChuoi': doc['maChuoi'],
       'centralAddress': doc['otherInfo'][0]['centralAddress'],
       'phone': doc['otherInfo'][0]['phone'],
-      'dateUpdate': doc['dateUpdate']
+      'dateUpdate': doc['dateUpdate'],
+      'date': doc['date'],
+      'signalQuality': doc['otherInfo'][0]['signalQuality'],
+      'dienApPin': doc['otherInfo'][0]['dienApPin']
     })
     else:
       if(doc['organization'] == currentUser['organization']):
@@ -342,7 +353,10 @@ def getRectifier():
           'maChuoi': doc['maChuoi'],
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
           'phone': doc['otherInfo'][0]['phone'],
-          'dateUpdate': doc['dateUpdate']
+          'dateUpdate': doc['dateUpdate'],
+          'date': doc['date'],
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'dienApPin': doc['otherInfo'][0]['dienApPin']
         })
   
   return jsonify(devices)
@@ -380,17 +394,6 @@ def deleteRectifier(id):
   db.RectifierTransformersDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
 
-# @app.route('/rectifierTransformer/<id>', methods=['PUT'])
-# def updateRectifier(id):
-#   print(request.json)
-#   db.update_one({'_id': ObjectId(id)}, {"$set": {
-#     'name': request.json['name'],
-#     'email': request.json['email'],
-#     'password': request.json['password']
-#   }})
-#   return jsonify({'message': 'User Updated'})
-
-
 # ################ Bo do ##################
 
 @app.route('/api/testPostList', methods=['GET'])
@@ -406,7 +409,9 @@ def getTestPost():
           'maChuoi': doc['maChuoi'],
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
           'phone': doc['otherInfo'][0]['phone'],
-          'dateUpdate': doc['dateUpdate']
+          'dateUpdate': doc['dateUpdate'],
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'dienApPin': doc['otherInfo'][0]['dienApPin']
         })
       else:
         if(doc['organization'] == currentUser['organization']):
@@ -416,7 +421,9 @@ def getTestPost():
             'maChuoi': doc['maChuoi'],
             'centralAddress': doc['otherInfo'][0]['centralAddress'],
             'phone': doc['otherInfo'][0]['phone'],
-            'dateUpdate': doc['dateUpdate']
+            'dateUpdate': doc['dateUpdate'],
+            'signalQuality': doc['otherInfo'][0]['signalQuality'],
+            'dienApPin': doc['otherInfo'][0]['dienApPin']
           })
     return jsonify(devices)
 
@@ -449,16 +456,6 @@ def getTestPostDetailTable(id):
 def deleteTestpost(id):
   db.TestPostsDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
-
-# @app.route('/testPost/<id>', methods=['PUT'])
-# def updateTestPost(id):
-#   print(request.json)
-#   db.update_one({'_id': ObjectId(id)}, {"$set": {
-#     'name': request.json['name'],
-#     'email': request.json['email'],
-#     'password': request.json['password']
-#   }})
-#   return jsonify({'message': 'User Updated'})
 
 ########## Ban do ###########
 

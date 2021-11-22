@@ -117,12 +117,12 @@ export default function FeaturedInfo() {
         </div>
         <span className="featuredTitle">Điện áp DC cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxDC} (V)</span>
+          <span className="featuredMoney">{info.maxDC} (mV)</span>
           <ConditionMaxDC value={info.maxDC} />
         </div>
         <span className="featuredTitle">Điện áp AC cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxAC} (V)</span>
+          <span className="featuredMoney">{info.maxAC} (mV)</span>
           <ConditionMaxAC value={info.maxAC} />
         </div>
       </div>
@@ -131,14 +131,14 @@ export default function FeaturedInfo() {
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">{info.countDevicesBD} thiết bị</span>
         </div>
-        <span className="featuredTitle">Điện áp nguồn cao nhất</span>
+        <span className="featuredTitle">Điện thế cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxNguon} (V)</span>
+          <span className="featuredMoney">{info.maxNguon * 1000} (mV)</span>
           <ConditionMaxNguon value={info.maxNguon} />
         </div>
-        <span className="featuredTitle">Điện áp pin cao nhất</span>
+        <span className="featuredTitle">Điện thế cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxPin} (V)</span>
+          <span className="featuredMoney">{info.maxPin * 1000} (mV)</span>
           <ConditionMaxPin value={info.maxPin} />
         </div>
       </div>

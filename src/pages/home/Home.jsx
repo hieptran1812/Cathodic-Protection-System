@@ -2,7 +2,11 @@ import FeaturedInfo from '../../components/featuredInfo/FeaturedInfo';
 import './home.css';
 import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
-import { DataGrid } from "@material-ui/data-grid";
+import {
+  DataGrid,
+  GridToolbarContainer,
+  GridToolbarExport,
+} from "@material-ui/data-grid";
 import axios from "axios";
 import { React, useEffect, useState } from "react";
 
@@ -51,6 +55,26 @@ export default function Home() {
       .catch((error) => console.log(error));
   }, []);
 
+  function CustomToolbar() {
+    return (
+      <GridToolbarContainer>
+        <GridToolbarExport
+          csvOptions={{
+            fields: [
+              "organization",
+              "name",
+              "role",
+              "phone",
+              "dateRegistered",
+              "dueDate",
+            ],
+            utf8WithBom: true,
+          }}
+        />
+      </GridToolbarContainer>
+    );
+  }
+
   return (
     <div className="home">
       <Topbar />
@@ -60,6 +84,9 @@ export default function Home() {
           <FeaturedInfo />
           <DataGrid
             rows={deviceInfo}
+            components={{
+              Toolbar: CustomToolbar,
+            }}
             autoHeight
             disableSelectionOnClick
             columns={columns}

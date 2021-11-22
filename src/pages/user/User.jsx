@@ -4,7 +4,7 @@ import {
   PermIdentity,
   PhoneAndroid,
   Business,
-  Notes
+  Notes,
 } from "@material-ui/icons";
 import axios from "axios";
 import { React, useState, useEffect } from "react";
@@ -43,6 +43,8 @@ export default function User() {
   const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
   const [password, setPassword] = useState("");
+  const [dateRegistered, setDateRegistered] = useState("");
+  const [dueDate, setDueDate] = useState("");
   const [open, setOpen] = useState(false);
   const [openClick, setOpenClick] = useState(false);
   let history = useHistory();
@@ -73,6 +75,8 @@ export default function User() {
       address,
       notes,
       password,
+      dateRegistered,
+      dueDate,
     };
     // console.log(data);
 
@@ -171,8 +175,12 @@ export default function User() {
             <div className="userShow">
               <div className="userShowTop">
                 <div className="userShowTopTitle">
-                  <span className="userUpdateTitle">Họ và tên: {info.name}</span>
-                  <span className="userShowUserTitle">Vai trò: {info.role}</span>
+                  <span className="userUpdateTitle">
+                    Họ và tên: {info.name}
+                  </span>
+                  <span className="userShowUserTitle">
+                    Vai trò: {info.role}
+                  </span>
                 </div>
               </div>
               <div className="userShowBottom">
@@ -213,6 +221,18 @@ export default function User() {
                   <Notes className="userShowIcon" />
                   <span className="userShowInfoTitle">
                     Ghi chú: {info.notes}
+                  </span>
+                </div>
+                <div className="userShowInfo">
+                  <Notes className="userShowIcon" />
+                  <span className="userShowInfoTitle">
+                    Ngày đăng ký: {info.dateRegistered}
+                  </span>
+                </div>
+                <div className="userShowInfo">
+                  <Notes className="userShowIcon" />
+                  <span className="userShowInfoTitle">
+                    Ngày hết hạn: {info.dueDate}
                   </span>
                 </div>
               </div>

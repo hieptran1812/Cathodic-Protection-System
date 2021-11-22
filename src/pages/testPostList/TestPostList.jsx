@@ -1,5 +1,9 @@
 import "./productList.css";
-import { DataGrid } from "@material-ui/data-grid";
+import {
+  DataGrid,
+  GridToolbarContainer,
+  GridToolbarExport,
+} from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import {React, useState, useEffect} from "react";
@@ -30,9 +34,24 @@ const columns = [
     width: 160,
   },
   {
+    field: "dienApPin",
+    headerName: "Battery voltage (V)",
+    width: 180,
+  },
+  {
     field: "dateUpdate",
     headerName: "Ngày thêm thiết bị",
     width: 200,
+  },
+  {
+    field: "date",
+    headerName: "Ngày bảo trì",
+    width: 200,
+  },
+  {
+    field: "signalQuality",
+    headerName: "Signal quality",
+    width: 170,
   },
   {
     field: "action",
@@ -69,6 +88,28 @@ export default function TestPostList() {
       })
       .catch((error) => console.log(error));
   }, []);
+
+  function CustomToolbar() {
+    return (
+      <GridToolbarContainer>
+        <GridToolbarExport
+          csvOptions={{
+            fields: [
+              "maChuoi",
+              "centralAddress",
+              "devSerial",
+              "phone",
+              "dienApPin",
+              "dateUpdate",
+              "date",
+              "signalQuality",
+            ],
+            utf8WithBom: true,
+          }}
+        />
+      </GridToolbarContainer>
+    );
+  }
   
   return (
     <div className="productList">
@@ -85,6 +126,9 @@ export default function TestPostList() {
           </Button>
           <DataGrid
             rows={deviceInfo}
+            components={{
+              Toolbar: CustomToolbar,
+            }}
             disableSelectionOnClick
             autoHeight
             columns={columns}

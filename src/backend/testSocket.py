@@ -238,7 +238,7 @@ def thread_client(connection):
 
 def executeGetData():
     print('initSocket')
-    sv_address = '103.166.183.195'
+    sv_address = '127.0.0.1'
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # Bind the socket to the port
     server_address = (sv_address, 30001)
