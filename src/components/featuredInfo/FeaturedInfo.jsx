@@ -64,28 +64,6 @@ function ConditionMaxAC(props) {
   }
 }
 
-function ConditionMaxNguon(props) {
-  if (props.value > 10) {
-    return (
-      <Alert variant="filled" severity="error">
-        Điện áp nguồn quá ngưỡng, hãy kiểm tra lại!
-      </Alert>
-    );
-  } else if (props.value === 0) {
-    return (
-      <Alert variant="filled" severity="error">
-        Điện áp nguồn bằng 0, hãy kiểm tra lại!
-      </Alert>
-    );
-  } else {
-    return (
-      <Alert variant="filled" severity="info">
-        Điện áp ổn định
-      </Alert>
-    );
-  }
-}
-
 function ConditionMaxPin(props) {
   if (props.value > 10) {
     return (
@@ -152,13 +130,13 @@ export default function FeaturedInfo() {
         </div>
         <span className="featuredTitle">Điện thế pin cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxPin} (mV)</span>
-          <ConditionMaxNguon value={info.maxNguon} />
+          <span className="featuredMoney">{info.maxPin *1000} (mV)</span>
+          <ConditionMaxPin value={info.maxPin} />
         </div>
         <span className="featuredTitle">Điện thế pin thấp nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.minPin} (mV)</span>
-          <ConditionMaxPin value={info.maxPin} />
+          <span className="featuredMoney">{info.minPin*1000} (mV)</span>
+          <ConditionMaxPin value={info.minPin} />
         </div>
         <span className="featuredTitle">Tổng số tín hiệu bị lỗi</span>
         <div className="featuredMoneyContainer">
