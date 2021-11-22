@@ -46,7 +46,7 @@ const columns = [
   },
   {
     field: "ACInputPower",
-    headerName: "AC Input Power (V)",
+    headerName: "AC Input Power (W)",
     width: 210,
   },
   {

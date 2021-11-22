@@ -24,3 +24,5 @@ yarn-error.log*
 log_endpoint.log*
 ./**/log_endpoint.log
 *.log
+*.env
+.env
