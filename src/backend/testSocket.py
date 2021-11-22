@@ -109,6 +109,7 @@ def getDataFromRectifier(rawData):
             data = rawData[100:101]
             subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3)
             # data = connection.recv(1) # number of bytes
+            subOtherInfo['ACInputPower'] = round(subOtherInfo['dienDCPoint1']*subOtherInfo['dongDienDC'],3)
             data = rawData[101]
             print(sys.stderr, 'received last byte "%s"' % data)
             

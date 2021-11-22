@@ -7,6 +7,8 @@ import {
   GridToolbarContainer,
   GridToolbarExport,
 } from "@material-ui/data-grid";
+import { Link } from "react-router-dom";
+
 import axios from "axios";
 import { React, useEffect, useState } from "react";
 
@@ -14,19 +16,19 @@ const API = process.env.REACT_APP_API;
 
 const columns = [
   {
+    field: "organization",
+    headerName: "Tổ chức",
+    width: 220,
+  },
+  {
     field: "devSerial",
     headerName: "Mã thiết bị",
-    width: 250,
+    width: 220,
     renderCell: (params) => {
       return <div className="productListItem">{params.row.devSerial}</div>;
     },
   },
   { field: "devType", headerName: "Loại thiết bị", width: 220 },
-  {
-    field: "organization",
-    headerName: "Tổ chức",
-    width: 250,
-  },
   {
     field: "dateUpdate",
     headerName: "Ngày thêm",
@@ -35,7 +37,33 @@ const columns = [
   {
     field: "signalQuality",
     headerName: "Chất lượng tín hiệu",
-    width: 250,
+    width: 220,
+  },
+  {
+    field: "action",
+    headerName: "Thông tin",
+    width: 200,
+    renderCell: (params) => {
+      return (
+        <>
+          {params.row.devType === "Bo trung tam" ? (
+            <Link
+              to={"/rectifierTransformer/" + params.row.devSerial}
+              style={{ textDecoration: "none" }}
+            >
+              <button className="productListEdit">Chi tiết</button>
+            </Link>
+          ) : (
+            <Link
+              to={"/testPost/" + params.row.devSerial}
+              style={{ textDecoration: "none" }}
+            >
+              <button className="productListEdit">Chi tiết</button>
+            </Link>
+          )}
+        </>
+      );
+    },
   },
 ];
 

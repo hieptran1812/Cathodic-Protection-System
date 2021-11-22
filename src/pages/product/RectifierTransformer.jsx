@@ -45,6 +45,11 @@ const columns = [
     width: 210,
   },
   {
+    field: "ACInputPower",
+    headerName: "AC Input Power (V)",
+    width: 210,
+  },
+  {
     field: "dienDCPoint1",
     headerName: "Power DC Point(V)",
     width: 210,
@@ -202,6 +207,7 @@ export default function RectifierTransformer() {
               "dienAC3PhaA",
               "dienAC3PhaB",
               "dienAC3PhaC",
+              "ACInputPower",
               "dienDCPoint1",
               "dongDienDC",
               "signalQuality",
@@ -301,7 +307,7 @@ export default function RectifierTransformer() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">Power supply voltage</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienApNguon} (V)
+                    {infoTop[0].ACInputPower} (W)
                   </span>
                 </div>
                 <div className="productInfoItem">
@@ -320,6 +326,12 @@ export default function RectifierTransformer() {
                   <span className="productInfoKey">AC power phase C</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienAC3PhaC} (V)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">AC Input Power</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].dienApPin} (W)
                   </span>
                 </div>
                 <div className="productInfoItem">

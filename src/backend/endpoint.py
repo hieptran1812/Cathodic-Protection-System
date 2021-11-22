@@ -43,29 +43,39 @@ def getFeatureInfo():
   countBD = 0
   maxDC = 0
   maxAC = 0
-  maxNguon = 0
+  minPin = 100
   maxPin = 0
+  countErrorRectifiers = 0
+  countErrorTestPosts = 0
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       countBTT += 1
       maxDC = max(int(doc['otherInfo'][0]['dienDCPoint1']),maxDC)
       maxAC = max(int(doc['otherInfo'][0]['dienAC3PhaA']),maxAC)
+      if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+            countErrorRectifiers += 1
     else:
       if(doc['organization'] == currentUser['organization']):
         countBTT += 1
         maxDC = max(int(doc['otherInfo'][0]['dienDCPoint1']),maxDC)
         maxAC = max(int(doc['otherInfo'][0]['dienAC3PhaA']),maxAC)
+        if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+            countErrorRectifiers += 1
   
   for doc in db.TestPostsDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       countBD += 1
-      maxNguon = max(int(doc['otherInfo'][0]['dienApPin']),maxNguon)
-      maxPin = max(int(doc['otherInfo'][0]['dienApNguon']),maxPin)
+      minPin = min(float(doc['otherInfo'][0]['dienApPin']),minPin)
+      maxPin = max(float(doc['otherInfo'][0]['dienApPin']),maxPin)
+      if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+            countErrorTestPosts += 1
     else:
       if(doc['organization'] == currentUser['organization']):
         countBD += 1
-        maxNguon = max(int(doc['otherInfo'][0]['dienApPin']),maxNguon)
-        maxPin = max(int(doc['otherInfo'][0]['dienApNguon']),maxPin)
+        minPin = min(float(doc['otherInfo'][0]['dienApPin']),minPin)
+        maxPin = max(float(doc['otherInfo'][0]['dienApPin']),maxPin)
+        if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+            countErrorTestPosts += 1
 
   countDevicesBTT = countBTT
   countDevicesBD = countBD
@@ -74,8 +84,10 @@ def getFeatureInfo():
     'maxDC': round(maxDC, 3),
     'maxAC': round(maxAC, 3),
     'countDevicesBD': countDevicesBD,
-    'maxNguon': round(maxNguon, 3),
+    'minPin': round(minPin, 3),
     'maxPin': round(maxPin, 3),
+    'countErrorRectifiers': countErrorRectifiers,
+    'countErrorTestPosts': countErrorTestPosts,
   }
   return jsonify(info)
 
@@ -410,6 +422,7 @@ def getTestPost():
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
           'phone': doc['otherInfo'][0]['phone'],
           'dateUpdate': doc['dateUpdate'],
+          'date': doc['date'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
           'dienApPin': doc['otherInfo'][0]['dienApPin']
         })
@@ -422,6 +435,7 @@ def getTestPost():
             'centralAddress': doc['otherInfo'][0]['centralAddress'],
             'phone': doc['otherInfo'][0]['phone'],
             'dateUpdate': doc['dateUpdate'],
+            'date': doc['date'],
             'signalQuality': doc['otherInfo'][0]['signalQuality'],
             'dienApPin': doc['otherInfo'][0]['dienApPin']
           })

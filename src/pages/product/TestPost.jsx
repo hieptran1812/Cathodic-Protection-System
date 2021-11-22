@@ -117,19 +117,19 @@ function ConditionPort1(props) {
   if (props.value <-1.2) {
     return (
       <Alert variant="filled" severity="warning">
-        {props.value} (V)
+        {props.value} (mV)
       </Alert>
     );
   } else if (props.value > -0.85) {
     return (
       <Alert variant="filled" severity="error">
-        {props.value} (V)
+        {props.value} (mV)
       </Alert>
     );
   } else{
     return (
       <Alert variant="filled" severity="info">
-        {props.value} (V)
+        {props.value} (mV)
       </Alert>
     ); 
   }
@@ -342,28 +342,28 @@ export default function TestPost() {
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Potential 2</span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].openPoint2} (V)
+                    {infoTop[0].openPoint2} (mV)
                   </span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].closePoint2} (V)
+                    {infoTop[0].closePoint2} (mV)
                   </span>
                 </div>
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Potential 3</span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].openPoint3} (V)
+                    {infoTop[0].openPoint3} (mV)
                   </span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].closePoint3} (V)
+                    {infoTop[0].closePoint3} (mV)
                   </span>
                 </div>
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Potential 4</span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].openPoint4} (V)
+                    {infoTop[0].openPoint4} (mV)
                   </span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].closePoint4} (V)
+                    {infoTop[0].closePoint4} (mV)
                   </span>
                 </div>
               </div>
