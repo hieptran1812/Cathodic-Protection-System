@@ -20,15 +20,12 @@ const columns = [
     headerName: "Tổ chức",
     width: 220,
   },
-  {
-    field: "devSerial",
-    headerName: "Mã thiết bị",
-    width: 220,
-    renderCell: (params) => {
-      return <div className="productListItem">{params.row.devSerial}</div>;
-    },
-  },
   { field: "devType", headerName: "Loại thiết bị", width: 220 },
+  {
+    field: "maChuoi",
+    headerName: "Tên thiết bị",
+    width: 220,
+  },
   {
     field: "dateUpdate",
     headerName: "Ngày thêm",
@@ -65,6 +62,14 @@ const columns = [
       );
     },
   },
+  {
+    field: "devSerial",
+    headerName: "Mã thiết bị",
+    width: 220,
+    renderCell: (params) => {
+      return <div className="productListItem">{params.row.devSerial}</div>;
+    },
+  },
 ];
 
 export default function Home() {
@@ -90,11 +95,11 @@ export default function Home() {
           csvOptions={{
             fields: [
               "organization",
-              "name",
-              "role",
-              "phone",
-              "dateRegistered",
-              "dueDate",
+              "devType",
+              "maChuoi",
+              "dateUpdate",
+              "signalQuality",
+              "devSerial",
             ],
             utf8WithBom: true,
           }}

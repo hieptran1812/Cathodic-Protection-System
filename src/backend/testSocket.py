@@ -16,6 +16,8 @@ def pushDataRectifier(result):
     deviceInDb = db.RectifierTransformersDetails.find_one({
         'devSerial': result['devSerial'] 
     })
+    print('Chinh Effciency')
+    result['otherInfo'][0]['efficiency'] = round(result['otherInfo'][0]['efficiency']/float(deviceInDb['ACInputPower']),3)
     if deviceInDb:
         db.RectifierTransformersDetails.update(
             {'devSerial': result['devSerial']},
@@ -109,7 +111,12 @@ def getDataFromRectifier(rawData):
             data = rawData[100:101]
             subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3)
             # data = connection.recv(1) # number of bytes
-            subOtherInfo['ACInputPower'] = round(subOtherInfo['dienDCPoint1']*subOtherInfo['dongDienDC'],3)
+            # subOtherInfo['ACInputPower'] = round(subOtherInfo['dienDCPoint1']*subOtherInfo['dongDienDC'],3)
+            if(float(subOtherInfo['dongDienDC'])):
+                subOtherInfo['resistance'] = round(float(subOtherInfo['dienDCPoint1'])/float(subOtherInfo['dongDienDC']), 3)
+            else:
+                subOtherInfo['resistance'] = "Can not calculate!"
+            subOtherInfo['efficiency'] = round(float(subOtherInfo['dienDCPoint1'])*float(subOtherInfo['dongDienDC']),3)
             data = rawData[101]
             print(sys.stderr, 'received last byte "%s"' % data)
             
@@ -133,7 +140,7 @@ def pushDataTestPost(result):
     deviceInDb = db.TestPostsDetails.find_one({
         'devSerial': result['devSerial'] 
     })
-    # print(result['devSerial'])
+    
     if deviceInDb:
         db.TestPostsDetails.update(
             {'devSerial': result['devSerial']},

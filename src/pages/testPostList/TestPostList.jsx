@@ -16,27 +16,14 @@ const API = process.env.REACT_APP_API;
 const columns = [
   { field: "maChuoi", headerName: "Tên thiết bị", width: 200 },
   {
-    field: "centralAddress",
-    headerName: "Central Address",
-    width: 200,
-  },
-  {
-    field: "devSerial",
-    headerName: "Mã thiết bị",
-    width: 200,
-    renderCell: (params) => {
-      return <div className="productListItem">{params.row.devSerial}</div>;
-    },
-  },
-  {
     field: "phone",
     headerName: "Số điện thoại",
     width: 160,
   },
   {
-    field: "dienApPin",
-    headerName: "Battery voltage (V)",
-    width: 180,
+    field: "signalQuality",
+    headerName: "Signal quality",
+    width: 170,
   },
   {
     field: "dateUpdate",
@@ -47,11 +34,6 @@ const columns = [
     field: "date",
     headerName: "Ngày bảo trì",
     width: 200,
-  },
-  {
-    field: "signalQuality",
-    headerName: "Signal quality",
-    width: 170,
   },
   {
     field: "action",
@@ -69,6 +51,25 @@ const columns = [
         </>
       );
     },
+  },
+
+  {
+    field: "centralAddress",
+    headerName: "Central Address",
+    width: 200,
+  },
+  {
+    field: "devSerial",
+    headerName: "Mã thiết bị",
+    width: 200,
+    renderCell: (params) => {
+      return <div className="productListItem">{params.row.devSerial}</div>;
+    },
+  },
+  {
+    field: "dienApPin",
+    headerName: "Battery voltage (V)",
+    width: 180,
   },
 ];
 
@@ -96,13 +97,13 @@ export default function TestPostList() {
           csvOptions={{
             fields: [
               "maChuoi",
-              "centralAddress",
-              "devSerial",
               "phone",
-              "dienApPin",
+              "signalQuality",
               "dateUpdate",
               "date",
-              "signalQuality",
+              "centralAddress",
+              "devSerial",
+              "dienApPin",
             ],
             utf8WithBom: true,
           }}

@@ -60,6 +60,16 @@ const columns = [
     width: 180,
   },
   {
+    field: "resistance",
+    headerName: "Resistance (Ω)",
+    width: 180,
+  },
+  {
+    field: "efficiency",
+    headerName: "Efficiency (%)",
+    width: 180,
+  },
+  {
     field: "signalQuality",
     headerName: "Signal quality",
     width: 170,
@@ -210,6 +220,8 @@ export default function RectifierTransformer() {
               "ACInputPower",
               "dienDCPoint1",
               "dongDienDC",
+              "resistance",
+              "efficiency",
               "signalQuality",
               "dienApPin",
               "dienApNguon",
@@ -281,6 +293,24 @@ export default function RectifierTransformer() {
             <div className="productTopRight">
               <div className="productInfoBottom">
                 <div className="productInfoItem">
+                  <span className="productInfoKey">Tên thiết bị</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].tenThietBi}
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Ngày thêm thiết bị</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].dateUpdate}
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Ngày bảo trì</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].date}
+                  </span>
+                </div>
+                <div className="productInfoItem">
                   <span className="productInfoKey">Location System</span>
                   <span className="productInfoValue">
                     {infoTop[0].locationSystem}
@@ -305,12 +335,6 @@ export default function RectifierTransformer() {
             <div className="productTopRight">
               <div className="productInfoBottom">
                 <div className="productInfoItem">
-                  <span className="productInfoKey">Power supply voltage</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].ACInputPower} (W)
-                  </span>
-                </div>
-                <div className="productInfoItem">
                   <span className="productInfoKey">AC power phase A</span>
                   <span className="productInfoValue">
                     <ConditionACInputPhaA value={infoTop[0].dienAC3PhaA} />
@@ -331,7 +355,37 @@ export default function RectifierTransformer() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">AC Input Power</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienApPin} (W)
+                    {infoTop[0].ACInputPower} (Watt)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">DC Output Voltage</span>
+                  <span className="productInfoValue">
+                    <ConditionDCOutput value={infoTop[0].dienDCPoint1} />
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">DC Output Current</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].dongDienDC} (A)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Resistance</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].resistance} (Ω)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Efficiency</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].efficiency} (%)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Signal quality</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].signalQuality}
                   </span>
                 </div>
                 <div className="productInfoItem">
@@ -341,27 +395,15 @@ export default function RectifierTransformer() {
                   </span>
                 </div>
                 <div className="productInfoItem">
+                  <span className="productInfoKey">Power supply voltage</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].dienApNguon} (V)
+                  </span>
+                </div>
+                <div className="productInfoItem">
                   <span className="productInfoKey">Temperature</span>
                   <span className="productInfoValue">
                     <ConditionTemperature value={infoTop[0].temperature} />
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Power DC point</span>
-                  <span className="productInfoValue">
-                    <ConditionDCOutput value={infoTop[0].dienDCPoint1} />
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">DC current</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].dongDienDC} (A)
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Signal quality</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].signalQuality}
                   </span>
                 </div>
               </div>

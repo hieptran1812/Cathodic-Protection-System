@@ -58,29 +58,32 @@ function ConditionMaxAC(props) {
     return (
       <Alert variant="filled" severity="info">
         Điện thế ổn định! 
-        (lớn hơn 380V và nhỏ hơn 220V)
+        (nhỏ hơn 380V và lớn hơn 220V)
       </Alert>
     );
   }
 }
 
-function ConditionMaxPin(props) {
-  if (props.value > 10) {
+function ConditionMaxPort(props) {
+  if (
+    (props.value < 1.2 && props.value > 0.85) ||
+    (props.value > -1.2 && props.value < -0.85)
+  ) {
     return (
-      <Alert variant="filled" severity="error">
-        Điện áp pin quá ngưỡng, hãy kiểm tra lại!
+      <Alert variant="filled" severity="info">
+        Điện thế ổn định (Giá trị tuyệt đối điện thế lớn hơn 850mV và nhỏ hơn 1200mV)
       </Alert>
     );
   } else if (props.value === 0) {
     return (
       <Alert variant="filled" severity="error">
-        Điện áp pin bằng 0, hãy kiểm tra lại!
+        Điện thế bằng 0, hãy kiểm tra lại!
       </Alert>
     );
   } else {
     return (
-      <Alert variant="filled" severity="info">
-        Điện áp ổn định
+      <Alert variant="filled" severity="error">
+        Điện thế quá ngưỡng, hãy kiểm tra lại!
       </Alert>
     );
   }
@@ -94,6 +97,7 @@ export default function FeaturedInfo() {
       .get(`${API}/api/featureInfo/`)
       .then((res) => {
         const data = res.data;
+        // console.log(data)
         setInfo(data);
       })
       .catch((error) => console.log(error));
@@ -108,18 +112,22 @@ export default function FeaturedInfo() {
         </div>
         <span className="featuredTitle">Điện áp DC cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxDC} (V)</span>
+          <span className="featuredMoney">
+            {info.maxDC} (V) - ({info.maxDCName})
+          </span>
           <ConditionMaxDC value={info.maxDC} />
         </div>
         <span className="featuredTitle">Điện áp AC cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxAC} (V)</span>
+          <span className="featuredMoney">
+            {info.maxAC} (V) - ({info.maxACName})
+          </span>
           <ConditionMaxAC value={info.maxAC} />
         </div>
         <span className="featuredTitle">Tổng số tín hiệu bị lỗi</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">
-            {info.countErrorRectifiers} tín hiệu
+            {info.countErrorRectifiers} tín hiệu ({info.BTTLoi})
           </span>
         </div>
       </div>
@@ -128,20 +136,24 @@ export default function FeaturedInfo() {
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">{info.countDevicesBD} thiết bị</span>
         </div>
-        <span className="featuredTitle">Điện thế pin cao nhất</span>
+        <span className="featuredTitle">Điện thế cao nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.maxPin *1000} (mV)</span>
-          <ConditionMaxPin value={info.maxPin} />
+          <span className="featuredMoney">
+            {info.maxPort * 1000} (mV) - ({info.maxPortName})
+          </span>
+          <ConditionMaxPort value={info.maxPin} />
         </div>
-        <span className="featuredTitle">Điện thế pin thấp nhất</span>
+        <span className="featuredTitle">Điện thế thấp nhất</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">{info.minPin*1000} (mV)</span>
-          <ConditionMaxPin value={info.minPin} />
+          <span className="featuredMoney">
+            {info.minPort * 1000} (mV) - ({info.minPortName})
+          </span>
+          <ConditionMaxPort value={info.minPin} />
         </div>
         <span className="featuredTitle">Tổng số tín hiệu bị lỗi</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">
-            {info.countErrorTestPosts} tín hiệu
+            {info.countErrorTestPosts} tín hiệu ({info.BDLoi})
           </span>
         </div>
       </div>

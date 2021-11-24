@@ -113,25 +113,60 @@ function ConditionTemperature(props) {
   }
 }
 
-function ConditionPort1(props) {
-  if (props.value <-1.2) {
-    return (
-      <Alert variant="filled" severity="warning">
-        {props.value} (mV)
-      </Alert>
-    );
-  } else if (props.value > -0.85) {
+function ConditionBatteryPower(props) {
+  if (props.value === 0) {
     return (
       <Alert variant="filled" severity="error">
-        {props.value} (mV)
+        {props.value} (V)
       </Alert>
     );
   } else{
     return (
       <Alert variant="filled" severity="info">
+        {props.value} (V)
+      </Alert>
+    );
+  }
+}
+
+function ConditionSignal(props) {
+  if (props.value === 0) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value}
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value}
+      </Alert>
+    );
+  }
+}
+
+function ConditionPort(props) {
+  if (
+    (props.value < 1.2 && props.value > 0.85) ||
+    (props.value > -1.2 && props.value < -0.85)
+  ) {
+    return (
+      <Alert variant="filled" severity="info">
         {props.value} (mV)
       </Alert>
-    ); 
+    );
+  } else if (props.value === 0) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} (mV)
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} (mV)
+      </Alert>
+    );
   }
 }
 
@@ -174,7 +209,7 @@ export default function TestPost() {
         .then((res) => {
           setLoading(false);
           const data = res.data;
-          console.log(data);
+          // console.log(data);
           setInfoTop(data);
           setInfoBottom(data);
         })
@@ -260,6 +295,24 @@ export default function TestPost() {
             <span className="productInfoValue">{infoTop[0].time}</span>
           </div>
           <div className="time">
+            <span className="productInfoKey">Tên thiết bị: </span>
+            <span className="productInfoValue">
+              {infoTop[0].tenThietBi}
+            </span>
+          </div>
+          <div className="time">
+            <span className="productInfoKey">Ngày thêm thiết bị: </span>
+            <span className="productInfoValue">
+              {infoTop[0].dateUpdate}
+            </span>
+          </div>
+          <div className="time">
+            <span className="productInfoKey">Ngày bảo trì: </span>
+            <span className="productInfoValue">
+              {infoTop[0].date}
+            </span>
+          </div>
+          <div className="time">
             <span className="productInfoKey">Kết nối với bộ trung tâm: </span>
             <span className="productInfoValue">
               {infoTop[0].idStringCentralDevice}
@@ -299,27 +352,32 @@ export default function TestPost() {
             <div className="productTopRight">
               <div className="productInfoBottom">
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Battery voltage</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].dienApPin} (V)
-                  </span>
-                </div>
-                <div className="productInfoItemTest">
                   <span className="productInfoKey">Temperature</span>
                   <span className="productInfoValue">
                     <ConditionTemperature value={infoTop[0].temperature} />
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Power supply voltage</span>
+                  <span className="productInfoKey">Signal quality</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienApNguon} (V)
+                    <ConditionSignal
+                      value={infoTop[0].signalQuality}
+                    />
                   </span>
                 </div>
                 <div className="productInfoItemTest">
-                  <span className="productInfoKey">Signal quality</span>
+                  <span className="productInfoKey">Battery voltage</span>
                   <span className="productInfoValue">
-                    {infoTop[0].signalQuality}
+                    <ConditionBatteryPower value={infoTop[0].dienApPin} />
+                  </span>
+                </div>
+
+                <div className="productInfoItemTest">
+                  <span className="productInfoKey">Power supply voltage</span>
+                  <span className="productInfoValue">
+                    <ConditionBatteryPower
+                      value={infoTop[0].dienApNguon}
+                    />
                   </span>
                 </div>
               </div>
@@ -327,43 +385,43 @@ export default function TestPost() {
             <div className="productTopRight">
               <div className="productInfoBottom">
                 <div className="productInfoItemColumn">
-                  <span className="columnTestPostLeft">Open</span>
-                  <span className="columnTestPostRight">Close</span>
+                  <span className="columnTestPostLeft">On</span>
+                  <span className="columnTestPostRight">Off</span>
                 </div>
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Potential 1</span>
                   <span className="productInfoValueElec">
-                    <ConditionPort1 value={infoTop[0].openPoint1} />
+                    <ConditionPort value={infoTop[0].openPoint1} />
                   </span>
                   <span className="productInfoValueElec">
-                    <ConditionPort1 value={infoTop[0].closePoint1} />
+                    <ConditionPort value={infoTop[0].closePoint1} />
                   </span>
                 </div>
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Potential 2</span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].openPoint2} (mV)
+                    <ConditionPort value={infoTop[0].openPoint2} />
                   </span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].closePoint2} (mV)
+                    <ConditionPort value={infoTop[0].closePoint2} />
                   </span>
                 </div>
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Potential 3</span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].openPoint3} (mV)
+                    <ConditionPort value={infoTop[0].openPoint3} />
                   </span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].closePoint3} (mV)
+                    <ConditionPort value={infoTop[0].closePoint3} />
                   </span>
                 </div>
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Potential 4</span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].openPoint4} (mV)
+                    <ConditionPort value={infoTop[0].openPoint4} />
                   </span>
                   <span className="productInfoValueElec">
-                    {infoTop[0].closePoint4} (mV)
+                    <ConditionPort value={infoTop[0].closePoint4} />
                   </span>
                 </div>
               </div>

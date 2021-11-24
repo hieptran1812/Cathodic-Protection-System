@@ -7,8 +7,8 @@ import Features from "../components/features/ThreeColWithSideImage.js";
 import MainFeature2 from "../components/features/TwoColWithTwoHorizontalFeaturesAndButton.js";
 import FeatureWithSteps from "../components/features/TwoColWithSteps.js";
 import FAQ from "../components/faqs/SingleCol.js";
-import macHeroScreenshotImageSrc from "../images/hero-screenshot-2.png";
-import prototypeIllustrationImageSrc from "../images/prototype-illustration.svg";
+import macHeroScreenshotImageSrc from "../images/anh2.gif";
+import prototypeIllustrationImageSrc from "../images/anh4.gif";
 import { ReactComponent as BriefcaseIcon } from "feather-icons/dist/icons/briefcase.svg";
 import { ReactComponent as MoneyIcon } from "feather-icons/dist/icons/dollar-sign.svg";
 

@@ -39,55 +39,101 @@ def index():
 @app.route('/api/featureInfo/', methods=['GET'])
 def getFeatureInfo():
   logging.info("start API get info Dashboard")
+  # Khoi tao bien
   countBTT = 0
-  countBD = 0
   maxDC = 0
+  maxDCName = ""
   maxAC = 0
-  minPin = 100
-  maxPin = 0
+  maxACName = ""
   countErrorRectifiers = 0
+  BTTLoiList = []
+  ###########################
+  countBD = 0
+  maxPort = -3000
+  maxPortName = ""
+  minPort = 3000
+  minPortName = ""
   countErrorTestPosts = 0
+  BDLoiList = []
+  # Tim kiem
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       countBTT += 1
-      maxDC = max(int(doc['otherInfo'][0]['dienDCPoint1']),maxDC)
-      maxAC = max(int(doc['otherInfo'][0]['dienAC3PhaA']),maxAC)
+      # Tim maxDC
+      if (int(doc['otherInfo'][0]['dienDCPoint1']) > maxDC):
+            maxDC = int(doc['otherInfo'][0]['dienDCPoint1'])
+            maxDCName = doc['maChuoi']
+      # Tim maxAC
+      if (int(doc['otherInfo'][0]['dienAC3PhaA']) > maxAC):
+            maxAC = int(doc['otherInfo'][0]['dienAC3PhaA'])
+            maxACName = doc['maChuoi']
+      # Tim BTT loi
       if(int(doc['otherInfo'][0]['signalQuality']) == 0):
             countErrorRectifiers += 1
+            BTTLoiList.append(doc['maChuoi'])
     else:
-      if(doc['organization'] == currentUser['organization']):
+      if(doc['organization'] == currentUser['organization']): #dieu kien cho rieng to chuc
         countBTT += 1
-        maxDC = max(int(doc['otherInfo'][0]['dienDCPoint1']),maxDC)
-        maxAC = max(int(doc['otherInfo'][0]['dienAC3PhaA']),maxAC)
+        # Tim maxDC
+        if (int(doc['otherInfo'][0]['dienDCPoint1']) > maxDC):
+              maxDC = int(doc['otherInfo'][0]['dienDCPoint1'])
+              maxDCName = doc['maChuoi']
+        # Tim maxAC
+        if (int(doc['otherInfo'][0]['dienAC3PhaA']) > maxAC):
+              maxAC = int(doc['otherInfo'][0]['dienAC3PhaA'])
+              maxACName = doc['maChuoi']
+        # Tim BTT loi
         if(int(doc['otherInfo'][0]['signalQuality']) == 0):
-            countErrorRectifiers += 1
+              countErrorRectifiers += 1
+              BTTLoiList.append(doc['maChuoi'])
   
   for doc in db.TestPostsDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       countBD += 1
-      minPin = min(float(doc['otherInfo'][0]['dienApPin']),minPin)
-      maxPin = max(float(doc['otherInfo'][0]['dienApPin']),maxPin)
+       # Tim Port co dien the cao nhat va thap nhat
+      listPort = [doc['otherInfo'][0]['openPoint1'], doc['otherInfo'][0]['openPoint2'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['closePoint1'], doc['otherInfo'][0]['closePoint2'], doc['otherInfo'][0]['closePoint3'], doc['otherInfo'][0]['closePoint4']]
+      if (max(listPort) > maxPort):
+            maxPortName = doc['maChuoi']
+            maxPort = max(listPort)
+      if (min(listPort) < minPort):
+            minPortName = doc['maChuoi']
+            minPort = min(listPort)
       if(int(doc['otherInfo'][0]['signalQuality']) == 0):
             countErrorTestPosts += 1
+            BDLoiList.append(doc['maChuoi'])
     else:
-      if(doc['organization'] == currentUser['organization']):
-        countBD += 1
-        minPin = min(float(doc['otherInfo'][0]['dienApPin']),minPin)
-        maxPin = max(float(doc['otherInfo'][0]['dienApPin']),maxPin)
-        if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+      countBD += 1
+       # Tim Port co dien the cao nhat va thap nhat
+      listPort = [doc['otherInfo'][0]['openPoint1'], doc['otherInfo'][0]['openPoint2'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['closePoint1'], doc['otherInfo'][0]['closePoint2'], doc['otherInfo'][0]['closePoint3'], doc['otherInfo'][0]['closePoint4']]
+      if (max(listPort) > maxPort):
+            maxPortName = doc['maChuoi']
+            maxPort = max(listPort)
+      if (min(listPort) < minPort):
+            minPortName = doc['maChuoi']
+            minPort = min(listPort)
+      if(int(doc['otherInfo'][0]['signalQuality']) == 0):
             countErrorTestPosts += 1
+            BDLoiList.append(doc['maChuoi'])
 
   countDevicesBTT = countBTT
   countDevicesBD = countBD
+  BTTLoi = ', '.join(BTTLoiList)
+  BDLoi = ", ". join(BDLoiList)
   info = {
     'countDevicesBTT': countDevicesBTT,
     'maxDC': round(maxDC, 3),
+    'maxDCName': maxDCName,
     'maxAC': round(maxAC, 3),
-    'countDevicesBD': countDevicesBD,
-    'minPin': round(minPin, 3),
-    'maxPin': round(maxPin, 3),
+    'maxACName': maxACName,
     'countErrorRectifiers': countErrorRectifiers,
+    'BTTLoi': BTTLoi,
+    'countDevicesBD': countDevicesBD,
+    'minPort': round(minPort, 3),
+    'minPortName': minPortName,
+    'maxPort': round(maxPort, 3),
+    'maxPortName': maxPortName,
     'countErrorTestPosts': countErrorTestPosts,
+    'BDLoi': BDLoi
   }
   return jsonify(info)
 
@@ -106,6 +152,7 @@ def getDashboard():
       'dateUpdate': doc['dateUpdate'],
       'organization': doc['organization'],
       'signalQuality': doc['otherInfo'][0]['signalQuality'],
+      'maChuoi': doc['maChuoi']
     })
     else:
       if(doc['organization'] == currentUser['organization']):
@@ -116,6 +163,7 @@ def getDashboard():
           'dateUpdate': doc['dateUpdate'],
           'organization': doc['organization'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'maChuoi': doc['maChuoi']
         })
   for doc in db.TestPostsDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
@@ -126,6 +174,7 @@ def getDashboard():
         'dateUpdate': doc['dateUpdate'],
         'organization': doc['organization'],
         'signalQuality': doc['otherInfo'][0]['signalQuality'],
+        'maChuoi': doc['maChuoi']
       })
     else:
       if(doc['organization'] == currentUser['organization']):
@@ -136,6 +185,7 @@ def getDashboard():
           'dateUpdate': doc['dateUpdate'],
           'organization': doc['organization'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'maChuoi': doc['maChuoi']
         })
   return jsonify(devices)
 
@@ -380,6 +430,10 @@ def getRectifierTransformerDetailTable(id):
       'devSerial': id,
     })
     result = deviceInfo['otherInfo']
+    result[0]['tenThietBi'] = deviceInfo['maChuoi']
+    result[0]['dateUpdate'] = deviceInfo['dateUpdate']
+    result[0]['date'] = deviceInfo['date']
+    result[0]['ACInputPower'] = deviceInfo['ACInputPower']
     #Bo do lien ket voi Bo trung tam
     testPostConnectionList = db.TestPostsDetails.find({
       'otherInfo.centralAddress': deviceInfo['otherInfo'][0]['centralAddress']
@@ -449,7 +503,9 @@ def getTestPostDetailTable(id):
       'devSerial': id,
     })
     result = deviceInfo['otherInfo']
-
+    result[0]['tenThietBi'] = deviceInfo['maChuoi']
+    result[0]['dateUpdate'] = deviceInfo['dateUpdate']
+    result[0]['date'] = deviceInfo['date']
     #Bo trung tam lien ket voi bo do
     centralDevice = db.RectifierTransformersDetails.find_one({
       'otherInfo.centralAddress': deviceInfo['otherInfo'][0]['centralAddress']

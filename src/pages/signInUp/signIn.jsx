@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage:
-      "url(https://petrovietnam.petrotimes.vn/stores/news_dataimages/thanhngoc/092019/25/17/3946_Gian_CNTT_sY_2_mY_BYch_HY_2.jpg)",
+      "url(https://get.pxhere.com/photo/sunset-line-tower-mast-electricity-energy-power-pylons-transmission-tower-transmission-line-high-pressure-outdoor-structure-electrical-supply-overhead-power-line-outdoor-power-equipment-546725.jpg)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
