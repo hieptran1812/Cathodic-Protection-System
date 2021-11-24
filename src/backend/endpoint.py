@@ -102,18 +102,19 @@ def getFeatureInfo():
             countErrorTestPosts += 1
             BDLoiList.append(doc['maChuoi'])
     else:
-      countBD += 1
-       # Tim Port co dien the cao nhat va thap nhat
-      listPort = [doc['otherInfo'][0]['openPoint1'], doc['otherInfo'][0]['openPoint2'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['closePoint1'], doc['otherInfo'][0]['closePoint2'], doc['otherInfo'][0]['closePoint3'], doc['otherInfo'][0]['closePoint4']]
-      if (max(listPort) > maxPort):
-            maxPortName = doc['maChuoi']
-            maxPort = max(listPort)
-      if (min(listPort) < minPort):
-            minPortName = doc['maChuoi']
-            minPort = min(listPort)
-      if(int(doc['otherInfo'][0]['signalQuality']) == 0):
-            countErrorTestPosts += 1
-            BDLoiList.append(doc['maChuoi'])
+      if(doc['organization'] == currentUser['organization']): #dieu kien cho rieng to chuc
+        countBD += 1
+         # Tim Port co dien the cao nhat va thap nhat
+        listPort = [doc['otherInfo'][0]['openPoint1'], doc['otherInfo'][0]['openPoint2'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['closePoint1'], doc['otherInfo'][0]['closePoint2'], doc['otherInfo'][0]['closePoint3'], doc['otherInfo'][0]['closePoint4']]
+        if (max(listPort) > maxPort):
+              maxPortName = doc['maChuoi']
+              maxPort = max(listPort)
+        if (min(listPort) < minPort):
+              minPortName = doc['maChuoi']
+              minPort = min(listPort)
+        if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+              countErrorTestPosts += 1
+              BDLoiList.append(doc['maChuoi'])
 
   countDevicesBTT = countBTT
   countDevicesBD = countBD
