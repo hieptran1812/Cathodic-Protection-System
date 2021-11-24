@@ -304,6 +304,7 @@ def addNewProduct():
     'date': res['date'],
     'lat': res['lat'],
     'lng': res['lng'],
+    'ACInputPower':res['ACInputPower'],
   }
   deviceRectifierTransformer = {
     'devSerial': res['id'],
@@ -315,6 +316,7 @@ def addNewProduct():
     'date': res['date'],
     'lat': res['lat'],
     'lng': res['lng'],
+    'ACInputPower':res['ACInputPower'],
     'otherInfo': [{
       'locationSystem': '0',
       'centralAddress': '0',
