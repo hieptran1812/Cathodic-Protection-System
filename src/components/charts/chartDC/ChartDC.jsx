@@ -72,7 +72,7 @@ export default function ChartDC() {
     labels: ["T", "T-1", "T-2", "T-3", "T-4", "T-5", "T-6", "T-7"],
     datasets: [
       {
-        label: "Potential On Port 1 (mV)",
+        label: "DC Voltage (V)",
         data: [
           {
             y: infoDC[0],
@@ -127,7 +127,7 @@ export default function ChartDC() {
     plugins: {
       title: {
         display: true,
-        text: "Biểu đồ giá trị điện thế On tại 4 port",
+        text: "Biểu đồ giá trị điện thế DC",
       },
       tooltip: {
         callbacks: {

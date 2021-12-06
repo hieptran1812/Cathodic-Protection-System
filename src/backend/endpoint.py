@@ -164,11 +164,11 @@ def getChartDCandAC():
             maxACName[i] = doc['maChuoi']
     else:
       if(doc['organization'] == currentUser['organization']): #dieu kien cho rieng to chuc
-        for i in range(len(doc['otherInfo'])):
+        for i in range(min(8,len(doc['otherInfo']))):
           # Tim mang maxDC
           if (int(doc['otherInfo'][i]['dienDCPoint1']) > maxDC[i]):
             maxDC[i] = int(doc['otherInfo'][i]['dienDCPoint1'])
-            maxACTime[i] = doc['otherInfo'][i]['time']
+            maxDCTime[i] = doc['otherInfo'][i]['time']
             maxDCName[i] = doc['maChuoi']
           # Tim mang maxAC
           if (int(doc['otherInfo'][i]['dienAC3PhaA']) > maxAC[i]):
