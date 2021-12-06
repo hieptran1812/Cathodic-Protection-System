@@ -372,6 +372,7 @@ def add():
     'lng': res['lng'],
     'ACInputPower':res['ACInputPower'],
     'otherInfo': [{
+      'time': datetime.datetime.now(),
       'locationSystem': '0',
       'centralAddress': '0',
       'phone': '0',
@@ -397,6 +398,7 @@ def add():
     'lat': res['lat'],
     'lng': res['lng'],
     'otherInfo': [{
+      'time': datetime.datetime.now(),
       'locationSystem': '0',
       'centralAddress': '0',
       'phone': '0',
@@ -523,6 +525,7 @@ def getChartDC(id):
   })
   dc = [0,0,0,0,0,0,0,0]
   time = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  # print(min(8,len(deviceInfo['otherInfo'])))
   for i in range(min(8,len(deviceInfo['otherInfo']))):
       dc[i] = deviceInfo['otherInfo'][i]['dienDCPoint1']
       time[i] = deviceInfo['otherInfo'][i]['time']
