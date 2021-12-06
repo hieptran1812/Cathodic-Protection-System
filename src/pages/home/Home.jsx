@@ -1,4 +1,5 @@
 import FeaturedInfo from '../../components/featuredInfo/FeaturedInfo';
+import ChartDCMax from '../../components/charts/chartDCMaxDashboard/ChartDCMax';
 import './home.css';
 import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
@@ -29,6 +30,11 @@ const columns = [
   {
     field: "dateUpdate",
     headerName: "Ngày thêm",
+    width: 200,
+  },
+  {
+    field: "date",
+    headerName: "Ngày bảo trì",
     width: 200,
   },
   {
@@ -98,6 +104,7 @@ export default function Home() {
               "devType",
               "maChuoi",
               "dateUpdate",
+              "date",
               "signalQuality",
               "devSerial",
             ],
@@ -115,6 +122,7 @@ export default function Home() {
         <Sidebar />
         <div style={{ width: "100%" }}>
           <FeaturedInfo />
+          <ChartDCMax />
           <DataGrid
             rows={deviceInfo}
             components={{

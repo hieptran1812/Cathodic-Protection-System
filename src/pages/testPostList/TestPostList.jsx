@@ -83,7 +83,7 @@ export default function TestPostList() {
       .get(`${API}/api/testPostList`)
       .then((res) => {
         setLoading(false);
-        console.log(res);
+        // console.log(res);
         const data = res.data;
         setDeviceInfo(data);
       })

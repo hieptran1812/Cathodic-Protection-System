@@ -31,7 +31,6 @@ def running():
 @app.route('/api/login', methods=['POST'])
 def index():
   if request.method == 'POST':
-    print('api login')
     return login()
 
 
@@ -138,6 +137,54 @@ def getFeatureInfo():
   }
   return jsonify(info)
 
+@app.route('/api/chartDCMax/', methods=['GET'])
+def getChartDCandAC():
+  logging.info("start API get info Dashboard")
+  # Khoi tao bien
+  maxDC = [0,0,0,0,0,0,0,0]
+  maxDCName = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  maxDCTime = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  maxAC = [0,0,0,0,0,0,0,0]
+  maxACName = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  maxACTime = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  ###########################
+  # Tim kiem
+  for doc in db.RectifierTransformersDetails.find({}):
+    if(currentUser['role'] == 'superadmin'):
+      for i in range(min(8,len(doc['otherInfo']))):
+        # Tim mang maxDC
+        if (int(doc['otherInfo'][i]['dienDCPoint1']) > maxDC[i]):
+            maxDC[i] = int(doc['otherInfo'][i]['dienDCPoint1'])
+            maxDCTime[i] = doc['otherInfo'][i]['time']
+            maxDCName[i] = doc['maChuoi']
+        # Tim mang maxAC
+        if (int(doc['otherInfo'][i]['dienAC3PhaA']) > maxAC[i]):
+            maxAC[i] = int(doc['otherInfo'][i]['dienAC3PhaA'])
+            maxACTime[i] = doc['otherInfo'][i]['time']
+            maxACName[i] = doc['maChuoi']
+    else:
+      if(doc['organization'] == currentUser['organization']): #dieu kien cho rieng to chuc
+        for i in range(len(doc['otherInfo'])):
+          # Tim mang maxDC
+          if (int(doc['otherInfo'][i]['dienDCPoint1']) > maxDC[i]):
+            maxDC[i] = int(doc['otherInfo'][i]['dienDCPoint1'])
+            maxACTime[i] = doc['otherInfo'][i]['time']
+            maxDCName[i] = doc['maChuoi']
+          # Tim mang maxAC
+          if (int(doc['otherInfo'][i]['dienAC3PhaA']) > maxAC[i]):
+            maxAC[i] = int(doc['otherInfo'][i]['dienAC3PhaA'])
+            maxACTime[i] = doc['otherInfo'][i]['time']
+            maxACName[i] = doc['maChuoi']
+  info = {
+    'maxDC': maxDC,
+    'maxDCName': maxDCName,
+    'maxDCTime': maxDCTime,
+    'maxAC': maxAC,
+    'maxACName': maxACName,
+    'maxACTime': maxACTime,
+  }
+  return jsonify(info)
+
 
 @app.route('/api/dashboardList/', methods=['GET'])
 def getDashboard():
@@ -151,6 +198,7 @@ def getDashboard():
       'devSerial': doc['devSerial'],
       'devType': "Bo trung tam",
       'dateUpdate': doc['dateUpdate'],
+      'date': doc['date'],
       'organization': doc['organization'],
       'signalQuality': doc['otherInfo'][0]['signalQuality'],
       'maChuoi': doc['maChuoi']
@@ -162,6 +210,7 @@ def getDashboard():
           'devSerial': doc['devSerial'],
           'devType': "Bo trung tam",
           'dateUpdate': doc['dateUpdate'],
+          'date': doc['date'],
           'organization': doc['organization'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
           'maChuoi': doc['maChuoi']
@@ -173,6 +222,7 @@ def getDashboard():
         'devSerial': doc['devSerial'],
         'devType': "Bo do",
         'dateUpdate': doc['dateUpdate'],
+        'date': doc['date'],
         'organization': doc['organization'],
         'signalQuality': doc['otherInfo'][0]['signalQuality'],
         'maChuoi': doc['maChuoi']
@@ -184,6 +234,7 @@ def getDashboard():
           'devSerial': doc['devSerial'],
           'devType': "Bo do",
           'dateUpdate': doc['dateUpdate'],
+          'date': doc['date'],
           'organization': doc['organization'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
           'maChuoi': doc['maChuoi']
@@ -232,6 +283,7 @@ def getUsers():
           'address': doc['address'],
           'role':doc['role'],
           'organization':doc['organization'],
+          'username': doc['username'],
           'dateRegistered': doc['dateRegistered'],
           'dueDate': doc['dueDate'],
         })
@@ -247,6 +299,7 @@ def getUsers():
           'phone': doc['phone'],
           'address': doc['address'],
           'role':doc['role'],
+          'username': doc['username'],
           'organization':doc['organization'],
           'dateRegistered': doc['dateRegistered'],
           'dueDate': doc['dueDate'],
@@ -292,7 +345,7 @@ def updateUser(id):
 # ################ bo trung tam ##################
 
 @app.route('/api/newProduct', methods=['POST'])
-def addNewProduct():
+def add():
   logging.info("start API add new product")
   res = request.get_json()
   deviceRectifierTransformersList = {
@@ -393,10 +446,10 @@ def addNewProduct():
       return 'hoan thanh', 200
 
 @app.route('/api/rectifierTransformerList/', methods=['GET'])
-def getRectifier():
+def get():
   logging.info("start API get Rectifier Transformers list")
   devices = []
-  print(currentUser['role'])
+  # print(currentUser['role'])
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       devices.append({
@@ -459,9 +512,25 @@ def getRectifierTransformerDetailTable(id):
 
 
 @app.route('/api/rectifierTransformer/delete/<id>', methods=['GET'])
-def deleteRectifier(id):
+def delete(id):
   db.RectifierTransformersDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
+
+@app.route('/api/getChartDC/<id>', methods=['GET'])
+def getChartDC(id):
+  deviceInfo = db.RectifierTransformersDetails.find_one({
+    'devSerial': id,
+  })
+  dc = [0,0,0,0,0,0,0,0]
+  time = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  for i in range(min(8,len(deviceInfo['otherInfo']))):
+      dc[i] = deviceInfo['otherInfo'][i]['dienDCPoint1']
+      time[i] = deviceInfo['otherInfo'][i]['time']
+  info = {
+    'dc': dc,
+    'time': time
+  }
+  return jsonify(info)
 
 # ################ Bo do ##################
 
@@ -529,6 +598,31 @@ def getTestPostDetailTable(id):
 def deleteTestpost(id):
   db.TestPostsDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
+
+@app.route('/api/getChartPort/<id>', methods=['GET'])
+def getChartPort(id):
+  deviceInfo = db.TestPostsDetails.find_one({
+    'devSerial': id,
+  })
+  portOn1 = [0,0,0,0,0,0,0,0]
+  portOn2 = [0,0,0,0,0,0,0,0]
+  portOn3 = [0,0,0,0,0,0,0,0]
+  portOn4 = [0,0,0,0,0,0,0,0]
+  time = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  for i in range(min(8,len(deviceInfo['otherInfo']))):
+      portOn1[i] = deviceInfo['otherInfo'][i]['openPoint1']
+      portOn2[i] = deviceInfo['otherInfo'][i]['openPoint2']
+      portOn3[i] = deviceInfo['otherInfo'][i]['openPoint3']
+      portOn4[i] = deviceInfo['otherInfo'][i]['openPoint4']
+      time[i] = deviceInfo['otherInfo'][i]['time']
+  info = {
+    'portOn1': portOn1,
+    'portOn2': portOn2,
+    'portOn3': portOn3,
+    'portOn4': portOn4,
+    'time': time
+  }
+  return jsonify(info)
 
 ########## Ban do ###########
 

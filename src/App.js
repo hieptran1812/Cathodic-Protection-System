@@ -69,7 +69,7 @@ function App() {
                 
                 if (
                   localStorage.getItem("role") !== "viewer" ||
-                  localStorage.getItem("idCurrentUser") ==
+                  localStorage.getItem("idCurrentUser") ===
                     props.match.params.userId
                 )
                   return <User />;

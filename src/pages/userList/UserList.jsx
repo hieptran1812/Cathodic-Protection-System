@@ -29,6 +29,11 @@ const columns = [
     },
   },
   {
+    field: "username",
+    headerName: "Tên đăng nhập",
+    width: 200,
+  },
+  {
     field: "role",
     headerName: "Vai trò",
     width: 200,
@@ -37,6 +42,11 @@ const columns = [
     field: "phone",
     headerName: "Số điện thoại",
     width: 180,
+  },
+  {
+    field: "email",
+    headerName: "Email",
+    width: 200,
   },
   {
     field: "dateRegistered",
@@ -94,8 +104,10 @@ export default function UserList() {
             fields: [
               "organization",
               "name",
+              "username",
               "role",
               "phone",
+              "email",
               "dateRegistered",
               "dueDate",
             ],

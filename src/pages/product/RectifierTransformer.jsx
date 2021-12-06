@@ -4,6 +4,7 @@ import {
   GridToolbarContainer,
   GridToolbarExport,
 } from "@material-ui/data-grid";
+import ChartDC from "../../components/charts/chartDC/ChartDC";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { React, useEffect, useState } from "react";
@@ -284,6 +285,18 @@ export default function RectifierTransformer() {
             <span className="productInfoValue">{infoTop[0].time}</span>
           </div>
           <div className="connect">
+            <span className="productInfoKey">Tên thiết bị: </span>
+            <span className="productInfoValue">{infoTop[0].tenThietBi}</span>
+          </div>
+          <div className="connect">
+            <span className="productInfoKey">Ngày thêm thiết bị: </span>
+            <span className="productInfoValue">{infoTop[0].dateUpdate}</span>
+          </div>
+          <div className="connect">
+            <span className="productInfoKey">Ngày bảo trì: </span>
+            <span className="productInfoValue">{infoTop[0].date}</span>
+          </div>
+          <div className="connect">
             <span className="productInfoKey">Kết nối với các bộ đo: </span>
             <span className="productInfoValue">
               {infoTop[0].testPostResultList}
@@ -292,24 +305,6 @@ export default function RectifierTransformer() {
           <div className="productTop">
             <div className="productTopRight">
               <div className="productInfoBottom">
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Tên thiết bị</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].tenThietBi}
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Ngày thêm thiết bị</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].dateUpdate}
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Ngày bảo trì</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].date}
-                  </span>
-                </div>
                 <div className="productInfoItem">
                   <span className="productInfoKey">Location System</span>
                   <span className="productInfoValue">
@@ -335,19 +330,19 @@ export default function RectifierTransformer() {
             <div className="productTopRight">
               <div className="productInfoBottom">
                 <div className="productInfoItem">
-                  <span className="productInfoKey">AC power phase A</span>
+                  <span className="productInfoKey">AC voltage phase A</span>
                   <span className="productInfoValue">
                     <ConditionACInputPhaA value={infoTop[0].dienAC3PhaA} />
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">AC power phase B</span>
+                  <span className="productInfoKey">AC voltage phase B</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienAC3PhaB} (V)
                   </span>
                 </div>
                 <div className="productInfoItem">
-                  <span className="productInfoKey">AC power phase C</span>
+                  <span className="productInfoKey">AC voltage phase C</span>
                   <span className="productInfoValue">
                     {infoTop[0].dienAC3PhaC} (V)
                   </span>
@@ -409,6 +404,7 @@ export default function RectifierTransformer() {
               </div>
             </div>
           </div>
+          <ChartDC />
           <DataGrid
             rows={infoBottom}
             components={{

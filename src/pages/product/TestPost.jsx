@@ -4,6 +4,7 @@ import {
   GridToolbarContainer,
   GridToolbarExport,
 } from "@material-ui/data-grid";
+import ChartPort from "../../components/charts/chartPort/ChartPort";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { React, useEffect, useState } from "react";
@@ -31,42 +32,42 @@ const columns = [
   },
   {
     field: "openPoint1",
-    headerName: "Potential Open Port 1 (mV)",
+    headerName: "Potential On Port 1 (mV)",
     width: 250,
   },
   {
     field: "closePoint1",
-    headerName: "Potential Closed Port 1 (mV)",
+    headerName: "Potential Off Port 1 (mV)",
     width: 250,
   },
   {
     field: "openPoint2",
-    headerName: "Potential Open Port 2 (mV)",
+    headerName: "Potential On Port 2 (mV)",
     width: 250,
   },
   {
     field: "closePoint2",
-    headerName: "Potential Closed Port 2 (mV)",
+    headerName: "Potential Off Port 2 (mV)",
     width: 250,
   },
   {
     field: "openPoint3",
-    headerName: "Potential Open Port 3 (mV)",
+    headerName: "Potential On Port 3 (mV)",
     width: 250,
   },
   {
     field: "closePoint3",
-    headerName: "Potential Closed Port 3 (mV)",
+    headerName: "Potential Off Port 3 (mV)",
     width: 250,
   },
   {
     field: "openPoint4",
-    headerName: "Potential Open Port 4 (mV)",
+    headerName: "Potential On Port 4 (mV)",
     width: 250,
   },
   {
     field: "closePoint4",
-    headerName: "Potential Closed Port 4 (mV)",
+    headerName: "Potential Off Port 4 (mV)",
     width: 250,
   },
   {
@@ -427,6 +428,7 @@ export default function TestPost() {
               </div>
             </div>
           </div>
+          <ChartPort />
           <div className="tableGrid">
             <DataGrid
               rows={infoBottom}

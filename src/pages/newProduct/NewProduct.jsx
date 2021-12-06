@@ -180,6 +180,8 @@ export default function NewProduct() {
                 onChange={(e) => setLat(e.target.value)}
                 autoFocus
                 step="any"
+                min="0"
+                max="90"
               />
             </div>
             <div className="addProductItem">
@@ -190,6 +192,8 @@ export default function NewProduct() {
                 onChange={(e) => setLng(e.target.value)}
                 autoFocus
                 step="any"
+                min="0"
+                max="180"
               />
             </div>
             <button className="addProductButton">Thêm mới</button>
