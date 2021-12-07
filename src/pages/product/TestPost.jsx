@@ -148,8 +148,8 @@ function ConditionSignal(props) {
 
 function ConditionPort(props) {
   if (
-    (props.value < 1.2 && props.value > 0.85) ||
-    (props.value > -1.2 && props.value < -0.85)
+    (props.value <= 1.2 && props.value >= 0.85) ||
+    (props.value >= -1.2 && props.value <= -0.85)
   ) {
     return (
       <Alert variant="filled" severity="info">
@@ -162,9 +162,15 @@ function ConditionPort(props) {
         {props.value} (mV)
       </Alert>
     );
-  } else {
+  } else if (props.value > 1.2 || props.value < -1.2) {
     return (
       <Alert variant="filled" severity="error">
+        {props.value} (mV)
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="warning">
         {props.value} (mV)
       </Alert>
     );

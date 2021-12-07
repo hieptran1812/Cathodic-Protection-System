@@ -14,13 +14,13 @@ function ConditionMaxDC(props){
     );
   } else if (props.value === 0) {
     return (
-      <Alert variant="filled" severity="error">
+      <Alert variant="filled" severity="warning">
         Điện áp DC bằng 0, hãy kiểm tra lại!
       </Alert>
     );
   } else if (props.value < 10) {
     return (
-      <Alert variant="filled" severity="error">
+      <Alert variant="filled" severity="warning">
         Cảnh báo điện thế thấp! (nhỏ hơn 10V)
       </Alert>
     );
@@ -43,14 +43,14 @@ function ConditionMaxAC(props) {
   }
   else if (props.value === 0) {
     return (
-      <Alert variant="filled" severity="error">
+      <Alert variant="filled" severity="warning">
         Điện thế bằng 0, hãy kiểm tra lại!
       </Alert>
     ); 
   }
   else if (props.value < 220) {
     return (
-      <Alert variant="filled" severity="error">
+      <Alert variant="filled" severity="warning">
         Cảnh báo điện thế thấp! (nhỏ hơn 220V)
       </Alert>
     );
@@ -66,8 +66,8 @@ function ConditionMaxAC(props) {
 
 function ConditionMaxPort(props) {
   if (
-    (props.value < 1.2 && props.value > 0.85) ||
-    (props.value > -1.2 && props.value < -0.85)
+    (props.value <= 1.2 && props.value >= 0.85) ||
+    (props.value >= -1.2 && props.value <= -0.85)
   ) {
     return (
       <Alert variant="filled" severity="info">
@@ -80,9 +80,15 @@ function ConditionMaxPort(props) {
         Điện thế bằng 0, hãy kiểm tra lại!
       </Alert>
     );
-  } else {
+  } else if (props.value > 1.2 || props.value < -1.2) {
     return (
       <Alert variant="filled" severity="error">
+        Điện thế quá ngưỡng, hãy kiểm tra lại!
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="warning">
         Điện thế quá ngưỡng, hãy kiểm tra lại!
       </Alert>
     );

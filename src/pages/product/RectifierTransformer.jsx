@@ -123,13 +123,13 @@ function ConditionTemperature(props) {
 function ConditionACInputPhaA(props) {
   if (props.value > 380) {
     return (
-      <Alert variant="filled" severity="warning">
+      <Alert variant="filled" severity="error">
         {props.value} (V)
       </Alert>
     );
   } else if (props.value < 220) {
     return (
-      <Alert variant="filled" severity="error">
+      <Alert variant="filled" severity="warning">
         {props.value} (V)
       </Alert>
     );
@@ -145,13 +145,13 @@ function ConditionACInputPhaA(props) {
 function ConditionDCOutput(props) {
   if (props.value > 50) {
     return (
-      <Alert variant="filled" severity="warning">
+      <Alert variant="filled" severity="error">
         {props.value} (V)
       </Alert>
     );
   } else if (props.value < 10) {
     return (
-      <Alert variant="filled" severity="error">
+      <Alert variant="filled" severity="warning">
         {props.value} (V)
       </Alert>
     );
