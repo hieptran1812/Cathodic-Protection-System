@@ -17,7 +17,7 @@ export default function LandingPage() {
   const HighlightedText = tw.span`text-gray-500`;
 
   return (
-    <AnimationRevealPage id = "feature">
+    <AnimationRevealPage id="feature">
       <Hero roundedHeaderButton={true} />
       <Features
         subheading={<Subheading>Tính năng</Subheading>}
@@ -71,6 +71,11 @@ export default function LandingPage() {
           </>
         }
         faqs={[
+          {
+            question: "Liên hệ đăng ký sử dụng sản phẩm qua đâu?",
+            answer:
+              "Thông tin: Đặng Thế Tụng, Hotline: 0948797456, Email: tungdt@pvchem.com.vn",
+          },
           {
             question: "Dữ liệu có realtime hay không?",
             answer:

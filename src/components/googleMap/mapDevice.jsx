@@ -252,7 +252,7 @@ export default function Map() {
         autoHeight
         disableSelectionOnClick
         columns={columns}
-        pageSize={10}
+        pageSize={8}
         loading={loading}
         checkboxSelection
       />
