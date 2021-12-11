@@ -675,6 +675,69 @@ def getLocation():
           })
     return jsonify(devices)
 
+@app.route('/api/dashboardMap/', methods=['GET'])
+def getDashboardMap():
+  logging.info("start API get dashboard list")
+  devices = []
+  print(currentUser['role'])
+  for doc in db.RectifierTransformersDetails.find({}):
+    if(currentUser['role'] == 'superadmin'):
+      devices.append({
+      'id': str(ObjectId(doc['_id'])),
+      'devSerial': doc['devSerial'],
+      'devType': "Bo trung tam",
+      'dateUpdate': doc['dateUpdate'],
+      'date': doc['date'],
+      'organization': doc['organization'],
+      'signalQuality': doc['otherInfo'][0]['signalQuality'],
+      'maChuoi': doc['maChuoi'],
+      'lat': doc['lat'],
+      'lng': doc['lng'],
+    })
+    else:
+      if(doc['organization'] == currentUser['organization']):
+        devices.append({
+          'id': str(ObjectId(doc['_id'])),
+          'devSerial': doc['devSerial'],
+          'devType': "Bo trung tam",
+          'dateUpdate': doc['dateUpdate'],
+          'date': doc['date'],
+          'organization': doc['organization'],
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'maChuoi': doc['maChuoi'],
+          'lat': doc['lat'],
+          'lng': doc['lng'],
+        })
+  for doc in db.TestPostsDetails.find({}):
+    if(currentUser['role'] == 'superadmin'):
+      devices.append({
+        'id': str(ObjectId(doc['_id'])),
+        'devSerial': doc['devSerial'],
+        'devType': "Bo do",
+        'dateUpdate': doc['dateUpdate'],
+        'date': doc['date'],
+        'organization': doc['organization'],
+        'signalQuality': doc['otherInfo'][0]['signalQuality'],
+        'maChuoi': doc['maChuoi'],
+        'lat': doc['lat'],
+        'lng': doc['lng'],
+      })
+    else:
+      if(doc['organization'] == currentUser['organization']):
+        devices.append({
+          'id': str(ObjectId(doc['_id'])),
+          'devSerial': doc['devSerial'],
+          'devType': "Bo do",
+          'dateUpdate': doc['dateUpdate'],
+          'date': doc['date'],
+          'organization': doc['organization'],
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'maChuoi': doc['maChuoi'],
+          'lat': doc['lat'],
+          'lng': doc['lng'],
+        })
+  return jsonify(devices)
+
 if __name__ == "__main__":
     print('run App')
     app.run(port=5000,host='0.0.0.0')

@@ -27,3 +27,12 @@
     margin-left: 40px;
 }
 
+.findAddress{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #d0d31e;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
