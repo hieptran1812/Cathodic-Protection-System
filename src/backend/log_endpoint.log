@@ -9,3 +9,229 @@
 2021-12-12 20:50:14,238 - INFO - start API get dashboard list
 2021-12-12 20:50:14,301 - INFO - 127.0.0.1 - - [12/Dec/2021 20:50:14] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
 2021-12-12 20:50:14,663 - INFO - 127.0.0.1 - - [12/Dec/2021 20:50:14] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:52:04,010 - INFO - Start API
+2021-12-12 20:52:04,014 - INFO - Flask started
+2021-12-12 20:52:05,039 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 20:52:14,377 - INFO - start API get info Dashboard
+2021-12-12 20:52:14,510 - INFO - start API get info Dashboard
+2021-12-12 20:52:14,937 - ERROR - Exception on /api/featureInfo/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 59, in getFeatureInfo
+    if(currentUser['role'] == 'superadmin'):
+KeyError: 'role'
+2021-12-12 20:52:15,287 - ERROR - Exception on /api/chartDCMax/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 153, in getChartDCandAC
+    if(currentUser['role'] == 'superadmin'):
+KeyError: 'role'
+2021-12-12 20:52:15,595 - INFO - 127.0.0.1 - - [12/Dec/2021 20:52:15] "[35m[1mGET /api/featureInfo/ HTTP/1.1[0m" 500 -
+2021-12-12 20:52:15,612 - INFO - 127.0.0.1 - - [12/Dec/2021 20:52:15] "[35m[1mGET /api/chartDCMax/ HTTP/1.1[0m" 500 -
+2021-12-12 20:52:16,562 - INFO - start API get dashboard list
+2021-12-12 20:52:16,562 - ERROR - Exception on /api/dashboardList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 193, in getDashboard
+    print(currentUser['role'])
+KeyError: 'role'
+2021-12-12 20:52:16,565 - INFO - 127.0.0.1 - - [12/Dec/2021 20:52:16] "[35m[1mGET /api/dashboardList/ HTTP/1.1[0m" 500 -
+2021-12-12 20:52:28,295 - INFO - 127.0.0.1 - - [12/Dec/2021 20:52:28] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 20:52:28,338 - INFO - 127.0.0.1 - - [12/Dec/2021 20:52:28] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 20:52:28,446 - INFO - start API get info Dashboard
+2021-12-12 20:52:28,486 - INFO - start API get info Dashboard
+2021-12-12 20:52:28,736 - INFO - 127.0.0.1 - - [12/Dec/2021 20:52:28] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 20:52:28,942 - INFO - 127.0.0.1 - - [12/Dec/2021 20:52:28] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 20:52:29,219 - INFO - start API get dashboard list
+2021-12-12 20:52:29,719 - INFO - 127.0.0.1 - - [12/Dec/2021 20:52:29] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:53:00,450 - INFO - start API get dashboard list
+2021-12-12 20:53:01,075 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:01] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:53:02,951 - INFO - start API get dashboard list
+2021-12-12 20:53:03,592 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:03] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:53:20,284 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:20] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:20,491 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:20] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:22,288 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:22] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:22,406 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:22] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:24,284 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:24] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:24,469 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:24] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:26,284 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:26] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:26,394 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:26] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:28,293 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:28] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:28,380 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:28] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:30,296 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:30] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:30,395 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:30] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:32,293 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:32] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:32,410 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:32] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:34,289 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:34] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:34,397 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:34] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:36,289 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:36] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:36,374 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:36] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:38,287 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:38] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:38,371 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:38] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:40,283 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:40] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:40,400 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:40] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:42,288 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:42] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:42,370 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:42] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:43,405 - INFO - Retrieve data from test device
+2021-12-12 20:53:43,405 - INFO - Ma thiet bi dang chuoi dang chay               
+2021-12-12 20:53:43,406 - INFO - Retrieve data from tool completely
+2021-12-12 20:53:43,497 - INFO - Insert data to MongoDB
+2021-12-12 20:53:44,281 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:44] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:44,392 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:44] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:46,350 - INFO - start API get info Dashboard
+2021-12-12 20:53:46,354 - INFO - start API get info Dashboard
+2021-12-12 20:53:46,456 - INFO - start API get dashboard list
+2021-12-12 20:53:46,657 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:46] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 20:53:46,734 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:46] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:46,778 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:46] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:47,004 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:47] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 20:53:47,101 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:47] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:53:48,287 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:48] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:48,372 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:48] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:50,292 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:50] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:50,376 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:50] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:52,280 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:52] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:52,380 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:52] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:54,292 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:54] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:54,375 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:54] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:56,284 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:56] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:56,387 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:56] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:58,282 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:58] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:53:58,374 - INFO - 127.0.0.1 - - [12/Dec/2021 20:53:58] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:00,281 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:00] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:00,379 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:00] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:02,314 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:02] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:03,350 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:03] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:04,310 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:04] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:05,358 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:05] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:06,314 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:06] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:09,008 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:09] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:09,039 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:09] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:10,280 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:10] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:10,384 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:10] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:11,188 - INFO - start API get Rectifier Transformers list
+2021-12-12 20:54:11,466 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 491, in get
+    'status': status
+NameError: name 'status' is not defined
+2021-12-12 20:54:11,468 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:11] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 20:54:11,948 - INFO - start API get Test Posts list
+2021-12-12 20:54:12,134 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:12] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 20:54:12,373 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:12] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:12,414 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:12] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:13,374 - INFO - start API get location all devices
+2021-12-12 20:54:14,035 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:14] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-12 20:54:15,107 - INFO - start API get info Dashboard
+2021-12-12 20:54:15,151 - INFO - start API get info Dashboard
+2021-12-12 20:54:15,480 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:15] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 20:54:15,711 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:15] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:15,759 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:15] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:15,791 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:15] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 20:54:15,827 - INFO - start API get dashboard list
+2021-12-12 20:54:15,918 - INFO - start API get dashboard list
+2021-12-12 20:54:16,393 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:16] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-12 20:54:16,692 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:16] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:54:17,828 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:17] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:17,868 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:17] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:18,359 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:18] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:18,404 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:18] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:20,302 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:20] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:20,881 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:20] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:22,292 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:22] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:22,382 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:22] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:24,291 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:24] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:24,374 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:24] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:26,295 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:26] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:26,379 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:26] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:27,668 - INFO - Retrieve data from central device
+2021-12-12 20:54:27,668 - INFO - Start packet b'U\xaa'
+2021-12-12 20:54:27,668 - INFO - length data 2
+2021-12-12 20:54:27,668 - INFO - Start packet 43605
+2021-12-12 20:54:27,668 - INFO - Start packet b'\x01\x00'
+2021-12-12 20:54:27,669 - INFO - length data 2
+2021-12-12 20:54:27,669 - INFO - location System 1
+2021-12-12 20:54:27,670 - INFO - Ma thiet bi dang chuoi                                
+2021-12-12 20:54:27,671 - INFO - Retrieve data from tool completely
+2021-12-12 20:54:27,770 - INFO - Insert data to MongoDB
+2021-12-12 20:54:28,279 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:28] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:28,386 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:28] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:30,285 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:30] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:30,396 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:30] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 20:54:32,044 - INFO - start API get info Dashboard
+2021-12-12 20:54:32,174 - INFO - start API get info Dashboard
+2021-12-12 20:54:32,181 - INFO - start API get dashboard list
+2021-12-12 20:54:32,568 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:32] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 20:54:32,660 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:32] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 20:54:32,740 - INFO - 127.0.0.1 - - [12/Dec/2021 20:54:32] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:57:14,609 - INFO - start API get info Dashboard
+2021-12-12 20:57:14,688 - INFO - start API get info Dashboard
+2021-12-12 20:57:14,773 - INFO - start API get dashboard list
+2021-12-12 20:57:15,125 - INFO - 127.0.0.1 - - [12/Dec/2021 20:57:15] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 20:57:15,136 - INFO - 127.0.0.1 - - [12/Dec/2021 20:57:15] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 20:57:15,567 - INFO - 127.0.0.1 - - [12/Dec/2021 20:57:15] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:57:54,795 - INFO - start API get info Dashboard
+2021-12-12 20:57:54,845 - INFO - start API get info Dashboard
+2021-12-12 20:57:54,856 - INFO - start API get dashboard list
+2021-12-12 20:57:55,163 - INFO - 127.0.0.1 - - [12/Dec/2021 20:57:55] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 20:57:55,597 - INFO - 127.0.0.1 - - [12/Dec/2021 20:57:55] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 20:57:55,630 - INFO - 127.0.0.1 - - [12/Dec/2021 20:57:55] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 21:10:47,894 - INFO - start API get info Dashboard
+2021-12-12 21:10:47,982 - INFO - start API get info Dashboard
+2021-12-12 21:10:48,039 - INFO - start API get dashboard list
+2021-12-12 21:10:48,385 - INFO - 127.0.0.1 - - [12/Dec/2021 21:10:48] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 21:10:48,561 - INFO - 127.0.0.1 - - [12/Dec/2021 21:10:48] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 21:10:48,666 - INFO - 127.0.0.1 - - [12/Dec/2021 21:10:48] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -

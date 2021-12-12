@@ -488,7 +488,6 @@ def get():
       'date': doc['date'],
       'signalQuality': doc['otherInfo'][0]['signalQuality'],
       'dienApPin': doc['otherInfo'][0]['dienApPin'],
-      'status': status
     })
     else:
       if(doc['organization'] == currentUser['organization']):
@@ -502,7 +501,6 @@ def get():
           'date': doc['date'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
           'dienApPin': doc['otherInfo'][0]['dienApPin'],
-          'status': status
         })
   
   return jsonify(devices)
