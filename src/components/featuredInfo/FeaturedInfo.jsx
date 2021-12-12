@@ -6,10 +6,10 @@ import { React, useEffect, useState } from "react";
 const API = process.env.REACT_APP_API;
 
 function ConditionMaxDC(props){
-  if (props.value > 50) {
+  if (props.value >= 50) {
     return (
       <Alert variant="filled" severity="error">
-        Cảnh báo điện thế cao! (lớn hơn 50V)
+        Cảnh báo điện thế cao! (Từ 50V trở lên)
       </Alert>
     );
   } else if (props.value === 0) {
@@ -18,10 +18,10 @@ function ConditionMaxDC(props){
         Điện áp DC bằng 0, hãy kiểm tra lại!
       </Alert>
     );
-  } else if (props.value < 10) {
+  } else if (props.value <= 10) {
     return (
       <Alert variant="filled" severity="warning">
-        Cảnh báo điện thế thấp! (nhỏ hơn 10V)
+        Cảnh báo điện thế thấp! (Từ 10V trở xuống)
       </Alert>
     );
   } else {
@@ -57,8 +57,7 @@ function ConditionMaxAC(props) {
   } else {
     return (
       <Alert variant="filled" severity="info">
-        Điện thế ổn định! 
-        (nhỏ hơn 380V và lớn hơn 220V)
+        Điện thế ổn định! (lớn hơn 220V và nhỏ hơn 380V)
       </Alert>
     );
   }

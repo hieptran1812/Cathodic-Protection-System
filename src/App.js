@@ -15,6 +15,8 @@ import RectifierTransformer from "./pages/product/RectifierTransformer";
 import TestPostList from "./pages/testPostList/TestPostList";
 import TestPost from "./pages/product/TestPost";
 import NewProduct from "./pages/newProduct/NewProduct";
+import DocumentsList from "./pages/documents/documentsList";
+import NewDocument from "./pages/newDocuments/NewDocument";
 import SignInSide from "./pages/signInUp/signIn";
 import LandingPage from "./pages/SaaSProductLandingPage";
 
@@ -64,9 +66,7 @@ function App() {
           <Route
             path="/user/:userId"
             render={(props) => {
-              
               if (localStorage.getItem("accessToken")) {
-                
                 if (
                   localStorage.getItem("role") !== "viewer" ||
                   localStorage.getItem("idCurrentUser") ===
@@ -94,6 +94,22 @@ function App() {
             render={() => {
               if (localStorage.getItem("accessToken")) {
                 return <RectifierTransformerList />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/documentsList"
+            render={() => {
+              return <DocumentsList />;
+            }}
+          ></Route>
+          <Route
+            path="/newDocuments"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <NewDocument />;
               } else {
                 return <Redirect to="/" />;
               }

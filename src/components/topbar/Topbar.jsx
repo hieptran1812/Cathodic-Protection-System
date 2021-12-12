@@ -1,5 +1,7 @@
 import React from "react";
 import "./topbar.css";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 
@@ -25,10 +27,10 @@ export default function Topbar() {
         </div>
         <div className="topRight">
           <Button variant="contained" color="primary" onClick={profileUser}>
-            <b>Thông tin cá nhân</b>
+            <AccountCircleIcon /><b> Thông tin cá nhân</b>
           </Button>
           <Button variant="contained" onClick={logOut}>
-            <b>Đăng xuất</b>
+            <ExitToAppIcon /><b> Đăng xuất</b>
           </Button>
         </div>
       </div>

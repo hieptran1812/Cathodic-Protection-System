@@ -4,6 +4,7 @@ import {
   GridToolbarContainer,
   GridToolbarExport,
 } from "@material-ui/data-grid";
+import AddBoxIcon from "@material-ui/icons/AddBox";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { React, useEffect, useState } from "react";
@@ -119,8 +120,10 @@ export default function RectifierTransformerList() {
             variant="contained"
             href="/newproduct"
             style={{ margin: "40px" }}
+            color="secondary"
+            startIcon={<AddBoxIcon />}
           >
-            <b>Thêm mới thiết bị</b>
+            <b>Thêm mới Bộ trung tâm</b>
           </Button>
           <DataGrid
             rows={deviceInfo}

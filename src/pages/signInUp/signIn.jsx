@@ -119,6 +119,15 @@ export default function SignInSide() {
             >
               Đăng nhập
             </Button>
+            Chưa có tài khoản?
+            <Button
+              fullWidth
+              variant="contained"
+              color="secondary"
+              className={classes.submit}
+            >
+              Đăng ký
+            </Button>
           </form>
         </div>
       </Grid>

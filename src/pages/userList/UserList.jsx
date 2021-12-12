@@ -5,6 +5,7 @@ import {
   GridToolbarExport,
 } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
+import AddBoxIcon from "@material-ui/icons/AddBox";
 import axios from "axios";
 import { React, useState, useEffect } from "react";
 import Topbar from "../../components/topbar/Topbar";
@@ -128,6 +129,8 @@ export default function UserList() {
             variant="contained"
             href="/newuser"
             style={{ margin: "40px" }}
+            color="secondary"
+            startIcon={<AddBoxIcon />}
           >
             <b>Thêm người dùng</b>
           </Button>

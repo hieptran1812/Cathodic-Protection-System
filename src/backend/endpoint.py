@@ -627,6 +627,32 @@ def getChartPort(id):
   }
   return jsonify(info)
 
+########## Tài liệu ###########
+@app.route('/api/documentsList', methods=['GET'])
+def getDocuments():
+    documents = []
+    for doc in db.Documents.find({}):
+        documents.append({
+          'id': str(ObjectId(doc['_id'])),
+          'title': doc['title'],
+          'dateCreated': doc['dateCreated'],
+          'content': doc['content'],
+          'link': doc['link']
+        })
+    return jsonify(documents)
+
+@app.route('/api/newDocument', methods=['POST'])
+def addDocuments():
+  res = request.get_json()
+  document = {
+    "title": res["title"],
+    "dateCreated": res["dateCreated"],
+    "content": res["content"],
+    "link": res["link"]
+  }
+  insertDocument = db.Documents.insert_one(document)
+  return 'hoan thanh', 200
+
 ########## Ban do ###########
 
 @app.route('/api/locationAllDevices', methods=['GET'])

@@ -5,6 +5,7 @@ import {
   GridToolbarExport,
 } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
+import AddBoxIcon from "@material-ui/icons/AddBox";
 import axios from "axios";
 import {React, useState, useEffect} from "react";
 import Topbar from "../../components/topbar/Topbar";
@@ -122,8 +123,10 @@ export default function TestPostList() {
             variant="contained"
             href="/newproduct"
             style={{ margin: "40px" }}
+            color="secondary"
+            startIcon={<AddBoxIcon />}
           >
-            <b>Thêm mới thiết bị</b>
+            <b>Thêm mới Bộ đo</b>
           </Button>
           <DataGrid
             rows={deviceInfo}

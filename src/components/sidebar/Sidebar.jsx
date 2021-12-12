@@ -6,6 +6,8 @@ import {
   SettingsCell,
   NetworkCheck,
 } from "@material-ui/icons";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
@@ -36,7 +38,6 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quản lý</h3>
           <ul className="sidebarList">
-            
             <li className="sidebarListItem">
               <NavLink to="/users" className="link" activeClassName="active">
                 <PermIdentity className="sidebarIcon" />
@@ -61,6 +62,16 @@ export default function Sidebar() {
               >
                 <NetworkCheck className="sidebarIcon" />
                 Bộ đo
+              </NavLink>
+            </li>
+            <li className="sidebarListItem">
+              <NavLink
+                to="/documentsList"
+                className="link"
+                activeClassName="active"
+              >
+                <InsertDriveFileIcon className="sidebarIcon" />
+                Tài liệu hướng dẫn
               </NavLink>
             </li>
           </ul>

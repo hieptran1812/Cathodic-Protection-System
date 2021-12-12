@@ -31,7 +31,7 @@ export default function Map() {
       zoom: 14,
       width: "76vw",
       height: "80vh",
-      transitionDuration: 5000,
+      transitionDuration: 4000,
       transitionInterpolator: new FlyToInterpolator(),
     });
   };
