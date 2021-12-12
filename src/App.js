@@ -17,7 +17,9 @@ import TestPost from "./pages/product/TestPost";
 import NewProduct from "./pages/newProduct/NewProduct";
 import DocumentsList from "./pages/documents/documentsList";
 import NewDocument from "./pages/newDocuments/NewDocument";
+import NotificationsList from "./pages/notifications/notifications";
 import SignInSide from "./pages/signInUp/signIn";
+import SignUpSide from "./pages/signInUp/signUp";
 import LandingPage from "./pages/SaaSProductLandingPage";
 
 function App() {
@@ -30,6 +32,9 @@ function App() {
           </Route>
           <Route path="/login">
             <SignInSide />
+          </Route>
+          <Route path="/signUp">
+            <SignUpSide />
           </Route>
           <Route
             path="/home"
@@ -57,6 +62,18 @@ function App() {
               if (localStorage.getItem("accessToken")) {
                 if (localStorage.getItem("role") !== "viewer")
                   return <UserList />;
+                else return <Home />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/notifications"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                if (localStorage.getItem("role") === "superadmin")
+                  return <NotificationsList />;
                 else return <Home />;
               } else {
                 return <Redirect to="/" />;

@@ -12,7 +12,6 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Button from "@material-ui/core/Button";
 
-
 const API = process.env.REACT_APP_API;
 
 const columns = [
@@ -125,15 +124,17 @@ export default function UserList() {
       <div style={{ display: "flex" }}>
         <Sidebar />
         <div style={{ width: "100%" }}>
-          <Button
-            variant="contained"
-            href="/newuser"
-            style={{ margin: "40px" }}
-            color="secondary"
-            startIcon={<AddBoxIcon />}
-          >
-            <b>Thêm người dùng</b>
-          </Button>
+          {localStorage.getItem("role") !== "viewer" ? (
+            <Button
+              variant="contained"
+              href="/newuser"
+              style={{ margin: "40px" }}
+              color="secondary"
+              startIcon={<AddBoxIcon />}
+            >
+              <b>Thêm người dùng</b>
+            </Button>
+          ) : null}
           <DataGrid
             rows={userInfo}
             components={{

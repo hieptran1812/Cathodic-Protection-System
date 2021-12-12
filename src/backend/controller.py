@@ -17,4 +17,4 @@ def login():
         currentUser['name'] = user['name']
         return jsonify(currentUser), 200
     else:
-        return 'ten dang nhap va mat khau sai', 404
+        return "failed to login", 203

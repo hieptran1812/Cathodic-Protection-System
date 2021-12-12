@@ -133,7 +133,7 @@ function ConditionACInputPhaA(props) {
         {props.value} (V)
       </Alert>
     );
-  } else{
+  } else {
     return (
       <Alert variant="filled" severity="info">
         {props.value} (V)
@@ -155,7 +155,7 @@ function ConditionDCOutput(props) {
         {props.value} (V)
       </Alert>
     );
-  } else{
+  } else {
     return (
       <Alert variant="filled" severity="info">
         {props.value} (V)
@@ -243,15 +243,17 @@ export default function RectifierTransformer() {
         <div style={{ width: "100%", margin: "20px 40px 20px" }}>
           <div className="productTitleContainer">
             <h1 className="productTitle">Thông tin Bộ trung tâm</h1>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              startIcon={<DeleteIcon />}
-              onClick={handleClickOpen}
-            >
-              Xóa thiết bị
-            </Button>
+            {localStorage.getItem("role") !== "viewer" ? (
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                startIcon={<DeleteIcon />}
+                onClick={handleClickOpen}
+              >
+                Xóa thiết bị
+              </Button>
+            ) : null}
             <Dialog
               open={open}
               onClose={handleClose}

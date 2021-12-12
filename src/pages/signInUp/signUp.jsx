@@ -9,7 +9,6 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import Alert from "@material-ui/lab/Alert";
 import Collapse from "@material-ui/core/Collapse";
 import CloseIcon from "@material-ui/icons/Close";
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     backgroundImage:
-      "url(https://get.pxhere.com/photo/sunset-line-tower-mast-electricity-energy-power-pylons-transmission-tower-transmission-line-high-pressure-outdoor-structure-electrical-supply-overhead-power-line-outdoor-power-equipment-546725.jpg)",
+      "url(http://baohonamson.vn/sites/default/files/TLAT/Hinh%20an%20toan%2015-%20baohonamson.jpg)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -52,33 +51,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUnSide() {
+export default function SignInSide() {
   const classes = useStyles();
 
-  let history = useHistory();
   let [username, setUsername] = useState("");
-  let [password, setPassword] = useState("");
+  let [name, setName] = useState("");
+  let [organization, setOrganization] = useState("");
+  let [email, setEmail] = useState("");
+  let [phone, setPhone] = useState("");
+  let [address, setAddress] = useState("");
+  let [note, setNote] = useState("");
   let [open, setOpen] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
       username,
-      password,
+      name,
+      organization,
+      email,
+      phone,
+      address,
+      note,
     };
-    axios
-      .post(`${API}/api/login`, data)
+    axios.post(`${API}/api/signUp`, data)
       .then((res) => {
         const info = res.data;
-        // console.log(info);
+        console.log(info);
         if (res.status === 200) {
-          // console.log("Dang nhap thanh cong");
-          localStorage.setItem("accessToken", true);
-          localStorage.setItem("idCurrentUser", info["id"]);
-          localStorage.setItem("role", info["role"]);
-          history.replace("/home");
-        } else if (res.status === 203) {
+          console.log("Dang ky thanh cong");
           setOpen(true);
-          // console.log("Dang nhap khong thanh cong");
         }
       })
       .catch((error) => console.log(error));
@@ -87,6 +88,7 @@ export default function SignUnSide() {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
+
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
@@ -94,12 +96,10 @@ export default function SignUnSide() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Cathodic Protection System
+            Đăng ký tài khoản
           </Typography>
           <Collapse in={open}>
             <Alert
-              severity="error"
-              variant="filled"
               action={
                 <IconButton
                   aria-label="close"
@@ -113,7 +113,7 @@ export default function SignUnSide() {
                 </IconButton>
               }
             >
-              Tên đăng nhập hoặc mật khẩu sai!
+              Đăng ký thành công! Người quản trị sẽ thực hiện yêu cầu của bạn!
             </Alert>
           </Collapse>
           <form className={classes.form} onSubmit={handleSubmit} noValidate>
@@ -122,10 +122,11 @@ export default function SignUnSide() {
               margin="normal"
               required
               fullWidth
-              id="username"
-              label="Tên đăng nhập"
-              onChange={(e) => setUsername(e.target.value)}
-              name="username"
+              id="organization"
+              label="Tên tổ chức"
+              onChange={(e) => setOrganization(e.target.value)}
+              name="organization"
+              type="text"
               autoFocus
             />
             <TextField
@@ -133,32 +134,92 @@ export default function SignUnSide() {
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Mật khẩu"
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              id="password"
-              autoComplete="current-password"
+              name="name"
+              label="Họ và tên"
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              id="name"
+              autoFocus
             />
-            <Button
-              type="submit"
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
               fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Đăng nhập
-            </Button>
-            Chưa có tài khoản?
+              name="username"
+              label="Tên đăng nhập"
+              type="text"
+              onChange={(e) => setUsername(e.target.value)}
+              id="username"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="phone"
+              label="Số điện thoại"
+              type="text"
+              pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"
+              onChange={(e) => setPhone(e.target.value)}
+              id="phone"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="email"
+              label="Email"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              id="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="address"
+              label="Địa chỉ"
+              type="text"
+              onChange={(e) => setAddress(e.target.value)}
+              id="address"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="note"
+              label="Ghi chú"
+              type="text"
+              onChange={(e) => setNote(e.target.value)}
+              id="note"
+              autoFocus
+            />
             <Button
               fullWidth
               variant="contained"
               color="secondary"
               className={classes.submit}
-              component={Link}
-              to="/signUp"
+              type="submit"
             >
               Đăng ký
+            </Button>
+            Đã tài khoản?
+            <Button
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              component={Link}
+              to="/login"
+            >
+              Đăng nhập
             </Button>
           </form>
         </div>

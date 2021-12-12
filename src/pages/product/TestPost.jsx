@@ -121,7 +121,7 @@ function ConditionBatteryPower(props) {
         {props.value} (V)
       </Alert>
     );
-  } else{
+  } else {
     return (
       <Alert variant="filled" severity="info">
         {props.value} (V)
@@ -260,15 +260,17 @@ export default function TestPost() {
         <div style={{ width: "100%", margin: "20px 40px 20px" }}>
           <div className="productTitleContainer">
             <h1 className="productTitle">Thông tin Bộ đo</h1>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              startIcon={<DeleteIcon />}
-              onClick={handleClickOpen}
-            >
-              Xóa thiết bị
-            </Button>
+            {localStorage.getItem("role") !== "viewer" ? (
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                startIcon={<DeleteIcon />}
+                onClick={handleClickOpen}
+              >
+                Xóa thiết bị
+              </Button>
+            ) : null}
             <Dialog
               open={open}
               onClose={handleClose}
@@ -303,21 +305,15 @@ export default function TestPost() {
           </div>
           <div className="time">
             <span className="productInfoKey">Tên thiết bị: </span>
-            <span className="productInfoValue">
-              {infoTop[0].tenThietBi}
-            </span>
+            <span className="productInfoValue">{infoTop[0].tenThietBi}</span>
           </div>
           <div className="time">
             <span className="productInfoKey">Ngày thêm thiết bị: </span>
-            <span className="productInfoValue">
-              {infoTop[0].dateUpdate}
-            </span>
+            <span className="productInfoValue">{infoTop[0].dateUpdate}</span>
           </div>
           <div className="time">
             <span className="productInfoKey">Ngày bảo trì: </span>
-            <span className="productInfoValue">
-              {infoTop[0].date}
-            </span>
+            <span className="productInfoValue">{infoTop[0].date}</span>
           </div>
           <div className="time">
             <span className="productInfoKey">Kết nối với bộ trung tâm: </span>
@@ -367,9 +363,7 @@ export default function TestPost() {
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Signal quality</span>
                   <span className="productInfoValue">
-                    <ConditionSignal
-                      value={infoTop[0].signalQuality}
-                    />
+                    <ConditionSignal value={infoTop[0].signalQuality} />
                   </span>
                 </div>
                 <div className="productInfoItemTest">
@@ -382,9 +376,7 @@ export default function TestPost() {
                 <div className="productInfoItemTest">
                   <span className="productInfoKey">Power supply voltage</span>
                   <span className="productInfoValue">
-                    <ConditionBatteryPower
-                      value={infoTop[0].dienApNguon}
-                    />
+                    <ConditionBatteryPower value={infoTop[0].dienApNguon} />
                   </span>
                 </div>
               </div>

@@ -116,15 +116,17 @@ export default function RectifierTransformerList() {
       <div style={{ display: "flex" }}>
         <Sidebar />
         <div style={{ width: "100%" }}>
-          <Button
-            variant="contained"
-            href="/newproduct"
-            style={{ margin: "40px" }}
-            color="secondary"
-            startIcon={<AddBoxIcon />}
-          >
-            <b>Thêm mới Bộ trung tâm</b>
-          </Button>
+          {localStorage.getItem("role") !== "viewer" ? (
+            <Button
+              variant="contained"
+              href="/newproduct"
+              style={{ margin: "40px" }}
+              color="secondary"
+              startIcon={<AddBoxIcon />}
+            >
+              <b>Thêm mới Bộ trung tâm</b>
+            </Button>
+          ) : null}
           <DataGrid
             rows={deviceInfo}
             components={{

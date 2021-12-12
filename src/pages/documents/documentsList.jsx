@@ -50,7 +50,7 @@ export default function DocumentsList() {
         return (
           <>
             <Link
-              to={{pathname: params.row.link}}
+              to={{ pathname: params.row.link }}
               style={{ textDecoration: "none" }}
               target="_blank"
               rel="noopener noreferrer"
@@ -82,15 +82,17 @@ export default function DocumentsList() {
       <div style={{ display: "flex" }}>
         <Sidebar />
         <div style={{ width: "100%" }}>
-          <Button
-            variant="contained"
-            href="/newDocuments"
-            style={{ margin: "40px" }}
-            color="secondary"
-            startIcon={<AddBoxIcon />}
-          >
-            <b>Thêm mới tài liệu</b>
-          </Button>
+          {localStorage.getItem("role") !== "viewer" ? (
+            <Button
+              variant="contained"
+              href="/newDocuments"
+              style={{ margin: "40px" }}
+              color="secondary"
+              startIcon={<AddBoxIcon />}
+            >
+              <b>Thêm mới tài liệu</b>
+            </Button>
+          ) : null}
           <DataGrid
             rows={documentsInfo}
             components={{

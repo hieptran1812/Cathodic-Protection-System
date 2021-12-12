@@ -7,7 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import axios from "axios";
-import {React, useState, useEffect} from "react";
+import { React, useState, useEffect } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Button from "@material-ui/core/Button";
@@ -75,7 +75,6 @@ const columns = [
 ];
 
 export default function TestPostList() {
-
   const [loading, setLoading] = useState(true);
   const [deviceInfo, setDeviceInfo] = useState([]);
 
@@ -112,22 +111,24 @@ export default function TestPostList() {
       </GridToolbarContainer>
     );
   }
-  
+
   return (
     <div className="productList">
       <Topbar />
       <div style={{ display: "flex" }}>
         <Sidebar />
         <div style={{ width: "100%" }}>
-          <Button
-            variant="contained"
-            href="/newproduct"
-            style={{ margin: "40px" }}
-            color="secondary"
-            startIcon={<AddBoxIcon />}
-          >
-            <b>Thêm mới Bộ đo</b>
-          </Button>
+          {localStorage.getItem("role") !== "viewer" ? (
+            <Button
+              variant="contained"
+              href="/newproduct"
+              style={{ margin: "40px" }}
+              color="secondary"
+              startIcon={<AddBoxIcon />}
+            >
+              <b>Thêm mới Bộ đo</b>
+            </Button>
+          ) : null}
           <DataGrid
             rows={deviceInfo}
             components={{

@@ -235,3 +235,1245 @@ NameError: name 'status' is not defined
 2021-12-12 21:10:48,385 - INFO - 127.0.0.1 - - [12/Dec/2021 21:10:48] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
 2021-12-12 21:10:48,561 - INFO - 127.0.0.1 - - [12/Dec/2021 21:10:48] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
 2021-12-12 21:10:48,666 - INFO - 127.0.0.1 - - [12/Dec/2021 21:10:48] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 21:21:28,021 - CRITICAL - [WinError 10054] An existing connection was forcibly closed by the remote host
+2021-12-12 21:30:44,720 - INFO - start API get Rectifier Transformers list
+2021-12-12 21:30:45,121 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 491, in get
+    'status': status
+NameError: name 'status' is not defined
+2021-12-12 21:30:45,125 - INFO - 127.0.0.1 - - [12/Dec/2021 21:30:45] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 21:30:49,000 - INFO - start API get Rectifier Transformers list
+2021-12-12 21:30:49,389 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 491, in get
+    'status': status
+NameError: name 'status' is not defined
+2021-12-12 21:30:49,391 - INFO - 127.0.0.1 - - [12/Dec/2021 21:30:49] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 22:21:26,226 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:26] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:21:26,410 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:26] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:21:26,468 - INFO - start API get info Dashboard
+2021-12-12 22:21:26,591 - INFO - start API get info Dashboard
+2021-12-12 22:21:26,816 - INFO - start API get dashboard list
+2021-12-12 22:21:27,050 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:27] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:21:27,347 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:27] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:21:27,691 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:27] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:21:38,447 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:38] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:21:38,488 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:38] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:21:38,550 - INFO - start API get info Dashboard
+2021-12-12 22:21:38,593 - INFO - start API get info Dashboard
+2021-12-12 22:21:38,958 - INFO - start API get dashboard list
+2021-12-12 22:21:38,971 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:38] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:21:39,244 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:39] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:21:39,530 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:39] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:21:45,028 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:45] "[37mGET /api/users/61ae518d3eed7fe2a79702d6 HTTP/1.1[0m" 200 -
+2021-12-12 22:21:48,728 - INFO - start API get users list
+2021-12-12 22:21:48,766 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:48] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-12 22:21:52,229 - INFO - start API get users list
+2021-12-12 22:21:52,269 - INFO - 127.0.0.1 - - [12/Dec/2021 22:21:52] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-12 22:22:13,417 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:13] "[37mOPTIONS /api/addUser HTTP/1.1[0m" 200 -
+2021-12-12 22:22:13,420 - INFO - start API add new user
+2021-12-12 22:22:13,570 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:13] "[37mPOST /api/addUser HTTP/1.1[0m" 200 -
+2021-12-12 22:22:22,248 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:22] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:22:22,289 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:22] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:22:22,352 - INFO - start API get info Dashboard
+2021-12-12 22:22:22,383 - INFO - start API get info Dashboard
+2021-12-12 22:22:22,707 - INFO - start API get dashboard list
+2021-12-12 22:22:22,765 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:22] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:22:22,901 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:22] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:22:23,337 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:23] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:22:35,202 - INFO - start API get location all devices
+2021-12-12 22:22:35,658 - INFO - start API get dashboard list
+2021-12-12 22:22:35,755 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:35] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-12 22:22:36,226 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:36] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-12 22:22:37,581 - INFO - start API get info Dashboard
+2021-12-12 22:22:37,599 - INFO - start API get info Dashboard
+2021-12-12 22:22:37,763 - INFO - start API get dashboard list
+2021-12-12 22:22:37,954 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:37] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:22:38,168 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:38] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:22:38,591 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:38] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:22:38,797 - INFO - start API get location all devices
+2021-12-12 22:22:39,182 - INFO - start API get dashboard list
+2021-12-12 22:22:39,511 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:39] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-12 22:22:39,848 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:39] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-12 22:22:39,925 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:22:40,198 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 505, in get
+NameError: name 'status' is not defined
+2021-12-12 22:22:40,282 - INFO - 127.0.0.1 - - [12/Dec/2021 22:22:40] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 22:23:17,265 - INFO - start API get Test Posts list
+2021-12-12 22:23:17,595 - INFO - 127.0.0.1 - - [12/Dec/2021 22:23:17] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:23:20,775 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:23:21,096 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 505, in get
+NameError: name 'status' is not defined
+2021-12-12 22:23:21,097 - INFO - 127.0.0.1 - - [12/Dec/2021 22:23:21] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 22:24:20,747 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:24:21,096 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 505, in get
+    return jsonify(devices)
+NameError: name 'status' is not defined
+2021-12-12 22:24:21,108 - INFO - 127.0.0.1 - - [12/Dec/2021 22:24:21] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 22:24:22,261 - INFO - start API get location all devices
+2021-12-12 22:24:22,636 - INFO - start API get dashboard list
+2021-12-12 22:24:22,860 - INFO - 127.0.0.1 - - [12/Dec/2021 22:24:22] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-12 22:24:23,367 - INFO - 127.0.0.1 - - [12/Dec/2021 22:24:23] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-12 22:24:27,117 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:24:27,501 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 505, in get
+    return jsonify(devices)
+NameError: name 'status' is not defined
+2021-12-12 22:24:27,502 - INFO - 127.0.0.1 - - [12/Dec/2021 22:24:27] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 22:25:31,830 - INFO - 127.0.0.1 - - [12/Dec/2021 22:25:31] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:25:31,873 - INFO - 127.0.0.1 - - [12/Dec/2021 22:25:31] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:25:31,930 - INFO - start API get info Dashboard
+2021-12-12 22:25:31,974 - INFO - start API get info Dashboard
+2021-12-12 22:25:32,282 - INFO - start API get dashboard list
+2021-12-12 22:25:32,315 - INFO - 127.0.0.1 - - [12/Dec/2021 22:25:32] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:25:32,546 - INFO - 127.0.0.1 - - [12/Dec/2021 22:25:32] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:25:32,822 - INFO - 127.0.0.1 - - [12/Dec/2021 22:25:32] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:25:33,517 - INFO - start API get users list
+2021-12-12 22:25:33,558 - INFO - 127.0.0.1 - - [12/Dec/2021 22:25:33] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-12 22:25:34,450 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:25:34,779 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 505, in get
+NameError: name 'status' is not defined
+2021-12-12 22:25:34,806 - INFO - 127.0.0.1 - - [12/Dec/2021 22:25:34] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 22:25:38,360 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:25:38,712 - ERROR - Exception on /api/rectifierTransformerList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 505, in get
+NameError: name 'status' is not defined
+2021-12-12 22:25:38,713 - INFO - 127.0.0.1 - - [12/Dec/2021 22:25:38] "[35m[1mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 500 -
+2021-12-12 22:25:51,318 - INFO - Start API
+2021-12-12 22:25:51,321 - INFO - Flask started
+2021-12-12 22:25:52,187 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 22:26:27,411 - INFO - Start API
+2021-12-12 22:26:27,414 - INFO - Flask started
+2021-12-12 22:26:28,284 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 22:26:37,646 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:37] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:26:38,010 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:38] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:26:38,105 - INFO - start API get info Dashboard
+2021-12-12 22:26:38,139 - INFO - start API get info Dashboard
+2021-12-12 22:26:38,502 - INFO - start API get dashboard list
+2021-12-12 22:26:38,801 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:38] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:26:38,907 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:38] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:26:39,345 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:39] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:26:39,855 - INFO - start API get users list
+2021-12-12 22:26:39,911 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:39] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-12 22:26:45,408 - INFO - start API get users list
+2021-12-12 22:26:45,465 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:45] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-12 22:26:46,599 - INFO - start API get Test Posts list
+2021-12-12 22:26:47,037 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:47] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:26:48,145 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:26:48,588 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:48] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:26:55,375 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:55] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:26:55,437 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:55] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:26:55,505 - INFO - start API get info Dashboard
+2021-12-12 22:26:55,542 - INFO - start API get info Dashboard
+2021-12-12 22:26:55,966 - INFO - start API get dashboard list
+2021-12-12 22:26:55,985 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:55] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:26:56,128 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:56] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:26:56,654 - INFO - 127.0.0.1 - - [12/Dec/2021 22:26:56] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:27:00,160 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:27:00,568 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:00] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:27:01,277 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:01] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:27:02,112 - INFO - start API get Test Posts list
+2021-12-12 22:27:02,512 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:02] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:27:03,369 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:03] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:27:04,095 - INFO - start API get location all devices
+2021-12-12 22:27:04,580 - INFO - start API get dashboard list
+2021-12-12 22:27:04,809 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:04] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-12 22:27:05,283 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:05] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-12 22:27:08,126 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:27:08,571 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:08] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:27:11,302 - INFO - start API get Test Posts list
+2021-12-12 22:27:11,693 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:11] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:27:11,897 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:11] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:27:12,426 - INFO - start API get Test Posts list
+2021-12-12 22:27:12,764 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:12] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:27:12,976 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:27:13,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:13] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:27:54,621 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:27:55,121 - INFO - 127.0.0.1 - - [12/Dec/2021 22:27:55] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:28:42,944 - INFO - start API get Test Posts list
+2021-12-12 22:28:43,352 - INFO - 127.0.0.1 - - [12/Dec/2021 22:28:43] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:28:43,674 - INFO - 127.0.0.1 - - [12/Dec/2021 22:28:43] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:29:11,284 - INFO - 127.0.0.1 - - [12/Dec/2021 22:29:11] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:29:12,847 - INFO - 127.0.0.1 - - [12/Dec/2021 22:29:12] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:29:16,062 - INFO - 127.0.0.1 - - [12/Dec/2021 22:29:16] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:29:59,392 - INFO - 127.0.0.1 - - [12/Dec/2021 22:29:59] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:30:02,328 - INFO - start API get Test Posts list
+2021-12-12 22:30:02,743 - INFO - 127.0.0.1 - - [12/Dec/2021 22:30:02] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:30:03,084 - INFO - 127.0.0.1 - - [12/Dec/2021 22:30:03] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:30:12,049 - INFO - 127.0.0.1 - - [12/Dec/2021 22:30:12] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:30:22,259 - INFO - 127.0.0.1 - - [12/Dec/2021 22:30:22] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:30:25,377 - INFO - 127.0.0.1 - - [12/Dec/2021 22:30:25] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:30:56,390 - INFO - 127.0.0.1 - - [12/Dec/2021 22:30:56] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:31:13,630 - INFO - start API get Test Posts list
+2021-12-12 22:31:14,059 - INFO - 127.0.0.1 - - [12/Dec/2021 22:31:14] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:31:14,297 - INFO - 127.0.0.1 - - [12/Dec/2021 22:31:14] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:31:48,412 - INFO - 127.0.0.1 - - [12/Dec/2021 22:31:48] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:31:52,482 - INFO - start API get Test Posts list
+2021-12-12 22:31:52,888 - INFO - 127.0.0.1 - - [12/Dec/2021 22:31:52] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:31:53,582 - INFO - 127.0.0.1 - - [12/Dec/2021 22:31:53] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:31:57,661 - INFO - start API get Test Posts list
+2021-12-12 22:31:58,060 - INFO - 127.0.0.1 - - [12/Dec/2021 22:31:58] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:31:59,275 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:31:59,706 - INFO - 127.0.0.1 - - [12/Dec/2021 22:31:59] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:32:11,051 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:11] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:32:11,858 - INFO - start API get Test Posts list
+2021-12-12 22:32:12,268 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:12] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:32:13,966 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:32:14,376 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:14] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:32:15,357 - INFO - start API get Test Posts list
+2021-12-12 22:32:15,777 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:15] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:32:18,524 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:18] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:18,587 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:18] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:20,536 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:20] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:20,595 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:20] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:22,523 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:22] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:22,582 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:22] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:24,517 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:24] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:24,580 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:24] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:26,531 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:26] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:26,587 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:26] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:29,365 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:29] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:29,430 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:29] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:31,338 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:31] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:31,391 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:31] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:33,334 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:33] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:33,389 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:33] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:35,444 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:35] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:35,498 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:35] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:37,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:37] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:37,385 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:37] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:39,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:39] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:39,388 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:39] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:41,339 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:41] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:41,396 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:41] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:43,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:43] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:43,381 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:43] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:45,318 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:45] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:45,371 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:45] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:47,344 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:47] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:47,402 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:47] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:49,323 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:49] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:49,375 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:49] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:51,336 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:51] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:51,388 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:51] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:53,318 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:53] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:53,377 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:53] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:55,698 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:55] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:55,760 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:55] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:57,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:57] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:57,376 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:57] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:59,325 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:59] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:32:59,383 - INFO - 127.0.0.1 - - [12/Dec/2021 22:32:59] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:01,336 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:01] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:01,394 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:01] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:03,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:03] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:03,389 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:03] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:05,334 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:05] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:05,392 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:05] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:07,360 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:07] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:07,423 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:07] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:09,779 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:09] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:09,856 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:09] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:11,377 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:11] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:11,468 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:11] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:13,507 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:13] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:13,565 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:13] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:14,534 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:14] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:15,575 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:15] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:16,527 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:16] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:17,387 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:17] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:19,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:19] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:19,376 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:19] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:21,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:21] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:21,383 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:21] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:23,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:23] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:23,398 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:23] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:26,009 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:26] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:26,070 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:26] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:27,337 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:27] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:27,409 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:27] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:28,544 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:28] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:28,597 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:28] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:30,536 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:30] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:30,590 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:30] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:32,522 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:32] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:32,577 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:32] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:32,998 - INFO - start API get location all devices
+2021-12-12 22:33:33,423 - INFO - start API get dashboard list
+2021-12-12 22:33:33,481 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:33] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:33,700 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:33] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-12 22:33:33,781 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:33] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:33,930 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:33:33,982 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:33] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:34,170 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:34] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:34,320 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:34] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:34,694 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:34] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:34,748 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:34] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:34,944 - INFO - start API get Test Posts list
+2021-12-12 22:33:35,358 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:35] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:33:35,418 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:35] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:35,491 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:35] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:35,588 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:35] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:33:35,790 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:35] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:36,587 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:33:36,645 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:36] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:36,670 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:36] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:37,051 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:37] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:37,399 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:37] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:37,420 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:37] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:37,538 - INFO - start API get Test Posts list
+2021-12-12 22:33:37,756 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:37] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:37,943 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:37] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:33:38,508 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:38] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:38,587 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:38] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:38,824 - INFO - start API get location all devices
+2021-12-12 22:33:39,161 - INFO - start API get dashboard list
+2021-12-12 22:33:39,475 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:39] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:39,542 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:39] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:39,678 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:39] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-12 22:33:39,697 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:39] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:39,792 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:39] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:40,027 - INFO - start API get info Dashboard
+2021-12-12 22:33:40,057 - INFO - start API get info Dashboard
+2021-12-12 22:33:40,310 - INFO - start API get dashboard list
+2021-12-12 22:33:40,491 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:40] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:40,525 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:40] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:40,526 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:40] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:40,786 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:40] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:41,098 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:41] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:41,396 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:41] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:41,427 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:41] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:41,620 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:41] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:42,503 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:42] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:42,578 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:42] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:43,393 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:43] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:43,420 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:43] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:43,615 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:43] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:44,504 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:44] "[37mGET /api/getChartPort/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:44,587 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:44] "[37mGET /api/testPost/table/153 HTTP/1.1[0m" 200 -
+2021-12-12 22:33:55,263 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:55] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:33:55,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:55] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 22:33:55,385 - INFO - start API get info Dashboard
+2021-12-12 22:33:55,429 - INFO - start API get info Dashboard
+2021-12-12 22:33:55,691 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:55] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:55,735 - INFO - start API get dashboard list
+2021-12-12 22:33:56,020 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:56] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:56,157 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:56] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 22:33:57,500 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:57] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 22:33:58,006 - INFO - start API get Test Posts list
+2021-12-12 22:33:58,438 - INFO - 127.0.0.1 - - [12/Dec/2021 22:33:58] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-12 22:33:59,669 - INFO - start API get Rectifier Transformers list
+2021-12-12 22:34:00,130 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:00] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-12 22:34:03,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:03] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:03,601 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:03] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:05,312 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:05] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:05,728 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:05] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:07,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:07] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:07,605 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:07] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:09,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:09] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:09,744 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:09] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:11,321 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:11] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:11,604 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:11] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:13,311 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:13] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:13,726 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:13] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:15,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:15] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:15,602 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:15] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:17,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:17] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:17,735 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:17] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:19,468 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:19] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:19,777 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:19] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:21,696 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:21] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:22,131 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:22] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:23,463 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:23] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:23,810 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:23] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:25,314 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:25] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:25,730 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:25] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:27,321 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:27] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:27,608 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:27] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:29,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:29] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:29,770 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:29] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:31,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:31] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:31,611 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:31] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:33,323 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:33] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:33,797 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:33] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:35,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:35] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:35,600 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:35] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:37,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:37] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:37,736 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:37] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:39,338 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:39] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:39,604 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:39] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:41,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:41] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:41,746 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:41] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:43,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:43] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:43,570 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:43] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:45,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:45] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:45,737 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:45] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:47,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:47] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:47,596 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:47] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:49,318 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:49] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:49,771 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:49] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:51,340 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:51] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:51,636 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:51] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:53,336 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:53] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:53,745 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:53] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:55,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:55] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:55,659 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:55] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:57,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:57] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:57,744 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:57] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:59,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:59] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:34:59,611 - INFO - 127.0.0.1 - - [12/Dec/2021 22:34:59] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:01,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:01] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:01,797 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:01] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:03,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:03] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:03,621 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:03] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:05,310 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:05] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:05,732 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:05] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:07,334 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:07] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:07,637 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:07] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:09,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:09] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:09,733 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:09] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:11,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:11] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:11,638 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:11] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:13,313 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:13] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:13,720 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:13] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:15,323 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:15] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:15,615 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:15] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:17,310 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:17] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:17,742 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:17] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:19,343 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:19] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:19,645 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:19] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:21,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:21] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:21,784 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:21] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:23,323 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:23] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:23,611 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:23] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:25,310 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:25] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:25,809 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:25] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:27,338 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:27] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:27,691 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:27] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:29,313 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:29] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:29,842 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:29] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:32,403 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:32] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:32,781 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:32] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:33,467 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:33] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:33,942 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:33] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:35,342 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:35] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:35,754 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:35] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:37,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:37] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:37,811 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:37] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:39,335 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:39] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:39,744 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:39] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:41,345 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:41] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:41,862 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:41] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:43,414 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:43] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:43,801 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:43] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:45,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:45] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:45,843 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:45] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:47,334 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:47] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:47,719 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:47] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:49,325 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:49] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:49,807 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:49] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:51,400 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:51] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:51,764 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:51] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:53,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:53] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:53,827 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:53] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:55,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:55] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:55,771 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:55] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:57,482 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:57] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:58,013 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:58] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:59,193 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:59] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:35:59,561 - INFO - 127.0.0.1 - - [12/Dec/2021 22:35:59] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:01,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:01] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:01,794 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:01] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:03,177 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:03] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:03,549 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:03] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:07,753 - INFO - start API get users list
+2021-12-12 22:36:07,795 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:07] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-12 22:36:07,816 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:07] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:08,240 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:08] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:09,709 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:09] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:10,234 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:10] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:12,098 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:12] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:12,517 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:12] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:14,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:14] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:14,809 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:14] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:16,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:16] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:16,736 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:16] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:18,341 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:18,818 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:20,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:20] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:20,713 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:20] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:22,335 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:22] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:22,781 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:22] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:24,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:24] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:24,744 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:24] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:26,334 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:26] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:26,853 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:26] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:28,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:28] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:28,707 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:28] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:30,340 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:30] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:30,850 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:30] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:32,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:32] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:32,738 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:32] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:34,325 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:34] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:34,795 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:34] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:36,325 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:36] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:36,720 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:36] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:38,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:38] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:38,816 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:38] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:40,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:40] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:40,703 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:40] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:42,335 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:42] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:42,808 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:42] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:44,353 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:44] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:44,768 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:44] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:46,794 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:46] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:47,279 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:47] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:48,338 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:48] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:48,802 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:48] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:50,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:50] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:50,778 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:50] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:52,437 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:52] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:52,892 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:52] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:54,386 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:54] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:54,879 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:54] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:56,341 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:56] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:56,744 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:56] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:58,340 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:58] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:36:58,842 - INFO - 127.0.0.1 - - [12/Dec/2021 22:36:58] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:00,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:00] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:00,728 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:00] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:02,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:02] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:02,782 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:02] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:04,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:04] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:04,737 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:04] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:06,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:06] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:06,730 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:06] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:08,321 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:08] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:08,721 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:08] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:10,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:10] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:10,757 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:10] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:12,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:12] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:12,745 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:12] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:14,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:14] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:14,758 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:14] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:16,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:16] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:16,720 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:16] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:18,337 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:18,784 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:20,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:20] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:20,708 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:20] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:22,691 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:22] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:23,110 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:23] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:24,337 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:24] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:24,758 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:24] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:26,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:26] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:26,746 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:26] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:28,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:28] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:28,724 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:28] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:30,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:30] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:30,754 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:30] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:32,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:32] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:32,714 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:32] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:34,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:34] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:34,773 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:34] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:36,341 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:36] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:36,731 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:36] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:38,335 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:38] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:38,751 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:38] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:40,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:40] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:40,717 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:40] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:42,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:42] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:42,739 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:42] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:44,323 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:44] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:44,724 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:44] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:46,349 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:46] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:46,776 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:46] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:48,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:48] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:48,740 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:48] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:50,341 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:50] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:50,761 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:50] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:52,435 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:52] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:52,856 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:52] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:54,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:54] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:54,733 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:54] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:56,454 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:56] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:56,862 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:56] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:58,349 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:58] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:37:58,791 - INFO - 127.0.0.1 - - [12/Dec/2021 22:37:58] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:00,347 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:00] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:00,778 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:00] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:02,334 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:02] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:02,740 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:02] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:04,636 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:04] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:05,064 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:05] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:06,355 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:06] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:06,795 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:06] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:08,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:08] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:08,764 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:08] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:10,346 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:10] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:10,822 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:10] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:12,341 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:12] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:12,752 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:12] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:14,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:14] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:14,754 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:14] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:16,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:16] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:16,730 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:16] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:18,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:18,723 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:20,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:20] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:20,727 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:20] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:22,338 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:22] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:22,741 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:22] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:24,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:24] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:24,708 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:24] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:26,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:26] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:26,724 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:26] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:28,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:28] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:28,741 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:28] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:30,318 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:30] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:30,724 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:30] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:32,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:32] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:32,710 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:32] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:34,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:34] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:34,741 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:34] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:36,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:36] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:36,713 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:36] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:38,334 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:38] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:38,766 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:38] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:40,319 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:40] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:40,715 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:40] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:42,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:42] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:42,796 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:42] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:44,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:44] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:44,714 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:44] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:46,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:46] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:46,749 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:46] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:48,323 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:48] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:48,693 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:48] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:50,363 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:50] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:50,798 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:50] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:52,363 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:52] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:52,833 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:52] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:54,325 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:54] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:54,733 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:54] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:56,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:56] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:56,737 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:56] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:58,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:58] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:38:58,738 - INFO - 127.0.0.1 - - [12/Dec/2021 22:38:58] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:00,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:00] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:00,729 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:00] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:02,618 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:02] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:03,321 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:03] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:04,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:04] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:04,792 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:04] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:06,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:06] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:06,731 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:06] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:08,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:08] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:08,747 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:08] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:10,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:10] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:10,756 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:10] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:12,337 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:12] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:12,764 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:12] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:14,343 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:14] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:14,744 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:14] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:16,339 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:16] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:16,735 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:16] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:18,338 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:18,729 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:20,336 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:20] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:20,737 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:20] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:22,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:22] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:22,727 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:22] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:24,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:24] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:24,721 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:24] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:26,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:26] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:26,729 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:26] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:28,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:28] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:28,765 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:28] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:30,429 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:30] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:30,829 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:30] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:32,336 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:32] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:32,765 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:32] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:34,342 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:34] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:34,801 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:34] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:36,376 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:36] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:36,787 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:36] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:38,341 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:38] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:38,738 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:38] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:40,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:40] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:40,790 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:40] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:42,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:42] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:42,749 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:42] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:44,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:44] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:44,748 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:44] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:46,339 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:46] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:46,750 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:46] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:48,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:48] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:48,719 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:48] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:50,320 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:50] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:50,709 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:50] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:52,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:52] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:52,732 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:52] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:54,323 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:54] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:54,760 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:54] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:56,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:56] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:56,730 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:56] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:58,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:58] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:39:58,772 - INFO - 127.0.0.1 - - [12/Dec/2021 22:39:58] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:00,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:00] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:00,751 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:00] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:02,321 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:02] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:02,717 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:02] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:04,317 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:04] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:04,717 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:04] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:06,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:06] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:06,711 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:06] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:08,325 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:08] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:08,733 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:08] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:10,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:10] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:10,737 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:10] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:12,321 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:12] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:12,736 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:12] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:14,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:14] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:14,739 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:14] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:16,325 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:16] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:16,733 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:16] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:18,350 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:18,757 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:20,349 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:20] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:20,776 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:20] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:22,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:22] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:22,728 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:22] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:24,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:24] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:24,738 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:24] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:26,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:26] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:26,732 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:26] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:28,366 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:28] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:28,768 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:28] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:30,326 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:30] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:30,714 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:30] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:32,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:32] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:32,760 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:32] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:34,334 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:34] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:34,743 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:34] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:36,332 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:36] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:36,733 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:36] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:38,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:38] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:38,713 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:38] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:40,318 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:40] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:40,713 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:40] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:42,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:42] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:43,176 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:43] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:44,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:44] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:44,742 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:44] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:46,352 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:46] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:46,805 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:46] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:48,347 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:48] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:48,809 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:48] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:50,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:50] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:50,822 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:50] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:52,384 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:52] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:52,852 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:52] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:54,337 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:54] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:54,801 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:54] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:56,397 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:56] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:56,984 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:56] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:58,330 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:58] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:40:58,747 - INFO - 127.0.0.1 - - [12/Dec/2021 22:40:58] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:00,335 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:00] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:00,805 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:00] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:02,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:02] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:02,742 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:02] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:04,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:04] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:04,779 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:04] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:06,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:06] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:06,762 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:06] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:08,625 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:08] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:09,064 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:09] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:10,340 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:10] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:10,804 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:10] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:12,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:12] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:12,769 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:12] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:18,341 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:41:18,803 - INFO - 127.0.0.1 - - [12/Dec/2021 22:41:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:42:18,357 - INFO - 127.0.0.1 - - [12/Dec/2021 22:42:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:42:18,800 - INFO - 127.0.0.1 - - [12/Dec/2021 22:42:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:43:18,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:43:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:43:18,771 - INFO - 127.0.0.1 - - [12/Dec/2021 22:43:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:05,337 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:05] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:05,779 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:05] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:06,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:06] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:06,748 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:06] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:08,340 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:08] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:08,778 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:08] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:18,342 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:18,756 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:25,343 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:25] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:25,824 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:25] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:26,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:26] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:44:26,758 - INFO - 127.0.0.1 - - [12/Dec/2021 22:44:26] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:45:18,564 - INFO - 127.0.0.1 - - [12/Dec/2021 22:45:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:45:18,959 - INFO - 127.0.0.1 - - [12/Dec/2021 22:45:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:18,338 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:18,753 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:36,338 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:36] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:36,798 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:36] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:37,722 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:37] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:38,127 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:38] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:40,376 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:40] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:40,810 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:40] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:41,874 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:41] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:42,284 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:42] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:44,323 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:44] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:44,740 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:44] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:46,329 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:46] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:46,738 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:46] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:48,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:48] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:48,731 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:48] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:50,336 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:50] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:50,783 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:50] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:52,340 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:52] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:52,766 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:52] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:54,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:54] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:54,747 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:54] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:56,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:56] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:56,729 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:56] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:59,664 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:59] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:46:59,732 - INFO - start API get users list
+2021-12-12 22:46:59,785 - INFO - 127.0.0.1 - - [12/Dec/2021 22:46:59] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-12 22:47:00,088 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:00] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:01,084 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:01] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:01,548 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:01] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:01,978 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:01] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:02,426 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:02] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:04,108 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:04] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:04,579 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:04] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:06,677 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:06] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:07,124 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:07] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:08,349 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:08] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:08,788 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:08] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:10,322 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:10] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:10,753 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:10] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:12,336 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:12] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:12,778 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:12] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:14,324 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:14] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:14,762 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:14] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:16,331 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:16] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:16,716 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:16] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:18,328 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:18] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:18,741 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:18] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:20,335 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:20] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:20,733 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:20] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:22,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:22] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:22,749 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:22] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:24,337 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:24] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:24,745 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:24] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:26,333 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:26] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:26,734 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:26] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:28,327 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:28] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:28,721 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:28] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:30,321 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:30] "[37mGET /api/getChartDC/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:30,733 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:30] "[37mGET /api/rectifierTransformer/table/152 HTTP/1.1[0m" 200 -
+2021-12-12 22:47:33,368 - INFO - start API get users list
+2021-12-12 22:47:33,427 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:33] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-12 22:47:35,749 - INFO - 127.0.0.1 - - [12/Dec/2021 22:47:35] "[33mGET /api/notificationsList HTTP/1.1[0m" 404 -
+2021-12-12 23:03:50,416 - INFO - 127.0.0.1 - - [12/Dec/2021 23:03:50] "[33mGET /api/notificationsList HTTP/1.1[0m" 404 -
+2021-12-12 23:08:05,949 - INFO - 127.0.0.1 - - [12/Dec/2021 23:08:05] "[33mGET /api/notificationsList HTTP/1.1[0m" 404 -
+2021-12-12 23:13:47,216 - INFO - Start API
+2021-12-12 23:13:47,217 - INFO - Flask started
+2021-12-12 23:13:48,171 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:13:56,439 - INFO - 127.0.0.1 - - [12/Dec/2021 23:13:56] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:13:56,702 - INFO - 127.0.0.1 - - [12/Dec/2021 23:13:56] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:13:56,761 - INFO - start API get info Dashboard
+2021-12-12 23:13:56,821 - INFO - start API get info Dashboard
+2021-12-12 23:13:57,127 - INFO - start API get dashboard list
+2021-12-12 23:13:57,312 - INFO - 127.0.0.1 - - [12/Dec/2021 23:13:57] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 23:13:57,505 - INFO - 127.0.0.1 - - [12/Dec/2021 23:13:57] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 23:13:57,862 - INFO - 127.0.0.1 - - [12/Dec/2021 23:13:57] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 23:13:58,783 - INFO - 127.0.0.1 - - [12/Dec/2021 23:13:58] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:14:37,441 - INFO - 127.0.0.1 - - [12/Dec/2021 23:14:37] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:14:37,492 - INFO - 127.0.0.1 - - [12/Dec/2021 23:14:37] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:14:37,549 - INFO - start API get info Dashboard
+2021-12-12 23:14:37,590 - INFO - start API get info Dashboard
+2021-12-12 23:14:37,853 - INFO - start API get dashboard list
+2021-12-12 23:14:37,877 - INFO - 127.0.0.1 - - [12/Dec/2021 23:14:37] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 23:14:38,015 - INFO - 127.0.0.1 - - [12/Dec/2021 23:14:38] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 23:14:38,293 - INFO - 127.0.0.1 - - [12/Dec/2021 23:14:38] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 23:14:38,833 - INFO - 127.0.0.1 - - [12/Dec/2021 23:14:38] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:20:45,764 - INFO - 127.0.0.1 - - [12/Dec/2021 23:20:45] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:20:45,826 - INFO - 127.0.0.1 - - [12/Dec/2021 23:20:45] "[33mPOST /api/login HTTP/1.1[0m" 404 -
+2021-12-12 23:21:38,265 - INFO - 127.0.0.1 - - [12/Dec/2021 23:21:38] "[37mOPTIONS /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:21:38,272 - ERROR - Exception on /api/signUp [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 701, in signUp
+    'title': res['title'],
+KeyError: 'title'
+2021-12-12 23:21:38,275 - INFO - 127.0.0.1 - - [12/Dec/2021 23:21:38] "[35m[1mPOST /api/signUp HTTP/1.1[0m" 500 -
+2021-12-12 23:23:02,100 - INFO - Start API
+2021-12-12 23:23:02,103 - INFO - Flask started
+2021-12-12 23:23:03,096 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:23:12,519 - INFO - 127.0.0.1 - - [12/Dec/2021 23:23:12] "[37mOPTIONS /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:23:12,524 - ERROR - Exception on /api/signUp [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 701, in signUp
+    'title': res['title'],
+KeyError: 'title'
+2021-12-12 23:23:12,528 - INFO - 127.0.0.1 - - [12/Dec/2021 23:23:12] "[35m[1mPOST /api/signUp HTTP/1.1[0m" 500 -
+2021-12-12 23:25:10,666 - INFO - Start API
+2021-12-12 23:25:10,668 - INFO - Flask started
+2021-12-12 23:25:11,629 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:25:27,669 - INFO - 127.0.0.1 - - [12/Dec/2021 23:25:27] "[37mOPTIONS /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:25:27,675 - ERROR - Exception on /api/signUp [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 701, in signUp
+    'title': res['title'],
+KeyError: 'title'
+2021-12-12 23:25:27,680 - INFO - 127.0.0.1 - - [12/Dec/2021 23:25:27] "[35m[1mPOST /api/signUp HTTP/1.1[0m" 500 -
+2021-12-12 23:27:19,564 - INFO - 127.0.0.1 - - [12/Dec/2021 23:27:19] "[37mOPTIONS /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:27:19,569 - ERROR - Exception on /api/signUp [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 701, in signUp
+    'title': res['title'],
+KeyError: 'title'
+2021-12-12 23:27:19,570 - INFO - 127.0.0.1 - - [12/Dec/2021 23:27:19] "[35m[1mPOST /api/signUp HTTP/1.1[0m" 500 -
+2021-12-12 23:27:31,214 - INFO - 127.0.0.1 - - [12/Dec/2021 23:27:31] "[37mOPTIONS /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:27:31,218 - ERROR - Exception on /api/signUp [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 701, in signUp
+    'title': res['title'],
+KeyError: 'title'
+2021-12-12 23:27:31,219 - INFO - 127.0.0.1 - - [12/Dec/2021 23:27:31] "[35m[1mPOST /api/signUp HTTP/1.1[0m" 500 -
+2021-12-12 23:29:38,424 - INFO - Start API
+2021-12-12 23:29:38,428 - INFO - Flask started
+2021-12-12 23:29:39,373 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:29:57,496 - INFO - 127.0.0.1 - - [12/Dec/2021 23:29:57] "[37mOPTIONS /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:29:57,763 - INFO - 127.0.0.1 - - [12/Dec/2021 23:29:57] "[37mPOST /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:30:20,954 - INFO - 127.0.0.1 - - [12/Dec/2021 23:30:20] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:30:21,005 - INFO - 127.0.0.1 - - [12/Dec/2021 23:30:21] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:30:21,112 - INFO - start API get info Dashboard
+2021-12-12 23:30:21,184 - INFO - start API get info Dashboard
+2021-12-12 23:30:21,472 - INFO - start API get dashboard list
+2021-12-12 23:30:21,646 - INFO - 127.0.0.1 - - [12/Dec/2021 23:30:21] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 23:30:21,801 - INFO - 127.0.0.1 - - [12/Dec/2021 23:30:21] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 23:30:22,212 - INFO - 127.0.0.1 - - [12/Dec/2021 23:30:22] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 23:30:22,895 - INFO - 127.0.0.1 - - [12/Dec/2021 23:30:22] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 23:30:23,357 - ERROR - Exception on /api/notificationsList [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 693, in getNotifications
+    'notes': doc['note']
+KeyError: 'note'
+2021-12-12 23:30:23,361 - INFO - 127.0.0.1 - - [12/Dec/2021 23:30:23] "[35m[1mGET /api/notificationsList HTTP/1.1[0m" 500 -
+2021-12-12 23:31:10,985 - INFO - Start API
+2021-12-12 23:31:10,986 - INFO - Flask started
+2021-12-12 23:31:11,938 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:32:07,626 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:07] "[37mOPTIONS /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:32:07,896 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:07] "[37mPOST /api/signUp HTTP/1.1[0m" 200 -
+2021-12-12 23:32:16,180 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:16] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:32:16,221 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:16] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:32:16,319 - INFO - start API get info Dashboard
+2021-12-12 23:32:16,369 - INFO - start API get info Dashboard
+2021-12-12 23:32:16,830 - INFO - start API get dashboard list
+2021-12-12 23:32:16,920 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:16] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 23:32:17,275 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:17] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 23:32:17,539 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:17] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 23:32:18,078 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:18] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:32:44,446 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:44] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:32:46,395 - INFO - 127.0.0.1 - - [12/Dec/2021 23:32:46] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:33:07,354 - INFO - 127.0.0.1 - - [12/Dec/2021 23:33:07] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:33:11,416 - INFO - 127.0.0.1 - - [12/Dec/2021 23:33:11] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:33:19,011 - INFO - 127.0.0.1 - - [12/Dec/2021 23:33:19] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2021-12-12 23:33:19,665 - INFO - 127.0.0.1 - - [12/Dec/2021 23:33:19] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:33:39,360 - INFO - 127.0.0.1 - - [12/Dec/2021 23:33:39] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-12 23:38:16,458 - INFO - 127.0.0.1 - - [12/Dec/2021 23:38:16] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:38:16,500 - INFO - 127.0.0.1 - - [12/Dec/2021 23:38:16] "[33mPOST /api/login HTTP/1.1[0m" 404 -
+2021-12-12 23:38:38,393 - INFO - 127.0.0.1 - - [12/Dec/2021 23:38:38] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:38:38,436 - INFO - 127.0.0.1 - - [12/Dec/2021 23:38:38] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:38:38,505 - INFO - start API get info Dashboard
+2021-12-12 23:38:38,549 - INFO - start API get info Dashboard
+2021-12-12 23:38:38,848 - INFO - 127.0.0.1 - - [12/Dec/2021 23:38:38] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 23:38:39,004 - INFO - start API get dashboard list
+2021-12-12 23:38:39,033 - INFO - 127.0.0.1 - - [12/Dec/2021 23:38:39] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 23:38:39,404 - INFO - 127.0.0.1 - - [12/Dec/2021 23:38:39] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 23:40:22,976 - INFO - 127.0.0.1 - - [12/Dec/2021 23:40:22] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:40:23,030 - INFO - 127.0.0.1 - - [12/Dec/2021 23:40:23] "[33mPOST /api/login HTTP/1.1[0m" 404 -
+2021-12-12 23:41:11,357 - INFO - Start API
+2021-12-12 23:41:11,361 - INFO - Flask started
+2021-12-12 23:41:12,336 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:41:36,927 - INFO - 127.0.0.1 - - [12/Dec/2021 23:41:36] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:41:37,285 - INFO - 127.0.0.1 - - [12/Dec/2021 23:41:37] "[31m[1mPOST /api/login HTTP/1.1[0m" 400 -
+2021-12-12 23:42:46,702 - INFO - Start API
+2021-12-12 23:42:46,704 - INFO - Flask started
+2021-12-12 23:42:47,665 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:42:56,956 - INFO - 127.0.0.1 - - [12/Dec/2021 23:42:56] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:42:57,314 - INFO - 127.0.0.1 - - [12/Dec/2021 23:42:57] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2021-12-12 23:43:16,229 - INFO - Start API
+2021-12-12 23:43:16,231 - INFO - Flask started
+2021-12-12 23:43:17,126 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:43:29,232 - INFO - 127.0.0.1 - - [12/Dec/2021 23:43:29] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:43:29,502 - INFO - 127.0.0.1 - - [12/Dec/2021 23:43:29] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2021-12-12 23:44:47,689 - INFO - Start API
+2021-12-12 23:44:47,691 - INFO - Flask started
+2021-12-12 23:44:48,659 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:44:52,149 - INFO - 127.0.0.1 - - [12/Dec/2021 23:44:52] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:44:52,474 - INFO - 127.0.0.1 - - [12/Dec/2021 23:44:52] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:44:54,862 - INFO - 127.0.0.1 - - [12/Dec/2021 23:44:54] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:44:55,455 - INFO - 127.0.0.1 - - [12/Dec/2021 23:44:55] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:44:55,870 - INFO - 127.0.0.1 - - [12/Dec/2021 23:44:55] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:44:56,130 - INFO - 127.0.0.1 - - [12/Dec/2021 23:44:56] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:03,450 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:03] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:45:03,509 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:03] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:04,819 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:04] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:04,989 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:04] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:05,184 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:05] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:05,422 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:05] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:45,078 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:45] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:45:45,134 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:45] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:45,738 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:45] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:45,918 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:45] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:45:46,102 - INFO - 127.0.0.1 - - [12/Dec/2021 23:45:46] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:01,674 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:01] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:46:01,731 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:01] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:02,879 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:02] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:03,398 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:03] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:03,644 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:03] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:03,877 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:03] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:04,064 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:04] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:04,271 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:04] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:11,651 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:11] "[31m[1mGET /api/login HTTP/1.1[0m" 405 -
+2021-12-12 23:46:12,090 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-12-12 23:46:15,995 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:15] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:46:16,051 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:16] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:19,526 - INFO - 127.0.0.1 - - [12/Dec/2021 23:46:19] "[1mPOST /api/login HTTP/1.1[0m" 100 -
+2021-12-12 23:46:44,368 - INFO - Start API
+2021-12-12 23:46:44,370 - INFO - Flask started
+2021-12-12 23:46:45,312 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:47:08,711 - INFO - Start API
+2021-12-12 23:47:08,713 - INFO - Flask started
+2021-12-12 23:47:09,590 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-12 23:47:18,371 - INFO - 127.0.0.1 - - [12/Dec/2021 23:47:18] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:47:18,632 - INFO - 127.0.0.1 - - [12/Dec/2021 23:47:18] "[37mPOST /api/login HTTP/1.1[0m" 203 -
+2021-12-12 23:47:44,985 - INFO - 127.0.0.1 - - [12/Dec/2021 23:47:44] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:47:45,029 - INFO - 127.0.0.1 - - [12/Dec/2021 23:47:45] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:47:45,115 - INFO - start API get info Dashboard
+2021-12-12 23:47:45,212 - INFO - start API get info Dashboard
+2021-12-12 23:47:45,647 - INFO - start API get dashboard list
+2021-12-12 23:47:45,863 - INFO - 127.0.0.1 - - [12/Dec/2021 23:47:45] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 23:47:45,907 - INFO - 127.0.0.1 - - [12/Dec/2021 23:47:45] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 23:47:46,515 - INFO - 127.0.0.1 - - [12/Dec/2021 23:47:46] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-12 23:48:56,488 - INFO - 127.0.0.1 - - [12/Dec/2021 23:48:56] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:48:56,549 - INFO - 127.0.0.1 - - [12/Dec/2021 23:48:56] "[37mPOST /api/login HTTP/1.1[0m" 203 -
+2021-12-12 23:49:06,274 - INFO - 127.0.0.1 - - [12/Dec/2021 23:49:06] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:49:06,334 - INFO - 127.0.0.1 - - [12/Dec/2021 23:49:06] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-12 23:49:06,449 - INFO - start API get info Dashboard
+2021-12-12 23:49:06,472 - INFO - start API get info Dashboard
+2021-12-12 23:49:06,774 - INFO - 127.0.0.1 - - [12/Dec/2021 23:49:06] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-12 23:49:06,894 - INFO - start API get dashboard list
+2021-12-12 23:49:07,018 - INFO - 127.0.0.1 - - [12/Dec/2021 23:49:07] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-12 23:49:07,343 - INFO - 127.0.0.1 - - [12/Dec/2021 23:49:07] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
