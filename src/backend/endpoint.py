@@ -193,6 +193,11 @@ def getDashboard():
   print(currentUser['role'])
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
+      status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+      if (status >= 300):
+            status = "notConnected"
+      else:
+            status = "connected"
       devices.append({
       'id': str(ObjectId(doc['_id'])),
       'devSerial': doc['devSerial'],
@@ -201,10 +206,16 @@ def getDashboard():
       'date': doc['date'],
       'organization': doc['organization'],
       'signalQuality': doc['otherInfo'][0]['signalQuality'],
-      'maChuoi': doc['maChuoi']
+      'maChuoi': doc['maChuoi'],
+      'status': status
     })
     else:
       if(doc['organization'] == currentUser['organization']):
+        status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+        if (status >= 300):
+            status = "notConnected"
+        else:
+            status = "connected"
         devices.append({
           'id': str(ObjectId(doc['_id'])),
           'devSerial': doc['devSerial'],
@@ -213,10 +224,16 @@ def getDashboard():
           'date': doc['date'],
           'organization': doc['organization'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
-          'maChuoi': doc['maChuoi']
+          'maChuoi': doc['maChuoi'],
+          'status': status
         })
   for doc in db.TestPostsDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
+      status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+      if (status >= 300):
+          status = "notConnected"
+      else:
+          status = "connected"
       devices.append({
         'id': str(ObjectId(doc['_id'])),
         'devSerial': doc['devSerial'],
@@ -225,10 +242,16 @@ def getDashboard():
         'date': doc['date'],
         'organization': doc['organization'],
         'signalQuality': doc['otherInfo'][0]['signalQuality'],
-        'maChuoi': doc['maChuoi']
+        'maChuoi': doc['maChuoi'],
+        'status': status
       })
     else:
       if(doc['organization'] == currentUser['organization']):
+        status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+        if (status >= 300):
+            status = "notConnected"
+        else:
+            status = "connected"
         devices.append({
           'id': str(ObjectId(doc['_id'])),
           'devSerial': doc['devSerial'],
@@ -237,7 +260,8 @@ def getDashboard():
           'date': doc['date'],
           'organization': doc['organization'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
-          'maChuoi': doc['maChuoi']
+          'maChuoi': doc['maChuoi'],
+          'status': status
         })
   return jsonify(devices)
 
@@ -463,7 +487,8 @@ def get():
       'dateUpdate': doc['dateUpdate'],
       'date': doc['date'],
       'signalQuality': doc['otherInfo'][0]['signalQuality'],
-      'dienApPin': doc['otherInfo'][0]['dienApPin']
+      'dienApPin': doc['otherInfo'][0]['dienApPin'],
+      'status': status
     })
     else:
       if(doc['organization'] == currentUser['organization']):
@@ -476,7 +501,8 @@ def get():
           'dateUpdate': doc['dateUpdate'],
           'date': doc['date'],
           'signalQuality': doc['otherInfo'][0]['signalQuality'],
-          'dienApPin': doc['otherInfo'][0]['dienApPin']
+          'dienApPin': doc['otherInfo'][0]['dienApPin'],
+          'status': status
         })
   
   return jsonify(devices)

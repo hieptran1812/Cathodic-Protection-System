@@ -17,6 +17,22 @@ const API = process.env.REACT_APP_API;
 
 const columns = [
   {
+    field: "status",
+    headerName: "Trạng thái",
+    width: 180,
+    renderCell: (params) => {
+      return (
+        <>
+          {params.row.status === "notConnected" ? (
+              <button className="notConnected">Không hoạt động</button>
+          ) : (
+              <button className="connected">Hoạt động</button>
+          )}
+        </>
+      );
+    },
+  },
+  {
     field: "organization",
     headerName: "Tổ chức",
     width: 220,
@@ -87,7 +103,7 @@ export default function Home() {
       .get(`${API}/api/dashboardList`)
       .then((res) => {
         setLoading(false);
-        // console.log(res);
+        console.log(res);
         const data = res.data;
         setDeviceInfo(data);
       })

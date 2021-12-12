@@ -96,6 +96,7 @@ export default function NewDocument() {
               <label>Nội dung *</label>
               <input
                 type="text"
+                style={{height: "100px"}}
                 required="required"
                 onChange={(e) => setContent(e.target.value)}
                 autoFocus
