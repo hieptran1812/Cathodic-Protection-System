@@ -76,7 +76,7 @@ export default function Sidebar() {
                 Tài liệu hướng dẫn
               </NavLink>
             </li>
-            {localStorage.getItem("role") !== "viewer" ? (
+            {localStorage.getItem("role") === "superadmin" ? (
               <li className="sidebarListItem">
                 <NavLink to="/notifications" className="link" activeClassName="active">
                   <NotificationsIcon className="sidebarIcon" />
