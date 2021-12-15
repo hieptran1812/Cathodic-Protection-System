@@ -23,8 +23,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   image: {
-    backgroundImage:
-      "url(https://get.pxhere.com/photo/sunset-line-tower-mast-electricity-energy-power-pylons-transmission-tower-transmission-line-high-pressure-outdoor-structure-electrical-supply-overhead-power-line-outdoor-power-equipment-546725.jpg)",
+    backgroundImage: "url(https://imgur.com/wF2KLir.png)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"

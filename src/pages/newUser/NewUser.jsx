@@ -176,10 +176,10 @@ export default function NewUser() {
                 onChange={(e) => setRole(e.target.value)}
               >
                 <option name="role" value="user">
-                  Người dùng
+                  Người xem
                 </option>
                 <option name="role" value="admin">
-                  Admin
+                  Quản trị viên
                 </option>
               </select>
             </div>

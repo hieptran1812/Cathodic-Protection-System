@@ -24,7 +24,7 @@ export default function Map() {
     zoom: 15,
   });
 
-  function updateLatLng(lat, lng){
+  function updateLatLng(lat, lng) {
     setViewport({
       latitude: Number(lat),
       longitude: Number(lng),
@@ -34,7 +34,7 @@ export default function Map() {
       transitionDuration: 4000,
       transitionInterpolator: new FlyToInterpolator(),
     });
-  };
+  }
 
   const columns = [
     {
@@ -164,8 +164,6 @@ export default function Map() {
     );
   }
 
-  
-
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [locate, setLocate] = useState([]);
   useEffect(() => {
@@ -216,6 +214,7 @@ export default function Map() {
             >
               <div>{device.devType}</div>
               <div>{device.maChuoi}</div>
+
               <img
                 width="30"
                 height="30"
@@ -235,10 +234,17 @@ export default function Map() {
             }}
           >
             <div>
-              <h4>{selectedDevice.devType}</h4>
+              {selectedDevice.devType === "Bo do" ? (
+                <h4>Bộ đo</h4>
+              ) : (
+                <h4>Bộ trung tâm</h4>
+              )}
               <p>Mã thiết bị: {selectedDevice.devSerial}</p>
               <p>Tên thiết bị: {selectedDevice.maChuoi}</p>
               <p>Tổ chức: {selectedDevice.organization}</p>
+              <p>Ngày thêm thiết bị: {selectedDevice.dateUpdate}</p>
+              <p>Ngày bảo trì: {selectedDevice.date}</p>
+              <p>Chất lượng tín hiệu: {selectedDevice.signalQuality}</p>
             </div>
           </Popup>
         ) : null}

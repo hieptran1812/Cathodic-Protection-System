@@ -50,3 +50,12 @@ a {
 .link{
   font-size: 18px;
 }
+
+.tipNoti{
+  margin-left: 15px;
+  background-color: rgb(235, 114, 45);
+  color: rgb(255, 255, 255);
+  border-radius: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+}

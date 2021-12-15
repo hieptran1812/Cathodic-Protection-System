@@ -75,7 +75,7 @@ export default function ChartDCMax() {
     labels: ["T", "T-1", "T-2", "T-3", "T-4", "T-5", "T-6", "T-7"],
     datasets: [
       {
-        label: "Điện áp DC (V)",
+        label: "Điện áp DC",
         data: [
           {
             y: maxDC[0],
@@ -131,7 +131,7 @@ export default function ChartDCMax() {
         borderColor: "rgba(39, 18, 226, 1)",
       },
       {
-        label: "Điện áp AC (V)",
+        label: "Điện áp AC",
         data: [
           {
             y: maxAC[0],
@@ -190,6 +190,20 @@ export default function ChartDCMax() {
 
   const options = {
     tension: 0.4,
+    scales: {
+      y: {
+        title: {
+          display: true,
+          text: "Điện áp (V)",
+        },
+      },
+      x: {
+        title: {
+          display: true,
+          text: "Tín hiệu nhận theo thời gian",
+        },
+      },
+    },
     plugins: {
       title: {
         display: true,

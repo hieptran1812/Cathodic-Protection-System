@@ -33,6 +33,16 @@ def index():
   if request.method == 'POST':
     return login()
 
+################ Notification ###############
+@app.route('/api/notificationsSidebar/', methods=['GET'])
+def getNumOfNoti():
+  count = 0
+  for doc in db.Notifications.find({}):
+      if doc['status'] == "notResponse":
+            count += 1
+  return jsonify({
+    'count': count
+  })
 
 ################ Dashboard ###############
 @app.route('/api/featureInfo/', methods=['GET'])
@@ -56,6 +66,11 @@ def getFeatureInfo():
   BDLoiList = []
   # Tim kiem
   for doc in db.RectifierTransformersDetails.find({}):
+    status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+    if (status >= 300):
+        status = "notConnected"
+    else:
+        status = "connected"
     if(currentUser['role'] == 'superadmin'):
       countBTT += 1
       # Tim maxDC
@@ -67,7 +82,7 @@ def getFeatureInfo():
             maxAC = int(doc['otherInfo'][0]['dienAC3PhaA'])
             maxACName = doc['maChuoi']
       # Tim BTT loi
-      if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+      if(status == "notConnected"):
             countErrorRectifiers += 1
             BTTLoiList.append(doc['maChuoi'])
     else:
@@ -82,11 +97,16 @@ def getFeatureInfo():
               maxAC = int(doc['otherInfo'][0]['dienAC3PhaA'])
               maxACName = doc['maChuoi']
         # Tim BTT loi
-        if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+        if(status == "notConnected"):
               countErrorRectifiers += 1
               BTTLoiList.append(doc['maChuoi'])
   
   for doc in db.TestPostsDetails.find({}):
+    status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+    if (status >= 300):
+        status = "notConnected"
+    else:
+        status = "connected"
     if(currentUser['role'] == 'superadmin'):
       countBD += 1
        # Tim Port co dien the cao nhat va thap nhat
@@ -97,7 +117,7 @@ def getFeatureInfo():
       if (min(listPort) < minPort):
             minPortName = doc['maChuoi']
             minPort = min(listPort)
-      if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+      if(status == "notConnected"):
             countErrorTestPosts += 1
             BDLoiList.append(doc['maChuoi'])
     else:
@@ -111,7 +131,7 @@ def getFeatureInfo():
         if (min(listPort) < minPort):
               minPortName = doc['maChuoi']
               minPort = min(listPort)
-        if(int(doc['otherInfo'][0]['signalQuality']) == 0):
+        if(status == "notConnected"):
               countErrorTestPosts += 1
               BDLoiList.append(doc['maChuoi'])
 
@@ -139,7 +159,6 @@ def getFeatureInfo():
 
 @app.route('/api/chartDCMax/', methods=['GET'])
 def getChartDCandAC():
-  logging.info("start API get info Dashboard")
   # Khoi tao bien
   maxDC = [0,0,0,0,0,0,0,0]
   maxDCName = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
@@ -182,6 +201,61 @@ def getChartDCandAC():
     'maxAC': maxAC,
     'maxACName': maxACName,
     'maxACTime': maxACTime,
+  }
+  return jsonify(info)
+
+@app.route('/api/chartPortMax/', methods=['GET'])
+def getChartPortMax():
+  # Khoi tao bien
+  maxPort = [0,0,0,0,0,0,0,0]
+  maxPortName = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  maxPortTime = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
+  ###########################
+  # Tim kiem
+  for doc in db.TestPostsDetails.find({}):
+    if(currentUser['role'] == 'superadmin'):
+      for i in range(min(8,len(doc['otherInfo']))):
+        # Tim mang maxDC
+        if (int(doc['otherInfo'][i]['dienDCPoint1']) > maxPort[i]):
+            maxPort[i] = int(doc['otherInfo'][i]['openPoint1'])
+            maxPortTime[i] = doc['otherInfo'][i]['time']
+            maxPortName[i] = doc['maChuoi']
+        if (int(doc['otherInfo'][i]['dienDCPoint2']) > maxPort[i]):
+            maxPort[i] = int(doc['otherInfo'][i]['openPoint2'])
+            maxPortTime[i] = doc['otherInfo'][i]['time']
+            maxPortName[i] = doc['maChuoi']
+        if (int(doc['otherInfo'][i]['dienDCPoint3']) > maxPort[i]):
+            maxPort[i] = int(doc['otherInfo'][i]['openPoint3'])
+            maxPortTime[i] = doc['otherInfo'][i]['time']
+            maxPortName[i] = doc['maChuoi']
+        if (int(doc['otherInfo'][i]['dienDCPoint4']) > maxPort[i]):
+            maxPort[i] = int(doc['otherInfo'][i]['openPoint4'])
+            maxPortTime[i] = doc['otherInfo'][i]['time']
+            maxPortName[i] = doc['maChuoi']
+    else:
+      if(doc['organization'] == currentUser['organization']): #dieu kien cho rieng to chuc
+        for i in range(min(8,len(doc['otherInfo']))):
+          # Tim mang maxDC
+          if (int(doc['otherInfo'][i]['dienDCPoint1']) > maxPort[i]):
+              maxPort[i] = int(doc['otherInfo'][i]['openPoint1'])
+              maxPortTime[i] = doc['otherInfo'][i]['time']
+              maxPortName[i] = doc['maChuoi']
+          if (int(doc['otherInfo'][i]['dienDCPoint2']) > maxPort[i]):
+              maxPort[i] = int(doc['otherInfo'][i]['openPoint2'])
+              maxPortTime[i] = doc['otherInfo'][i]['time']
+              maxPortName[i] = doc['maChuoi']
+          if (int(doc['otherInfo'][i]['dienDCPoint3']) > maxPort[i]):
+              maxPort[i] = int(doc['otherInfo'][i]['openPoint3'])
+              maxPortTime[i] = doc['otherInfo'][i]['time']
+              maxPortName[i] = doc['maChuoi']
+          if (int(doc['otherInfo'][i]['dienDCPoint4']) > maxPort[i]):
+              maxPort[i] = int(doc['otherInfo'][i]['openPoint4'])
+              maxPortTime[i] = doc['otherInfo'][i]['time']
+              maxPortName[i] = doc['maChuoi']
+  info = {
+    'maxPort': maxPort,
+    'maxPortName': maxPortName,
+    'maxPortTime': maxPortTime,
   }
   return jsonify(info)
 
@@ -690,7 +764,8 @@ def getNotifications():
           'email': doc['email'],
           'phone': doc['phone'],
           'address': doc['address'],
-          'notes': doc['note']
+          'notes': doc['note'],
+          'status': doc['status'],
         })
     return jsonify(notifications)
 
@@ -706,9 +781,24 @@ def signUp():
     'email': res['email'],
     'phone': res['phone'],
     'address': res['address'],
-    'note': res['note']
+    'note': res['note'],
+    'status': "notResponse"
   }
   insertInfo = db.Notifications.insert_one(info)
+  return 'hoan thanh', 200
+
+@app.route('/api/editStatus/', methods=['POST'])
+def editStatusNoti():
+  res = request.get_json()
+  # print(res['id'])
+  if res['status'] =='notResponse':
+    db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
+      'status': "response",
+    }})
+  else: 
+    db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
+      'status': "notResponse",
+    }})
   return 'hoan thanh', 200
 
 ########## Ban do ###########
@@ -725,7 +815,10 @@ def getLocation():
           'devSerial': doc['devSerial'],
           'organization': doc['organization'],
           'devType': "Bo do",
-          'maChuoi':doc['maChuoi'],        
+          'maChuoi':doc['maChuoi'],
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'dateUpdate': doc['dateUpdate'],
+          'date': doc['date'],         
         })
       else:
         if(doc['organization'] == currentUser['organization']):
@@ -735,7 +828,10 @@ def getLocation():
             'devSerial': doc['devSerial'],
             'organization': doc['organization'],
             'devType': "Bo do",
-            'maChuoi':doc['maChuoi'],        
+            'maChuoi':doc['maChuoi'],
+            'signalQuality': doc['otherInfo'][0]['signalQuality'],
+            'dateUpdate': doc['dateUpdate'],
+            'date': doc['date'],      
           })
     for doc in db.RectifierTransformersDetails.find({}):
       if(currentUser['role'] == 'superadmin'):
@@ -745,7 +841,10 @@ def getLocation():
           'devSerial': doc['devSerial'],
           'organization': doc['organization'],
           'devType': "Bo trung tam",
-          'maChuoi':doc['maChuoi'],           
+          'maChuoi':doc['maChuoi'],  
+          'signalQuality': doc['otherInfo'][0]['signalQuality'],
+          'dateUpdate': doc['dateUpdate'],
+          'date': doc['date'],           
         })
       else:
         if(doc['organization'] == currentUser['organization']):
@@ -755,7 +854,10 @@ def getLocation():
             'devSerial': doc['devSerial'],
             'organization': doc['organization'],
             'devType': "Bo trung tam",
-            'maChuoi':doc['maChuoi'],           
+            'maChuoi':doc['maChuoi'],    
+            'signalQuality': doc['otherInfo'][0]['signalQuality'],
+            'dateUpdate': doc['dateUpdate'],
+            'date': doc['date'],         
           })
     return jsonify(devices)
 

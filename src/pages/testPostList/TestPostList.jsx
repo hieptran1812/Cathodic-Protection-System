@@ -37,24 +37,6 @@ const columns = [
     width: 200,
   },
   {
-    field: "action",
-    headerName: "Thông tin",
-    width: 200,
-    renderCell: (params) => {
-      return (
-        <>
-          <Link
-            to={"/testPost/" + params.row.devSerial}
-            style={{ textDecoration: "none" }}
-          >
-            <button className="productListEdit">Chi tiết</button>
-          </Link>
-        </>
-      );
-    },
-  },
-
-  {
     field: "centralAddress",
     headerName: "Central Address",
     width: 200,
@@ -71,6 +53,23 @@ const columns = [
     field: "dienApPin",
     headerName: "Battery voltage (V)",
     width: 180,
+  },
+  {
+    field: "action",
+    headerName: "Thông tin",
+    width: 200,
+    renderCell: (params) => {
+      return (
+        <>
+          <Link
+            to={"/testPost/" + params.row.devSerial}
+            style={{ textDecoration: "none" }}
+          >
+            <button className="productListEdit">Chi tiết</button>
+          </Link>
+        </>
+      );
+    },
   },
 ];
 

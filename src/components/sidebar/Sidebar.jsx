@@ -9,8 +9,23 @@ import {
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
+import { React, useEffect, useState } from "react";
+
+const API = process.env.REACT_APP_API;
 
 export default function Sidebar() {
+  const [notiInfo, setNotiInfo] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(`${API}/api/notificationsSidebar`)
+      .then((res) => {
+        const data = res.data;
+        setNotiInfo(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
@@ -78,9 +93,16 @@ export default function Sidebar() {
             </li>
             {localStorage.getItem("role") === "superadmin" ? (
               <li className="sidebarListItem">
-                <NavLink to="/notifications" className="link" activeClassName="active">
+                <NavLink
+                  to="/notifications"
+                  className="link"
+                  activeClassName="active"
+                >
                   <NotificationsIcon className="sidebarIcon" />
                   Thông báo
+                  {notiInfo.count !== 0 ? (
+                    <b className="tipNoti">{notiInfo.count}</b>
+                  ) : null}
                 </NavLink>
               </li>
             ) : null}

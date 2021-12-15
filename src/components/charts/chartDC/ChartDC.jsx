@@ -124,6 +124,21 @@ export default function ChartDC() {
 
   const options = {
     tension: 0.4,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        title: {
+          display: true,
+          text: "Điện áp (V)",
+        },
+      },
+      x: {
+        title: {
+          display: true,
+          text: "Tín hiệu nhận theo thời gian",
+        },
+      },
+    },
     plugins: {
       title: {
         display: true,
@@ -141,7 +156,7 @@ export default function ChartDC() {
 
   return (
     <div className="chart">
-      <Line data={data} options={options} />
+      <Line width={"200px"} height={"500px"} data={data} options={options} />
     </div>
   );
 }

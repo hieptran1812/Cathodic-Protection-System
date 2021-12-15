@@ -52,7 +52,7 @@ const columns = [
   },
   {
     field: "dienDCPoint1",
-    headerName: "Power DC Point(V)",
+    headerName: "Output DC Voltage(V)",
     width: 210,
   },
   {
@@ -159,6 +159,28 @@ function ConditionDCOutput(props) {
     return (
       <Alert variant="filled" severity="info">
         {props.value} (V)
+      </Alert>
+    );
+  }
+}
+
+function ConditionDCCurrent(props) {
+  if (props.value > 25) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} (A)
+      </Alert>
+    );
+  } else if (props.value < 5) {
+    return (
+      <Alert variant="filled" severity="warning">
+        {props.value} (A)
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value} (A)
       </Alert>
     );
   }
@@ -327,6 +349,30 @@ export default function RectifierTransformer() {
                   <span className="productInfoKey">Phone number</span>
                   <span className="productInfoValue">{infoTop[0].phone}</span>
                 </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Signal quality</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].signalQuality}
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Battery voltage</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].dienApPin} (V)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Power supply voltage</span>
+                  <span className="productInfoValue">
+                    {infoTop[0].dienApNguon} (V)
+                  </span>
+                </div>
+                <div className="productInfoItem">
+                  <span className="productInfoKey">Temperature</span>
+                  <span className="productInfoValue">
+                    <ConditionTemperature value={infoTop[0].temperature} />
+                  </span>
+                </div>
               </div>
             </div>
             <div className="productTopRight">
@@ -364,7 +410,7 @@ export default function RectifierTransformer() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">DC Output Current</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dongDienDC} (A)
+                    <ConditionDCCurrent value={infoTop[0].dongDienDC} />
                   </span>
                 </div>
                 <div className="productInfoItem">
@@ -377,30 +423,6 @@ export default function RectifierTransformer() {
                   <span className="productInfoKey">Efficiency</span>
                   <span className="productInfoValue">
                     {infoTop[0].efficiency} (%)
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Signal quality</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].signalQuality}
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Battery voltage</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].dienApPin} (V)
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Power supply voltage</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].dienApNguon} (V)
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Temperature</span>
-                  <span className="productInfoValue">
-                    <ConditionTemperature value={infoTop[0].temperature} />
                   </span>
                 </div>
               </div>

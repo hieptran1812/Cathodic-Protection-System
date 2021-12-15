@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   image: {
-    backgroundImage:
-      "url(http://baohonamson.vn/sites/default/files/TLAT/Hinh%20an%20toan%2015-%20baohonamson.jpg)",
+    backgroundImage: "url(https://imgur.com/wF2KLir.png)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"

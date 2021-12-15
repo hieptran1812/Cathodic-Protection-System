@@ -5,7 +5,7 @@ import {
   GridToolbarExport,
 } from "@material-ui/data-grid";
 import axios from "axios";
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState, forceUpdate } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 
@@ -14,6 +14,18 @@ const API = process.env.REACT_APP_API;
 export default function NotificationsList() {
   const [loading, setLoading] = useState(true);
   const [info, setInfo] = useState([]);
+  async function changeStatus(noti, idNoti) {
+    const statusNoti = { status: noti, id: idNoti };
+    window.location.reload();
+    await axios
+      .post(`${API}/api/editStatus/`, statusNoti)
+      .then((res) => {
+        if (res.status === 200) {
+          
+        }
+      })
+      .catch((error) => console.log(error));
+  }
 
   useEffect(() => {
     axios
@@ -28,6 +40,32 @@ export default function NotificationsList() {
   }, []);
 
   const columns = [
+    {
+      field: "status",
+      headerName: "Trạng thái",
+      width: 180,
+      renderCell: (params) => {
+        if (params.row.status === "notResponse") {
+          return (
+            <button
+              className="notConnected"
+              onClick={() => changeStatus(params.row.status, params.row.id)}
+            >
+              Chưa phản hồi
+            </button>
+          );
+        } else {
+          return (
+            <button
+              className="connected"
+              onClick={() => changeStatus(params.row.status, params.row.id)}
+            >
+              Đã phản hồi
+            </button>
+          );
+        }
+      },
+    },
     {
       field: "dateCreated",
       headerName: "Thời gian",
