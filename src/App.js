@@ -14,7 +14,8 @@ import RectifierTransformerList from "./pages/rectifierTransformerList/Rectifier
 import RectifierTransformer from "./pages/product/RectifierTransformer";
 import TestPostList from "./pages/testPostList/TestPostList";
 import TestPost from "./pages/product/TestPost";
-import NewProduct from "./pages/newProduct/NewProduct";
+import NewTestPost from "./pages/newProduct/NewTestPost";
+import NewRectifier from "./pages/newProduct/NewRectifier";
 import DocumentsList from "./pages/documents/documentsList";
 import NewDocument from "./pages/newDocuments/NewDocument";
 import NotificationsList from "./pages/notifications/notifications";
@@ -167,10 +168,20 @@ function App() {
             }}
           ></Route>
           <Route
-            path="/newproduct"
+            path="/newRectifier"
             render={() => {
               if (localStorage.getItem("accessToken")) {
-                return <NewProduct />;
+                return <NewRectifier />;
+              } else {
+                return <Redirect to="/" />;
+              }
+            }}
+          ></Route>
+          <Route
+            path="/newTestPost"
+            render={() => {
+              if (localStorage.getItem("accessToken")) {
+                return <NewTestPost />;
               } else {
                 return <Redirect to="/" />;
               }

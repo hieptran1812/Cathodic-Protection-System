@@ -120,7 +120,7 @@ export default function TestPostList() {
           {localStorage.getItem("role") !== "viewer" ? (
             <Button
               variant="contained"
-              href="/newproduct"
+              href="/newTestPost"
               style={{ margin: "40px" }}
               color="secondary"
               startIcon={<AddBoxIcon />}

@@ -48,7 +48,7 @@ def getNumOfNoti():
 @app.route('/api/featureInfo/', methods=['GET'])
 def getFeatureInfo():
   logging.info("start API get info Dashboard")
-  # Khoi tao bien
+  # Khoi tao bien BTT
   countBTT = 0
   maxDC = 0
   maxDCName = ""
@@ -56,7 +56,7 @@ def getFeatureInfo():
   maxACName = ""
   countErrorRectifiers = 0
   BTTLoiList = []
-  ###########################
+  # Khoi tao bien BD
   countBD = 0
   maxPort = -3000
   maxPortName = ""
@@ -110,7 +110,7 @@ def getFeatureInfo():
     if(currentUser['role'] == 'superadmin'):
       countBD += 1
        # Tim Port co dien the cao nhat va thap nhat
-      listPort = [doc['otherInfo'][0]['openPoint1'], doc['otherInfo'][0]['openPoint2'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['closePoint1'], doc['otherInfo'][0]['closePoint2'], doc['otherInfo'][0]['closePoint3'], doc['otherInfo'][0]['closePoint4']]
+      listPort = [float(doc['otherInfo'][0]['openPoint1']), float(doc['otherInfo'][0]['openPoint2']), float(doc['otherInfo'][0]['openPoint3']), float(doc['otherInfo'][0]['openPoint3']), float(doc['otherInfo'][0]['closePoint1']), float(doc['otherInfo'][0]['closePoint2']), float(doc['otherInfo'][0]['closePoint3']), float(doc['otherInfo'][0]['closePoint4'])]
       if (max(listPort) > maxPort):
             maxPortName = doc['maChuoi']
             maxPort = max(listPort)
@@ -124,7 +124,7 @@ def getFeatureInfo():
       if(doc['organization'] == currentUser['organization']): #dieu kien cho rieng to chuc
         countBD += 1
          # Tim Port co dien the cao nhat va thap nhat
-        listPort = [doc['otherInfo'][0]['openPoint1'], doc['otherInfo'][0]['openPoint2'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['openPoint3'], doc['otherInfo'][0]['closePoint1'], doc['otherInfo'][0]['closePoint2'], doc['otherInfo'][0]['closePoint3'], doc['otherInfo'][0]['closePoint4']]
+        listPort = [float(doc['otherInfo'][0]['openPoint1']), float(doc['otherInfo'][0]['openPoint2']), float(doc['otherInfo'][0]['openPoint3']), float(doc['otherInfo'][0]['openPoint3']), float(doc['otherInfo'][0]['closePoint1']), float(doc['otherInfo'][0]['closePoint2']), float(doc['otherInfo'][0]['closePoint3']), float(doc['otherInfo'][0]['closePoint4'])]
         if (max(listPort) > maxPort):
               maxPortName = doc['maChuoi']
               maxPort = max(listPort)
@@ -134,7 +134,6 @@ def getFeatureInfo():
         if(status == "notConnected"):
               countErrorTestPosts += 1
               BDLoiList.append(doc['maChuoi'])
-
   countDevicesBTT = countBTT
   countDevicesBD = countBD
   BTTLoi = ', '.join(BTTLoiList)
@@ -442,108 +441,56 @@ def updateUser(id):
 
 # ################ bo trung tam ##################
 
-@app.route('/api/newProduct', methods=['POST'])
-def add():
-  logging.info("start API add new product")
+@app.route('/api/newRectifier', methods=['POST'])
+def addRectifier():
+  logging.info("start API add new Rectifier")
   res = request.get_json()
-  deviceRectifierTransformersList = {
-    'devSerial': res['id'],
-    'maChuoi': res['maChuoi'],
-    'devType': res['type'],
-    'organization': res['organization'],
-    'area': res['area'],
-    'dateUpdate': res['dateUpdate'],
-    'date': res['date'],
-    'lat': res['lat'],
-    'lng': res['lng'],
-    'ACInputPower':res['ACInputPower'],
-  }
   deviceRectifierTransformer = {
     'devSerial': res['id'],
     'maChuoi': res['maChuoi'],
-    'devType': res['type'],
     'organization': res['organization'],
     'area': res['area'],
     'dateUpdate': res['dateUpdate'],
     'date': res['date'],
     'lat': res['lat'],
     'lng': res['lng'],
+    'connect': ["Chưa kết nối Bộ đo nào!"],
     'ACInputPower':res['ACInputPower'],
     'otherInfo': [{
       'time': datetime.datetime.now(),
       'locationSystem': '0',
       'centralAddress': '0',
       'phone': '0',
-      'signalQuality': '0',
-      'dienApPin': '0',
-      'dienApNguon': '0',
-      'temperature': '0',
-      'dienAC3PhaA': '0',
-      'dienAC3PhaB': '0',
-      'dienAC3PhaC': '0',
-      'dienDCPoint1': '0',
-      'dongDienDC': '0',
+      'signalQuality': 0,
+      'dienApPin': 0,
+      'dienApNguon': 0,
+      'temperature': 0,
+      'dienAC3PhaA': 0,
+      'dienAC3PhaB': 0,
+      'dienAC3PhaC': 0,
+      'dienDCPoint1': 0,
+      'dongDienDC': 0,
     }],
-  }
-  deviceTestPost = {
-    'devSerial': res['id'],
-    'maChuoi': res['maChuoi'],
-    'devType': res['type'],
-    'organization': res['organization'],
-    'area': res['area'],
-    'dateUpdate': res['dateUpdate'],
-    'date': res['date'],
-    'lat': res['lat'],
-    'lng': res['lng'],
-    'otherInfo': [{
-      'time': datetime.datetime.now(),
-      'locationSystem': '0',
-      'centralAddress': '0',
-      'phone': '0',
-      'signalQuality': '0',
-      'nodeAddress': '0',
-      'dienApPin' : '0',
-      'dienApNguon': '0',
-      'temperature': '0',
-      'openPoint1': '0',
-      'openPoint2': '0',
-      'openPoint3': '0',
-      'openPoint4': '0',
-      'closePoint1': '0',
-      'closePoint2': '0',
-      'closePoint3': '0',
-      'closePoint4': '0',
-    }],
-  }
-  deviceTestPostsList = {
-    'devSerial': res['id'],
-    'maChuoi': res['maChuoi'],
-    'devType': res['type'],
-    'organization': res['organization'],
-    'area': res['area'],
-    'dateUpdate': res['dateUpdate'],
-    'date': res['date'],
-    'lat': res['lat'],
-    'lng': res['lng'],
   }
   deviceInDb = db.RectifierTransformersDetails.find_one({ #tim thiet bi trong danh sach bo trung tam
       'devSerial': res['id']
   })
   if deviceInDb:
       return 'thiet bi da ton tai', 404
-  deviceInDb = db.TestPostsDetails.find_one({ #tim thiet bi trong danh sach bo do
-      'devSerial': res['id']
-  })
-  if deviceInDb:
-      return 'thiet bi da ton tai', 404
   else:
-      if(res['type'] == '0'):
-        # insertDeviceList = db.RectifierTransformersList.insert_one(deviceRectifierTransformersList)
-        insertDeviceDetails = db.RectifierTransformersDetails.insert_one(deviceRectifierTransformer)
-      else:
-        # insertDeviceList = db.TestPostsList.insert_one(deviceTestPostsList)
-        insertDeviceDetails = db.TestPostsDetails.insert_one(deviceTestPost)
+      insertDeviceDetails = db.RectifierTransformersDetails.insert_one(deviceRectifierTransformer)
       return 'hoan thanh', 200
+
+@app.route('/api/rectifierTransformerNameList/', methods=['GET'])
+def getNameRT():
+  devices = []
+  for doc in db.RectifierTransformersDetails.find({}):
+    if(currentUser['role'] == 'superadmin'):
+      devices.append({'maChuoi': doc['maChuoi'],})
+    else:
+      if(doc['organization'] == currentUser['organization']):
+        devices.append({'maChuoi': doc['maChuoi'],})
+  return jsonify(devices)
 
 @app.route('/api/rectifierTransformerList/', methods=['GET'])
 def get():
@@ -589,19 +536,13 @@ def getRectifierTransformerDetailTable(id):
     result[0]['date'] = deviceInfo['date']
     result[0]['ACInputPower'] = deviceInfo['ACInputPower']
     #Bo do lien ket voi Bo trung tam
-    testPostConnectionList = db.TestPostsDetails.find({
-      'otherInfo.centralAddress': deviceInfo['otherInfo'][0]['centralAddress']
-    })
-
-    if(testPostConnectionList):
-      testPostResultList = ""
-      for doc in testPostConnectionList:
-        if(doc['organization'] == deviceInfo['organization']):
-          testPostResultList += doc['maChuoi'] + "  ||  "  
-          # print(doc["maChuoi"])
-      result[0]["testPostResultList"] = testPostResultList
-    else:
-      result[0]["testPostResultList"] = "Chua ket noi Bo do nao!"
+    connect = ""
+    for i in range(len(deviceInfo['connect'])):
+      if (i == len(deviceInfo['connect']) - 1):
+        connect += str(deviceInfo['connect'][i])
+      else:
+        connect += str(deviceInfo['connect'][i]) + ", "  
+    result[0]['connect'] = connect
     i = 0
     for data in result:
       data['id'] = i
@@ -611,6 +552,12 @@ def getRectifierTransformerDetailTable(id):
 
 @app.route('/api/rectifierTransformer/delete/<id>', methods=['GET'])
 def delete(id):
+  deviceInfo = db.RectifierTransformersDetails.find_one({
+      'devSerial': id,
+  })
+  for tp in deviceInfo['connect']:
+    updateConnectTP = db.TestPostsDetails.update_one({'maChuoi': tp}, {'$set': {'connect': "Chưa kết nối Bộ trung tâm nào!"}}, upsert = False)
+  deleteVar = db.TestPostsDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$pull':{'connect': deviceInfo['maChuoi']}}, upsert = True)
   db.RectifierTransformersDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
 
@@ -632,6 +579,51 @@ def getChartDC(id):
   return jsonify(info)
 
 # ################ Bo do ##################
+
+@app.route('/api/newTestPost', methods=['POST'])
+def addTestPost():
+  logging.info("start API add new TestPost")
+  res = request.get_json()
+  deviceTestPost = {
+    'devSerial': res['id'],
+    'maChuoi': res['maChuoi'],
+    'organization': res['organization'],
+    'area': res['area'],
+    'dateUpdate': res['dateUpdate'],
+    'date': res['date'],
+    'lat': res['lat'],
+    'lng': res['lng'],
+    'connect': res['connect'],
+    'otherInfo': [{
+      'time': datetime.datetime.now(),
+      'locationSystem': '0',
+      'centralAddress': '0',
+      'phone': '0',
+      'signalQuality': 0,
+      'nodeAddress': '0',
+      'dienApPin' : 0,
+      'dienApNguon': 0,
+      'temperature': 0,
+      'openPoint1': 0,
+      'openPoint2': 0,
+      'openPoint3': 0,
+      'openPoint4': 0,
+      'closePoint1': 0,
+      'closePoint2': 0,
+      'closePoint3': 0,
+      'closePoint4': 0,
+    }],
+  }
+  deviceInDb = db.TestPostsDetails.find_one({ #tim thiet bi trong danh sach bo do
+      'devSerial': res['id']
+  })
+  if deviceInDb:
+      return 'thiet bi da ton tai', 404
+  else:
+    updateConnectRT = db.RectifierTransformersDetails.update_one({'maChuoi': res['connect']}, {'$push': {'connect': res['maChuoi']}}, upsert = False)
+    deleteVar = db.RectifierTransformersDetails.update_one({'maChuoi': res['connect']}, {'$pull':{'connect': 'Chưa kết nối Bộ đo nào!'}}, upsert = False)
+    insertDeviceDetails = db.TestPostsDetails.insert_one(deviceTestPost)
+    return 'hoan thanh', 200
 
 @app.route('/api/testPostList', methods=['GET'])
 def getTestPost():
@@ -677,16 +669,7 @@ def getTestPostDetailTable(id):
     result[0]['tenThietBi'] = deviceInfo['maChuoi']
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
     result[0]['date'] = deviceInfo['date']
-    #Bo trung tam lien ket voi bo do
-    centralDevice = db.RectifierTransformersDetails.find_one({
-      'otherInfo.centralAddress': deviceInfo['otherInfo'][0]['centralAddress']
-    })
-    if(centralDevice and centralDevice['organization'] == deviceInfo['organization']):
-      result[0]["idCentralDevice"] = centralDevice["devSerial"]
-      result[0]["idStringCentralDevice"] = centralDevice["maChuoi"]
-    else:
-      result[0]["idCentralDevice"] = "Chua ket noi Bo trung tam nao"
-      result[0]["idStringCentralDevice"] = "Chua ket noi Bo trung tam nao"
+    result[0]['connect'] = deviceInfo['connect']
     i = 0
     for data in result:
       data['id'] = i
@@ -695,6 +678,12 @@ def getTestPostDetailTable(id):
 
 @app.route('/api/testPost/delete/<id>', methods=['GET'])
 def deleteTestpost(id):
+  deviceInfo = db.TestPostsDetails.find_one({
+      'devSerial': id,
+  })
+  deleteVar = db.RectifierTransformersDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$pull':{'connect': deviceInfo['maChuoi']}}, upsert = False)
+  if (len(deviceInfo['connect']) == 0):
+     updateConnectRT = db.TestPostsDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$push': {'connect': "Chưa kết nối Bộ đo nào!"}}, upsert = False)   
   db.TestPostsDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
 

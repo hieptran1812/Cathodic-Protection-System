@@ -119,7 +119,7 @@ export default function RectifierTransformerList() {
           {localStorage.getItem("role") !== "viewer" ? (
             <Button
               variant="contained"
-              href="/newproduct"
+              href="/newRectifier"
               style={{ margin: "40px" }}
               color="secondary"
               startIcon={<AddBoxIcon />}

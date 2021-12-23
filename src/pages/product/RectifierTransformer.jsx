@@ -323,7 +323,7 @@ export default function RectifierTransformer() {
           <div className="connect">
             <span className="productInfoKey">Kết nối với các bộ đo: </span>
             <span className="productInfoValue">
-              {infoTop[0].testPostResultList}
+              {infoTop[0].connect}
             </span>
           </div>
           <div className="productTop">

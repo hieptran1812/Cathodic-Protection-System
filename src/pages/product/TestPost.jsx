@@ -318,7 +318,7 @@ export default function TestPost() {
           <div className="time">
             <span className="productInfoKey">Kết nối với bộ trung tâm: </span>
             <span className="productInfoValue">
-              {infoTop[0].idStringCentralDevice}
+              {infoTop[0].connect}
             </span>
           </div>
           <div className="productTop">
