@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignInSide() {
+export default function ForgotPassword() {
   const classes = useStyles();
 
   let [username, setUsername] = useState("");
@@ -72,12 +72,13 @@ export default function SignInSide() {
       address,
       note,
     };
-    axios.post(`${API}/api/signUp`, data)
+    axios
+      .post(`${API}/api/forgotpassword`, data)
       .then((res) => {
         const info = res.data;
         console.log(info);
         if (res.status === 200) {
-          // console.log("Dang ky thanh cong");
+          console.log("Gui quen mat khau");
           setOpen(true);
         }
       })
@@ -95,7 +96,7 @@ export default function SignInSide() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Đăng ký tài khoản
+            Đặt lại mật khẩu
           </Typography>
           <Collapse in={open}>
             <Alert
@@ -112,7 +113,8 @@ export default function SignInSide() {
                 </IconButton>
               }
             >
-              Đăng ký thành công! Người quản trị sẽ thực hiện yêu cầu của bạn!
+              Báo cáo quên mật khẩu thành công! Người quản trị sẽ thực hiện yêu
+              cầu của bạn!
             </Alert>
           </Collapse>
           <form className={classes.form} onSubmit={handleSubmit} noValidate>
@@ -207,7 +209,7 @@ export default function SignInSide() {
               className={classes.submit}
               type="submit"
             >
-              Đăng ký
+              Gưi yêu cầu
             </Button>
             <div className="question">
               <p style={{ display: "inline" }}>Chưa có tài khoản? </p>

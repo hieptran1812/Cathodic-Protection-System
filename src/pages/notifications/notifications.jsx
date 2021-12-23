@@ -5,7 +5,7 @@ import {
   GridToolbarExport,
 } from "@material-ui/data-grid";
 import axios from "axios";
-import { React, useEffect, useState, forceUpdate } from "react";
+import { React, useEffect, useState } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 
@@ -21,7 +21,6 @@ export default function NotificationsList() {
       .post(`${API}/api/editStatus/`, statusNoti)
       .then((res) => {
         if (res.status === 200) {
-          
         }
       })
       .catch((error) => console.log(error));

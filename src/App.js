@@ -19,6 +19,7 @@ import DocumentsList from "./pages/documents/documentsList";
 import NewDocument from "./pages/newDocuments/NewDocument";
 import NotificationsList from "./pages/notifications/notifications";
 import SignInSide from "./pages/signInUp/signIn";
+import ForgotPassword from "./pages/signInUp/forgotPassword";
 import SignUpSide from "./pages/signInUp/signUp";
 import LandingPage from "./pages/SaaSProductLandingPage";
 
@@ -29,6 +30,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LandingPage />
+          </Route>
+          <Route path="/forgot-password">
+            <ForgotPassword />
           </Route>
           <Route path="/login">
             <SignInSide />

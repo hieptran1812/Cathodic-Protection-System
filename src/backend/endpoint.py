@@ -787,6 +787,24 @@ def signUp():
   insertInfo = db.Notifications.insert_one(info)
   return 'hoan thanh', 200
 
+@app.route('/api/forgotpassword', methods=['POST'])
+def forgotPassword():
+  res = request.get_json()
+  info = {
+    'title': "Quen mat khau",
+    'dateCreated': datetime.datetime.now(),
+    'organization': res['organization'],
+    'name': res['name'],
+    'username': res['username'],
+    'email': res['email'],
+    'phone': res['phone'],
+    'address': res['address'],
+    'note': res['note'],
+    'status': "notResponse"
+  }
+  insertInfo = db.Notifications.insert_one(info)
+  return 'hoan thanh', 200
+
 @app.route('/api/editStatus/', methods=['POST'])
 def editStatusNoti():
   res = request.get_json()

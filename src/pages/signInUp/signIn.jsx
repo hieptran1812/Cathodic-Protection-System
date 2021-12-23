@@ -15,6 +15,7 @@ import Collapse from "@material-ui/core/Collapse";
 import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const API = process.env.REACT_APP_API;
 
@@ -148,7 +149,13 @@ export default function SignUnSide() {
             >
               Đăng nhập
             </Button>
-            Chưa có tài khoản?
+            <div className="question">
+              <a style={{ display: "inline"}} href="/forgot-password">
+                Quên mật khẩu?
+              </a>
+              <p style={{ display: "inline" }}>Chưa có tài khoản? </p>
+            </div>
+
             <Button
               fullWidth
               variant="contained"

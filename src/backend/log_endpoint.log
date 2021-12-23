@@ -4582,3 +4582,581 @@ TypeError: id must be an instance of (bytes, str, ObjectId), not <class 'builtin
 2021-12-15 23:52:11,033 - INFO - 127.0.0.1 - - [15/Dec/2021 23:52:11] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
 2021-12-15 23:52:13,205 - INFO - 127.0.0.1 - - [15/Dec/2021 23:52:13] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
 2021-12-15 23:52:13,208 - INFO - 127.0.0.1 - - [15/Dec/2021 23:52:13] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:12,472 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:12] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:14,684 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:14] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:16,435 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:16] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:19,544 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:19] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:21,515 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:21] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:23,461 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:23] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:28,600 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:28] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:31,591 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:31] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:53:31,605 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:31] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:33,992 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:33] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:53:34,055 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:34] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:53:36,153 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:36] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:53:36,156 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:36] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:52,150 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:52] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:53,865 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:53] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:53,879 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:53] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:53:55,670 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:55] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:53:55,728 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:55] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:53:57,581 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:57] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:53:57,588 - INFO - 127.0.0.1 - - [15/Dec/2021 23:53:57] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:55:02,549 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:02] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:55:08,457 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:08] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:55:10,565 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:10] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:55:10,577 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:10] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:55:11,862 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:11] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:55:11,919 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:11] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:55:13,925 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:13] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:55:13,926 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:13] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:55:27,345 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:27] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:55:27,402 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:27] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:55:29,117 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:29] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:55:29,118 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:29] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:55:41,477 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:41] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:55:44,872 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:44] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:55:52,609 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:52] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:55:55,479 - INFO - 127.0.0.1 - - [15/Dec/2021 23:55:55] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:56:08,476 - INFO - 127.0.0.1 - - [15/Dec/2021 23:56:08] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:56:08,674 - INFO - 127.0.0.1 - - [15/Dec/2021 23:56:08] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:56:12,991 - INFO - 127.0.0.1 - - [15/Dec/2021 23:56:12] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:56:13,001 - INFO - 127.0.0.1 - - [15/Dec/2021 23:56:13] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:56:13,902 - INFO - 127.0.0.1 - - [15/Dec/2021 23:56:13] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:56:13,962 - INFO - 127.0.0.1 - - [15/Dec/2021 23:56:13] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-15 23:56:17,050 - INFO - 127.0.0.1 - - [15/Dec/2021 23:56:17] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:56:17,055 - INFO - 127.0.0.1 - - [15/Dec/2021 23:56:17] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:57:08,444 - INFO - 127.0.0.1 - - [15/Dec/2021 23:57:08] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:57:08,710 - INFO - 127.0.0.1 - - [15/Dec/2021 23:57:08] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-15 23:57:14,478 - INFO - 127.0.0.1 - - [15/Dec/2021 23:57:14] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:57:15,463 - INFO - 127.0.0.1 - - [15/Dec/2021 23:57:15] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:57:19,443 - INFO - 127.0.0.1 - - [15/Dec/2021 23:57:19] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:57:22,455 - INFO - 127.0.0.1 - - [15/Dec/2021 23:57:22] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:57:27,448 - INFO - 127.0.0.1 - - [15/Dec/2021 23:57:27] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:58:12,491 - INFO - 127.0.0.1 - - [15/Dec/2021 23:58:12] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-15 23:58:12,756 - INFO - 127.0.0.1 - - [15/Dec/2021 23:58:12] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:05:14,483 - INFO - 127.0.0.1 - - [16/Dec/2021 00:05:14] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:05:14,770 - INFO - 127.0.0.1 - - [16/Dec/2021 00:05:14] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:05:25,523 - INFO - 127.0.0.1 - - [16/Dec/2021 00:05:25] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:05:29,461 - INFO - 127.0.0.1 - - [16/Dec/2021 00:05:29] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:05:56,494 - INFO - 127.0.0.1 - - [16/Dec/2021 00:05:56] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:06:07,441 - INFO - 127.0.0.1 - - [16/Dec/2021 00:06:07] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:06:59,459 - INFO - 127.0.0.1 - - [16/Dec/2021 00:06:59] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:07:07,588 - INFO - 127.0.0.1 - - [16/Dec/2021 00:07:07] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:08:01,462 - INFO - 127.0.0.1 - - [16/Dec/2021 00:08:01] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:08:04,488 - INFO - 127.0.0.1 - - [16/Dec/2021 00:08:04] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:08:04,846 - INFO - 127.0.0.1 - - [16/Dec/2021 00:08:04] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:08:54,422 - INFO - 127.0.0.1 - - [16/Dec/2021 00:08:54] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:08:54,660 - INFO - 127.0.0.1 - - [16/Dec/2021 00:08:54] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:13,720 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:13] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:14,476 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:14] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:15,436 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:15] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:16,477 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:16] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:16,919 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:16] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:37,054 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:37] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:37,063 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:37] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:40,760 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:40] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:40,763 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:40] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:41,387 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:41] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:41,447 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:41] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:43,709 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:43] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:43,713 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:43] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:55,982 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:55] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:56,044 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:56] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:56,416 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:56] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:09:57,199 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:57] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:59,985 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:59] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:09:59,995 - INFO - 127.0.0.1 - - [16/Dec/2021 00:09:59] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:10:01,358 - INFO - 127.0.0.1 - - [16/Dec/2021 00:10:01] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:10:01,418 - INFO - 127.0.0.1 - - [16/Dec/2021 00:10:01] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:10:05,442 - INFO - 127.0.0.1 - - [16/Dec/2021 00:10:05] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:10:06,155 - INFO - 127.0.0.1 - - [16/Dec/2021 00:10:06] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:10:07,900 - INFO - 127.0.0.1 - - [16/Dec/2021 00:10:07] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:10:07,900 - INFO - 127.0.0.1 - - [16/Dec/2021 00:10:07] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:12:44,446 - INFO - 127.0.0.1 - - [16/Dec/2021 00:12:44] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:12:46,144 - INFO - 127.0.0.1 - - [16/Dec/2021 00:12:46] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:12:46,195 - INFO - 127.0.0.1 - - [16/Dec/2021 00:12:46] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:12:47,440 - INFO - 127.0.0.1 - - [16/Dec/2021 00:12:47] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:12:50,243 - INFO - 127.0.0.1 - - [16/Dec/2021 00:12:50] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:12:50,257 - INFO - 127.0.0.1 - - [16/Dec/2021 00:12:50] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:12:51,552 - INFO - 127.0.0.1 - - [16/Dec/2021 00:12:51] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:12:51,612 - INFO - 127.0.0.1 - - [16/Dec/2021 00:12:51] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:13:01,519 - INFO - 127.0.0.1 - - [16/Dec/2021 00:13:01] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:13:09,299 - INFO - 127.0.0.1 - - [16/Dec/2021 00:13:09] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:13:09,608 - INFO - 127.0.0.1 - - [16/Dec/2021 00:13:09] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:13:10,727 - INFO - 127.0.0.1 - - [16/Dec/2021 00:13:10] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:13:10,787 - INFO - 127.0.0.1 - - [16/Dec/2021 00:13:10] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:19:05,676 - INFO - 127.0.0.1 - - [16/Dec/2021 00:19:05] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:19:07,473 - INFO - 127.0.0.1 - - [16/Dec/2021 00:19:07] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:19:36,448 - INFO - 127.0.0.1 - - [16/Dec/2021 00:19:36] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:20:28,599 - INFO - 127.0.0.1 - - [16/Dec/2021 00:20:28] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:20:28,612 - INFO - 127.0.0.1 - - [16/Dec/2021 00:20:28] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:21:28,596 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:28] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:21:29,445 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:29] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:21:32,514 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:32] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:33,787 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:33] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:21:34,694 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:34] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:34,762 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:34] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:35,248 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:35] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:35,441 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:35] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:35,609 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:35] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:36,213 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:36] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:36,657 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:36] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:36,850 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:36] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:37,008 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:37] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:21:42,314 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:42] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:21:42,322 - INFO - 127.0.0.1 - - [16/Dec/2021 00:21:42] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:22:52,545 - INFO - 127.0.0.1 - - [16/Dec/2021 00:22:52] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:23:17,473 - INFO - 127.0.0.1 - - [16/Dec/2021 00:23:17] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:23:17,906 - INFO - 127.0.0.1 - - [16/Dec/2021 00:23:17] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:23:20,470 - INFO - 127.0.0.1 - - [16/Dec/2021 00:23:20] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:23:20,646 - INFO - 127.0.0.1 - - [16/Dec/2021 00:23:20] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:23:35,513 - INFO - 127.0.0.1 - - [16/Dec/2021 00:23:35] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:23:52,589 - INFO - 127.0.0.1 - - [16/Dec/2021 00:23:52] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:23:56,437 - INFO - 127.0.0.1 - - [16/Dec/2021 00:23:56] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:23:56,684 - INFO - 127.0.0.1 - - [16/Dec/2021 00:23:56] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:24:19,560 - INFO - 127.0.0.1 - - [16/Dec/2021 00:24:19] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:24:36,474 - INFO - 127.0.0.1 - - [16/Dec/2021 00:24:36] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:25:16,210 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:16] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:25:17,403 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:17] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:17,491 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:17] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:21,254 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:21] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:21,258 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:21] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:25:22,343 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:22] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:23,541 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:23] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:23,596 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:23] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:24,722 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:24] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:29,853 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:29] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:25:29,854 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:29] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:39,430 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:39] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:25:55,234 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:55] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:25:55,410 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:55] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:57,727 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:57] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:25:57,743 - INFO - 127.0.0.1 - - [16/Dec/2021 00:25:57] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:26:26,057 - INFO - 127.0.0.1 - - [16/Dec/2021 00:26:26] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:26:26,919 - INFO - 127.0.0.1 - - [16/Dec/2021 00:26:26] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:26:26,977 - INFO - 127.0.0.1 - - [16/Dec/2021 00:26:26] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:26:28,749 - INFO - 127.0.0.1 - - [16/Dec/2021 00:26:28] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:26:28,755 - INFO - 127.0.0.1 - - [16/Dec/2021 00:26:28] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:29:04,437 - INFO - 127.0.0.1 - - [16/Dec/2021 00:29:04] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:29:04,837 - INFO - 127.0.0.1 - - [16/Dec/2021 00:29:04] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:29:08,445 - INFO - 127.0.0.1 - - [16/Dec/2021 00:29:08] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:29:27,192 - INFO - 127.0.0.1 - - [16/Dec/2021 00:29:27] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:29:27,681 - INFO - 127.0.0.1 - - [16/Dec/2021 00:29:27] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:30:05,503 - INFO - 127.0.0.1 - - [16/Dec/2021 00:30:05] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:30:05,728 - INFO - 127.0.0.1 - - [16/Dec/2021 00:30:05] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:30:35,380 - INFO - 127.0.0.1 - - [16/Dec/2021 00:30:35] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:30:35,511 - INFO - 127.0.0.1 - - [16/Dec/2021 00:30:35] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:30:55,537 - INFO - 127.0.0.1 - - [16/Dec/2021 00:30:55] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:30:55,933 - INFO - 127.0.0.1 - - [16/Dec/2021 00:30:55] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:31:48,492 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:48] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:31:48,579 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:48] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:31:48,927 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:48] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:31:48,966 - ERROR - Exception on /api/editStatus/ [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 794, in editStatusNoti
+    if res['status'] =='notResponse':
+KeyError: 'status'
+2021-12-16 00:31:49,772 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:49] "[35m[1mPOST /api/editStatus/ HTTP/1.1[0m" 500 -
+2021-12-16 00:31:50,088 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:50] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:31:51,282 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:51] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:31:53,509 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:53] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:31:53,517 - ERROR - Exception on /api/editStatus/ [POST]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 794, in editStatusNoti
+    if res['status'] =='notResponse':
+KeyError: 'status'
+2021-12-16 00:31:53,518 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:53] "[35m[1mPOST /api/editStatus/ HTTP/1.1[0m" 500 -
+2021-12-16 00:31:53,557 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:53] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:31:53,563 - INFO - 127.0.0.1 - - [16/Dec/2021 00:31:53] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:03,697 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:03] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:05,062 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:05] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:14,621 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:14] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:18,436 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:18] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:18,446 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:18] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:19,457 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:19] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:19,527 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:19] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:20,301 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:20] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:20,308 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:20] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:21,766 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:21] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:22,622 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:22] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:22,647 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:22] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:24,342 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:24] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:25,142 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:25] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:25,147 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:25] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:27,983 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:27] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:28,049 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:28] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:28,880 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:28] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:28,888 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:28] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:29,996 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:29] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:30,690 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:30] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:32:30,701 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:30] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:46,771 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:46] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:32:46,782 - INFO - 127.0.0.1 - - [16/Dec/2021 00:32:46] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:33:11,998 - INFO - 127.0.0.1 - - [16/Dec/2021 00:33:11] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:37:46,546 - INFO - start API get info Dashboard
+2021-12-16 00:37:47,138 - ERROR - Exception on /api/featureInfo/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 74, in getFeatureInfo
+    if(currentUser['role'] == 'superadmin'):
+KeyError: 'role'
+2021-12-16 00:37:47,139 - INFO - start API get dashboard list
+2021-12-16 00:37:47,141 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:47] "[35m[1mGET /api/featureInfo/ HTTP/1.1[0m" 500 -
+2021-12-16 00:37:47,141 - ERROR - Exception on /api/dashboardList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 267, in getDashboard
+    print(currentUser['role'])
+KeyError: 'role'
+2021-12-16 00:37:47,142 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:47] "[35m[1mGET /api/dashboardList/ HTTP/1.1[0m" 500 -
+2021-12-16 00:37:47,466 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:47] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:37:47,677 - ERROR - Exception on /api/chartDCMax/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 172, in getChartDCandAC
+    if(currentUser['role'] == 'superadmin'):
+KeyError: 'role'
+2021-12-16 00:37:47,678 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:47] "[35m[1mGET /api/chartDCMax/ HTTP/1.1[0m" 500 -
+2021-12-16 00:37:52,195 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:52] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:37:52,312 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:52] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:37:53,001 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:53] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:37:53,046 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:53] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2021-12-16 00:37:55,904 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:55] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:37:55,935 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:55] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:37:57,446 - INFO - start API get info Dashboard
+2021-12-16 00:37:57,924 - ERROR - Exception on /api/featureInfo/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 74, in getFeatureInfo
+    if(currentUser['role'] == 'superadmin'):
+KeyError: 'role'
+2021-12-16 00:37:57,926 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:57] "[35m[1mGET /api/featureInfo/ HTTP/1.1[0m" 500 -
+2021-12-16 00:37:58,110 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:58] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:37:58,323 - INFO - start API get dashboard list
+2021-12-16 00:37:58,324 - ERROR - Exception on /api/dashboardList/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 267, in getDashboard
+    print(currentUser['role'])
+KeyError: 'role'
+2021-12-16 00:37:58,326 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:58] "[35m[1mGET /api/dashboardList/ HTTP/1.1[0m" 500 -
+2021-12-16 00:37:58,380 - ERROR - Exception on /api/chartDCMax/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\hiept\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File ".\endpoint.py", line 172, in getChartDCandAC
+    if(currentUser['role'] == 'superadmin'):
+KeyError: 'role'
+2021-12-16 00:37:58,382 - INFO - 127.0.0.1 - - [16/Dec/2021 00:37:58] "[35m[1mGET /api/chartDCMax/ HTTP/1.1[0m" 500 -
+2021-12-16 00:38:19,130 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:19] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2021-12-16 00:38:19,175 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:19] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2021-12-16 00:38:19,228 - INFO - start API get info Dashboard
+2021-12-16 00:38:19,551 - INFO - start API get dashboard list
+2021-12-16 00:38:19,619 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:19] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:19,721 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:19] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:21,079 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:21] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:21,129 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:21] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:28,118 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:28] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:30,538 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:30] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:30,691 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:30] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:32,557 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:32] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:32,687 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:32] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:34,541 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:34] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:34,636 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:34] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:35,864 - INFO - start API get info Dashboard
+2021-12-16 00:38:36,004 - INFO - start API get dashboard list
+2021-12-16 00:38:36,015 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:36] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:36,453 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:36] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:36,754 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:36] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:36,885 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:36] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:37,294 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:37] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:37,604 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:37] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-16 00:38:38,666 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:38] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:38,667 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:38] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:40,586 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:40] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:40,686 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:40] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:42,942 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:42] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:43,034 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:43] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:44,616 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:44] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:44,735 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:44] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:46,605 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:46] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:46,621 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:46] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:48,561 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:48] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:48,628 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:48] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:50,571 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:50] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:50,592 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:50] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:52,524 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:52] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:52,634 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:52] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:54,498 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:54] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:54,661 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:54] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:56,506 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:56] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:56,663 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:56] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:58,487 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:58] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:38:58,840 - INFO - 127.0.0.1 - - [16/Dec/2021 00:38:58] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:00,479 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:00] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:00,739 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:00] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:02,479 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:02] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:02,697 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:02] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:04,467 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:04] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:04,845 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:04] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:06,551 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:06] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:06,744 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:06] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:08,559 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:08] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:08,729 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:08] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:10,536 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:10] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:10,700 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:10] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:12,537 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:12] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:12,656 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:12] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:14,569 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:14] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:14,641 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:14] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:16,517 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:16] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:16,694 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:16] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:18,645 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:18] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:18,707 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:18] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:20,609 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:20] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:20,643 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:20] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:22,648 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:22] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:22,717 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:22] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:24,590 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:24] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:24,694 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:24] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:26,618 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:26] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:26,691 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:26] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:28,511 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:28] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:28,689 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:28] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:30,559 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:30] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:30,572 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:30] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:32,558 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:32] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:32,561 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:32] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:34,537 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:34] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:34,557 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:34] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:36,558 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:36] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:36,603 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:36] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:38,573 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:38] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:38,603 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:38] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:40,577 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:40] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:40,590 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:40] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:42,541 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:42] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:42,564 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:42] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:44,515 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:44] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:44,546 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:44] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:46,535 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:46] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:46,573 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:46] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:48,528 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:48] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:48,562 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:48] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:50,489 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:50] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:50,602 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:50] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:52,485 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:52] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:52,626 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:52] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:54,495 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:54] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:54,798 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:54] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:56,468 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:56] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:56,769 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:56] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:58,611 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:58] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:39:58,714 - INFO - 127.0.0.1 - - [16/Dec/2021 00:39:58] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:00,538 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:00] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:00,695 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:00] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:02,588 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:02] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:02,778 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:02] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:04,558 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:04] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:04,857 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:04] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:05,486 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:05] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:40:05,554 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:05] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:06,525 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:06] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:06,718 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:06] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:08,590 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:08] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:08,741 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:08] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:10,683 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:10] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:10,738 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:10] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:12,703 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:12] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:12,723 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:12] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:12,812 - INFO - start API get info Dashboard
+2021-12-16 00:40:12,973 - INFO - start API get dashboard list
+2021-12-16 00:40:12,975 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:12] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:13,359 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:13] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:13,858 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:13] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:14,145 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:14] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:14,351 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:14] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:14,864 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:14] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:16,457 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:16] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:16,619 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:16] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:18,505 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:18] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:18,668 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:18] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:20,475 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:20] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:20,568 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:20] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:22,459 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:22] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:22,582 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:22] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:24,484 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:24] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:24,717 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:24] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:26,461 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:26] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:26,590 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:26] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:28,432 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:28] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:28,572 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:28] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:30,419 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:30] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:30,539 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:30] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:32,419 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:32] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:32,502 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:32] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:34,412 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:34] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:34,492 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:34] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:36,454 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:36] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:36,542 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:36] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:38,429 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:38] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:38,547 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:38] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:40,433 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:40] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:40,515 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:40] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:42,422 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:42] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:42,649 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:42] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:44,414 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:44] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:44,721 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:44] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:46,433 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:46] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:46,673 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:46] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:48,433 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:48] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:48,748 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:48] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:50,469 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:50] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:50,627 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:50] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:51,476 - INFO - start API get location all devices
+2021-12-16 00:40:51,999 - INFO - start API get dashboard list
+2021-12-16 00:40:52,037 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:52] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:52,413 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:52] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:52,957 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:52] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-16 00:40:53,489 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:53] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:53,834 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:53] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:55,229 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:55] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:55,528 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:55] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:56,715 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:56] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:56,716 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:56] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:57,628 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:57] "[32mGET /api/rectifierTransformerList HTTP/1.1[0m" 308 -
+2021-12-16 00:40:57,808 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:57] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:57,825 - INFO - start API get Rectifier Transformers list
+2021-12-16 00:40:58,466 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:58] "[37mGET /api/rectifierTransformerList/ HTTP/1.1[0m" 200 -
+2021-12-16 00:40:58,590 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:58] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:58,690 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:58] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:40:59,637 - INFO - start API get Test Posts list
+2021-12-16 00:40:59,763 - INFO - 127.0.0.1 - - [16/Dec/2021 00:40:59] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:00,377 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:00] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2021-12-16 00:41:00,643 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:00] "[37mGET /api/rectifierTransformer/table/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:41:00,656 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:00] "[37mGET /api/getChartDC/16724 HTTP/1.1[0m" 200 -
+2021-12-16 00:41:01,543 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:01] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:45,311 - INFO - start API get info Dashboard
+2021-12-16 00:41:45,613 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:45] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:45,616 - INFO - start API get dashboard list
+2021-12-16 00:41:45,976 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:45] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:46,588 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:46] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:46,931 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:46] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:47,750 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:47] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2021-12-16 00:41:47,819 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:47] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:57,244 - INFO - start API get users list
+2021-12-16 00:41:57,289 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:57] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2021-12-16 00:41:57,443 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:57] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:58,534 - INFO - start API get location all devices
+2021-12-16 00:41:58,859 - INFO - start API get dashboard list
+2021-12-16 00:41:58,912 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:58] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2021-12-16 00:41:59,807 - INFO - 127.0.0.1 - - [16/Dec/2021 00:41:59] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2021-12-16 00:42:00,150 - INFO - 127.0.0.1 - - [16/Dec/2021 00:42:00] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2021-12-23 17:16:19,080 - INFO - Start API
+2021-12-23 17:16:19,097 - INFO - Flask started
