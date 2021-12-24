@@ -214,43 +214,25 @@ def getChartPortMax():
   for doc in db.TestPostsDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       for i in range(min(8,len(doc['otherInfo']))):
-        # Tim mang maxDC
-        if (int(doc['otherInfo'][i]['dienDCPoint1']) > maxPort[i]):
-            maxPort[i] = int(doc['otherInfo'][i]['openPoint1'])
+        listPort = [float(doc['otherInfo'][i]['openPoint1']), float(doc['otherInfo'][i]['openPoint2']), float(doc['otherInfo'][i]['openPoint3']), float(doc['otherInfo'][i]['openPoint3']), float(doc['otherInfo'][i]['closePoint1']), float(doc['otherInfo'][i]['closePoint2']), float(doc['otherInfo'][i]['closePoint3']), float(doc['otherInfo'][i]['closePoint4'])]
+        # Tim mang port
+        # print(listPort)
+        # print(maxPort[i], maxPortTime[i], maxPortName[i])
+        if (min(listPort) < maxPort[i]):
+            maxPort[i] = round(max(listPort),3)
             maxPortTime[i] = doc['otherInfo'][i]['time']
             maxPortName[i] = doc['maChuoi']
-        if (int(doc['otherInfo'][i]['dienDCPoint2']) > maxPort[i]):
-            maxPort[i] = int(doc['otherInfo'][i]['openPoint2'])
-            maxPortTime[i] = doc['otherInfo'][i]['time']
-            maxPortName[i] = doc['maChuoi']
-        if (int(doc['otherInfo'][i]['dienDCPoint3']) > maxPort[i]):
-            maxPort[i] = int(doc['otherInfo'][i]['openPoint3'])
-            maxPortTime[i] = doc['otherInfo'][i]['time']
-            maxPortName[i] = doc['maChuoi']
-        if (int(doc['otherInfo'][i]['dienDCPoint4']) > maxPort[i]):
-            maxPort[i] = int(doc['otherInfo'][i]['openPoint4'])
-            maxPortTime[i] = doc['otherInfo'][i]['time']
-            maxPortName[i] = doc['maChuoi']
+            # print("con")
+            # print(maxPort[i], maxPortTime[i], maxPortName[i])
     else:
       if(doc['organization'] == currentUser['organization']): #dieu kien cho rieng to chuc
         for i in range(min(8,len(doc['otherInfo']))):
-          # Tim mang maxDC
-          if (int(doc['otherInfo'][i]['dienDCPoint1']) > maxPort[i]):
-              maxPort[i] = int(doc['otherInfo'][i]['openPoint1'])
-              maxPortTime[i] = doc['otherInfo'][i]['time']
-              maxPortName[i] = doc['maChuoi']
-          if (int(doc['otherInfo'][i]['dienDCPoint2']) > maxPort[i]):
-              maxPort[i] = int(doc['otherInfo'][i]['openPoint2'])
-              maxPortTime[i] = doc['otherInfo'][i]['time']
-              maxPortName[i] = doc['maChuoi']
-          if (int(doc['otherInfo'][i]['dienDCPoint3']) > maxPort[i]):
-              maxPort[i] = int(doc['otherInfo'][i]['openPoint3'])
-              maxPortTime[i] = doc['otherInfo'][i]['time']
-              maxPortName[i] = doc['maChuoi']
-          if (int(doc['otherInfo'][i]['dienDCPoint4']) > maxPort[i]):
-              maxPort[i] = int(doc['otherInfo'][i]['openPoint4'])
-              maxPortTime[i] = doc['otherInfo'][i]['time']
-              maxPortName[i] = doc['maChuoi']
+          listPort = [float(doc['otherInfo'][i]['openPoint1']), float(doc['otherInfo'][i]['openPoint2']), float(doc['otherInfo'][i]['openPoint3']), float(doc['otherInfo'][i]['openPoint3']), float(doc['otherInfo'][i]['closePoint1']), float(doc['otherInfo'][i]['closePoint2']), float(doc['otherInfo'][i]['closePoint3']), float(doc['otherInfo'][i]['closePoint4'])]
+          # Tim mang port
+          if (min(listPort) > maxPort[i]):
+            maxPort[i] = round(max(listPort),3)
+            maxPortTime[i] = doc['otherInfo'][i]['time']
+            maxPortName[i] = doc['maChuoi']
   info = {
     'maxPort': maxPort,
     'maxPortName': maxPortName,
@@ -549,6 +531,15 @@ def getRectifierTransformerDetailTable(id):
       i += 1
     return jsonify(result)
 
+@app.route('/api/rectifierTransformer/update/<id>', methods=['POST'])
+def updateRT(id):
+  res = request.get_json()
+  db.RectifierTransformersDetails.update_one({'devSerial': id}, {"$set": {
+    'maChuoi': res['maChuoi'],
+    'date': res['date'],
+    'dateUpdate': res['dateUpdate'],
+  }})
+  return 'hoan thanh', 200
 
 @app.route('/api/rectifierTransformer/delete/<id>', methods=['GET'])
 def delete(id):
@@ -675,6 +666,16 @@ def getTestPostDetailTable(id):
       data['id'] = i
       i += 1
     return jsonify(result)
+  
+@app.route('/api/testPost/update/<id>', methods=['POST'])
+def updateTP(id):
+  res = request.get_json()
+  db.TestPostsDetails.update_one({'devSerial': id}, {"$set": {
+    'maChuoi': res['maChuoi'],
+    'date': res['date'],
+    'dateUpdate': res['dateUpdate'],
+  }})
+  return 'hoan thanh', 200
 
 @app.route('/api/testPost/delete/<id>', methods=['GET'])
 def deleteTestpost(id):

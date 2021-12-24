@@ -1,8 +1,9 @@
-import FeaturedInfo from '../../components/featuredInfo/FeaturedInfo';
-import ChartDCMax from '../../components/charts/chartDCMaxDashboard/ChartDCMax';
-import './home.css';
-import Topbar from '../../components/topbar/Topbar';
-import Sidebar from '../../components/sidebar/Sidebar';
+import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
+import ChartDCMax from "../../components/charts/chartDCMaxDashboard/ChartDCMax";
+import ChartTP from "../../components/charts/chartTPDashboard/ChartTP";
+import "./home.css";
+import Topbar from "../../components/topbar/Topbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 import {
   DataGrid,
   GridToolbarContainer,
@@ -24,9 +25,9 @@ const columns = [
       return (
         <>
           {params.row.status === "notConnected" ? (
-              <button className="notConnected">Không hoạt động</button>
+            <button className="notConnected">Không hoạt động</button>
           ) : (
-              <button className="connected">Hoạt động</button>
+            <button className="connected">Hoạt động</button>
           )}
         </>
       );
@@ -138,7 +139,8 @@ export default function Home() {
         <Sidebar />
         <div style={{ width: "100%" }}>
           <FeaturedInfo />
-          <ChartDCMax />
+          <ChartDCMax  />
+          <ChartTP  />
           <DataGrid
             rows={deviceInfo}
             components={{

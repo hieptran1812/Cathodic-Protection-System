@@ -17,6 +17,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import AddCircleOutlinedIcon from "@material-ui/icons/AddCircleOutlined";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import Alert from "@material-ui/lab/Alert";
@@ -192,16 +193,47 @@ export default function RectifierTransformer() {
   const [loading, setLoading] = useState(true);
   const [infoTop, setInfoTop] = useState([{}]);
   const [infoBottom, setInfoBottom] = useState([]);
-  const [open, setOpen] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
+  const [openUpdate, setOpenUpdate] = useState(false);
+  const [maChuoi, setMaChuoi] = useState("");
+  const [date, setDate] = useState("");
+  const [dateUpdate, setDateUpdate] = useState("");
 
   let history = useHistory();
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const handleClickOpenDelete = () => {
+    setOpenDelete(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseDelete = () => {
+    setOpenDelete(false);
+  };
+
+  const handleClickOpenUpdate = () => {
+    setOpenUpdate(true);
+  };
+
+  const handleCloseUpdate = () => {
+    setOpenUpdate(false);
+  };
+
+  const updateDevice = (e) => {
+    e.preventDefault();
+    const data = {
+      maChuoi,
+      date,
+      dateUpdate,
+    };
+    // console.log(data);
+
+    axios
+      .post(`${API}/api/testPost/update/${productId}`, data)
+      .then((res) => {
+        console.log(res.data);
+        window.location.reload();
+        return 0;
+      })
+      .catch((error) => console.log(error));
   };
   function deleteDevice() {
     axios
@@ -228,6 +260,21 @@ export default function RectifierTransformer() {
         .catch((error) => console.log(error));
     }
     setInterval(fetchAPI, 2000);
+  }, [productId]);
+
+  useEffect(() => {
+    async function fetchAPIInput() {
+      await axios
+        .get(`${API}/api/rectifierTransformer/table/${productId}`)
+        .then((res) => {
+          const data = res.data;
+          setMaChuoi(data[0].tenThietBi);
+          setDate(data[0].date);
+          setDateUpdate(data[0].dateUpdate);
+        })
+        .catch((error) => console.log(error));
+    }
+    fetchAPIInput();
   }, [productId]);
 
   function CustomToolbar() {
@@ -264,6 +311,39 @@ export default function RectifierTransformer() {
         <Sidebar />
         <div style={{ width: "100%", margin: "20px 40px 20px" }}>
           <div className="productTitleContainer">
+            {localStorage.getItem("role") !== "viewer" ? (
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.button}
+                startIcon={<AddCircleOutlinedIcon />}
+                onClick={handleClickOpenUpdate}
+              >
+                Cập nhật thiết bị
+              </Button>
+            ) : null}
+            <Dialog
+              open={openUpdate}
+              onClose={handleCloseUpdate}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {"Bạn chắc chắn muốn cập nhật thông tin của thiết bị?"}
+              </DialogTitle>
+              <DialogActions>
+                <Button onClick={handleCloseUpdate} color="primary">
+                  Không đồng ý
+                </Button>
+                <Button
+                  onClick={updateDevice}
+                  color="primary"
+                  autoFocus
+                >
+                  Đồng ý
+                </Button>
+              </DialogActions>
+            </Dialog>
             <h1 className="productTitle">Thông tin Bộ trung tâm</h1>
             {localStorage.getItem("role") !== "viewer" ? (
               <Button
@@ -271,14 +351,14 @@ export default function RectifierTransformer() {
                 color="secondary"
                 className={classes.button}
                 startIcon={<DeleteIcon />}
-                onClick={handleClickOpen}
+                onClick={handleClickOpenDelete}
               >
                 Xóa thiết bị
               </Button>
             ) : null}
             <Dialog
-              open={open}
-              onClose={handleClose}
+              open={openDelete}
+              onClose={handleCloseDelete}
               aria-labelledby="alert-dialog-title"
               aria-describedby="alert-dialog-description"
             >
@@ -291,7 +371,7 @@ export default function RectifierTransformer() {
                 </DialogContentText>
               </DialogContent>
               <DialogActions>
-                <Button onClick={handleClose} color="primary">
+                <Button onClick={handleCloseDelete} color="primary">
                   Không đồng ý
                 </Button>
                 <Button
@@ -310,21 +390,37 @@ export default function RectifierTransformer() {
           </div>
           <div className="connect">
             <span className="productInfoKey">Tên thiết bị: </span>
-            <span className="productInfoValue">{infoTop[0].tenThietBi}</span>
+            <input
+              id="maChuoi"
+              type="text"
+              className="inp"
+              value={maChuoi}
+              onChange={(e) => setMaChuoi(e.target.value)}
+            />
           </div>
           <div className="connect">
             <span className="productInfoKey">Ngày thêm thiết bị: </span>
-            <span className="productInfoValue">{infoTop[0].dateUpdate}</span>
+            <input
+              id="dateUpdate"
+              type="date"
+              className="inp"
+              value={dateUpdate}
+              onChange={(e) => setDateUpdate(e.target.value)}
+            />
           </div>
           <div className="connect">
             <span className="productInfoKey">Ngày bảo trì: </span>
-            <span className="productInfoValue">{infoTop[0].date}</span>
+            <input
+              id="date"
+              type="date"
+              className="inp"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
           </div>
           <div className="connect">
             <span className="productInfoKey">Kết nối với các bộ đo: </span>
-            <span className="productInfoValue">
-              {infoTop[0].connect}
-            </span>
+            <span className="productInfoValue">{infoTop[0].connect}</span>
           </div>
           <div className="productTop">
             <div className="productTopRight">

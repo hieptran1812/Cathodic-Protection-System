@@ -223,7 +223,10 @@ export default function ChartDCMax() {
   };
 
   return (
-    <div className="chart">
+    <div
+      className="chart"
+      style={{ width: "50%", float: "left", clear: "none" }}
+    >
       <Line data={data} options={options} />
     </div>
   );

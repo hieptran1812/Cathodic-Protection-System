@@ -173,6 +173,8 @@ export default function SignInSide() {
               name="email"
               label="Email"
               type="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              title="Nhập địa chỉ email hợp lệ"
               onChange={(e) => setEmail(e.target.value)}
               id="email"
               autoFocus
