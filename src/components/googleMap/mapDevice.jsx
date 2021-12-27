@@ -214,13 +214,21 @@ export default function Map() {
             >
               <div>{device.devType}</div>
               <div>{device.maChuoi}</div>
-
-              <img
-                width="30"
-                height="30"
-                src="https://cdn-icons-png.flaticon.com/512/900/900618.png"
-                alt={device.devType}
-              />
+              {device.devType === "Bo trung tam" ? (
+                <img
+                  width="30"
+                  height="30"
+                  src="https://cdn-icons-png.flaticon.com/512/900/900618.png"
+                  alt={device.devType}
+                />
+              ) : (
+                <img
+                  width="30"
+                  height="30"
+                  src="https://imgur.com/nF7Bpzz.png"
+                  alt={device.devType}
+                />
+              )}
             </button>
           </Marker>
         ))}

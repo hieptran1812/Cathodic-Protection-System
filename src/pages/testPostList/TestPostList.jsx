@@ -15,6 +15,22 @@ import Button from "@material-ui/core/Button";
 const API = process.env.REACT_APP_API;
 
 const columns = [
+  {
+    field: "status",
+    headerName: "Trạng thái",
+    width: 180,
+    renderCell: (params) => {
+      return (
+        <>
+          {params.row.status === "notConnected" ? (
+            <button className="notConnected">Không hoạt động</button>
+          ) : (
+            <button className="connected">Hoạt động</button>
+          )}
+        </>
+      );
+    },
+  },
   { field: "maChuoi", headerName: "Tên thiết bị", width: 200 },
   {
     field: "phone",

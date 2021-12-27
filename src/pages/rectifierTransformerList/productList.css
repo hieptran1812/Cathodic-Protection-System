@@ -1,45 +1,65 @@
-.productList{
-    width: 100%;
-    height: 80%;
+.productList {
+  width: 100%;
+  height: 80%;
 }
 
-.productListItem{
-    display: flex;
-    align-items: center;
+.productListItem {
+  display: flex;
+  align-items: center;
 }
 
 .productListImg {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-
-.productListEdit{
-    border: none;
-    border-radius: 10px;
-    padding: 5px 10px;
-    background-color: #3bb077;
-    color: white;
-    cursor: pointer;
-    margin-right: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
-.productListDelete{
-    color: red;
-    cursor: pointer;
+.productListEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.productListDelete {
+  color: red;
+  cursor: pointer;
 }
 
 .productAddButton {
-    width: 150px;
-    border: none;
-    padding: 10px;
-    text-decoration: none;
-    background-color: rgb(80, 45, 236);
-    color: white;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 20px;
-  }
+  width: 150px;
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  background-color: rgb(80, 45, 236);
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.notConnected {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #e61616;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.connected {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #30a6ca;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}

@@ -60,6 +60,14 @@ const columns = [
     width: 220,
   },
   {
+    field: "devSerial",
+    headerName: "Mã thiết bị",
+    width: 220,
+    renderCell: (params) => {
+      return <div className="productListItem">{params.row.devSerial}</div>;
+    },
+  },
+  {
     field: "action",
     headerName: "Thông tin",
     width: 200,
@@ -83,14 +91,6 @@ const columns = [
           )}
         </>
       );
-    },
-  },
-  {
-    field: "devSerial",
-    headerName: "Mã thiết bị",
-    width: 220,
-    renderCell: (params) => {
-      return <div className="productListItem">{params.row.devSerial}</div>;
     },
   },
 ];

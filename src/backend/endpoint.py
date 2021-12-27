@@ -480,8 +480,14 @@ def get():
   devices = []
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
+      status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+      if (status >= 300):
+        status = "notConnected"
+      else:
+        status = "connected"
       devices.append({
       'id': str(ObjectId(doc['_id'])),
+      'status': status,
       'devSerial': doc['devSerial'],
       'maChuoi': doc['maChuoi'],
       'centralAddress': doc['otherInfo'][0]['centralAddress'],
@@ -493,9 +499,15 @@ def get():
     })
     else:
       if(doc['organization'] == currentUser['organization']):
+        status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+        if (status >= 300):
+          status = "notConnected"
+        else:
+          status = "connected"
         devices.append({
           'id': str(ObjectId(doc['_id'])),
           'devSerial': doc['devSerial'],
+          'status': status,
           'maChuoi': doc['maChuoi'],
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
           'phone': doc['otherInfo'][0]['phone'],
@@ -517,6 +529,12 @@ def getRectifierTransformerDetailTable(id):
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
     result[0]['date'] = deviceInfo['date']
     result[0]['ACInputPower'] = deviceInfo['ACInputPower']
+    result[0]['area'] = deviceInfo['area'],
+    result[0]['lat'] = deviceInfo['lat'],
+    result[0]['lng'] = deviceInfo['lng'],
+    result[0]['organization'] = deviceInfo['organization'],
+    result[0]['devSerial'] = deviceInfo['devSerial'],
+  
     #Bo do lien ket voi Bo trung tam
     connect = ""
     for i in range(len(deviceInfo['connect'])):
@@ -538,6 +556,12 @@ def updateRT(id):
     'maChuoi': res['maChuoi'],
     'date': res['date'],
     'dateUpdate': res['dateUpdate'],
+    'area': res['area'],
+    'lat': res['lat'],
+    'lng': res['lng'],
+    'ACInputPower': res['ACInputPower'],
+    'organization':res['organization'],
+    'devSerial':res['devSerial'],
   }})
   return 'hoan thanh', 200
 
@@ -585,6 +609,7 @@ def addTestPost():
     'lat': res['lat'],
     'lng': res['lng'],
     'connect': res['connect'],
+    'ACInputPower':res['ACInputPower'],
     'otherInfo': [{
       'time': datetime.datetime.now(),
       'locationSystem': '0',
@@ -620,11 +645,16 @@ def addTestPost():
 def getTestPost():
     logging.info("start API get Test Posts list")
     devices = []
-    print(currentUser['role'])
     for doc in db.TestPostsDetails.find({}):
       if(currentUser['role'] == 'superadmin'):
+        status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+        if (status >= 300):
+          status = "notConnected"
+        else:
+          status = "connected"
         devices.append({
           'id': str(ObjectId(doc['_id'])),
+          'status':status,
           'devSerial': doc['devSerial'],
           'maChuoi': doc['maChuoi'],
           'centralAddress': doc['otherInfo'][0]['centralAddress'],
@@ -636,8 +666,14 @@ def getTestPost():
         })
       else:
         if(doc['organization'] == currentUser['organization']):
+          status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
+          if (status >= 300):
+            status = "notConnected"
+          else:
+            status = "connected"
           devices.append({
             'id': str(ObjectId(doc['_id'])),
+            'status':status,
             'devSerial': doc['devSerial'],
             'maChuoi': doc['maChuoi'],
             'centralAddress': doc['otherInfo'][0]['centralAddress'],
@@ -660,7 +696,13 @@ def getTestPostDetailTable(id):
     result[0]['tenThietBi'] = deviceInfo['maChuoi']
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
     result[0]['date'] = deviceInfo['date']
-    result[0]['connect'] = deviceInfo['connect']
+    result[0]['ACInputPower'] = deviceInfo['ACInputPower']
+    result[0]['area'] = deviceInfo['area'],
+    result[0]['lat'] = deviceInfo['lat'],
+    result[0]['lng'] = deviceInfo['lng'],
+    result[0]['organization'] = deviceInfo['organization'],
+    result[0]['devSerial'] = deviceInfo['devSerial'],
+    result[0]['connect']= deviceInfo['connect'],
     i = 0
     for data in result:
       data['id'] = i
@@ -674,6 +716,12 @@ def updateTP(id):
     'maChuoi': res['maChuoi'],
     'date': res['date'],
     'dateUpdate': res['dateUpdate'],
+    'area': res['area'],
+    'lat': res['lat'],
+    'lng': res['lng'],
+    'ACInputPower': res['ACInputPower'],
+    'organization':res['organization'],
+    'devSerial':res['devSerial'],
   }})
   return 'hoan thanh', 200
 

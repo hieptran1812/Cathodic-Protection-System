@@ -121,6 +121,38 @@ function ConditionTemperature(props) {
   }
 }
 
+function ConditionSignal(props) {
+  if (props.value === 0) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value}
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value}
+      </Alert>
+    );
+  }
+}
+
+function ConditionBattery(props) {
+  if (props.value < 3.5) {
+    return (
+      <Alert variant="filled" severity="error">
+        {props.value} (V)
+      </Alert>
+    );
+  } else {
+    return (
+      <Alert variant="filled" severity="info">
+        {props.value} (V)
+      </Alert>
+    );
+  }
+}
+
 function ConditionACInputPhaA(props) {
   if (props.value > 380) {
     return (
@@ -196,6 +228,12 @@ export default function RectifierTransformer() {
   const [openDelete, setOpenDelete] = useState(false);
   const [openUpdate, setOpenUpdate] = useState(false);
   const [maChuoi, setMaChuoi] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [area, setArea] = useState("");
+  const [lat, setLat] = useState("");
+  const [lng, setLng] = useState("");
+  const [devSerial, setDevSerial] = useState("");
+  const [ACInputPower, setACInputPower] = useState("");
   const [date, setDate] = useState("");
   const [dateUpdate, setDateUpdate] = useState("");
 
@@ -220,9 +258,15 @@ export default function RectifierTransformer() {
   const updateDevice = (e) => {
     e.preventDefault();
     const data = {
+      organization,
+      area,
       maChuoi,
       date,
       dateUpdate,
+      lat,
+      lng,
+      devSerial,
+      ACInputPower,
     };
     // console.log(data);
 
@@ -271,6 +315,12 @@ export default function RectifierTransformer() {
           setMaChuoi(data[0].tenThietBi);
           setDate(data[0].date);
           setDateUpdate(data[0].dateUpdate);
+          setOrganization(data[0].organization);
+          setArea(data[0].area);
+          setLat(data[0].lat);
+          setLng(data[0].lng);
+          setDevSerial(data[0].devSerial);
+          setACInputPower(data[0].ACInputPower);
         })
         .catch((error) => console.log(error));
     }
@@ -335,11 +385,7 @@ export default function RectifierTransformer() {
                 <Button onClick={handleCloseUpdate} color="primary">
                   Không đồng ý
                 </Button>
-                <Button
-                  onClick={updateDevice}
-                  color="primary"
-                  autoFocus
-                >
+                <Button onClick={updateDevice} color="primary" autoFocus>
                   Đồng ý
                 </Button>
               </DialogActions>
@@ -388,40 +434,248 @@ export default function RectifierTransformer() {
             <span className="productInfoKey">Dữ liệu được cập nhật vào: </span>
             <span className="productInfoValue">{infoTop[0].time}</span>
           </div>
-          <div className="connect">
-            <span className="productInfoKey">Tên thiết bị: </span>
-            <input
-              id="maChuoi"
-              type="text"
-              className="inp"
-              value={maChuoi}
-              onChange={(e) => setMaChuoi(e.target.value)}
-            />
-          </div>
-          <div className="connect">
-            <span className="productInfoKey">Ngày thêm thiết bị: </span>
-            <input
-              id="dateUpdate"
-              type="date"
-              className="inp"
-              value={dateUpdate}
-              onChange={(e) => setDateUpdate(e.target.value)}
-            />
-          </div>
-          <div className="connect">
-            <span className="productInfoKey">Ngày bảo trì: </span>
-            <input
-              id="date"
-              type="date"
-              className="inp"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </div>
-          <div className="connect">
-            <span className="productInfoKey">Kết nối với các bộ đo: </span>
-            <span className="productInfoValue">{infoTop[0].connect}</span>
-          </div>
+          {localStorage.getItem("role") === "superadmin" ? (
+            <div>
+              <div className="connect">
+                <span className="productInfoKey">Tổ chức: </span>
+                <input
+                  id="organization"
+                  type="text"
+                  className="inp"
+                  value={organization}
+                  onChange={(e) => setOrganization(e.target.value)}
+                />
+                <div className="connectRight">
+                  <span className="productInfoKey">Ngày thêm thiết bị: </span>
+                  <input
+                    id="dateUpdate"
+                    type="date"
+                    className="inp"
+                    value={dateUpdate}
+                    onChange={(e) => setDateUpdate(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="connect">
+                <span className="productInfoKey">Khu vực/ Phân xưởng: </span>
+                <input
+                  id="area"
+                  type="text"
+                  className="inp"
+                  value={area}
+                  onChange={(e) => setArea(e.target.value)}
+                />
+                <div className="connectRight">
+                  <span className="productInfoKey">Ngày bảo trì: </span>
+                  <input
+                    id="date"
+                    type="date"
+                    className="inp"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="connect">
+                <span className="productInfoKey">Tên thiết bị: </span>
+                <input
+                  id="maChuoi"
+                  type="text"
+                  className="inp"
+                  value={maChuoi}
+                  onChange={(e) => setMaChuoi(e.target.value)}
+                />
+                <div className="connectRight">
+                  <span className="productInfoKey">Vĩ độ: </span>
+                  <input
+                    id="lat"
+                    type="text"
+                    className="inp"
+                    value={lat}
+                    onChange={(e) => setLat(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="connect">
+                <span className="productInfoKey">Mã thiết bị: </span>
+                <input
+                  id="devSerial"
+                  type="text"
+                  className="inp"
+                  value={productId}
+                  onChange={(e) => setDevSerial(e.target.value)}
+                />
+                <div className="connectRight">
+                  <span className="productInfoKey">Kinh độ: </span>
+                  <input
+                    id="lng"
+                    type="text"
+                    className="inp"
+                    value={lng}
+                    onChange={(e) => setLng(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="connect">
+                <span className="productInfoKey">AC Input Power (Watt): </span>
+                <input
+                  id="ACInputPower"
+                  type="text"
+                  className="inp"
+                  value={ACInputPower}
+                  onChange={(e) => setACInputPower(e.target.value)}
+                />
+                <div className="connectRight">
+                  <span className="productInfoKey">
+                    Kết nối với các bộ đo:{" "}
+                  </span>
+                  <span className="productInfoValue">{infoTop[0].connect}</span>
+                </div>
+              </div>
+            </div>
+          ) : null}
+
+          {localStorage.getItem("role") === "admin" ? (
+            <div>
+              <div className="connect">
+                <span className="productInfoKey">Tổ chức: </span>
+                <span className="productInfoValue">{organization}</span>
+                <div className="connectRight">
+                  <span className="productInfoKey">Ngày thêm thiết bị: </span>
+                  <input
+                    id="dateUpdate"
+                    type="date"
+                    className="inp"
+                    value={dateUpdate}
+                    onChange={(e) => setDateUpdate(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="connect">
+                <span className="productInfoKey">Khu vực/ Phân xưởng: </span>
+                <input
+                  id="area"
+                  type="text"
+                  className="inp"
+                  value={area}
+                  onChange={(e) => setArea(e.target.value)}
+                />
+                <div className="connectRight">
+                  <span className="productInfoKey">Ngày bảo trì: </span>
+                  <input
+                    id="date"
+                    type="date"
+                    className="inp"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="connect">
+                <span className="productInfoKey">Tên thiết bị: </span>
+                <input
+                  id="maChuoi"
+                  type="text"
+                  className="inp"
+                  value={maChuoi}
+                  onChange={(e) => setMaChuoi(e.target.value)}
+                />
+                <div className="connectRight">
+                  <span className="productInfoKey">Vĩ độ: </span>
+                  <input
+                    id="lat"
+                    type="text"
+                    className="inp"
+                    value={lat}
+                    onChange={(e) => setLat(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="connect">
+                <span className="productInfoKey">Mã thiết bị: </span>
+                <span className="productInfoValue">{devSerial}</span>
+                <div className="connectRight">
+                  <span className="productInfoKey">Kinh độ: </span>
+                  <input
+                    id="lng"
+                    type="text"
+                    className="inp"
+                    value={lng}
+                    onChange={(e) => setLng(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="connect">
+                <span className="productInfoKey">AC Input Power (Watt): </span>
+                <input
+                  id="ACInputPower"
+                  type="text"
+                  className="inp"
+                  value={ACInputPower}
+                  onChange={(e) => setACInputPower(e.target.value)}
+                />
+                <div className="connectRight">
+                  <span className="productInfoKey">
+                    Kết nối với các bộ đo:{" "}
+                  </span>
+                  <span className="productInfoValue">{infoTop[0].connect}</span>
+                </div>
+              </div>
+            </div>
+          ) : null}
+
+          {localStorage.getItem("role") === "viewer" ? (
+            <div>
+              <div className="connect">
+                <span className="productInfoKey">Tổ chức: </span>
+                <span className="productInfoValue">{organization}</span>
+                <div className="connectRight">
+                  <span className="productInfoKey">Ngày thêm thiết bị: </span>
+                  <span className="productInfoValue">{dateUpdate}</span>
+                </div>
+              </div>
+              <div className="connect">
+                <span className="productInfoKey">Khu vực/ Phân xưởng: </span>
+                <span className="productInfoValue">{area}</span>
+                <div className="connectRight">
+                  <span className="productInfoKey">Ngày bảo trì: </span>
+                  <span className="productInfoValue">{date}</span>
+                </div>
+              </div>
+
+              <div className="connect">
+                <span className="productInfoKey">Tên thiết bị: </span>
+                <span className="productInfoValue">{maChuoi}</span>
+                <div className="connectRight">
+                  <span className="productInfoKey">Vĩ độ: </span>
+                  <span className="productInfoValue">{lat}</span>
+                </div>
+              </div>
+              <div className="connect">
+                <span className="productInfoKey">Mã thiết bị: </span>
+                <span className="productInfoValue">{devSerial}</span>
+                <div className="connectRight">
+                  <span className="productInfoKey">Kinh độ: </span>
+                  <span className="productInfoValue">{lng}</span>
+                </div>
+              </div>
+              <div className="connect">
+                <span className="productInfoKey">AC Input Power (Watt): </span>
+                <span className="productInfoValue">{ACInputPower}</span>
+                <div className="connectRight">
+                  <span className="productInfoKey">
+                    Kết nối với các bộ đo:{" "}
+                  </span>
+                  <span className="productInfoValue">{infoTop[0].connect}</span>
+                </div>
+              </div>
+            </div>
+          ) : null}
+
           <div className="productTop">
             <div className="productTopRight">
               <div className="productInfoBottom">
@@ -430,10 +684,6 @@ export default function RectifierTransformer() {
                   <span className="productInfoValue">
                     {infoTop[0].locationSystem}
                   </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">Device code</span>
-                  <span className="productInfoValue">{productId}</span>
                 </div>
                 <div className="productInfoItem">
                   <span className="productInfoKey">Central Address</span>
@@ -448,13 +698,13 @@ export default function RectifierTransformer() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">Signal quality</span>
                   <span className="productInfoValue">
-                    {infoTop[0].signalQuality}
+                    <ConditionSignal value={infoTop[0].signalQuality} />
                   </span>
                 </div>
                 <div className="productInfoItem">
                   <span className="productInfoKey">Battery voltage</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienApPin} (V)
+                    <ConditionBattery value={infoTop[0].dienApPin} />
                   </span>
                 </div>
                 <div className="productInfoItem">
@@ -482,19 +732,13 @@ export default function RectifierTransformer() {
                 <div className="productInfoItem">
                   <span className="productInfoKey">AC voltage phase B</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienAC3PhaB} (V)
+                    <ConditionACInputPhaA value={infoTop[0].dienAC3PhaB} />
                   </span>
                 </div>
                 <div className="productInfoItem">
                   <span className="productInfoKey">AC voltage phase C</span>
                   <span className="productInfoValue">
-                    {infoTop[0].dienAC3PhaC} (V)
-                  </span>
-                </div>
-                <div className="productInfoItem">
-                  <span className="productInfoKey">AC Input Power</span>
-                  <span className="productInfoValue">
-                    {infoTop[0].ACInputPower} (Watt)
+                    <ConditionACInputPhaA value={infoTop[0].dienAC3PhaC} />
                   </span>
                 </div>
                 <div className="productInfoItem">
