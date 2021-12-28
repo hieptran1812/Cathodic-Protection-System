@@ -72,7 +72,8 @@ export default function SignInSide() {
       address,
       note,
     };
-    axios.post(`${API}/api/signUp`, data)
+    axios
+      .post(`${API}/api/signUp`, data)
       .then((res) => {
         const info = res.data;
         console.log(info);
@@ -212,7 +213,7 @@ export default function SignInSide() {
               Đăng ký
             </Button>
             <div className="question">
-              <p style={{ display: "inline" }}>Đã tài khoản? </p>
+              <p style={{ display: "inline" }}>Đã có tài khoản? </p>
             </div>
             <Button
               fullWidth
