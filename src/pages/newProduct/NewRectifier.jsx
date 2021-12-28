@@ -33,6 +33,7 @@ export default function NewRectifier() {
   const [lng, setLng] = useState("");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [openNot, setOpenNot] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,7 +53,7 @@ export default function NewRectifier() {
       .then((res) => {
         if (res.status === 200) {
           setOpen(true);
-        }
+        } else if (res.status === 203) {setOpenNot(true)}
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       })
       .catch((error) => console.log(error));
@@ -81,6 +82,26 @@ export default function NewRectifier() {
                 }
               >
                 Thêm thiết bị Bộ trung tâm thành công!
+              </Alert>
+            </Collapse>
+            <Collapse in={openNot}>
+              <Alert
+                severity="error"
+                variant="filled"
+                action={
+                  <IconButton
+                    aria-label="close"
+                    color="inherit"
+                    size="small"
+                    onClick={() => {
+                      setOpenNot(false);
+                    }}
+                  >
+                    <CloseIcon fontSize="inherit" />
+                  </IconButton>
+                }
+              >
+                Mã thiết bị đã được sử dụng!
               </Alert>
             </Collapse>
           </div>

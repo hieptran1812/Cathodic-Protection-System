@@ -458,7 +458,7 @@ def addRectifier():
       'devSerial': res['id']
   })
   if deviceInDb:
-      return 'thiet bi da ton tai', 404
+      return 'thiet bi da ton tai', 203
   else:
       insertDeviceDetails = db.RectifierTransformersDetails.insert_one(deviceRectifierTransformer)
       return 'hoan thanh', 200
@@ -635,7 +635,7 @@ def addTestPost():
       'devSerial': res['id']
   })
   if deviceInDb:
-      return 'thiet bi da ton tai', 404
+      return 'thiet bi da ton tai', 203
   else:
     updateConnectRT = db.RectifierTransformersDetails.update_one({'maChuoi': res['connect']}, {'$push': {'connect': res['maChuoi']}}, upsert = False)
     deleteVar = db.RectifierTransformersDetails.update_one({'maChuoi': res['connect']}, {'$pull':{'connect': 'Chưa kết nối Bộ đo nào!'}}, upsert = False)

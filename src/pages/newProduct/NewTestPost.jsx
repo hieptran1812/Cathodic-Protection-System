@@ -33,6 +33,7 @@ export default function NewTestPost() {
   const [lng, setLng] = useState("");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [openNot, setOpenNot] = useState(false);
   const [nameDevice, setNameDevice] = useState([]);
 
   const handleSubmit = (e) => {
@@ -94,6 +95,26 @@ export default function NewTestPost() {
                 }
               >
                 Thêm thiết bị Bộ đo thành công!
+              </Alert>
+            </Collapse>
+            <Collapse in={openNot}>
+              <Alert
+                severity="error"
+                variant="filled"
+                action={
+                  <IconButton
+                    aria-label="close"
+                    color="inherit"
+                    size="small"
+                    onClick={() => {
+                      setOpenNot(false);
+                    }}
+                  >
+                    <CloseIcon fontSize="inherit" />
+                  </IconButton>
+                }
+              >
+                Mã thiết bị đã được sử dụng!
               </Alert>
             </Collapse>
           </div>
