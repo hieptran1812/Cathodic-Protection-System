@@ -552,7 +552,8 @@ def getRectifierTransformerDetailTable(id):
 @app.route('/api/rectifierTransformer/update/<id>', methods=['POST'])
 def updateRT(id):
   res = request.get_json()
-  db.RectifierTransformersDetails.update_one({'devSerial': id}, {"$set": {
+  print('ok')
+  update = db.RectifierTransformersDetails.update_one({'devSerial': id}, {"$set": {
     'maChuoi': res['maChuoi'],
     'date': res['date'],
     'dateUpdate': res['dateUpdate'],
@@ -712,7 +713,7 @@ def getTestPostDetailTable(id):
 @app.route('/api/testPost/update/<id>', methods=['POST'])
 def updateTP(id):
   res = request.get_json()
-  db.TestPostsDetails.update_one({'devSerial': id}, {"$set": {
+  update = db.TestPostsDetails.update_one({'devSerial': id}, {"$set": {
     'maChuoi': res['maChuoi'],
     'date': res['date'],
     'dateUpdate': res['dateUpdate'],
@@ -848,11 +849,11 @@ def editStatusNoti():
   res = request.get_json()
   # print(res['id'])
   if res['status'] =='notResponse':
-    db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
+    update = db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
       'status': "response",
     }})
   else: 
-    db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
+    update = db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
       'status': "notResponse",
     }})
   return 'hoan thanh', 200

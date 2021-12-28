@@ -231,12 +231,11 @@ export default function TestPost() {
       devSerial,
       ACInputPower,
     };
-    // console.log(data);
 
     axios
       .post(`${API}/api/testPost/update/${productId}`, data)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         window.location.reload();
         return 0;
       })
@@ -468,7 +467,7 @@ export default function TestPost() {
                   id="devSerial"
                   type="text"
                   className="inp"
-                  value={productId}
+                  value={devSerial}
                   onChange={(e) => setDevSerial(e.target.value)}
                 />
                 <div className="connectRight">

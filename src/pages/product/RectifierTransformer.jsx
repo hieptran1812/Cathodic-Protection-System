@@ -271,9 +271,8 @@ export default function RectifierTransformer() {
     // console.log(data);
 
     axios
-      .post(`${API}/api/testPost/update/${productId}`, data)
+      .post(`${API}/api/rectifierTransformer/update/${productId}`, data)
       .then((res) => {
-        console.log(res.data);
         window.location.reload();
         return 0;
       })

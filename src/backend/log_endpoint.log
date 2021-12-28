@@ -12465,3 +12465,21 @@ TypeError: 'NoneType' object is not subscriptable
 2021-12-27 18:40:37,425 - INFO - 127.0.0.1 - - [27/Dec/2021 18:40:37] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
 2021-12-27 18:40:39,623 - INFO - 127.0.0.1 - - [27/Dec/2021 18:40:39] "[37mGET /api/testPost/table/103 HTTP/1.1[0m" 200 -
 2021-12-27 18:40:39,635 - INFO - 127.0.0.1 - - [27/Dec/2021 18:40:39] "[37mGET /api/getChartPort/103 HTTP/1.1[0m" 200 -
+2021-12-28 22:49:25,756 - INFO - Start API
+2021-12-28 22:49:25,777 - INFO - Flask started
+2021-12-28 22:49:26,792 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-28 23:01:25,239 - INFO - Start API
+2021-12-28 23:01:25,242 - INFO - Flask started
+2021-12-28 23:01:26,205 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-28 23:09:39,202 - INFO - Start API
+2021-12-28 23:09:39,206 - INFO - Flask started
+2021-12-28 23:09:40,197 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-28 23:11:36,909 - INFO - Start API
+2021-12-28 23:11:36,911 - INFO - Flask started
+2021-12-28 23:11:37,875 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-28 23:26:21,838 - INFO - Start API
+2021-12-28 23:26:21,839 - INFO - Flask started
+2021-12-28 23:26:22,796 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-28 23:54:19,911 - INFO - Start API
+2021-12-28 23:54:19,913 - INFO - Flask started
+2021-12-28 23:54:20,881 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)

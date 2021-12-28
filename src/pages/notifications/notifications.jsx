@@ -16,11 +16,11 @@ export default function NotificationsList() {
   const [info, setInfo] = useState([]);
   async function changeStatus(noti, idNoti) {
     const statusNoti = { status: noti, id: idNoti };
-    window.location.reload();
     await axios
       .post(`${API}/api/editStatus/`, statusNoti)
       .then((res) => {
         if (res.status === 200) {
+          window.location.reload();
         }
       })
       .catch((error) => console.log(error));

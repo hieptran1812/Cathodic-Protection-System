@@ -59,7 +59,7 @@ export default function ChartDC() {
         .get(`${API}/api/getChartDC/${productId}`)
         .then((res) => {
           const data = res.data;
-          console.log(data);
+          // console.log(data);
           setInfoDC(data.dc)
           setTimeOn(data.time);
         })
