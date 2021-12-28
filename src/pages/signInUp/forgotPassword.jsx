@@ -209,10 +209,10 @@ export default function ForgotPassword() {
               className={classes.submit}
               type="submit"
             >
-              Gưi yêu cầu
+              Gửi yêu cầu
             </Button>
             <div className="question">
-              <p style={{ display: "inline" }}>Chưa có tài khoản? </p>
+              <p style={{ display: "inline" }}>Đã có tài khoản? </p>
             </div>
             <Button
               fullWidth
