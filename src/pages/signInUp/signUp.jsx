@@ -212,7 +212,7 @@ export default function SignInSide() {
               Đăng ký
             </Button>
             <div className="question">
-              <p style={{ display: "inline" }}>Chưa có tài khoản? </p>
+              <p style={{ display: "inline" }}>Đã tài khoản? </p>
             </div>
             <Button
               fullWidth
