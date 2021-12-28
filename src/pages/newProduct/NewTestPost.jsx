@@ -55,7 +55,7 @@ export default function NewTestPost() {
         if (res.status === 200) {
           setOpen(true);
         }
-        window.scrollTo({ top: 150, left: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       })
       .catch((error) => console.log(error));
   };
