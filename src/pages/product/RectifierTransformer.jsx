@@ -504,7 +504,7 @@ export default function RectifierTransformer() {
                   id="devSerial"
                   type="text"
                   className="inp"
-                  value={productId}
+                  value={devSerial}
                   onChange={(e) => setDevSerial(e.target.value)}
                 />
                 <div className="connectRight">
