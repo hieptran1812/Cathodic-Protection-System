@@ -10,6 +10,9 @@ from controller import login, currentUser
 import datetime
 import sys
 import json
+import ssl 
+context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER) 
+context.load_cert_chain('\etc\nginx\certs\cpsmart_net.crt', '\etc\nginx\certs\cpsmart_net.key')
 
 from bson import ObjectId
 logging.info("Start API")
@@ -983,5 +986,5 @@ def getDashboardMap():
 
 if __name__ == "__main__":
     print('run App')
-    app.run(port=5000,host='0.0.0.0',ssl_context='adhoc')
+    app.run(port=5000,host='0.0.0.0',ssl_context=context)
     

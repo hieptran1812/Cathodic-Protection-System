@@ -12,6 +12,7 @@ import threading
 from flask_pymongo import pymongo
 from configDB import db
 
+
 def pushDataRectifier(result):
     deviceInDb = db.RectifierTransformersDetails.find_one({
         'devSerial': result['devSerial'] 
