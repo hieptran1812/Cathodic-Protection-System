@@ -11,6 +11,10 @@ logging.basicConfig(filename='log_testSocket.log', format='%(asctime)s - %(level
 import threading
 from flask_pymongo import pymongo
 from configDB import db
+from OpenSSL import SSL
+context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+# context.use_privatekey_file('server.key')
+# context.use_certificate_file('server.crt')  
 
 def pushDataRectifier(result):
     deviceInDb = db.RectifierTransformersDetails.find_one({

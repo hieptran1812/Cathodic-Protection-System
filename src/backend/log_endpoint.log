@@ -12501,3 +12501,10 @@ TypeError: 'NoneType' object is not subscriptable
 2021-12-29 15:06:54,173 - INFO - Flask started
 2021-12-29 15:07:15,360 - INFO - Start API
 2021-12-29 15:07:15,362 - INFO - Flask started
+2021-12-29 15:08:29,124 - INFO - Start API
+2021-12-29 15:08:29,126 - INFO - Flask started
+2021-12-29 15:08:30,392 - INFO -  * Running on https://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-29 15:08:56,252 - INFO - 127.0.0.1 - - [29/Dec/2021 15:08:56] "[37mGET / HTTP/1.1[0m" 200 -
+2021-12-29 15:08:56,530 - INFO - 127.0.0.1 - - [29/Dec/2021 15:08:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-12-29 15:22:50,336 - INFO - Start API
+2021-12-29 15:22:50,372 - INFO - Flask started
