@@ -983,5 +983,5 @@ def getDashboardMap():
 
 if __name__ == "__main__":
     print('run App')
-    app.run(port=5000,host='0.0.0.0')
+    app.run(port=5000,host='0.0.0.0',ssl_context='adhoc')
     
