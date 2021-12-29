@@ -573,7 +573,7 @@ def delete(id):
   })
   for tp in deviceInfo['connect']:
     updateConnectTP = db.TestPostsDetails.update_one({'maChuoi': tp}, {'$set': {'connect': "Chưa kết nối Bộ trung tâm nào!"}}, upsert = False)
-  deleteVar = db.TestPostsDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$pull':{'connect': deviceInfo['maChuoi']}}, upsert = True)
+  deleteVar = db.TestPostsDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$pull':{'connect': deviceInfo['maChuoi']}}, upsert = False)
   db.RectifierTransformersDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
 

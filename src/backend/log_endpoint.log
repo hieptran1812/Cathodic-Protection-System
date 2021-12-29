@@ -12489,3 +12489,6 @@ TypeError: 'NoneType' object is not subscriptable
 2021-12-29 00:10:33,927 - INFO - Start API
 2021-12-29 00:10:33,931 - INFO - Flask started
 2021-12-29 00:10:34,919 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-12-29 00:12:14,008 - INFO - Start API
+2021-12-29 00:12:14,011 - INFO - Flask started
+2021-12-29 00:12:14,977 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
