@@ -273,6 +273,7 @@ export default function RectifierTransformer() {
     axios
       .post(`${API}/api/rectifierTransformer/update/${productId}`, data)
       .then((res) => {
+        history.replace("/rectifierTransformer/" + data.devSerial);
         window.location.reload();
         return 0;
       })

@@ -235,7 +235,7 @@ export default function TestPost() {
     axios
       .post(`${API}/api/testPost/update/${productId}`, data)
       .then((res) => {
-        // console.log(res.data);
+        history.replace("/testPost/" + data.devSerial);
         window.location.reload();
         return 0;
       })
