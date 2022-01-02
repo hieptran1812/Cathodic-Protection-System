@@ -274,14 +274,14 @@ export default function TestPost() {
         .get(`${API}/api/testPost/table/${productId}`)
         .then((res) => {
           const data = res.data;
-          setMaChuoi(data[0].tenThietBi);
+          setMaChuoi(String(data[0].tenThietBi));
           setDate(data[0].date);
           setDateUpdate(data[0].dateUpdate);
-          setOrganization(data[0].organization);
+          setOrganization(String(data[0].organization));
           setArea(data[0].area);
           setLat(data[0].lat);
           setLng(data[0].lng);
-          setDevSerial(data[0].devSerial);
+          setDevSerial(String(data[0].devSerial));
           setACInputPower(data[0].ACInputPower);
           console.log(data);
         })

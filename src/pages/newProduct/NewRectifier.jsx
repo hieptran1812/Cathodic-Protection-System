@@ -1,6 +1,6 @@
 import "./newProduct.css";
 import axios from "axios";
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Alert from "@material-ui/lab/Alert";
 import IconButton from "@material-ui/core/IconButton";
@@ -30,7 +30,7 @@ export default function NewRectifier() {
   const [area, setArea] = useState("");
   const [ACInputPower, setACInputPower] = useState("");
   const [lat, setLat] = useState();
-  const [lng, setLng] = useState("");
+  const [lng, setLng] = useState();
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [openNot, setOpenNot] = useState(false);

@@ -1,5 +1,5 @@
 import logging
-logging.basicConfig(filename='log_endpoint.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='log_server.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 from flask import Flask, jsonify, request, session, redirect
 from flask_pymongo import pymongo
 from flask_cors import CORS, cross_origin
@@ -12,7 +12,7 @@ import sys
 import json
 import ssl 
 context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER) 
-context.load_cert_chain('\etc\nginx\certs\cpsmart_net.crt', '\etc\nginx\certs\cpsmart_net.key')
+context.load_cert_chain(app.send_static_file('../../../../../certs/cpsmart_net.crt'), '../../../../../certs/cpsmart_net.key')
 
 from bson import ObjectId
 logging.info("Start API")
@@ -431,9 +431,9 @@ def addRectifier():
   logging.info("start API add new Rectifier")
   res = request.get_json()
   deviceRectifierTransformer = {
-    'devSerial': res['id'],
-    'maChuoi': res['maChuoi'],
-    'organization': res['organization'],
+    'devSerial': str(res['id']),
+    'maChuoi': str(res['maChuoi']),
+    'organization': str(res['organization']),
     'area': res['area'],
     'dateUpdate': res['dateUpdate'],
     'date': res['date'],
@@ -557,15 +557,15 @@ def updateRT(id):
   res = request.get_json()
   print('ok')
   update = db.RectifierTransformersDetails.update_one({'devSerial': id}, {"$set": {
-    'maChuoi': res['maChuoi'],
+    'maChuoi': str(res['maChuoi']),
     'date': res['date'],
     'dateUpdate': res['dateUpdate'],
     'area': res['area'],
     'lat': res['lat'],
     'lng': res['lng'],
     'ACInputPower': res['ACInputPower'],
-    'organization':res['organization'],
-    'devSerial':res['devSerial'],
+    'organization':str(res['organization']),
+    'devSerial':str(res['devSerial']),
   }})
   return 'hoan thanh', 200
 
@@ -604,9 +604,9 @@ def addTestPost():
   logging.info("start API add new TestPost")
   res = request.get_json()
   deviceTestPost = {
-    'devSerial': res['id'],
-    'maChuoi': res['maChuoi'],
-    'organization': res['organization'],
+    'devSerial': str(res['id']),
+    'maChuoi': str(res['maChuoi']),
+    'organization': str(res['organization']),
     'area': res['area'],
     'dateUpdate': res['dateUpdate'],
     'date': res['date'],
@@ -717,15 +717,15 @@ def getTestPostDetailTable(id):
 def updateTP(id):
   res = request.get_json()
   update = db.TestPostsDetails.update_one({'devSerial': id}, {"$set": {
-    'maChuoi': res['maChuoi'],
+    'maChuoi': str(res['maChuoi']),
     'date': res['date'],
     'dateUpdate': res['dateUpdate'],
     'area': res['area'],
     'lat': res['lat'],
     'lng': res['lng'],
     'ACInputPower': res['ACInputPower'],
-    'organization':res['organization'],
-    'devSerial':res['devSerial'],
+    'organization':str(res['organization']),
+    'devSerial':str(res['devSerial']),
   }})
   return 'hoan thanh', 200
 
@@ -985,6 +985,7 @@ def getDashboardMap():
   return jsonify(devices)
 
 if __name__ == "__main__":
-    print('run App')
-    app.run(port=5000,host='0.0.0.0',ssl_context=context)
+    print('run App......')
+    # app.run(port=5000,host='0.0.0.0',ssl_context=context)
+    app.run(port=5000,host='0.0.0.0')
     

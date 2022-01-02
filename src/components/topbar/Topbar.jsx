@@ -12,6 +12,7 @@ export default function Topbar() {
     localStorage.removeItem("idCurrentUser");
     localStorage.removeItem("role");
     history.replace("/");
+    window.location.reload();
   }
 
   function profileUser() {
