@@ -61,9 +61,9 @@ def getFeatureInfo():
   BTTLoiList = []
   # Khoi tao bien BD
   countBD = 0
-  maxPort = -3000
+  maxPort = -9999
   maxPortName = ""
-  minPort = 3000
+  minPort = 9999
   minPortName = ""
   countErrorTestPosts = 0
   BDLoiList = []
@@ -171,6 +171,8 @@ def getChartDCandAC():
   ###########################
   # Tim kiem
   for doc in db.RectifierTransformersDetails.find({}):
+    if(len(doc['otherInfo']) == 1):
+      continue;
     if(currentUser['role'] == 'superadmin'):
       for i in range(min(8,len(doc['otherInfo']))):
         # Tim mang maxDC
@@ -209,20 +211,22 @@ def getChartDCandAC():
 @app.route('/api/chartPortMax/', methods=['GET'])
 def getChartPortMax():
   # Khoi tao bien
-  maxPort = [0,0,0,0,0,0,0,0]
+  maxPort = [9999,9999,9999,9999,9999,9999,9999,9999]
   maxPortName = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
   maxPortTime = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
   ###########################
   # Tim kiem
   for doc in db.TestPostsDetails.find({}):
+    if(len(doc['otherInfo']) == 1):
+      continue;
     if(currentUser['role'] == 'superadmin'):
-      for i in range(min(8,len(doc['otherInfo']))):
+      for i in range(min(8,len(doc['otherInfo'])-1)):
         listPort = [float(doc['otherInfo'][i]['openPoint1']), float(doc['otherInfo'][i]['openPoint2']), float(doc['otherInfo'][i]['openPoint3']), float(doc['otherInfo'][i]['openPoint3']), float(doc['otherInfo'][i]['closePoint1']), float(doc['otherInfo'][i]['closePoint2']), float(doc['otherInfo'][i]['closePoint3']), float(doc['otherInfo'][i]['closePoint4'])]
         # Tim mang port
         # print(listPort)
         # print(maxPort[i], maxPortTime[i], maxPortName[i])
         if (min(listPort) < maxPort[i]):
-            maxPort[i] = round(max(listPort),3)
+            maxPort[i] = round(min(listPort),3)
             maxPortTime[i] = doc['otherInfo'][i]['time']
             maxPortName[i] = doc['maChuoi']
             # print("con")
@@ -233,7 +237,7 @@ def getChartPortMax():
           listPort = [float(doc['otherInfo'][i]['openPoint1']), float(doc['otherInfo'][i]['openPoint2']), float(doc['otherInfo'][i]['openPoint3']), float(doc['otherInfo'][i]['openPoint3']), float(doc['otherInfo'][i]['closePoint1']), float(doc['otherInfo'][i]['closePoint2']), float(doc['otherInfo'][i]['closePoint3']), float(doc['otherInfo'][i]['closePoint4'])]
           # Tim mang port
           if (min(listPort) > maxPort[i]):
-            maxPort[i] = round(max(listPort),3)
+            maxPort[i] = round(min(listPort),3)
             maxPortTime[i] = doc['otherInfo'][i]['time']
             maxPortName[i] = doc['maChuoi']
   info = {
