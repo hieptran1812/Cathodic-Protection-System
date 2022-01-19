@@ -279,11 +279,11 @@ export default function TestPost() {
           setDate(data[0].date);
           setDateUpdate(data[0].dateUpdate);
           setOrganization(String(data[0].organization));
-          setArea(data[0].area);
-          setLat(data[0].lat);
-          setLng(data[0].lng);
+          setArea(String(data[0].area));
+          setLat(Number(data[0].lat));
+          setLng(Number(data[0].lng));
           setDevSerial(String(data[0].devSerial));
-          setACInputPower(data[0].ACInputPower);
+          setACInputPower(Number(data[0].ACInputPower));
           console.log(data);
         })
         .catch((error) => console.log(error));
