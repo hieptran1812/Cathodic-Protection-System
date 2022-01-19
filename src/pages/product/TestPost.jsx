@@ -231,11 +231,11 @@ export default function TestPost() {
       devSerial,
       ACInputPower,
     };
-
+    console.log(data);
     axios
       .post(`${API}/api/testPost/update/${productId}`, data)
       .then((res) => {
-        console.log(data)
+        // console.log(data)
         history.replace("/testPost/" + data.devSerial);
         window.location.reload();
         return 0;
