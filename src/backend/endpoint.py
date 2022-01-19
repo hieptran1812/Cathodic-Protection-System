@@ -555,7 +555,6 @@ def getRectifierTransformerDetailTable(id):
 @app.route('/api/rectifierTransformer/update/<id>', methods=['POST'])
 def updateRT(id):
   res = request.get_json()
-  print('ok')
   update = db.RectifierTransformersDetails.update_one({'devSerial': id}, {"$set": {
     'maChuoi': str(res['maChuoi']),
     'date': res['date'],
