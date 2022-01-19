@@ -234,6 +234,7 @@ def thread_client(connection):
     while True:
         try:
             lengthOfData, data = detectDevice(connection)
+            print("Do dai ban tin ", lengthOfData)
             if lengthOfData == 102:
                 print('Chay Bo trung tam')
                 getDataFromRectifier(data)
