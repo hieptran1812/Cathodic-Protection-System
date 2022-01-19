@@ -10,9 +10,7 @@ from controller import login, currentUser
 import datetime
 import sys
 import json
-import ssl 
-# context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER) 
-# context.load_cert_chain(app.send_static_file('../../../../../certs/cpsmart_net.crt'), '../../../../../certs/cpsmart_net.key')
+import ssl
 
 from bson import ObjectId
 logging.info("Start API")
@@ -21,8 +19,6 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['JSON_AS_ASCII'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
-
-logging.info('Flask started')
 
 @app.route('/')
 @cross_origin()

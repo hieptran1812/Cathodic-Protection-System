@@ -59,7 +59,7 @@ def getDataFromRectifier(rawData):
             logging.info('length data %s' % len(data))
             logging.info('location System %s' % struct.unpack('<H', data))
             subOtherInfo['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
-            print("rectifier")
+            print("======rectifier=======")
             # data = connection.recv(2) # number of bytes
             data = rawData[4:6]
             subOtherInfo['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
@@ -69,7 +69,7 @@ def getDataFromRectifier(rawData):
             # data = connection.recv(4) # number of bytes
             data = rawData[7:11]
             result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
-            # print(str(struct.unpack("2H", data)[0:-1])[1:-2])
+            print("Ma thiet bi", data)
             # data = connection.recv(5) # number of bytes
             data = rawData[11:16]
             # data = connection.recv(4) # number of bytes
@@ -84,21 +84,21 @@ def getDataFromRectifier(rawData):
             # data = connection.recv(4) # number of bytes
             data = rawData[28:32]
             subOtherInfo['dienAC3PhaA'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            print(subOtherInfo['dienAC3PhaA'])
+            # print(subOtherInfo['dienAC3PhaA'])
             data = rawData[32:36]
             subOtherInfo['dienAC3PhaB'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            print(subOtherInfo['dienAC3PhaB'])
+            # print(subOtherInfo['dienAC3PhaB'])
             data = rawData[36:40]
             subOtherInfo['dienAC3PhaC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            print(subOtherInfo['dienAC3PhaC'])
+            # print(subOtherInfo['dienAC3PhaC'])
             # data = connection.recv(4) # number of bytes
             data = rawData[40:44]
             subOtherInfo['dienDCPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            print(subOtherInfo['dienDCPoint1'])
+            # print(subOtherInfo['dienDCPoint1'])
             # data = connection.recv(4) # number of bytes
             data = rawData[44:48]
             subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            print(subOtherInfo['dongDienDC'])
+            # print(subOtherInfo['dongDienDC'])
 
             # Ma thiet bi dang chuoi tu bo trung tam
             data = rawData[47:84]
@@ -167,7 +167,7 @@ def getDataFromTestPost(rawData):
         subOtherInfo = {}
         subOtherInfo['time'] = datetime.datetime.now()
         try:
-            print("testpost")
+            print("==========testpost=========")
             # print(sys.stderr, 'connection from', client_address)
             data = rawData[0:2] # number of bytes
             data = rawData[2:4] # number of bytes
