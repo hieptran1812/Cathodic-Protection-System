@@ -69,7 +69,7 @@ def getDataFromRectifier(rawData):
             # data = connection.recv(4) # number of bytes
             data = rawData[7:11]
             result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
-            print("Ma thiet bi", data)
+            print("Ma thiet bi Bo trung tam", data)
             # data = connection.recv(5) # number of bytes
             data = rawData[11:16]
             # data = connection.recv(4) # number of bytes
@@ -180,6 +180,7 @@ def getDataFromTestPost(rawData):
             result['devType'] = str(struct.unpack('b', data))[1:-2]
             data = rawData[9:13] # number of bytes
             result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
+            print("Ma thiet bi bo do: ", data)
             data = rawData[13:18] # number of bytes
             data = rawData[18:22] # number of bytes
             subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
