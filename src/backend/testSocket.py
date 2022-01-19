@@ -232,11 +232,12 @@ def detectDevice(connection):
 def thread_client(connection):
     while True:
         try:
-            print('exe')
             lengthOfData, data = detectDevice(connection)
             if lengthOfData == 102:
+                print('Chay Bo trung tam')
                 getDataFromRectifier(data)
             elif lengthOfData == 99:
+                print('Chay Bo do')
                 getDataFromTestPost(data)
             elif lengthOfData == 0:
                 print('ngat ket noi tu device')
