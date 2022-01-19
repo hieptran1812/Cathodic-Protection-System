@@ -166,7 +166,7 @@ export default function NewRectifier() {
             <div className="addProductItem">
               <label>AC Input power (W) *</label>
               <input
-                type="text"
+                type="number"
                 placeholder=""
                 required="required"
                 onChange={(e) => setACInputPower(e.target.value)}

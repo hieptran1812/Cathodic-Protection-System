@@ -526,7 +526,7 @@ export default function RectifierTransformer() {
                 <span className="productInfoKey">AC Input Power (Watt): </span>
                 <input
                   id="ACInputPower"
-                  type="text"
+                  type="number"
                   className="inp"
                   value={ACInputPower}
                   onChange={(e) => setACInputPower(e.target.value)}
