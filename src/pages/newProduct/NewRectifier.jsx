@@ -29,8 +29,8 @@ export default function NewRectifier() {
 
   const [area, setArea] = useState("");
   const [ACInputPower, setACInputPower] = useState("");
-  const [lat, setLat] = useState();
-  const [lng, setLng] = useState();
+  const [lat, setLat] = useState("");
+  const [lng, setLng] = useState("");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [openNot, setOpenNot] = useState(false);
