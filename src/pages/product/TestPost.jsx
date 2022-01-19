@@ -455,8 +455,10 @@ export default function TestPost() {
                   <span className="productInfoKey">Vĩ độ: </span>
                   <input
                     id="lat"
-                    type="text"
+                    type="number"
                     className="inp"
+                    min="0"
+                    max="90"
                     value={lat}
                     onChange={(e) => setLat(e.target.value)}
                   />
@@ -475,8 +477,10 @@ export default function TestPost() {
                   <span className="productInfoKey">Kinh độ: </span>
                   <input
                     id="lng"
-                    type="text"
+                    type="number"
                     className="inp"
+                    min="0"
+                    max="180"
                     value={lng}
                     onChange={(e) => setLng(e.target.value)}
                   />
@@ -552,8 +556,10 @@ export default function TestPost() {
                   <span className="productInfoKey">Vĩ độ: </span>
                   <input
                     id="lat"
-                    type="text"
+                    type="number"
                     className="inp"
+                    min="0"
+                    max="90"
                     value={lat}
                     onChange={(e) => setLat(e.target.value)}
                   />
@@ -566,7 +572,9 @@ export default function TestPost() {
                   <span className="productInfoKey">Kinh độ: </span>
                   <input
                     id="lng"
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="180"
                     className="inp"
                     value={lng}
                     onChange={(e) => setLng(e.target.value)}

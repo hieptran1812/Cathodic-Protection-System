@@ -493,6 +493,8 @@ export default function RectifierTransformer() {
                     id="lat"
                     type="text"
                     className="inp"
+                    min="0"
+                    max="90"
                     value={lat}
                     onChange={(e) => setLat(e.target.value)}
                   />
@@ -511,7 +513,9 @@ export default function RectifierTransformer() {
                   <span className="productInfoKey">Kinh độ: </span>
                   <input
                     id="lng"
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="180"
                     className="inp"
                     value={lng}
                     onChange={(e) => setLng(e.target.value)}
@@ -590,6 +594,8 @@ export default function RectifierTransformer() {
                     id="lat"
                     type="text"
                     className="inp"
+                    min="0"
+                    max="90"
                     value={lat}
                     onChange={(e) => setLat(e.target.value)}
                   />
@@ -602,7 +608,9 @@ export default function RectifierTransformer() {
                   <span className="productInfoKey">Kinh độ: </span>
                   <input
                     id="lng"
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="180"
                     className="inp"
                     value={lng}
                     onChange={(e) => setLng(e.target.value)}
