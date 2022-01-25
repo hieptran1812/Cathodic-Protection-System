@@ -1,5 +1,5 @@
 import logging
-logging.basicConfig(filename='log_server.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='server.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 from flask import Flask, jsonify, request, session, redirect
 from flask_pymongo import pymongo
 from flask_cors import CORS, cross_origin
@@ -46,7 +46,6 @@ def getNumOfNoti():
 ################ Dashboard ###############
 @app.route('/api/featureInfo/', methods=['GET'])
 def getFeatureInfo():
-  logging.info("start API get info Dashboard")
   # Khoi tao bien BTT
   countBTT = 0
   maxDC = 0
@@ -246,7 +245,6 @@ def getChartPortMax():
 
 @app.route('/api/dashboardList/', methods=['GET'])
 def getDashboard():
-  logging.info("start API get dashboard list")
   devices = []
   print(currentUser['role'])
   for doc in db.RectifierTransformersDetails.find({}):
@@ -326,7 +324,6 @@ def getDashboard():
 ################ User ##################
 @app.route('/api/addUser', methods=['POST'])
 def createUser():
-  logging.info("start API add new user")
   res = request.get_json()
   userData = {
     'name': res['name'],
@@ -353,7 +350,6 @@ def createUser():
 
 @app.route('/api/users', methods=['GET'])
 def getUsers():
-    logging.info("start API get users list")
     users = []
     if(currentUser['role'] == 'superadmin'):
       for doc in db.User.find({}):
@@ -479,7 +475,6 @@ def getNameRT():
 
 @app.route('/api/rectifierTransformerList/', methods=['GET'])
 def get():
-  logging.info("start API get Rectifier Transformers list")
   devices = []
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
@@ -570,6 +565,7 @@ def updateRT(id):
 
 @app.route('/api/rectifierTransformer/delete/<id>', methods=['GET'])
 def delete(id):
+  logging.info("delete Rectifier")
   deviceInfo = db.RectifierTransformersDetails.find_one({
       'devSerial': id,
   })
@@ -600,7 +596,7 @@ def getChartDC(id):
 
 @app.route('/api/newTestPost', methods=['POST'])
 def addTestPost():
-  logging.info("start API add new TestPost")
+  logging.info("start API add new Testpost")
   res = request.get_json()
   deviceTestPost = {
     'devSerial': str(res['id']),
@@ -646,7 +642,6 @@ def addTestPost():
 
 @app.route('/api/testPostList', methods=['GET'])
 def getTestPost():
-    logging.info("start API get Test Posts list")
     devices = []
     for doc in db.TestPostsDetails.find({}):
       if(currentUser['role'] == 'superadmin'):
@@ -730,6 +725,7 @@ def updateTP(id):
 
 @app.route('/api/testPost/delete/<id>', methods=['GET'])
 def deleteTestpost(id):
+  logging.info("delete Testpost")
   deviceInfo = db.TestPostsDetails.find_one({
       'devSerial': id,
   })
@@ -864,7 +860,6 @@ def editStatusNoti():
 
 @app.route('/api/locationAllDevices', methods=['GET'])
 def getLocation():
-    logging.info("start API get location all devices")
     devices = []
     for doc in db.TestPostsDetails.find({}):
       if(currentUser['role'] == 'superadmin'):
@@ -922,7 +917,6 @@ def getLocation():
 
 @app.route('/api/dashboardMap/', methods=['GET'])
 def getDashboardMap():
-  logging.info("start API get dashboard list")
   devices = []
   print(currentUser['role'])
   for doc in db.RectifierTransformersDetails.find({}):

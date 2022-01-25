@@ -7,7 +7,7 @@ import struct
 import json
 import datetime
 import logging
-logging.basicConfig(filename='log_testSocket.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='testSocket.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 import threading
 from flask_pymongo import pymongo
 from configDB import db
