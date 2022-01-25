@@ -65,12 +65,13 @@ function ConditionMaxAC(props) {
 
 function ConditionMaxPort(props) {
   if (
-    (props.value <= 1.2 && props.value >= 0.85) ||
-    (props.value >= -1.2 && props.value <= -0.85)
+    (props.value <= 1.28 * 1000 && props.value >= 0.85 * 1000) ||
+    (props.value >= -1.2 * 1000 && props.value <= -0.85 * 1000)
   ) {
     return (
       <Alert variant="filled" severity="info">
-        Điện thế ổn định (Giá trị tuyệt đối điện thế lớn hơn 850mV và nhỏ hơn 1200mV)
+        Điện thế ổn định (Giá trị tuyệt đối điện thế lớn hơn 850mV và nhỏ hơn
+        1200mV)
       </Alert>
     );
   } else if (props.value === 0) {
@@ -79,7 +80,7 @@ function ConditionMaxPort(props) {
         Điện thế bằng 0, hãy kiểm tra lại!
       </Alert>
     );
-  } else if (props.value > 1.2 || props.value < -1.2) {
+  } else if (props.value > 1.2 * 1000 || props.value < -1.2 * 1000) {
     return (
       <Alert variant="filled" severity="error">
         Điện thế quá ngưỡng, hãy kiểm tra lại!
@@ -144,14 +145,14 @@ export default function FeaturedInfo() {
         <span className="featuredTitle">Điện thế cao nhất</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">
-            {info.maxPort * 1000} (mV) - ({info.maxPortName})
+            {info.maxPort} (mV) - ({info.maxPortName})
           </span>
           <ConditionMaxPort value={info.maxPin} />
         </div>
         <span className="featuredTitle">Điện thế thấp nhất</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">
-            {info.minPort * 1000} (mV) - ({info.minPortName})
+            {info.minPort} (mV) - ({info.minPortName})
           </span>
           <ConditionMaxPort value={info.minPin} />
         </div>
