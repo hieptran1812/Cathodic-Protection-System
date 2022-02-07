@@ -69,7 +69,7 @@ def getDataFromRectifier(rawData):
             # data = connection.recv(4) # number of bytes
             data = rawData[7:11]
             result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
-            print("Ma thiet bi Bo trung tam", data)
+            logging.info("Ma thiet bi bo trung tam: %s", data)
             # data = connection.recv(5) # number of bytes
             data = rawData[11:16]
             # data = connection.recv(4) # number of bytes
@@ -180,7 +180,7 @@ def getDataFromTestPost(rawData):
             result['devType'] = str(struct.unpack('b', data))[1:-2]
             data = rawData[9:13] # number of bytes
             result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
-            print("Ma thiet bi bo do: ", data)
+            logging.info("Ma thiet bi bo do: %s", data)
             data = rawData[13:18] # number of bytes
             data = rawData[18:22] # number of bytes
             subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
@@ -236,13 +236,10 @@ def thread_client(connection):
             lengthOfData, data = detectDevice(connection)
             logging.info("Do dai ban tin %s", lengthOfData)
             if lengthOfData == 102:
-                print('Chay Bo trung tam')
                 getDataFromRectifier(data)
             elif lengthOfData == 99:
-                print('Chay Bo do')
                 getDataFromTestPost(data)
             elif lengthOfData == 0:
-                print('ngat ket noi tu device')
                 break
         except Exception as e:
             logging.critical(str(e))
