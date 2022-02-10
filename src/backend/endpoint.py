@@ -979,6 +979,6 @@ def getDashboardMap():
 
 if __name__ == "__main__":
     print('run App......')
-    app.run(port=5000,host='0.0.0.0',ssl_context=("../../../../../etc/nginx/certs/cpsmart_net.crt", "../../../../../etc/nginx/certs/cpsmart_net.key"))
+    app.run(port=5000,host='0.0.0.0',ssl_context=("../../../../../etc/nginx/certs/cpsmart_net.crt", "../../../../../etc/nginx/certs/cpsmart_net.key"), threaded=True)
     # app.run(port=5000,host='0.0.0.0')
     
