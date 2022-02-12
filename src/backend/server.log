@@ -1,0 +1,151 @@
+2022-02-12 09:58:33,304 - INFO - Start API
+2022-02-12 09:59:04,912 - INFO - Start API
+2022-02-12 09:59:05,899 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2022-02-12 09:59:58,352 - INFO - Start API
+2022-02-12 09:59:59,729 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2022-02-12 10:15:53,555 - INFO - Start API
+2022-02-12 10:15:54,650 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2022-02-12 10:25:18,602 - INFO - 127.0.0.1 - - [12/Feb/2022 10:25:18] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2022-02-12 10:25:18,975 - INFO - 127.0.0.1 - - [12/Feb/2022 10:25:18] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2022-02-12 10:25:19,034 - INFO - 127.0.0.1 - - [12/Feb/2022 10:25:19] "[32mGET /api/notificationsSidebar HTTP/1.1[0m" 308 -
+2022-02-12 10:25:19,127 - INFO - 127.0.0.1 - - [12/Feb/2022 10:25:19] "[32mGET /api/dashboardList HTTP/1.1[0m" 308 -
+2022-02-12 10:25:19,374 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:25:19] code 400, message Bad request version ('**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ªª\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:25:19,430 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:25:19] code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93\x8a\x8a\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:25:19,440 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:25:19] code 400, message Bad request version ('\x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ZZ\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:25:19,453 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:25:19] code 400, message Bad request version ('ªª\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93\x8a\x8a\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:25:23,291 - INFO - 127.0.0.1 - - [12/Feb/2022 10:25:23] "[37mGET /api/chartPortMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:25:23,394 - INFO - 127.0.0.1 - - [12/Feb/2022 10:25:23] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:25:24,652 - INFO - 127.0.0.1 - - [12/Feb/2022 10:25:24] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2022-02-12 10:26:03,594 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:26:03] code 400, message Bad request version ('ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93JJ\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:26:03,609 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:26:03] code 400, message Bad request version ('ªª\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93zz\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:26:05,011 - INFO - 127.0.0.1 - - [12/Feb/2022 10:26:05] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2022-02-12 10:26:10,909 - INFO - 127.0.0.1 - - [12/Feb/2022 10:26:10] "[32mGET /api/rectifierTransformerList HTTP/1.1[0m" 308 -
+2022-02-12 10:26:11,063 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:26:11] code 400, message Bad request version ('²\x84Ñ\x89ù{¹Hðmî\x9a2Û5l\\')
+2022-02-12 10:26:11,078 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:26:11] code 400, message Bad request version ('\x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93êê\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:26:11,121 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:26:11] code 400, message Bad request version ('**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ÚÚ\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:26:11,133 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:26:11] code 400, message Bad request version ('JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93êê\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:29:23,646 - INFO - Start API
+2022-02-12 10:29:24,616 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2022-02-12 10:30:09,816 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:09] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2022-02-12 10:30:10,076 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:10] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2022-02-12 10:30:10,561 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:10] code 400, message Bad request version ('ºº\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ÚÚ\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:30:10,590 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:10] code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ºº\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:30:10,638 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:10] code 400, message Bad request version ('\x10Ò\x81Zv´\x87Ø\x07\x9f/$1')
+2022-02-12 10:30:10,652 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:10] code 400, message Bad request version ('**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ZZ\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:30:14,217 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:14] "[37mGET /api/chartPortMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:30:14,913 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:14] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:30:15,871 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:15] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2022-02-12 10:30:36,564 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:36] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2022-02-12 10:30:36,707 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:36] code 400, message Bad request version ('\x18£\x05ò(èÙ\x15%Ônþd{>ÓIþ×k®ü\xad·r\\W£=\x92\x98')
+2022-02-12 10:30:36,722 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:36] code 400, message Bad request version ('\x9c{j4Ñ\x00')
+2022-02-12 10:30:37,994 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:37] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2022-02-12 10:30:38,050 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:38] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2022-02-12 10:30:40,792 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:40] code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93**\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:30:40,831 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:40] code 400, message Bad request version ('**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93\x8a\x8a\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:30:40,837 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:40] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2022-02-12 10:30:43,541 - INFO - 127.0.0.1 - - [12/Feb/2022 10:30:43] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2022-02-12 10:30:43,673 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:43] code 400, message Bad request version ('ªª\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93zz\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:30:43,690 - ERROR - 127.0.0.1 - - [12/Feb/2022 10:30:43] code 400, message Bad request version ('ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ºº\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x00')
+2022-02-12 10:31:53,810 - INFO - 127.0.0.1 - - [12/Feb/2022 10:31:53] "[37mGET /api/documentsList HTTP/1.1[0m" 200 -
+2022-02-12 10:31:53,827 - INFO - 127.0.0.1 - - [12/Feb/2022 10:31:53] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:32:02,139 - INFO - Start API
+2022-02-12 10:32:03,167 - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2022-02-12 10:34:50,921 - INFO - 127.0.0.1 - - [12/Feb/2022 10:34:50] "[37mOPTIONS /api/login HTTP/1.1[0m" 200 -
+2022-02-12 10:34:51,263 - INFO - 127.0.0.1 - - [12/Feb/2022 10:34:51] "[37mPOST /api/login HTTP/1.1[0m" 200 -
+2022-02-12 10:34:51,938 - INFO - 127.0.0.1 - - [12/Feb/2022 10:34:51] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:34:56,306 - INFO - 127.0.0.1 - - [12/Feb/2022 10:34:56] "[37mGET /api/chartPortMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:34:56,679 - INFO - 127.0.0.1 - - [12/Feb/2022 10:34:56] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:34:58,733 - INFO - 127.0.0.1 - - [12/Feb/2022 10:34:58] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2022-02-12 10:34:59,318 - INFO - 127.0.0.1 - - [12/Feb/2022 10:34:59] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:02,414 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:02] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:03,020 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:03] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:05,124 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:05] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:05,216 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:05] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:07,192 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:07] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:07,263 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:07] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:09,166 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:09] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:09,399 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:09] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:11,026 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:11] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:11,420 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:11] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:13,187 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:13] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:13,187 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:13] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:15,190 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:15] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:15,193 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:15] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:17,198 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:17] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:17,230 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:17] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:17,361 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:17] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:20,664 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:20] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:21,049 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:21] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:23,198 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:23] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:23,511 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:23] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:23,643 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:23] "[37mGET /api/chartPortMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:23,796 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:23] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:24,969 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:24] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:25,093 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:25] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:26,658 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:26] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:26,705 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:26] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:28,230 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:28] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:28,417 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:28] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:28,710 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:28] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:29,047 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:29] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:29,573 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:29] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:29,754 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:29] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:31,215 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:31] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:31,226 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:31] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:33,158 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:33] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:33,257 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:33] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:35,159 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:35] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:35,175 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:35] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:37,178 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:37] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:37,287 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:37] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:39,140 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:39] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:39,281 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:39] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:41,200 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:41] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:41,211 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:41] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:42,410 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:42] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:42,680 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:42] "[37mGET /api/testPost/table/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:43,537 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:43] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:43,632 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:43] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:44,971 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:44] "[37mGET /api/testPost/table/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:44,977 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:44] "[37mGET /api/getChartPort/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:45,583 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:45] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:45,636 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:45] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:46,927 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:46] "[37mGET /api/getChartPort/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:46,960 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:46] "[37mGET /api/testPost/table/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:47,578 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:47] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:47,743 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:47] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:48,915 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:48] "[37mGET /api/getChartPort/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:48,985 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:48] "[37mGET /api/testPost/table/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:49,389 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:49] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:49,640 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:49] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:49,701 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:49] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:51,088 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:51] "[37mGET /api/getChartPort/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:51,114 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:51] "[37mGET /api/testPost/table/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:51,860 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:51] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:51,871 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:51] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:52,991 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:52] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2022-02-12 10:35:53,083 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:53] "[37mGET /api/testPost/table/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:53,089 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:53] "[37mGET /api/getChartPort/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:53,131 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:53] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:53,681 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:53] "[37mGET /api/testPostList HTTP/1.1[0m" 200 -
+2022-02-12 10:35:53,852 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:53] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:53,870 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:53] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:54,660 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:54] "[37mOPTIONS /api/editStatus/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:54,709 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:54] "[37mPOST /api/editStatus/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:54,924 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:54] "[37mGET /api/testPost/table/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:54,932 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:54] "[37mGET /api/getChartPort/111 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:55,549 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:55] "[37mGET /api/rectifierTransformer/table/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:55,795 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:55] "[37mGET /api/getChartDC/1122 HTTP/1.1[0m" 200 -
+2022-02-12 10:35:56,353 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:56] "[37mGET /api/notificationsList HTTP/1.1[0m" 200 -
+2022-02-12 10:35:56,362 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:56] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:57,353 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:57] "[37mGET /api/users HTTP/1.1[0m" 200 -
+2022-02-12 10:35:57,476 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:57] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:35:59,192 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:59] "[32mGET /api/dashboardMap HTTP/1.1[0m" 308 -
+2022-02-12 10:35:59,619 - INFO - 127.0.0.1 - - [12/Feb/2022 10:35:59] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:36:05,465 - INFO - 127.0.0.1 - - [12/Feb/2022 10:36:05] "[37mGET /api/dashboardMap/ HTTP/1.1[0m" 200 -
+2022-02-12 10:36:05,811 - INFO - 127.0.0.1 - - [12/Feb/2022 10:36:05] "[37mGET /api/locationAllDevices HTTP/1.1[0m" 200 -
+2022-02-12 10:36:10,923 - INFO - 127.0.0.1 - - [12/Feb/2022 10:36:10] "[37mGET /api/notificationsSidebar/ HTTP/1.1[0m" 200 -
+2022-02-12 10:36:15,627 - INFO - 127.0.0.1 - - [12/Feb/2022 10:36:15] "[37mGET /api/chartPortMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:36:15,756 - INFO - 127.0.0.1 - - [12/Feb/2022 10:36:15] "[37mGET /api/chartDCMax/ HTTP/1.1[0m" 200 -
+2022-02-12 10:36:18,470 - INFO - 127.0.0.1 - - [12/Feb/2022 10:36:18] "[37mGET /api/featureInfo/ HTTP/1.1[0m" 200 -
+2022-02-12 10:36:18,805 - INFO - 127.0.0.1 - - [12/Feb/2022 10:36:18] "[37mGET /api/dashboardList/ HTTP/1.1[0m" 200 -

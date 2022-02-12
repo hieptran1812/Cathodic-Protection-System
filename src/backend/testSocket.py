@@ -116,7 +116,7 @@ def getDataFromRectifier(rawData):
             if(float(subOtherInfo['dongDienDC'])):
                 subOtherInfo['resistance'] = round(float(subOtherInfo['dienDCPoint1'])/float(subOtherInfo['dongDienDC']), 3)
             else:
-                subOtherInfo['resistance'] = "Can not calculate!"
+                subOtherInfo['resistance'] = "NA"
             subOtherInfo['efficiency'] = round(float(subOtherInfo['dienDCPoint1'])*float(subOtherInfo['dongDienDC']),3)
             data = rawData[101]
             print(sys.stderr, 'received last byte "%s"' % data)
