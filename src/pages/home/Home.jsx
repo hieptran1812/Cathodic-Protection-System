@@ -149,8 +149,8 @@ export default function Home() {
         <Sidebar />
         <div style={{ width: "100%" }}>
           <FeaturedInfo />
-          <ChartDCMax  />
-          <ChartTP  />
+          <ChartDCMax />
+          <ChartTP />
           <DataGrid
             rows={deviceInfo}
             components={{
