@@ -246,7 +246,7 @@ def getChartPortMax():
 @app.route('/api/dashboardList/', methods=['GET'])
 def getDashboard():
   devices = []
-  print(currentUser['role'])
+  # print(currentUser['role'])
   for doc in db.RectifierTransformersDetails.find({}):
     if(currentUser['role'] == 'superadmin'):
       status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
@@ -435,7 +435,7 @@ def addRectifier():
     'date': res['date'],
     'lat': float(res['lat']),
     'lng': float(res['lng']),
-    'connect': ["Chưa kết nối Bộ đo nào!"],
+    'connect': ["Chua ket noi bo do nao!"],
     'ACInputPower':res['ACInputPower'],
     'otherInfo': [{
       'time': datetime.datetime.now(),
@@ -570,7 +570,7 @@ def delete(id):
       'devSerial': id,
   })
   for tp in deviceInfo['connect']:
-    updateConnectTP = db.TestPostsDetails.update_one({'maChuoi': tp}, {'$set': {'connect': "Chưa kết nối Bộ trung tâm nào!"}}, upsert = False)
+    updateConnectTP = db.TestPostsDetails.update_one({'maChuoi': tp}, {'$set': {'connect': "Chua ket noi Bo trung tam nao!"}}, upsert = False)
   deleteVar = db.TestPostsDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$pull':{'connect': deviceInfo['maChuoi']}}, upsert = False)
   db.RectifierTransformersDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
@@ -636,7 +636,7 @@ def addTestPost():
       return 'thiet bi da ton tai', 203
   else:
     updateConnectRT = db.RectifierTransformersDetails.update_one({'maChuoi': res['connect']}, {'$push': {'connect': res['maChuoi']}}, upsert = False)
-    deleteVar = db.RectifierTransformersDetails.update_one({'maChuoi': res['connect']}, {'$pull':{'connect': 'Chưa kết nối Bộ đo nào!'}}, upsert = False)
+    deleteVar = db.RectifierTransformersDetails.update_one({'maChuoi': res['connect']}, {'$pull':{'connect': 'Chua ket noi Bo do nao!'}}, upsert = False)
     insertDeviceDetails = db.TestPostsDetails.insert_one(deviceTestPost)
     return 'hoan thanh', 200
 
@@ -731,7 +731,7 @@ def deleteTestpost(id):
   })
   deleteVar = db.RectifierTransformersDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$pull':{'connect': deviceInfo['maChuoi']}}, upsert = False)
   if (len(deviceInfo['connect']) == 0):
-     updateConnectRT = db.TestPostsDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$push': {'connect': "Chưa kết nối Bộ đo nào!"}}, upsert = False)   
+     updateConnectRT = db.TestPostsDetails.update_one({'maChuoi': deviceInfo['connect']}, {'$push': {'connect': "Chua ket noi bo do nao!"}}, upsert = False)   
   db.TestPostsDetails.delete_one({'devSerial': id})
   return 'hoan thanh', 200
 
