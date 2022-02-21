@@ -786,7 +786,7 @@ def addDocuments():
   insertDocument = db.Documents.insert_one(document)
   return 'hoan thanh', 200
 
-########## Thông báo ###########
+########## Notifications ###########
 @app.route('/api/notificationsList', methods=['GET'])
 def getNotifications():
     notifications = []
@@ -856,7 +856,7 @@ def editStatusNoti():
     }})
   return 'hoan thanh', 200
 
-########## Ban do ###########
+########## Map ###########
 
 @app.route('/api/locationAllDevices', methods=['GET'])
 def getLocation():
