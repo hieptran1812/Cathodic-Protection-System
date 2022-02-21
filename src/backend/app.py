@@ -760,7 +760,7 @@ def getChartPort(id):
   }
   return jsonify(info)
 
-########## Tài liệu ###########
+########## Documents ###########
 @app.route('/api/documentsList', methods=['GET'])
 def getDocuments():
     documents = []
