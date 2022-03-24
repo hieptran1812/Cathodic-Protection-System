@@ -5,8 +5,11 @@ from flask_pymongo import pymongo
 from flask_cors import CORS, cross_origin
 
 from configDB import db
+
+from loginHandler import login, currentUser
 from testSocket import getDataFromTestPost, getDataFromRectifier
-from controller import login, currentUser
+from notifications import getNumberOfNoti, getNotifications
+
 import datetime
 import sys
 import json
@@ -34,14 +37,35 @@ def index():
 
 ################ Notification ###############
 @app.route('/api/notificationsSidebar/', methods=['GET'])
-def getNumOfNoti():
-  count = 0
-  for doc in db.Notifications.find({}):
-      if doc['status'] == "notResponse":
-            count += 1
-  return jsonify({
-    'count': count
-  })
+def countsNoti():
+  # count = 0
+  # for doc in db.Notifications.find({}):
+  #     if doc['status'] == "notResponse":
+  #           count += 1
+  # return jsonify({
+  #   'count': count
+  # })
+  return getNumberOfNoti()
+
+@app.route('/api/notificationsList', methods=['GET'])
+def getList():
+    # notifications = []
+    # for doc in db.Notifications.find({}):
+    #     notifications.append({
+    #       'id': str(ObjectId(doc['_id'])),
+    #       'title': doc['title'],
+    #       'dateCreated': doc['dateCreated'],
+    #       'organization': doc['organization'],
+    #       'name': doc['name'],
+    #       'username': doc['username'],
+    #       'email': doc['email'],
+    #       'phone': doc['phone'],
+    #       'address': doc['address'],
+    #       'notes': doc['note'],
+    #       'status': doc['status'],
+    #     })
+    # return jsonify(notifications)
+    return getNotifications()
 
 ################ Dashboard ###############
 @app.route('/api/featureInfo/', methods=['GET'])
@@ -786,25 +810,7 @@ def addDocuments():
   insertDocument = db.Documents.insert_one(document)
   return 'hoan thanh', 200
 
-########## Notifications ###########
-@app.route('/api/notificationsList', methods=['GET'])
-def getNotifications():
-    notifications = []
-    for doc in db.Notifications.find({}):
-        notifications.append({
-          'id': str(ObjectId(doc['_id'])),
-          'title': doc['title'],
-          'dateCreated': doc['dateCreated'],
-          'organization': doc['organization'],
-          'name': doc['name'],
-          'username': doc['username'],
-          'email': doc['email'],
-          'phone': doc['phone'],
-          'address': doc['address'],
-          'notes': doc['note'],
-          'status': doc['status'],
-        })
-    return jsonify(notifications)
+
 
 @app.route('/api/signUp', methods=['POST'])
 def signUp():
