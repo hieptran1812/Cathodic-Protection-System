@@ -7,7 +7,7 @@ import struct
 import json
 import datetime
 import logging
-logging.basicConfig(filename='testSocket.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
+logging.basicConfig(filename='pushData.log', format='%(asctime)s - %(levelname)s - %(message)s', level=logging.DEBUG)
 import threading
 from flask_pymongo import pymongo
 from configDB import db
@@ -47,71 +47,35 @@ def getDataFromRectifier(rawData):
         subOtherInfo['time'] = datetime.datetime.now()
         try:
             # print(sys.stderr, 'connection from', client_address)
-            # data = connection.recv(2) # number of bytes
-            data = rawData[0:2]
-            logging.info('Start packet %s' % data)   
-            logging.info('length data %s' % len(data))
-            logging.info('Start packet %s' % struct.unpack('<H', data))
-            print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', data)) #
-            # data = connection.recv(2) # number of bytes
-            data = rawData[2:4]
-            logging.info('Start packet %s' % data)   
-            logging.info('length data %s' % len(data))
-            logging.info('location System %s' % struct.unpack('<H', data))
-            subOtherInfo['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
+            logging.info('Start packet %s' % rawData[0:2])   
+            logging.info('length data %s' % len(rawData[0:2]))
+            logging.info('Start packet %s' % struct.unpack('<H', rawData[0:2]))
+            print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', rawData[0:2])) #
+            logging.info('Start packet %s' % rawData[2:4])   
+            logging.info('length data %s' % len(rawData[2:4]))
+            logging.info('location System %s' % struct.unpack('<H', rawData[2:4]))
+            subOtherInfo['locationSystem'] = str(struct.unpack('<H', rawData[2:4]))[1:-2]
             print("======rectifier=======")
-            # data = connection.recv(2) # number of bytes
-            data = rawData[4:6]
-            subOtherInfo['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
-            # data = connection.recv(1) # number of bytes
-            data = rawData[6:7]
-            result['devType'] = str(struct.unpack('b', data))[1:-2]
-            # data = connection.recv(4) # number of bytes
-            data = rawData[7:11]
-            result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
-            logging.info("Ma thiet bi bo trung tam: %s", data)
-            # data = connection.recv(5) # number of bytes
-            data = rawData[11:16]
-            # data = connection.recv(4) # number of bytes
-            data = rawData[16:20]
-            subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            # data = connection.recv(4) # number of bytes
-            data = rawData[20:24]
-            subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            # data = connection.recv(4) # number of bytes
-            data = rawData[24:28]
-            subOtherInfo['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            # data = connection.recv(4) # number of bytes
-            data = rawData[28:32]
-            subOtherInfo['dienAC3PhaA'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            # print(subOtherInfo['dienAC3PhaA'])
-            data = rawData[32:36]
-            subOtherInfo['dienAC3PhaB'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            # print(subOtherInfo['dienAC3PhaB'])
-            data = rawData[36:40]
-            subOtherInfo['dienAC3PhaC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            # print(subOtherInfo['dienAC3PhaC'])
-            # data = connection.recv(4) # number of bytes
-            data = rawData[40:44]
-            subOtherInfo['dienDCPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            # print(subOtherInfo['dienDCPoint1'])
-            # data = connection.recv(4) # number of bytes
-            data = rawData[44:48]
-            subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            # print(subOtherInfo['dongDienDC'])
+            subOtherInfo['centralAddress'] = str(struct.unpack('<H', rawData[4:6]))[1:-2]
+            result['devType'] = str(struct.unpack('b', rawData[6:7]))[1:-2]
+            result['devSerial'] = str(struct.unpack("2H", rawData[7:11])[0:-1])[1:-2]
+            logging.info("Ma thiet bi bo trung tam: %s", rawData[7:11])
+            subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', rawData[16:20]))[1:-2]), 3)
+            subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', rawData[20:24]))[1:-2]), 3)
+            subOtherInfo['temperature'] = round(float(str(struct.unpack('f', rawData[24:28]))[1:-2]), 3)
+            subOtherInfo['dienAC3PhaA'] = round(float(str(struct.unpack('f', rawData[28:32]))[1:-2]), 3)
+            subOtherInfo['dienAC3PhaB'] = round(float(str(struct.unpack('f', rawData[32:36]))[1:-2]), 3)
+            subOtherInfo['dienAC3PhaC'] = round(float(str(struct.unpack('f', rawData[36:40]))[1:-2]), 3)
+            subOtherInfo['dienDCPoint1'] = round(float(str(struct.unpack('f', rawData[40:44]))[1:-2]), 3)
+            subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', rawData[44:48]))[1:-2]), 3)
 
             # Ma thiet bi dang chuoi tu bo trung tam
-            data = rawData[47:84]
-            subOtherInfo['maChuoi'] = str(struct.unpack("b36s", data)[1].decode('cp1252'))[0:-5]
+            subOtherInfo['maChuoi'] = str(struct.unpack("b36s", rawData[47:84])[1].decode('cp1252'))[0:-5]
             logging.info('Ma thiet bi dang chuoi %s', subOtherInfo['maChuoi'])
 
-            data = rawData[84:100]
-            subOtherInfo['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
+            subOtherInfo['phone'] = str(struct.unpack("b15s", rawData[84:100])[1].decode('cp1252'))[0:-5]
             print(subOtherInfo['phone'])
-            # data = connection.recv(1) # number of bytes
-            data = rawData[100:101]
-            subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3)
-            # data = connection.recv(1) # number of bytes
+            subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', rawData[100:101]))[1:-2]), 3)
             # subOtherInfo['ACInputPower'] = round(subOtherInfo['dienDCPoint1']*subOtherInfo['dongDienDC'],3)
             if(float(subOtherInfo['dongDienDC'])):
                 subOtherInfo['resistance'] = round(float(subOtherInfo['dienDCPoint1'])/float(subOtherInfo['dongDienDC']), 3)
