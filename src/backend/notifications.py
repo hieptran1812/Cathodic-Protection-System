@@ -3,7 +3,7 @@ from flask import jsonify
 from bson import ObjectId
 
 def getNumberOfNoti():
-    return db.Notifications.count({"status": "notResponse"})
+    return str(db.Notifications.count({"status": "notResponse"}))
     # count = 0
     # for doc in db.Notifications.find({}):
     #     if doc['status'] == "notResponse":
