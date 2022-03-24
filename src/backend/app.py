@@ -7,8 +7,8 @@ from flask_cors import CORS, cross_origin
 from configDB import db
 
 from loginHandler import login, currentUser
-from testSocket import getDataFromTestPost, getDataFromRectifier
-from notifications import getNumberOfNoti, getNotifications, editStatusNoti
+from pushDatafromDevices import getDataFromTestPost, getDataFromRectifier
+from notifications import getNumberOfNoti, getNotifications, editStatusNoti, forgotPassword, signUp
 
 import datetime
 import sys
@@ -35,17 +35,26 @@ def index():
   if request.method == 'POST':
     return login()
 
+@app.route('/api/signUp', methods=['POST'])
+def register():
+  return signUp()
+
+@app.route('/api/forgotpassword', methods=['POST'])
+def postForgotPassword():
+  return forgotPassword()
+
+
 ################ Notification ###############
 @app.route('/api/notificationsSidebar/', methods=['GET'])
 def countsNoti():
   return getNumberOfNoti()
 
 @app.route('/api/notificationsList', methods=['GET'])
-def getList():
+def notificationsList():
     return getNotifications()
 
 @app.route('/api/editStatus/', methods=['POST'])
-def put():
+def editStatus():
   return editStatusNoti()
 
 ################ Dashboard ###############
@@ -789,44 +798,6 @@ def addDocuments():
     "link": res["link"]
   }
   insertDocument = db.Documents.insert_one(document)
-  return 'hoan thanh', 200
-
-
-
-@app.route('/api/signUp', methods=['POST'])
-def signUp():
-  res = request.get_json()
-  info = {
-    'title': "Dang ky",
-    'dateCreated': datetime.datetime.now(),
-    'organization': res['organization'],
-    'name': res['name'],
-    'username': res['username'],
-    'email': res['email'],
-    'phone': res['phone'],
-    'address': res['address'],
-    'note': res['note'],
-    'status': "notResponse"
-  }
-  insertInfo = db.Notifications.insert_one(info)
-  return 'hoan thanh', 200
-
-@app.route('/api/forgotpassword', methods=['POST'])
-def forgotPassword():
-  res = request.get_json()
-  info = {
-    'title': "Quen mat khau",
-    'dateCreated': datetime.datetime.now(),
-    'organization': res['organization'],
-    'name': res['name'],
-    'username': res['username'],
-    'email': res['email'],
-    'phone': res['phone'],
-    'address': res['address'],
-    'note': res['note'],
-    'status': "notResponse"
-  }
-  insertInfo = db.Notifications.insert_one(info)
   return 'hoan thanh', 200
 
 ########## Map ###########
