@@ -1,5 +1,5 @@
 from configDB import db
-from flask import jsonify
+from flask import jsonify, request
 from bson import ObjectId
 
 def getNumberOfNoti():
