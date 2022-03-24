@@ -8,7 +8,7 @@ from configDB import db
 
 from loginHandler import login, currentUser
 from testSocket import getDataFromTestPost, getDataFromRectifier
-from notifications import getNumberOfNoti, getNotifications
+from notifications import getNumberOfNoti, getNotifications, editStatusNoti
 
 import datetime
 import sys
@@ -38,18 +38,15 @@ def index():
 ################ Notification ###############
 @app.route('/api/notificationsSidebar/', methods=['GET'])
 def countsNoti():
-  # count = 0
-  # for doc in db.Notifications.find({}):
-  #     if doc['status'] == "notResponse":
-  #           count += 1
-  # return jsonify({
-  #   'count': count
-  # })
   return getNumberOfNoti()
 
 @app.route('/api/notificationsList', methods=['GET'])
 def getList():
     return getNotifications()
+
+@app.route('/api/editStatus/', methods=['POST'])
+def put():
+  return editStatusNoti()
 
 ################ Dashboard ###############
 @app.route('/api/featureInfo/', methods=['GET'])
@@ -830,20 +827,6 @@ def forgotPassword():
     'status': "notResponse"
   }
   insertInfo = db.Notifications.insert_one(info)
-  return 'hoan thanh', 200
-
-@app.route('/api/editStatus/', methods=['POST'])
-def editStatusNoti():
-  res = request.get_json()
-  # print(res['id'])
-  if res['status'] =='notResponse':
-    update = db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
-      'status': "response",
-    }})
-  else: 
-    update = db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
-      'status': "notResponse",
-    }})
   return 'hoan thanh', 200
 
 ########## Map ###########

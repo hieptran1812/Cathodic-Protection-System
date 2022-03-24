@@ -3,14 +3,6 @@ from flask import jsonify
 from bson import ObjectId
 
 def getNumberOfNoti():
-    # return str(db.Notifications.count({"status": "notResponse"}))
-    # count = 0
-    # for doc in db.Notifications.find({}):
-    #     if doc['status'] == "notResponse":
-    #         count += 1
-    # return jsonify({
-    #     'count': count
-    # })
     return jsonify({
         'count': str(db.Notifications.count({"status": "notResponse"}))
     })
@@ -32,3 +24,16 @@ def getNotifications():
           'status': doc['status'],
         })
     return jsonify(notifications)
+
+def editStatusNoti():
+  res = request.get_json()
+  # print(res['id'])
+  if res['status'] =='notResponse':
+    update = db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
+      'status': "response",
+    }})
+  else: 
+    update = db.Notifications.update_one({'_id': ObjectId(res['id'])}, {"$set": {
+      'status': "notResponse",
+    }})
+  return 'hoan thanh', 200
