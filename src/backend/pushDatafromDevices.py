@@ -87,7 +87,7 @@ def getDataFromRectifier(rawData):
             
             result['otherInfo'].append(subOtherInfo)
             logging.info('Retrieve data from tool completely')
-            print('complete')
+            print('complete rectifier')
             pushDataRectifier(result)
             print('push data to db complete')
             
@@ -133,55 +133,33 @@ def getDataFromTestPost(rawData):
         try:
             print("==========testpost=========")
             # print(sys.stderr, 'connection from', client_address)
-            data = rawData[0:2] # number of bytes
-            data = rawData[2:4] # number of bytes
-            subOtherInfo['locationSystem'] = str(struct.unpack('<H', data))[1:-2]
-            data = rawData[4:6] # number of bytes
-            subOtherInfo['centralAddress'] = str(struct.unpack('<H', data))[1:-2]
-            data = rawData[6:8] # number of bytes
-            subOtherInfo['nodeAddress'] = str(struct.unpack('<H', data))[1:-2]
-            data = rawData[8:9] # number of bytes
-            result['devType'] = str(struct.unpack('b', data))[1:-2]
-            data = rawData[9:13] # number of bytes
-            result['devSerial'] = str(struct.unpack("2H", data)[0:-1])[1:-2]
+            subOtherInfo['locationSystem'] = str(struct.unpack('<H', rawData[2:4]))[1:-2]
+            subOtherInfo['centralAddress'] = str(struct.unpack('<H', rawData[4:6]))[1:-2]
+            subOtherInfo['nodeAddress'] = str(struct.unpack('<H', rawData[6:8]))[1:-2]
+            result['devType'] = str(struct.unpack('b', rawData[8:9]))[1:-2]
+            result['devSerial'] = str(struct.unpack("2H", rawData[9:13] )[0:-1])[1:-2]
             logging.info("Ma thiet bi bo do: %s", data)
-            data = rawData[13:18] # number of bytes
-            data = rawData[18:22] # number of bytes
-            subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[22:26] # number of bytes
-            subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[26:30] # number of bytes
-            subOtherInfo['temperature'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[30:34] # number of bytes
-            subOtherInfo['openPoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[34:38] # number of bytes
-            subOtherInfo['openPoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[38:42] # number of bytes
-            subOtherInfo['openPoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[42:46] # number of bytes
-            subOtherInfo['openPoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[46:50] # number of bytes
-            subOtherInfo['closePoint1'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[50:54] # number of bytes
-            subOtherInfo['closePoint2'] = round(float(str(struct.unpack('f', data))[1:-2]), 3) 
-            data = rawData[54:58] # number of bytes
-            subOtherInfo['closePoint3'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
-            data = rawData[58:62] # number of bytes
-            subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', data))[1:-2]), 3)
+            subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', rawData[18:22] ))[1:-2]), 3)
+            subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', rawData[22:26] ))[1:-2]), 3)
+            subOtherInfo['temperature'] = round(float(str(struct.unpack('f', rawData[26:30] ))[1:-2]), 3)
+            subOtherInfo['openPoint1'] = round(float(str(struct.unpack('f', rawData[30:34]))[1:-2]), 3)
+            subOtherInfo['openPoint2'] = round(float(str(struct.unpack('f', rawData[34:38]))[1:-2]), 3)
+            subOtherInfo['openPoint3'] = round(float(str(struct.unpack('f', rawData[38:42]))[1:-2]), 3)
+            subOtherInfo['openPoint4'] = round(float(str(struct.unpack('f', rawData[42:46]))[1:-2]), 3)
+            subOtherInfo['closePoint1'] = round(float(str(struct.unpack('f', rawData[46:50]))[1:-2]), 3)
+            subOtherInfo['closePoint2'] = round(float(str(struct.unpack('f', rawData[50:54]))[1:-2]), 3) 
+            subOtherInfo['closePoint3'] = round(float(str(struct.unpack('f', rawData[54:58]))[1:-2]), 3)
+            subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', rawData[58:62]ta))[1:-2]), 3)
 
             # Ma thiet bi dang chuoi
-            data = rawData[62:82]
-            subOtherInfo['maChuoi'] = str(struct.unpack("b19s", data)[1].decode('cp1252'))[0:-5]
+            subOtherInfo['maChuoi'] = str(struct.unpack("b19s", rawData[62:82])[1].decode('cp1252'))[0:-5]
             logging.info('Ma thiet bi dang chuoi dang chay %s', subOtherInfo['maChuoi'])
 
-            data = rawData[81:97] # number of bytes
-            subOtherInfo['phone'] = str(struct.unpack("b15s", data)[1].decode('cp1252'))[0:-5]
-            data = rawData[97:98] # number of bytes
-            subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', data))[1:-2]), 3) 
-            data = rawData[98:99] # number of bytes
+            subOtherInfo['phone'] = str(struct.unpack("b15s", rawData[81:97])[1].decode('cp1252'))[0:-5]
+            subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', rawData[97:98]))[1:-2]), 3) 
             result['otherInfo'].append(subOtherInfo)
             logging.info('Retrieve data from tool completely')
-            print('complete')
+            print('complete testpost')
             pushDataTestPost(result)
         except Exception as e:
             print(str(e))
