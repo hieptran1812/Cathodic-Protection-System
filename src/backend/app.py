@@ -15,6 +15,8 @@ import sys
 import json
 import ssl
 
+import uvicorn
+
 from bson import ObjectId
 logging.info("Start API")
 
@@ -923,6 +925,6 @@ def getDashboardMap():
 
 if __name__ == "__main__":
     print('run App......')
-    app.run(port=5000,host='0.0.0.0',ssl_context=("../../../../../etc/nginx/certs/cpsmart_net.crt", "../../../../../etc/nginx/certs/cpsmart_net.key"), threaded=True)
+    uvicorn.run("app:app", port=5000,host='0.0.0.0',ssl_context=("../../../../../etc/nginx/certs/cpsmart_net.crt", "../../../../../etc/nginx/certs/cpsmart_net.key"), threaded=True)
     # app.run(port=5000,host='0.0.0.0')
     
