@@ -149,7 +149,7 @@ def getDataFromTestPost(rawData):
             subOtherInfo['closePoint1'] = round(float(str(struct.unpack('f', rawData[46:50]))[1:-2]), 3)
             subOtherInfo['closePoint2'] = round(float(str(struct.unpack('f', rawData[50:54]))[1:-2]), 3) 
             subOtherInfo['closePoint3'] = round(float(str(struct.unpack('f', rawData[54:58]))[1:-2]), 3)
-            subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', rawData[58:62]ta))[1:-2]), 3)
+            subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', rawData[58:62]))[1:-2]), 3)
 
             # Ma thiet bi dang chuoi
             subOtherInfo['maChuoi'] = str(struct.unpack("b19s", rawData[62:82])[1].decode('cp1252'))[0:-5]
