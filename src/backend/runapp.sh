@@ -9,10 +9,13 @@ do
       PID=`lsof -i :5000 | awk '{print $2}'`
       echo $PID
       if [[ "" !=  "$PID" ]]; then
+       sleep 2s
        echo "killing $PID"
        kill -9 $PID
+       sleep 3s
        echo "$PID killed and start app.py"
        nohup python3 app.py &
+       sleep2s
        echo "started app.py"
       fi
    fi
