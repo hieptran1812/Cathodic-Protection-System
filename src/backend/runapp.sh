@@ -4,7 +4,7 @@ while true
 do
    currentDate=`date +"%T"`
    echo $currentDate
-   if [[ "$currentDate" ==  "19:20:00" ]]; then
+   if [[ "$currentDate" ==  "19:22:40" ]]; then
       echo "========schedule restart backend=========="
       PID=`lsof -i :5000 | awk '{print $2}'`
       echo $PID
