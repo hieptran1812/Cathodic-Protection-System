@@ -10,8 +10,10 @@ do
       echo $PID
       if [[ "" !=  "$PID" ]]; then
        echo "killing $PID"
-      #  kill -9 $PID
+       kill -9 $PID
+       echo "$PID killed and start app.py"
        nohup python3 app.py &
+       echo "started app.py"
       fi
    fi
 done
