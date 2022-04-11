@@ -4,7 +4,7 @@ while true
 do
    currentDate=`date +"%T"`
    echo $currentDate
-   if [[ "$currentDate" ==  "19:31:00" ]]; then
+   if [[ "$currentDate" ==  "19:33:00" ]]; then
       sleep 5s
       echo "========schedule restart backend=========="
       PID=`lsof -i :5000 | awk '{print $2}'`
@@ -15,6 +15,10 @@ do
        kill -9 $PID
        sleep 3s
        echo "$PID killed and start app.py"
+       nohup python3 app.py &
+       sleep 3s
+       echo "started app.py"
+      else 
        nohup python3 app.py &
        sleep 3s
        echo "started app.py"
