@@ -571,7 +571,7 @@ def getRectifierTransformerDetailTable(id):
     deviceInfo = db.RectifierTransformersDetails.find_one({
       'devSerial': id,
     })
-    result = deviceInfo['otherInfo'][0:1000] # config number of row
+    result = deviceInfo['otherInfo'][0:200] # config number of row
     result[0]['tenThietBi'] = deviceInfo['maChuoi']
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
     result[0]['date'] = deviceInfo['date']
@@ -750,7 +750,7 @@ def getTestPostDetailTable(id):
     deviceInfo = db.TestPostsDetails.find_one({
       'devSerial': id,
     })
-    result = deviceInfo['otherInfo'][0:1000] # config number of row
+    result = deviceInfo['otherInfo'][0:200] # config number of row
     result[0]['tenThietBi'] = deviceInfo['maChuoi']
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
     result[0]['date'] = deviceInfo['date']
