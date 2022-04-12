@@ -836,7 +836,7 @@ def addDocuments():
 @app.route('/api/locationAllDevices', methods=['GET'])
 def getLocation():
     devices = []
-    for doc in db.TestPostsDetails.find({}, {'_id':0,'devSerial':1,'maChuoi':1, 
+    for doc in db.TestPostsDetails.find({}, {'devSerial':1,'maChuoi':1, 
                                                        'dateUpdate':1, 'date':1,
                                                        'organization': 1, 
                                                        'lat': 1,
@@ -868,7 +868,7 @@ def getLocation():
             'dateUpdate': doc['dateUpdate'],
             'date': doc['date'],      
           })
-    for doc in db.RectifierTransformersDetails.find({}, {'_id':0,'devSerial':1,'maChuoi':1, 
+    for doc in db.RectifierTransformersDetails.find({}, {'devSerial':1,'maChuoi':1, 
                                                        'dateUpdate':1, 'date':1,
                                                        'organization': 1, 
                                                        'lat': 1,
@@ -906,7 +906,7 @@ def getLocation():
 def getDashboardMap():
   devices = []
   print(currentUser['role'])
-  for doc in db.RectifierTransformersDetails.find({}, {'_id':0,'devSerial':1,'maChuoi':1, 
+  for doc in db.RectifierTransformersDetails.find({}, {'devSerial':1,'maChuoi':1, 
                                                        'dateUpdate':1, 'date':1,
                                                        'otherInfo': {'$slice': 1},
                                                        'organization': 1, 
@@ -941,14 +941,14 @@ def getDashboardMap():
           'lat': doc['lat'],
           'lng': doc['lng'],
         })
-  for doc in db.TestPostsDetails.find({}, {'_id':0,'devSerial':1,'maChuoi':1, 
-                                                       'dateUpdate':1, 'date':1,
-                                                       'otherInfo': {'$slice': 1},
-                                                       'organization': 1, 
-                                                       'lat': 1,
-                                                       'lng': 1,
-                                                       'devType': 1,
-                                                       }).sort([( '$natural', 1 )]):
+  for doc in db.TestPostsDetails.find({}, {'devSerial':1,'maChuoi':1, 
+                                            'dateUpdate':1, 'date':1,
+                                            'otherInfo': {'$slice': 1},
+                                            'organization': 1, 
+                                            'lat': 1,
+                                            'lng': 1,
+                                            'devType': 1,
+                                            }).sort([( '$natural', 1 )]):
     if(currentUser['role'] == 'superadmin'):
       devices.append({
         'id': str(ObjectId(doc['_id'])),
