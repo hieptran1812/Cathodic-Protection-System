@@ -46,6 +46,7 @@ def getDataFromRectifier(rawData):
         subOtherInfo = {}
         subOtherInfo['time'] = datetime.datetime.now()
         try:
+            print("======rectifier=======")
             # print(sys.stderr, 'connection from', client_address)
             print('Start packet %s' % rawData[0:2])   
             print('length data %s' % len(rawData[0:2]))
@@ -55,19 +56,26 @@ def getDataFromRectifier(rawData):
             print('length data %s' % len(rawData[2:4]))
             print('location System %s' % struct.unpack('<H', rawData[2:4]))
             subOtherInfo['locationSystem'] = str(struct.unpack('<H', rawData[2:4]))[1:-2]
-            print("======rectifier=======")
             subOtherInfo['centralAddress'] = str(struct.unpack('<H', rawData[4:6]))[1:-2]
             result['devType'] = str(struct.unpack('b', rawData[6:7]))[1:-2]
             result['devSerial'] = str(struct.unpack("2H", rawData[7:11])[0:-1])[1:-2]
-            print('Ma thiet bi bo trung tam: %s', rawData[7:11])
+            print('Ma thiet bi bo trung tam: %s', result['devSerial'])
             subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', rawData[16:20]))[1:-2]), 3)
+            print('dienApPin', subOtherInfo['dienApPin'])
             subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', rawData[20:24]))[1:-2]), 3)
+            print('dienApNguon', subOtherInfo['dienApNguon'])
             subOtherInfo['temperature'] = round(float(str(struct.unpack('f', rawData[24:28]))[1:-2]), 3)
+            print('temperature', subOtherInfo['temperature'])
             subOtherInfo['dienAC3PhaA'] = round(float(str(struct.unpack('f', rawData[28:32]))[1:-2]), 3)
+            print('dienAC3PhaA', subOtherInfo['dienAC3PhaA'])
             subOtherInfo['dienAC3PhaB'] = round(float(str(struct.unpack('f', rawData[32:36]))[1:-2]), 3)
+            print('dienAC3PhaB', subOtherInfo['dienAC3PhaB'])
             subOtherInfo['dienAC3PhaC'] = round(float(str(struct.unpack('f', rawData[36:40]))[1:-2]), 3)
+            print('dienAC3PhaC', subOtherInfo['dienAC3PhaC'])
             subOtherInfo['dienDCPoint1'] = round(float(str(struct.unpack('f', rawData[40:44]))[1:-2]), 3)
+            print('dienDCPoint1', subOtherInfo['dienDCPoint1'])
             subOtherInfo['dongDienDC'] = round(float(str(struct.unpack('f', rawData[44:48]))[1:-2]), 3)
+            print('dongDienDC', subOtherInfo['dongDienDC'])
 
             # Ma thiet bi dang chuoi tu bo trung tam
             subOtherInfo['maChuoi'] = str(struct.unpack("b36s", rawData[47:84])[1].decode('cp1252'))[0:-5]
@@ -149,9 +157,9 @@ def getDataFromTestPost(rawData):
             print('dienApNguon', subOtherInfo['dienApNguon'])
             subOtherInfo['temperature'] = round(float(str(struct.unpack('f', rawData[26:30]))[1:-2]), 3)
             print('temperature', subOtherInfo['temperature'])
-            subOtherInfo['openPoint1'] = round(float(str(struct.unpack('f', rawData[30:34]))[1:-3]), 3)
+            subOtherInfo['openPoint1'] = round(float(str(struct.unpack('f', rawData[30:34]))[1:-2]), 3)
             print('openPoint1', subOtherInfo['openPoint1'])
-            subOtherInfo['openPoint2'] = round(float(str(struct.unpack('f', rawData[34:38]))[1:-3]), 3)
+            subOtherInfo['openPoint2'] = round(float(str(struct.unpack('f', rawData[34:38]))[1:-2]), 3)
             print('openPoint2', subOtherInfo['openPoint2'])
             subOtherInfo['openPoint3'] = round(float(str(struct.unpack('f', rawData[38:42]))[1:-2]), 3)
             print('openPoint3', subOtherInfo['openPoint3'])
