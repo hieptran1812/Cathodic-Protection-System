@@ -571,7 +571,7 @@ def getRectifierTransformerDetailTable(id):
     deviceInfo = db.RectifierTransformersDetails.find_one({
       'devSerial': id,
     })
-    result = deviceInfo['otherInfo']
+    result = deviceInfo['otherInfo'][0:1000] # config number of row
     result[0]['tenThietBi'] = deviceInfo['maChuoi']
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
     result[0]['date'] = deviceInfo['date']
@@ -628,7 +628,16 @@ def delete(id):
 def getChartDC(id):
   deviceInfo = db.RectifierTransformersDetails.find_one({
     'devSerial': id,
-  })
+  }, {'_id':1,'devSerial':1,'maChuoi':1, 'dateUpdate':1, 'date':1, 'otherInfo': {'$slice': 1},
+      'otherInfo': {'$slice': 2},
+      'otherInfo': {'$slice': 3},
+      'otherInfo': {'$slice': 4},
+      'otherInfo': {'$slice': 5},
+      'otherInfo': {'$slice': 6},
+      'otherInfo': {'$slice': 7},
+      'otherInfo': {'$slice': 8},
+      'otherInfo': {'$slice': 9},
+      }).sort([( '$natural', 1 )])
   dc = [0,0,0,0,0,0,0,0]
   time = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
   # print(min(8,len(deviceInfo['otherInfo'])))
@@ -741,7 +750,7 @@ def getTestPostDetailTable(id):
     deviceInfo = db.TestPostsDetails.find_one({
       'devSerial': id,
     })
-    result = deviceInfo['otherInfo']
+    result = deviceInfo['otherInfo'][0:1000] # config number of row
     result[0]['tenThietBi'] = deviceInfo['maChuoi']
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
     result[0]['date'] = deviceInfo['date']
@@ -790,7 +799,16 @@ def deleteTestpost(id):
 def getChartPort(id):
   deviceInfo = db.TestPostsDetails.find_one({
     'devSerial': id,
-  })
+  }, {'otherInfo': {'$slice': 1},
+      'otherInfo': {'$slice': 2},
+      'otherInfo': {'$slice': 3},
+      'otherInfo': {'$slice': 4},
+      'otherInfo': {'$slice': 5},
+      'otherInfo': {'$slice': 6},
+      'otherInfo': {'$slice': 7},
+      'otherInfo': {'$slice': 8},
+      'otherInfo': {'$slice': 9},
+      }).sort([( '$natural', 1 )])
   portOn1 = [0,0,0,0,0,0,0,0]
   portOn2 = [0,0,0,0,0,0,0,0]
   portOn3 = [0,0,0,0,0,0,0,0]
