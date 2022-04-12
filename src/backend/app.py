@@ -492,7 +492,7 @@ def getNameRT():
 @app.route('/api/rectifierTransformerList/', methods=['GET'])
 def get():
   devices = []
-  for doc in db.RectifierTransformersDetails.find({}):
+  for doc in db.RectifierTransformersDetails.find({}, {'otherInfo[1:]': 0}).sort([( '$natural', 1 )]):
     if(currentUser['role'] == 'superadmin'):
       status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
       if (status >= 300):
@@ -659,7 +659,7 @@ def addTestPost():
 @app.route('/api/testPostList', methods=['GET'])
 def getTestPost():
     devices = []
-    for doc in db.TestPostsDetails.find({}).sort([( '$natural', 1 )] ):
+    for doc in db.TestPostsDetails.find({}).sort([( '$natural', 1 )]):
       if(currentUser['role'] == 'superadmin'):
         status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
         if (status >= 300):
