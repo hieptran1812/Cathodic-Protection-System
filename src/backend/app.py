@@ -194,6 +194,7 @@ def getChartDCandAC():
                                                        'otherInfo': {'$slice': 6},
                                                        'otherInfo': {'$slice': 7},
                                                        'otherInfo': {'$slice': 8},
+                                                       'otherInfo': {'$slice': 9},
                                                        }).sort([( '$natural', 1 )]):
     if(len(doc['otherInfo']) == 1):
       continue;
@@ -242,7 +243,7 @@ def getChartPortMax():
   # Tim kiem
   for doc in db.TestPostsDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
                                                        'otherInfo': {'$slice': 9},
-                                                       }).sort([( '$natural', 1 )]):
+                                                       }):
     # print(doc)
     # print('\n')
     if(len(doc['otherInfo']) == 1):
