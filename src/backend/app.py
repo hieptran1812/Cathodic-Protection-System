@@ -840,6 +840,7 @@ def getLocation():
                                                        'dateUpdate':1, 'date':1,
                                                        'organization': 1, 
                                                        'lat': 1,
+                                                       'otherInfo': {'$slice': 1},
                                                        'lng': 1,
                                                        'devType': 1,
                                                        }).sort([( '$natural', 1 )]):
@@ -872,6 +873,7 @@ def getLocation():
                                                        'dateUpdate':1, 'date':1,
                                                        'organization': 1, 
                                                        'lat': 1,
+                                                       'otherInfo': {'$slice': 1},
                                                        'lng': 1,
                                                        'devType': 1,
                                                        }).sort([( '$natural', 1 )]):
