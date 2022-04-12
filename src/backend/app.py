@@ -570,7 +570,7 @@ def getRectifierTransformerDetailTable(id):
   if request.method == 'GET':
     deviceInfo = db.RectifierTransformersDetails.find_one({
       'devSerial': id,
-    })
+    }, {'otherInfo': {'$slice': 200}})
     result = deviceInfo['otherInfo'][0:200] # config number of row
     result[0]['tenThietBi'] = deviceInfo['maChuoi']
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
@@ -749,7 +749,7 @@ def getTestPostDetailTable(id):
     # Thong tin cua bo do    
     deviceInfo = db.TestPostsDetails.find_one({
       'devSerial': id,
-    })
+    }, {'otherInfo': {'$slice': 200}})
     result = deviceInfo['otherInfo'][0:200] # config number of row
     result[0]['tenThietBi'] = deviceInfo['maChuoi']
     result[0]['dateUpdate'] = deviceInfo['dateUpdate']
@@ -809,7 +809,7 @@ def getChartPort(id):
       'otherInfo': {'$slice': 8},
       'otherInfo': {'$slice': 9},
       })
-  print(deviceInfo)
+  # print(deviceInfo)
   portOn1 = [0,0,0,0,0,0,0,0]
   portOn2 = [0,0,0,0,0,0,0,0]
   portOn3 = [0,0,0,0,0,0,0,0]
