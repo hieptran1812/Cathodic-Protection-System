@@ -241,14 +241,6 @@ def getChartPortMax():
   ###########################
   # Tim kiem
   for doc in db.TestPostsDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
-                                                       'otherInfo': {'$slice': 1},
-                                                       'otherInfo': {'$slice': 2},
-                                                       'otherInfo': {'$slice': 3},
-                                                       'otherInfo': {'$slice': 4},
-                                                       'otherInfo': {'$slice': 5},
-                                                       'otherInfo': {'$slice': 6},
-                                                       'otherInfo': {'$slice': 7},
-                                                       'otherInfo': {'$slice': 8},
                                                        'otherInfo': {'$slice': 9},
                                                        }).sort([( '$natural', 1 )]):
     # print(doc)
@@ -628,16 +620,7 @@ def delete(id):
 def getChartDC(id):
   deviceInfo = db.RectifierTransformersDetails.find_one({
     'devSerial': id,
-  }, {'otherInfo': {'$slice': 1},
-      'otherInfo': {'$slice': 2},
-      'otherInfo': {'$slice': 3},
-      'otherInfo': {'$slice': 4},
-      'otherInfo': {'$slice': 5},
-      'otherInfo': {'$slice': 6},
-      'otherInfo': {'$slice': 7},
-      'otherInfo': {'$slice': 8},
-      'otherInfo': {'$slice': 9},
-      })
+  }, {'otherInfo': {'$slice': 9}})
   dc = [0,0,0,0,0,0,0,0]
   time = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
   # print(min(8,len(deviceInfo['otherInfo'])))
@@ -799,16 +782,7 @@ def deleteTestpost(id):
 def getChartPort(id):
   deviceInfo = db.TestPostsDetails.find_one({
     'devSerial': id,
-  }, {'otherInfo': {'$slice': 1},
-      'otherInfo': {'$slice': 2},
-      'otherInfo': {'$slice': 3},
-      'otherInfo': {'$slice': 4},
-      'otherInfo': {'$slice': 5},
-      'otherInfo': {'$slice': 6},
-      'otherInfo': {'$slice': 7},
-      'otherInfo': {'$slice': 8},
-      'otherInfo': {'$slice': 9},
-      })
+  }, {'otherInfo': {'$slice': 9}})
   # print(deviceInfo)
   portOn1 = [0,0,0,0,0,0,0,0]
   portOn2 = [0,0,0,0,0,0,0,0]
