@@ -137,8 +137,8 @@ def getDataFromTestPost(rawData):
             subOtherInfo['centralAddress'] = str(struct.unpack('<H', rawData[4:6]))[1:-2]
             subOtherInfo['nodeAddress'] = str(struct.unpack('<H', rawData[6:8]))[1:-2]
             result['devType'] = str(struct.unpack('b', rawData[8:9]))[1:-2]
-            result['devSerial'] = str(struct.unpack("2H", rawData[9:13] )[0:-1])[1:-2]
-            logging.info("Ma thiet bi bo do: %s", data)
+            result['devSerial'] = str(struct.unpack("2H", rawData[9:13])[0:-1])[1:-2]
+            logging.info("Ma thiet bi bo do: %s", result['devSerial'])
             subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', rawData[18:22] ))[1:-2]), 3)
             subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', rawData[22:26] ))[1:-2]), 3)
             subOtherInfo['temperature'] = round(float(str(struct.unpack('f', rawData[26:30] ))[1:-2]), 3)
