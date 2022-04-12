@@ -637,7 +637,7 @@ def getChartDC(id):
       'otherInfo': {'$slice': 7},
       'otherInfo': {'$slice': 8},
       'otherInfo': {'$slice': 9},
-      }).sort([( '$natural', 1 )])
+      })
   dc = [0,0,0,0,0,0,0,0]
   time = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
   # print(min(8,len(deviceInfo['otherInfo'])))
@@ -808,7 +808,7 @@ def getChartPort(id):
       'otherInfo': {'$slice': 7},
       'otherInfo': {'$slice': 8},
       'otherInfo': {'$slice': 9},
-      }).sort([( '$natural', 1 )])
+      })
   print(deviceInfo)
   portOn1 = [0,0,0,0,0,0,0,0]
   portOn2 = [0,0,0,0,0,0,0,0]
