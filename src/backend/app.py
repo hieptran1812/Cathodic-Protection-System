@@ -662,7 +662,9 @@ def addTestPost():
 @app.route('/api/testPostList', methods=['GET'])
 def getTestPost():
     devices = []
-    for doc in db.TestPostsDetails.find({}).sort([( '$natural', 1 )]):
+    for doc in db.TestPostsDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
+                                                       'dateUpdate':1, 'date':1,
+                                                       'otherInfo': {'$slice': 1}}).sort([( '$natural', 1 )]):
       if(currentUser['role'] == 'superadmin'):
         status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
         if (status >= 300):
