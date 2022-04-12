@@ -250,6 +250,7 @@ def getChartPortMax():
                                                        'otherInfo': {'$slice': 7},
                                                        'otherInfo': {'$slice': 8},
                                                        }).sort([( '$natural', 1 )]):
+    print(doc)
     if(len(doc['otherInfo']) == 1):
       continue;
     if(currentUser['role'] == 'superadmin'):
