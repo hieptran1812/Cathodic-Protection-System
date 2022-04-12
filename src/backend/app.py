@@ -809,6 +809,7 @@ def getChartPort(id):
       'otherInfo': {'$slice': 8},
       'otherInfo': {'$slice': 9},
       }).sort([( '$natural', 1 )])
+  print(deviceInfo)
   portOn1 = [0,0,0,0,0,0,0,0]
   portOn2 = [0,0,0,0,0,0,0,0]
   portOn3 = [0,0,0,0,0,0,0,0]
