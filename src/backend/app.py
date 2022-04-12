@@ -249,6 +249,7 @@ def getChartPortMax():
                                                        'otherInfo': {'$slice': 6},
                                                        'otherInfo': {'$slice': 7},
                                                        'otherInfo': {'$slice': 8},
+                                                       'otherInfo': {'$slice': 9},
                                                        }).sort([( '$natural', 1 )]):
     print(doc)
     print('\n')
