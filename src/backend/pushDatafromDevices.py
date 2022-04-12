@@ -17,7 +17,7 @@ def pushDataRectifier(result):
     deviceInDb = db.RectifierTransformersDetails.find_one({
         'devSerial': result['devSerial'] 
     })
-    print('Chinh Effciency')
+    print('Tinh toan Effciency')
     result['otherInfo'][0]['efficiency'] = round(result['otherInfo'][0]['efficiency']/float(deviceInDb['ACInputPower']),3)
     if deviceInDb:
         db.RectifierTransformersDetails.update(
@@ -33,13 +33,13 @@ def pushDataRectifier(result):
         )
     else:
         # db.RectifierTransformersDetails.insert_one(result)
-        logging.info(f"nhan du lieu tu thiet bi moi chua duoc them tren he thong")
+        print('nhan du lieu tu thiet bi Bo trung tam chua duoc them tren he thong')
 
-    logging.info('Insert data to MongoDB')
+    print('Insert data to MongoDB')
 
 #### Lấy dữ liệu từ bộ trung tâm ####
 def getDataFromRectifier(rawData):
-    logging.info('Retrieve data from central device')
+    print('Retrieve data from central device')
     try:
         result = {}
         result['otherInfo'] = []
@@ -47,19 +47,19 @@ def getDataFromRectifier(rawData):
         subOtherInfo['time'] = datetime.datetime.now()
         try:
             # print(sys.stderr, 'connection from', client_address)
-            logging.info('Start packet %s' % rawData[0:2])   
-            logging.info('length data %s' % len(rawData[0:2]))
-            logging.info('Start packet %s' % struct.unpack('<H', rawData[0:2]))
+            print('Start packet %s' % rawData[0:2])   
+            print('length data %s' % len(rawData[0:2]))
+            print('Start packet %s' % struct.unpack('<H', rawData[0:2]))
             print(sys.stderr, 'Start packet "%s"' % struct.unpack('<H', rawData[0:2])) #
-            logging.info('Start packet %s' % rawData[2:4])   
-            logging.info('length data %s' % len(rawData[2:4]))
-            logging.info('location System %s' % struct.unpack('<H', rawData[2:4]))
+            print('Start packet %s' % rawData[2:4])   
+            print('length data %s' % len(rawData[2:4]))
+            print('location System %s' % struct.unpack('<H', rawData[2:4]))
             subOtherInfo['locationSystem'] = str(struct.unpack('<H', rawData[2:4]))[1:-2]
             print("======rectifier=======")
             subOtherInfo['centralAddress'] = str(struct.unpack('<H', rawData[4:6]))[1:-2]
             result['devType'] = str(struct.unpack('b', rawData[6:7]))[1:-2]
             result['devSerial'] = str(struct.unpack("2H", rawData[7:11])[0:-1])[1:-2]
-            logging.info("Ma thiet bi bo trung tam: %s", rawData[7:11])
+            print('Ma thiet bi bo trung tam: %s', rawData[7:11])
             subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', rawData[16:20]))[1:-2]), 3)
             subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', rawData[20:24]))[1:-2]), 3)
             subOtherInfo['temperature'] = round(float(str(struct.unpack('f', rawData[24:28]))[1:-2]), 3)
@@ -71,7 +71,7 @@ def getDataFromRectifier(rawData):
 
             # Ma thiet bi dang chuoi tu bo trung tam
             subOtherInfo['maChuoi'] = str(struct.unpack("b36s", rawData[47:84])[1].decode('cp1252'))[0:-5]
-            logging.info('Ma thiet bi dang chuoi %s', subOtherInfo['maChuoi'])
+            print('Ma thiet bi dang chuoi %s', subOtherInfo['maChuoi'])
 
             subOtherInfo['phone'] = str(struct.unpack("b15s", rawData[84:100])[1].decode('cp1252'))[0:-5]
             print(subOtherInfo['phone'])
@@ -86,18 +86,18 @@ def getDataFromRectifier(rawData):
             print(sys.stderr, 'received last byte "%s"' % data)
             
             result['otherInfo'].append(subOtherInfo)
-            logging.info('Retrieve data from tool completely')
+            print('Retrieve data from tool completely')
             print('complete rectifier')
             pushDataRectifier(result)
             print('push data to db complete')
             
         except Exception as e:
             logging.critical(e)
-            logging.info('======================')
+            print('======================')
             
     except Exception as e:
         logging.critical(e)
-        logging.info('======================')
+        print('======================')
 
 #### Lấy dữ liệu từ bộ đo ####
 
@@ -121,10 +121,10 @@ def pushDataTestPost(result):
     else:
         # db.TestPostsDetails.insert_one(result)
         logging.info(f"nhan du lieu tu thiet bi moi chua duoc them tren he thong")
-    logging.info('Insert data to MongoDB')
+    print('Insert data to MongoDB')
 
 def getDataFromTestPost(rawData):
-    logging.info('Retrieve data from test device')
+    print('Retrieve data from test device')
     try:
         result = {}
         result['otherInfo'] = []
@@ -134,31 +134,46 @@ def getDataFromTestPost(rawData):
             print("==========testpost=========")
             # print(sys.stderr, 'connection from', client_address)
             subOtherInfo['locationSystem'] = str(struct.unpack('<H', rawData[2:4]))[1:-2]
+            print('Location system', subOtherInfo['locationSystem'])
             subOtherInfo['centralAddress'] = str(struct.unpack('<H', rawData[4:6]))[1:-2]
+            print('centralAddress', subOtherInfo['centralAddress'])
             subOtherInfo['nodeAddress'] = str(struct.unpack('<H', rawData[6:8]))[1:-2]
+            print('nodeAddress', subOtherInfo['nodeAddress'])
             result['devType'] = str(struct.unpack('b', rawData[8:9]))[1:-2]
+            print('devType', result['devType'])
             result['devSerial'] = str(struct.unpack("2H", rawData[9:13])[0:-1])[1:-2]
-            logging.info("Ma thiet bi bo do: %s", result['devSerial'])
+            print('Ma thiet bi bo do: %s', result['devSerial'])
             subOtherInfo['dienApPin'] = round(float(str(struct.unpack('f', rawData[18:22] ))[1:-2]), 3)
+            print('dienApPin', subOtherInfo['dienApPin'])
             subOtherInfo['dienApNguon'] = round(float(str(struct.unpack('f', rawData[22:26] ))[1:-2]), 3)
+            print('dienApNguon', subOtherInfo['dienApNguon'])
             subOtherInfo['temperature'] = round(float(str(struct.unpack('f', rawData[26:30] ))[1:-2]), 3)
+            print('temperature', subOtherInfo['temperature'])
             subOtherInfo['openPoint1'] = round(float(str(struct.unpack('f', rawData[30:34]))[1:-2]), 3)
+            print('openPoint1', subOtherInfo['openPoint1'])
             subOtherInfo['openPoint2'] = round(float(str(struct.unpack('f', rawData[34:38]))[1:-2]), 3)
+            print('openPoint2', subOtherInfo['openPoint2'])
             subOtherInfo['openPoint3'] = round(float(str(struct.unpack('f', rawData[38:42]))[1:-2]), 3)
+            print('openPoint3', subOtherInfo['openPoint3'])
             subOtherInfo['openPoint4'] = round(float(str(struct.unpack('f', rawData[42:46]))[1:-2]), 3)
+            print('openPoint4', subOtherInfo['openPoint4'])
             subOtherInfo['closePoint1'] = round(float(str(struct.unpack('f', rawData[46:50]))[1:-2]), 3)
+            print('closePoint1', subOtherInfo['closePoint1'])
             subOtherInfo['closePoint2'] = round(float(str(struct.unpack('f', rawData[50:54]))[1:-2]), 3) 
+            print('closePoint2', subOtherInfo['closePoint2'])
             subOtherInfo['closePoint3'] = round(float(str(struct.unpack('f', rawData[54:58]))[1:-2]), 3)
+            print('closePoint3', subOtherInfo['closePoint3'])
             subOtherInfo['closePoint4'] = round(float(str(struct.unpack('f', rawData[58:62]))[1:-2]), 3)
+            print('closePoint4', subOtherInfo['closePoint4'])
 
             # Ma thiet bi dang chuoi
             subOtherInfo['maChuoi'] = str(struct.unpack("b19s", rawData[62:82])[1].decode('cp1252'))[0:-5]
-            logging.info('Ma thiet bi dang chuoi dang chay %s', subOtherInfo['maChuoi'])
+            print('Ma thiet bi dang chuoi dang chay %s', subOtherInfo['maChuoi'])
 
             subOtherInfo['phone'] = str(struct.unpack("b15s", rawData[81:97])[1].decode('cp1252'))[0:-5]
             subOtherInfo['signalQuality'] = round(float(str(struct.unpack('b', rawData[97:98]))[1:-2]), 3) 
             result['otherInfo'].append(subOtherInfo)
-            logging.info('Retrieve data from tool completely')
+            print('Retrieve data from tool completely')
             print('complete testpost')
             pushDataTestPost(result)
         except Exception as e:
@@ -176,7 +191,7 @@ def thread_client(connection):
     while True:
         try:
             lengthOfData, data = detectDevice(connection)
-            logging.info("Do dai ban tin %s", lengthOfData)
+            print('Do dai ban tin %s', lengthOfData)
             if lengthOfData == 102:
                 getDataFromRectifier(data)
             elif lengthOfData == 99:
