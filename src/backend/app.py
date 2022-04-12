@@ -79,7 +79,9 @@ def getFeatureInfo():
   countErrorTestPosts = 0
   BDLoiList = []
   # Tim kiem
-  for doc in db.RectifierTransformersDetails.find({}):
+  for doc in db.RectifierTransformersDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
+                                                       'otherInfo': {'$slice': 1}
+                                                       }).sort([( '$natural', 1 )]):
     status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
     if (status >= 300):
         status = "notConnected"
@@ -115,7 +117,9 @@ def getFeatureInfo():
               countErrorRectifiers += 1
               BTTLoiList.append(doc['maChuoi'])
   
-  for doc in db.TestPostsDetails.find({}):
+  for doc in db.TestPostsDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
+                                                       'otherInfo': {'$slice': 1}
+                                                       }).sort([( '$natural', 1 )]):
     status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
     if (status >= 300):
         status = "notConnected"
@@ -181,7 +185,16 @@ def getChartDCandAC():
   maxACTime = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
   ###########################
   # Tim kiem
-  for doc in db.RectifierTransformersDetails.find({}):
+  for doc in db.RectifierTransformersDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
+                                                       'otherInfo': {'$slice': 1},
+                                                       'otherInfo': {'$slice': 2},
+                                                       'otherInfo': {'$slice': 3},
+                                                       'otherInfo': {'$slice': 4},
+                                                       'otherInfo': {'$slice': 5},
+                                                       'otherInfo': {'$slice': 6},
+                                                       'otherInfo': {'$slice': 7},
+                                                       'otherInfo': {'$slice': 8},
+                                                       }).sort([( '$natural', 1 )]):
     if(len(doc['otherInfo']) == 1):
       continue;
     if(currentUser['role'] == 'superadmin'):
@@ -227,7 +240,16 @@ def getChartPortMax():
   maxPortTime = ["chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu","chua co du lieu"]
   ###########################
   # Tim kiem
-  for doc in db.TestPostsDetails.find({}):
+  for doc in db.TestPostsDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
+                                                       'otherInfo': {'$slice': 1},
+                                                       'otherInfo': {'$slice': 2},
+                                                       'otherInfo': {'$slice': 3},
+                                                       'otherInfo': {'$slice': 4},
+                                                       'otherInfo': {'$slice': 5},
+                                                       'otherInfo': {'$slice': 6},
+                                                       'otherInfo': {'$slice': 7},
+                                                       'otherInfo': {'$slice': 8},
+                                                       }).sort([( '$natural', 1 )]):
     if(len(doc['otherInfo']) == 1):
       continue;
     if(currentUser['role'] == 'superadmin'):
@@ -498,9 +520,8 @@ def get():
   devices = []
   for doc in db.RectifierTransformersDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
                                                        'dateUpdate':1, 'date':1,
-                                                       'otherInfo': {'$slice': 1},
-                                                       'otherInfo': {'$slice': 2},
-                                                       'otherInfo': {'$slice': 3}}).sort([( '$natural', 1 )]):
+                                                       'otherInfo': {'$slice': 1}
+                                                       }).sort([( '$natural', 1 )]):
     print(doc)
     if(currentUser['role'] == 'superadmin'):
       status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
