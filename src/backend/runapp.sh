@@ -3,7 +3,7 @@
 while true
 do
    currentDate=`date +"%T"`
-   echo $currentDate
+   # echo $currentDate
    if [[ "$currentDate" ==  "03:00:00" ]]; then
       sleep 5s
       echo "========schedule restart backend=========="
