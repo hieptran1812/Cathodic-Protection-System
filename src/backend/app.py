@@ -494,7 +494,7 @@ def get():
   devices = []
   for doc in db.RectifierTransformersDetails.find({}, {'_id':1,'devSerial':1,'maChuoi':1, 
                                                        'dateUpdate':1, 'date':1}
-                                                       'otherInfo': {$slice: 0}).sort([( '$natural', 1 )]):
+                                                       'otherInfo.$': 0).sort([( '$natural', 1 )]):
     print(doc)
     if(currentUser['role'] == 'superadmin'):
       status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
