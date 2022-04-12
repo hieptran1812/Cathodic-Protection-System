@@ -251,8 +251,8 @@ def getChartPortMax():
                                                        'otherInfo': {'$slice': 8},
                                                        'otherInfo': {'$slice': 9},
                                                        }).sort([( '$natural', 1 )]):
-    print(doc)
-    print('\n')
+    # print(doc)
+    # print('\n')
     if(len(doc['otherInfo']) == 1):
       continue;
     if(currentUser['role'] == 'superadmin'):
@@ -525,7 +525,7 @@ def get():
                                                        'dateUpdate':1, 'date':1,
                                                        'otherInfo': {'$slice': 1}
                                                        }).sort([( '$natural', 1 )]):
-    print(doc)
+    # print(doc)
     if(currentUser['role'] == 'superadmin'):
       status = (datetime.datetime.now() - doc['otherInfo'][0]['time']).total_seconds()
       if (status >= 300):
@@ -628,7 +628,7 @@ def delete(id):
 def getChartDC(id):
   deviceInfo = db.RectifierTransformersDetails.find_one({
     'devSerial': id,
-  }, {'_id':1,'devSerial':1,'maChuoi':1, 'dateUpdate':1, 'date':1, 'otherInfo': {'$slice': 1},
+  }, {'otherInfo': {'$slice': 1},
       'otherInfo': {'$slice': 2},
       'otherInfo': {'$slice': 3},
       'otherInfo': {'$slice': 4},
