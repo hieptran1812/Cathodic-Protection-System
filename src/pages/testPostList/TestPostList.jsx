@@ -24,14 +24,14 @@ const columns = [
         <>
           {params.row.status === "notConnected" ? (
             <Link
-              to={"/rectifierTransformer/" + params.row.devSerial}
+              to={"/testPost/" + params.row.devSerial}
               style={{ textDecoration: "none" }}
             >
               <button className="notConnected">Không hoạt động</button>
             </Link>
           ) : (
             <Link
-              to={"/rectifierTransformer/" + params.row.devSerial}
+              to={"/testPost/" + params.row.devSerial}
               style={{ textDecoration: "none" }}
             >
               <button className="connected">Hoạt động</button>
