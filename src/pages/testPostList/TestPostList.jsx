@@ -162,7 +162,7 @@ export default function TestPostList() {
             disableSelectionOnClick
             autoHeight
             columns={columns}
-            pageSize={8}
+            pageSize={20}
             checkboxSelection
             loading={loading}
           />

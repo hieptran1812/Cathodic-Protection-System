@@ -25,11 +25,27 @@ const columns = [
       return (
         <>
           {params.row.status === "notConnected" ? (
+            params.row.devType === "Bo trung tam" ? (
+              <Link
+                to={"/rectifierTransformer/" + params.row.devSerial}
+                style={{ textDecoration: "none" }}
+              >
+                <button className="notConnected">Không hoạt động</button>
+              </Link>
+            ) : (
+              <Link
+                to={"/testPost/" + params.row.devSerial}
+                style={{ textDecoration: "none" }}
+              >
+                <button className="notConnected">Không hoạt động</button>
+              </Link>
+            )
+          ) : params.row.devType === "Bo trung tam" ? (
             <Link
               to={"/rectifierTransformer/" + params.row.devSerial}
               style={{ textDecoration: "none" }}
             >
-              <button className="notConnected">Không hoạt động</button>
+              <button className="connected">Hoạt động</button>
             </Link>
           ) : (
             <Link
@@ -159,7 +175,7 @@ export default function Home() {
             autoHeight
             disableSelectionOnClick
             columns={columns}
-            pageSize={10}
+            pageSize={20}
             loading={loading}
             checkboxSelection
           />
