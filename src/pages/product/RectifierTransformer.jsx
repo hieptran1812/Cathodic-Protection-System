@@ -785,7 +785,7 @@ export default function RectifierTransformer() {
             autoHeight
             disableSelectionOnClick
             columns={columns}
-            pageSize={8}
+            pageSize={50}
             loading={loading}
             checkboxSelection
           />

@@ -760,7 +760,7 @@ export default function TestPost() {
               disableSelectionOnClick
               columns={columns}
               loading={loading}
-              pageSize={8}
+              pageSize={50}
               checkboxSelection
               components={{
                 Toolbar: CustomToolbar,
