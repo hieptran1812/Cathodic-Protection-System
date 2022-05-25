@@ -143,7 +143,7 @@ export default function UserList() {
             disableSelectionOnClick
             autoHeight
             columns={columns}
-            pageSize={8}
+            pageSize={15}
             checkboxSelection
             loading={loading}
           />
